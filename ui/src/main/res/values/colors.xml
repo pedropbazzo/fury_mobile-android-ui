@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="UnusedResources">
+
+    <color name="ui_components_primary_color">#3483FA</color>
+    <color name="ui_components_primary_color_pressed">#2761BA</color>
+    <color name="ui_components_primary_color_disabled">#332681FF</color>
+    <color name="ui_components_primary_color_text_disabled">@color/ui_components_white_color</color>
+    <color name="ui_components_secondary_color">#3483FA</color>
+    <color name="ui_components_secondary_color_pressed">#2761BA</color>
+    <color name="ui_components_secondary_color_disabled">#332681FF</color>
+    <color name="ui_components_secondary_color_text_disabled">#332681FF</color>
+    <color name="ui_components_success_color">#39B54A</color>
+    <color name="ui_components_error_color">#F04449</color>
+    <color name="ui_components_black_color">#333333</color>
+    <color name="ui_components_dark_grey_color">#666666</color>
+    <color name="ui_components_grey_color">#999999</color>
+    <color name="ui_components_mid_grey_color">#CCCCCC</color>
+    <color name="ui_components_light_grey_color">#EEEEEE</color>
+    <color name="ui_components_white_color">#FFFFFF</color>
+    <color name="ui_base_color">#FFDB15</color>
+    <color name="ui_base_light_color">#FFEA78</color>
+    <color name="ui_base_dark_color">#E6FFDB15</color>
+    <color name="ui_components_melidialog_background">#c0000000</color>
+    <color name="ui_components_melidialog_tint">@color/ui_components_white_color</color>
+    <color name="ui_components_spinner_primary_color">@color/ui_components_primary_color</color>
+    <color name="ui_components_spinner_secondary_color">@color/ui_base_color</color>
+    <color name="ui_components_spinner_alternate_color">@color/ui_components_white_color</color>
+
+
+    <!-- Meli Color palette -->
+    <color name="ui_meli_yellow">#FFDB15</color>
+    <color name="ui_meli_light_yellow">#FFEA78</color>
+    <color name="ui_meli_black">#333333</color>
+    <color name="ui_meli_dark_grey">#666666</color>
+    <color name="ui_meli_grey">#999999</color>
+    <color name="ui_meli_mid_grey">#CCCCCC</color>
+    <color name="ui_meli_light_grey">#EEEEEE</color>
+    <color name="ui_meli_white">#FFFFFF</color>
+    <color name="ui_meli_blue">#3483FA</color>
+    <color name="ui_meli_green">#39B54A</color>
+    <color name="ui_meli_red">#F04449</color>
+
+    <!-- Contextualized colors -->
+    <color name="ui_meli_background">@color/ui_meli_light_grey</color>
+    <color name="ui_meli_success">@color/ui_meli_green</color>
+    <color name="ui_meli_error">@color/ui_meli_red</color>
+    <color name="ui_ripple_mask">#1A333333</color>
+
+    <color name="ui_transparent">#00000000</color>
+    <color name="ui_action_button_pressed">#2761BA</color>
+    <color name="ui_second_action_button_pressed">@color/ui_components_mid_grey_color</color>
+    <color name="ui_action_button_disabled">#332681FF</color>
+    <color name="ui_action_button_text_disabled">@color/ui_components_white_color</color>
+    <color name="ui_option_button_text_disabled">#4D333333</color>
+    <color name="ui_action_button_default">#3483FA</color>
+    <color name="ui_contextual_menu_background_color">#80000000</color>
+
+</resources>

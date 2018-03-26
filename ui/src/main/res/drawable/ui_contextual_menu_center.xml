@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="oval">
+    <stroke
+        android:width="2dp"
+        android:color="#66ffda15"/>
+    <solid android:color="@color/transparent"/>
+    <size
+        android:width="@dimen/ui_contextual_menu_icon_diameter"
+        android:height="@dimen/ui_contextual_menu_icon_diameter"/>
+</shape>

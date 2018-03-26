@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_atable_view">ATableViewActivity</string>
+    <string name="title_activity_widgets">Widgets</string>
+    <string name="title_activity_default">Default Components</string>
+    <string name="title_activity_table">MLTable</string>
+    <string name="title_activity_buttons_list_view">ButtonsListViewActivity</string>
+    <string name="title_activity_mlprice_view">MLPriceViewActivity</string>
+    <string name="title_activity_dynamicheight_image_view">DynamicHeightImageView</string>
+    <string name="title_activity_flow_layout">FlowLayout</string>
+    <string name="title_activity_icons">Icons Activity</string>
+    <string name="title_activity_view_pager">ViewPager</string>
+    <string name="title_activity_ml_imageview">MLImageView</string>
+    <string name="title_activity_ml_imagepager">MLImageView</string>
+
+    <string name="title_activity_item_carousel">ItemCarousel</string>
+
+</resources>

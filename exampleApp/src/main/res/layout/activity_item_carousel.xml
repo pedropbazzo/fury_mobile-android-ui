@@ -1,0 +1,44 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ui="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent">
+    
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="TITLE"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"/>
+
+
+    <com.mercadolibre.android.ui.legacy.widgets.carousel.ItemCarousel
+        android:id="@+id/item_carousel_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/divider"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+    
+    <View
+        android:id="@+id/divider"
+        android:layout_height="50dp"
+        android:layout_width="1dp"
+        android:layout_centerInParent="true"/>
+
+
+    <com.mercadolibre.android.ui.legacy.widgets.carousel.ItemCarousel
+        android:id="@+id/item_carousel_2"
+        android:layout_below="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        ui:title_layout="@layout/seller_more_items"
+        android:layout_marginTop="10dp" />
+    
+</RelativeLayout>

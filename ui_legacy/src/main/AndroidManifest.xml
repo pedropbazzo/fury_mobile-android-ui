@@ -1,0 +1,16 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mercadolibre.android.ui.legacy">
+
+    <!--<uses-sdk-->
+        <!--tools:node="replace" />-->
+
+    <application android:allowBackup="true">
+
+        <activity android:name="com.mercadolibre.android.ui.activities.LayoutUtilsActivity">
+        </activity>
+
+        <activity android:name="com.mercadolibre.android.ui.activities.MLImageTestActivity" />
+
+    </application>
+
+</manifest>

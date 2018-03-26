@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <style name="textview_default" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="textview_title" parent="textview_default">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="textview_counter" parent="textview_default">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_title_normal" parent="textview_default">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_title_big" parent="android:Widget.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+
+    <style name="textview_default_bold" parent="textview_default">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textview_status" parent="android:Widget.TextView">
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="textview_status_light" parent="android:Widget.TextView">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_description_subtitle" parent="android:Widget.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_status_big" parent="android:Widget.TextView">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_comment" parent="textview_default">
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+    <style name="textview_subtitle" parent="textview_default">
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="textview_note_light" parent="textview_default">
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="textview_dialog_title" parent="textview_default">
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="textview_dialog_content" parent="textview_default">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="textview_section_header" parent="textview_default">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textview_section_content" parent="textview_default">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="textview_section_actions" parent="textview_default">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="textview_congrats" parent="textview_default">
+        <item name="android:textSize">23sp</item>
+    </style>
+
+    <style name="textview_form" parent="textview_default">
+        <item name="android:textSize">23sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+
+    <style name="textview_vip_title" parent="textview_default">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textview_search_title" parent="textview_default">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="textview_vip_price" parent="textview_default">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textview_vip_installments" parent="textview_default">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="textview_vip_freeshipping" parent="textview_default">
+        <item name="android:textColor">@android:color/holo_green_dark</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="textview_form_label" parent="textview_default">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="textview_form_input" parent="textview_default">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="textview_form_placeholder" parent="textview_default">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

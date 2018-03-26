@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <style name="MeliTextField" parent="Theme.MLTheme">
+        <item name="colorControlNormal">@color/ui_components_grey_color</item>
+        <item name="colorControlActivated">@color/ui_components_primary_color</item>
+        <item name="colorControlHighlight">@color/ui_components_primary_color</item>
+        <item name="android:textAppearance">@style/MLFont.Regular</item>
+        <item name="android:textColor">@color/ui_textfield_text_color</item>
+        <item name="android:textSize">@dimen/ui_fontsize_medium</item>
+    </style>
+
+    <style name="MeliTextField.EditText">
+        <item name="colorControlNormal">@color/ui_components_grey_color</item>
+        <item name="colorControlActivated">@color/ui_components_primary_color</item>
+        <item name="colorControlHighlight">@color/ui_components_primary_color</item>
+    </style>
+
+    <style name="MeliTextField.HelperText">
+        <item name="android:textAppearance">@style/MLFont.Regular</item>
+        <item name="android:textColor">@color/ui_components_dark_grey_color</item>
+        <item name="android:textSize">@dimen/ui_fontsize_xsmall</item>
+    </style>
+
+    <style name="MeliTextField.ErrorText">
+        <item name="android:textAppearance">@style/MLFont.Bold.Semi</item>
+        <item name="android:textColor">@color/ui_components_error_color</item>
+        <item name="android:textSize">@dimen/ui_fontsize_xsmall</item>
+    </style>
+
+    <style name="MeliTextField.CounterText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textAppearance">@style/MLFont.Regular</item>
+        <item name="android:textColor">@color/ui_components_grey_color</item>
+        <item name="android:textSize">@dimen/ui_fontsize_xsmall</item>
+    </style>
+
+    <style name="MeliTextField.Label">
+        <item name="android:textAppearance">@style/MLFont.Regular</item>
+        <item name="android:textColor">@color/ui_components_grey_color</item>
+        <item name="android:textSize">@dimen/ui_fontsize_xsmall</item>
+    </style>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="MLButton" parent="android:Widget.Button">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="layout_mode">centered</item>
+    </style>
+
+    <!--Define default look & feel for FABs on Meli-->
+    <style name="Widget.Design.FloatingActionButton" parent="android:Widget">
+        <item name="android:background">@drawable/design_fab_background</item>
+        <item name="backgroundTint">@color/ui_fab_color</item>
+
+        <item name="fabSize">normal</item>
+        <item name="elevation">@dimen/ui_fab_elevation</item>
+        <item name="pressedTranslationZ">@dimen/design_fab_translation_z_pressed</item>
+        <item name="rippleColor">?attr/colorControlHighlight</item>
+        <item name="borderWidth">@dimen/ui_fab_border_width</item>
+    </style>
+
+    <style name="MLButton.Primary">
+        <item name="android:background">@drawable/ui_button_style_primary</item>
+        <item name="android:textColor">@color/buttons_color_primary_text</item>
+    </style>
+
+    <style name="MLButton.Secondary">
+        <item name="android:background">@drawable/ui_button_style_secondary</item>
+        <item name="android:textColor">@color/buttons_color_secondary_text</item>
+    </style>
+
+    <style name="MLButton.Tertiary">
+        <item name="android:background">@drawable/ui_button_style_tertiary</item>
+        <item name="android:textColor">@color/buttons_color_tertiary_text</item>
+    </style>
+
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mercadolibre.android.ui.example.ui.ColorsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:ignore="HardcodedText">
+
+        <Button
+            android:id="@+id/meli_yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_yellow"
+            android:text="meli_yellow"
+            android:textColor="@color/ui_meli_dark_grey" />
+
+        <Button
+            android:id="@+id/meli_light_yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_yellow"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_light_yellow"
+            android:text="meli_light_yellow"
+            android:textColor="@color/ui_meli_dark_grey" />
+
+        <Button
+            android:id="@+id/meli_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_light_yellow"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_black"
+            android:text="meli_black" />
+
+        <Button
+            android:id="@+id/meli_dark_grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_black"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_dark_grey"
+            android:text="meli_dark_grey" />
+
+        <Button
+            android:id="@+id/meli_grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_dark_grey"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_grey"
+            android:text="meli_grey" />
+
+        <Button
+            android:id="@+id/meli_light_grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_grey"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_light_grey"
+            android:text="meli_light_grey"
+            android:textColor="@color/ui_meli_dark_grey" />
+
+        <Button
+            android:id="@+id/meli_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_light_grey"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_white"
+            android:text="meli_white"
+            android:textColor="@color/ui_meli_dark_grey" />
+
+        <Button
+            android:id="@+id/meli_blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_white"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_blue"
+            android:text="meli_blue" />
+
+        <Button
+            android:id="@+id/meli_green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_blue"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_green"
+            android:text="meli_green" />
+
+        <Button
+            android:id="@+id/meli_red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/meli_green"
+            android:layout_marginBottom="10dp"
+            android:background="@color/ui_meli_red"
+            android:text="meli_red" />
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="login_password_hint">Clave</string>
+    <string name="login_password_show">Mostrar</string>
+    <string name="login_password_hide">Ocultar</string>
+
+    <string name="loading_message">Cargando…</string>
+
+    <string name="ui_widget_banner_officialstore_label">Tienda oficial</string>
+</resources>

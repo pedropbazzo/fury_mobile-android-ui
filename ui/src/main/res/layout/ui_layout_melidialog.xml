@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ui_melidialog_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_components_melidialog_background"
+    android:clickable="true"
+    tools:ignore="RtlHardcoded">
+
+    <ImageView
+        android:id="@+id/ui_melidialog_close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:padding="16dp"
+        android:src="@drawable/ui_ic_clear"
+        android:tint="@color/ui_components_melidialog_tint" />
+
+    <TextView
+        android:id="@+id/ui_melidialog_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="?attr/selectableItemBackground"
+        android:padding="16dp"
+        android:textAppearance="@style/MLFont.Regular.Medium"
+        android:textColor="@color/ui_components_melidialog_tint"
+        android:textSize="@dimen/ui_fontsize_medium"
+        android:visibility="gone"
+        tools:text="Aplicar"
+        tools:visibility="visible" />
+
+    <com.mercadolibre.android.ui.MaxWidthLinearLayout
+        android:id="@+id/ui_melidialog_dialog_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/ui_dialog_vertical_padding"
+        android:paddingLeft="@dimen/ui_dialog_side_padding"
+        android:paddingRight="@dimen/ui_dialog_side_padding"
+        android:paddingTop="@dimen/ui_dialog_vertical_padding"
+        app:maxWidth="@dimen/ui_dialog_max_width">
+
+        <com.mercadolibre.android.ui.RoundedRelativeLayout
+            android:id="@+id/ui_melidialog_rounded_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:ui_cornerRadius="4dp">
+
+            <RelativeLayout
+                android:id="@+id/ui_melidialog_title_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ui_components_light_grey_color"
+                android:clickable="true"
+                android:minHeight="@dimen/ui_dialog_title_height"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/ui_melidialog_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:lineSpacingExtra="@dimen/ui_dialog_title_linespacing"
+                    android:textAppearance="@style/MLFont.Light.Large"
+                    android:textSize="@dimen/ui_fontsize_xlarge"
+                    android:textColor="@color/ui_components_black_color"
+                    tools:text="Título" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/ui_melidialog_content_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ui_melidialog_title_container"
+                android:background="@color/ui_components_white_color"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+        </com.mercadolibre.android.ui.RoundedRelativeLayout>
+
+        <Button
+            android:id="@+id/ui_melidialog_secondary_exit_button"
+            style="@style/Button.Option.Primary"
+            android:layout_marginTop="16dp"
+            android:textAppearance="@style/MLFont.Regular"
+            android:textColor="@color/ui_components_melidialog_tint"
+            android:textSize="@dimen/ui_fontsize_medium"
+            android:visibility="gone"
+            tools:text="Salida secundaria"
+            tools:visibility="visible" />
+
+    </com.mercadolibre.android.ui.MaxWidthLinearLayout>
+
+</RelativeLayout>

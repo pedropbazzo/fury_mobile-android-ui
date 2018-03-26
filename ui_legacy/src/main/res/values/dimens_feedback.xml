@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <dimen name="ui_feedback_margin_horizontal">16dp</dimen>
+    <dimen name="ui_feedback_margin_vertical">65dp</dimen>
+    <dimen name="ui_feedback_button_margin_top">72dp</dimen>
+    <dimen name="ui_feedback_title_margin_top">20dp</dimen>
+    <dimen name="ui_feedback_title_margin_bottom">10dp</dimen>
+    <dimen name="ui_feedback_image_size">84dp</dimen>
+
+    <dimen name="ui_feedback_image_size_big">280dp</dimen>
+
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded">
+
+    <ImageView
+        android:id="@+id/ui_error_view_image"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@null"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="left|center"
+        tools:ignore="SelectableText">
+        <TextView
+            android:id="@+id/ui_error_view_title"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            style="@style/ui_error_view_title"
+            tools:text="¡Parece que no hay Internet!"/>
+        <TextView
+            android:id="@+id/ui_error_view_subtitle"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/ui_error_view_subtitle_margin"
+            style="@style/ui_error_view_subtitle"
+            tools:text="Revisa tu conexión para seguir navegando."/>
+        <Button
+            android:id="@+id/ui_error_view_button"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ui_error_view_button_margin"
+            style="@style/Button.Option.Primary"
+            tools:text="Reintentar"/>
+
+    </LinearLayout>
+</merge>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:focusable="false"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp" >
+    
+    <View android:id="@+id/item_carousel_more_items"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:background="@drawable/carousel_more_item_clickable_selector"/>
+
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:layout_centerInParent="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:src="@drawable/ic_more_item_list"/>
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ui_components_primary_color">#3483FA</color>
+    <color name="ui_components_primary_color_pressed">#2761BA</color>
+    <color name="ui_components_primary_color_disabled">#332681FF</color>
+    <color name="ui_components_primary_color_text_disabled">@color/ui_components_white_color</color>
+    <color name="ui_components_secondary_color">#3483FA</color>
+    <color name="ui_components_secondary_color_pressed">#2761BA</color>
+    <color name="ui_components_secondary_color_disabled">#332681FF</color>
+    <color name="ui_components_secondary_color_text_disabled">#332681FF</color>
+    <color name="ui_components_success_color">#39B54A</color>
+    <color name="ui_components_error_color">#F04449</color>
+    <color name="ui_components_black_color">#333333</color>
+    <color name="ui_components_dark_grey_color">#666666</color>
+    <color name="ui_components_grey_color">#999999</color>
+    <color name="ui_components_mid_grey_color">#CCCCCC</color>
+    <color name="ui_components_light_grey_color">#EEEEEE</color>
+    <color name="ui_components_white_color">#FFFFFF</color>
+    <color name="ui_base_color">#FFDB15</color>
+    <color name="ui_base_light_color">#FFEA78</color>
+    <color name="ui_base_dark_color">#E6FFDB15</color>
+    <color name="ui_components_melidialog_background">@color/ui_base_dark_color</color>
+    <color name="ui_components_melidialog_tint">@color/ui_components_black_color</color>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.MLTheme" parent="@style/Theme.MLThemeLegacy" tools:ignore="ResourceName">
+
+        <item name="android:textAppearance">@style/MLFont.Light</item>
+
+        <item name="android:buttonStyle">@style/Button.Action.Primary</item>
+        <item name="buttonStyle">@style/Button.Action.Primary</item>
+        <item name="buttonBarButtonStyle">@style/Button.Action.Primary</item>
+
+        <item name="android:colorAccent">@color/ui_meli_blue</item>
+
+        <!-- Ripple mask color -->
+        <item name="android:colorControlHighlight">@color/ui_ripple_mask</item>
+
+        <item name="android:actionModeBackground">@color/ui_meli_yellow</item>
+        <item name="actionModeBackground">@color/ui_meli_yellow</item>
+
+        <!-- Line spacing -->
+        <item name="android:lineSpacingExtra">2dp</item>
+
+        <item name="ui_meliSpinnerStyle">@style/ui_meli_spinner</item>
+    </style>
+
+</resources>

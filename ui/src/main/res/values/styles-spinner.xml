@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ui_meli_spinner">
+        <item name="size">large</item>
+        <item name="primaryColor">@color/ui_components_spinner_primary_color</item>
+        <item name="secondaryColor">@color/ui_components_spinner_secondary_color</item>
+    </style>
+
+    <style name="ui_meli_spinner.Alternate">
+        <item name="secondaryColor">@color/ui_components_spinner_alternate_color</item>
+    </style>
+
+    <style name="ui_meli_spinner.SingleColorSmall">
+        <item name="size">small</item>
+        <item name="primaryColor">@color/ui_components_spinner_primary_color</item>
+        <item name="secondaryColor">?primaryColor</item>
+    </style>
+
+    <style name="ui_meli_spinner.SingleColorSmall.Alternate">
+        <item name="primaryColor">@color/ui_components_spinner_alternate_color</item>
+    </style>
+</resources>

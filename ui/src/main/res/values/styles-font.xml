@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <style name="MLFont" parent="android:TextAppearance"/>
+
+    <style name="MLFont.Light"/>
+
+    <style name="MLFont.Black"/>
+
+    <style name="MLFont.Bold"/>
+
+    <style name="MLFont.Bold.Extra"/>
+
+    <style name="MLFont.Bold.Semi"/>
+
+    <style name="MLFont.Regular"/>
+
+    <style name="MLFont.Thin"/>
+
+    <style name="MLFont.Medium"/>
+
+    <style name="MLFont.Light.XXLarge">
+        <item name="android:textSize">@dimen/ui_fontsize_xxlarge</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_xxlarge</item>
+    </style>
+
+    <style name="MLFont.Light.XLarge">
+        <item name="android:textSize">@dimen/ui_fontsize_xlarge</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_xlarge</item>
+    </style>
+
+    <style name="MLFont.Light.Large">
+        <item name="android:textSize">@dimen/ui_fontsize_large</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_large</item>
+    </style>
+
+    <style name="MLFont.Light.Medium">
+        <item name="android:textSize">@dimen/ui_fontsize_medium</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_medium</item>
+    </style>
+
+    <style name="MLFont.Light.Small">
+        <item name="android:textSize">@dimen/ui_fontsize_small</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_small</item>
+    </style>
+
+    <style name="MLFont.Light.XSmall">
+        <item name="android:textSize">@dimen/ui_fontsize_xsmall</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_xsmall</item>
+    </style>
+
+    <style name="MLFont.Light.XXSmall">
+        <item name="android:textSize">@dimen/ui_fontsize_xxsmall</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_xxsmall</item>
+    </style>
+
+    <style name="MLFont.Regular.XXLarge">
+        <item name="android:textSize">@dimen/ui_fontsize_xxlarge</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_xxlarge</item>
+    </style>
+
+    <style name="MLFont.Regular.XLarge">
+        <item name="android:textSize">@dimen/ui_fontsize_xlarge</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_xlarge</item>
+    </style>
+
+    <style name="MLFont.Regular.Large">
+        <item name="android:textSize">@dimen/ui_fontsize_large</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_large</item>
+    </style>
+
+    <style name="MLFont.Regular.Medium">
+        <item name="android:textSize">@dimen/ui_fontsize_medium</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_medium</item>
+    </style>
+
+    <style name="MLFont.Regular.Small">
+        <item name="android:textSize">@dimen/ui_fontsize_small</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_small</item>
+    </style>
+
+    <style name="MLFont.Regular.XSmall">
+        <item name="android:textSize">@dimen/ui_fontsize_xsmall</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_xsmall</item>
+    </style>
+
+    <style name="MLFont.Regular.XXSmall">
+        <item name="android:textSize">@dimen/ui_fontsize_xxsmall</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_xxsmall</item>
+    </style>
+
+</resources>

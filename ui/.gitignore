@@ -1,0 +1,6 @@
+/build
+*.iml
+
+src/main/project.properties
+src/main/test-project.properties
+*.DS_STORE

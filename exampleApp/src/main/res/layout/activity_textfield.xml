@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_new_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.mercadolibre.android.ui.example.ui.widgets.textfield.NewTextFieldActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Super TextField with everything"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/super_text_field"
+            app:ui_textFieldHint="Eg: Fake street 123"
+            app:ui_textFieldLabel="Address"
+            app:ui_textFieldHelperText="Helper Text"
+            app:ui_textFieldDrawableRight="@drawable/ic_official_store_bg"
+            app:ui_textFieldMaxCharacters="25"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with label and hint"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldHint="Eg: Fake street 123"
+            app:ui_textFieldLabel="Address"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with only hint"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldHint="Email"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with max characters"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldHint="Title"
+            app:ui_textFieldMaxCharacters="20"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with max lines"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldHint="Title"
+            app:ui_textFieldMaxLines="3"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with hide/show password"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldInputType="textPassword"
+            app:ui_textFieldHint="Title"
+            app:ui_textFieldPasswordToggleDrawable="@drawable/show_hide_password_drawable"
+            app:ui_textFieldPasswordToggleTint="@color/show_hide_password_color"
+            app:ui_textFieldPasswordToggleEnabled="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with error"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:id="@+id/text_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldHint="Title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with drawables"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldDrawableBottom="@drawable/ic_official_store_bg"
+            app:ui_textFieldDrawableLeft="@drawable/ic_official_store_bg"
+            app:ui_textFieldDrawableRight="@drawable/ic_official_store_bg"
+            app:ui_textFieldDrawableTop="@drawable/ic_official_store_bg"
+            app:ui_textFieldHint="Title"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with button"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_field_with_button"
+            app:ui_textFieldHint="Eg: Fake street 123"
+            app:ui_textFieldLabel="Address"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField type center"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_field_center"
+            app:ui_textFieldHint="Eg: Fake street 123"
+            app:ui_textFieldLabel="Address"
+            app:ui_textFieldAlign="centerAlign"
+            app:ui_textFieldHelperText="Helper Text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField disable"/>
+
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_field_disable"
+            app:ui_textFieldEnabled="false"
+            app:ui_textFieldHint="Eg: Fake street 123"
+            app:ui_textFieldLabel="Address"
+            app:ui_textFieldHelperText="Helper Text" />
+    </LinearLayout>
+</ScrollView>

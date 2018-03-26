@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Font sizes -->
+    <dimen name="ui_fontsize_xxlarge">32sp</dimen>
+    <dimen name="ui_fontsize_xlarge">24sp</dimen>
+    <dimen name="ui_fontsize_large">20sp</dimen>
+    <dimen name="ui_fontsize_medium">18sp</dimen>
+    <dimen name="ui_fontsize_small">16sp</dimen>
+    <dimen name="ui_fontsize_xsmall">14sp</dimen>
+    <dimen name="ui_fontsize_xxsmall">12sp</dimen>
+
+    <!-- Line spacing -->
+    <dimen name="ui_linespacing_xxlarge">4sp</dimen>
+    <dimen name="ui_linespacing_xlarge">4sp</dimen>
+    <dimen name="ui_linespacing_large">4sp</dimen>
+    <dimen name="ui_linespacing_medium">4sp</dimen>
+    <dimen name="ui_linespacing_small">4sp</dimen>
+    <dimen name="ui_linespacing_xsmall">4sp</dimen>
+    <dimen name="ui_linespacing_xxsmall">4sp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="ui_button_height">48dp</dimen>
+    <dimen name="ui_button_corner_radius">4dp</dimen>
+    <dimen name="ui_button_padding">8dp</dimen>
+    <dimen name="ui_button_checkbox_margin">16dp</dimen>
+    <dimen name="ui_button_checkbox_size">18dp</dimen>
+
+    <!-- Dialog -->
+    <dimen name="ui_dialog_title_height">80dp</dimen>
+    <dimen name="ui_dialog_title_linespacing">0dp</dimen>
+    <dimen name="ui_dialog_side_padding">32dp</dimen>
+    <dimen name="ui_dialog_vertical_padding">56dp</dimen>
+    <dimen name="ui_dialog_max_width">544dp</dimen> <!-- 480dp + side paddings -->
+    <dimen name="ui_dialog_bottom_padding_with_secondary_exit">40dp</dimen>
+    <dimen name="ui_dialog_bottom_padding_with_keyboard">@dimen/ui_dialog_side_padding</dimen>
+    <dimen name="ui_dialog_bottom_padding_with_keyboard_and_secondary_exit">16dp</dimen>
+
+    <!-- Snackbar -->
+    <dimen name="ui_snackbar_text_linespacing">5dp</dimen>
+    <dimen name="ui_snackbar_padding">16dp</dimen>
+
+    <!-- Spinner -->
+    <dimen name="ui_spinner_stroke">3dp</dimen>
+    <dimen name="ui_spinner_size">72dp</dimen>
+    <dimen name="ui_spinner_small_stroke">2dp</dimen>
+    <dimen name="ui_spinner_small_size">20dp</dimen>
+    <dimen name="ui_spinner_text_margin">24dp</dimen>
+
+    <!-- Contextual Menu -->
+    <dimen name="ui_contextual_menu_icon_diameter">40dp</dimen>
+    <dimen name="ui_contextual_menu_text_size">14dp</dimen>
+    <dimen name="ui_contextual_menu_tooltip_upper_text_padding">2dp</dimen>
+    <dimen name="ui_contextual_menu_tooltip_lower_text_padding">5dp</dimen>
+    <dimen name="ui_contextual_menu_tooltip_margin">10dp</dimen>
+    <dimen name="ui_contextual_menu_tooltip_horizontal_padding">5dp</dimen>
+    <dimen name="ui_contextual_menu_child_size">48dp</dimen>
+
+
+    <!-- TextField -->
+    <dimen name="ui_textfield_label_margin_left">4dp</dimen>
+
+    <!--Error View-->
+    <dimen name="ui_error_view_subtitle_margin">12dp</dimen>
+    <dimen name="ui_error_view_button_margin">15dp</dimen>
+    <dimen name="ui_error_view_image_margin">29dp</dimen>
+    <dimen name="ui_error_view_padding">32dp</dimen>
+
+</resources>

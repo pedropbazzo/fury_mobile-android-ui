@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="UI" />
+
+    <style name="UI.Feedback" />
+
+    <style name="UI.Feedback.Container" />
+
+    <style name="UI.Feedback.TextView" parent="android:Widget.TextView" />
+
+    <style name="UI.Feedback.ImageView">
+        <item name="android:layout_width">@dimen/ui_feedback_image_size</item>
+        <item name="android:layout_height">@dimen/ui_feedback_image_size</item>
+    </style>
+
+    <style name="UI.Feedback.TextView.Title">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize" tools:ignore="SpUsage">20dp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="UI.Feedback.TextView.Subtitle">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
+        <item name="android:textColor">@color/gray_light</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="UI.Feedback.Button" parent="MLButton.Tertiary">
+        <item name="android:minWidth">120dp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+</resources>

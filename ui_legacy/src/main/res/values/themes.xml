@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Theme.MLThemeLegacy" parent="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    	<item name="vpiCirclePageIndicatorStyle">@style/CustomCirclePageIndicator</item>
+        <item name="actionModeBackground">@color/yellow</item>
+        <item name="android:actionModeBackground">@color/yellow</item>
+        <item name="android:actionMenuTextColor">@color/gray_dark</item>
+
+        <item name="actionBarTabBarStyle">@style/Widget.MLTheme.ActionBar</item>
+        <item name="actionBarStyle">@style/Widget.MLTheme.ActionBar</item>
+        <item name="actionBarTabStyle">@style/Widget.MLTheme.ActionBar.TabView</item>
+        <item name="actionBarTabTextStyle">@style/Widget.MLTheme.ActionBar.TabText</item>
+
+        <item name="android:buttonStyle">@style/MLButton.Primary</item>
+        <item name="buttonStyle">@style/MLButton.Primary</item>
+        <item name="buttonBarButtonStyle">@style/MLButton.Primary</item>
+        <!--<item name="android:button">@style/MLButton.Primary</item>-->
+        <!--<item name="actionBarTabTextStyle">@style/Widget.MLTheme.ActionBar.TabText</item>-->
+
+        <item name="android:textViewStyle">@style/textview_default</item>
+        <item name="android:progressBarStyle">@style/Widget.MercadoLibre.ProgressBar.Horizontal</item>
+        <item name="android:progressBarStyleHorizontal">@style/Widget.MercadoLibre.ProgressBar.Horizontal</item>
+        <item name="android:progressBarStyleLarge">@style/Widget.MercadoLibre.ProgressBar.Horizontal</item>
+        <item name="android:scrollViewStyle">@style/Widget.ScrollView.Default</item>
+
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+        <!--<item name="actionBarStyle">@style/Widget.ActionMode</item>-->
+        <item name="colorAccent">@color/blue</item>
+
+        <item name="android:actionBarSize">@dimen/abc_action_bar_default_height_material</item>
+
+        <item name="android:colorPressedHighlight">@color/selection_color</item>
+        <item name="android:colorLongPressedHighlight">@color/selection_color</item>
+        <!--<item name="colorPrimary">@color/blue</item>-->
+        <!--<item name="android:textColorSecondary">@color/blue</item>-->
+        <!--<item name="android:colorControlNormal">@color/blue</item>-->
+
+        <item name="android:spinnerItemStyle">@style/MLSpinnerItem</item>
+
+        <!--<item name="colorSwitchThumbNormal">@color/blue</item>-->
+        <item name="android:listSeparatorTextViewStyle">@style/MLPreference.ListHeader</item>
+
+        <item name="android:dropDownItemStyle">@style/MLDropDownItemStyle</item>
+
+        <item name="actionBarItemBackground">@drawable/actionbar_home_background</item>
+        <!-- for native ActionBar -->
+        <item name="android:actionBarItemBackground">@drawable/actionbar_home_background</item>
+
+        <item name="android:selectableItemBackground">@drawable/actionbar_home_background</item>
+        <item name="selectableItemBackground">@drawable/actionbar_home_background</item>
+
+    </style>
+</resources>

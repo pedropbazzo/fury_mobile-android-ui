@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+   <!-- Meli Button Colors -->
+    <color name="button_primary_normal">#323E8F</color>
+    <color name="button_primary_pressed">#181B3E</color>
+
+    <color name="button_secondary_normal">#BFD7FA</color>
+    <color name="button_secondary_pressed">#B4C7D9</color>
+
+
+    <color name="button_stroke">#4A90E2</color>
+    <color name="button_disabled">#33999999</color>
+    <color name="button_disabled_border">#33636363</color>
+    <color name="button_text_disabled">#33333333</color>
+
+    <color name="ui_fab_color">#2681FF</color>
+
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="icons_green">#468847</color>
+    <color name="icons_green_light">#468743</color>
+
+    <color name="icons_blue">#3A87AD</color>
+    <color name="icons_blue_dark">#2C3F91</color>
+
+    <color name="icons_yellow">#FFE500</color>
+    <color name="icons_yellow_dark">#F5CC00</color>
+
+    <color name="icons_red_light">#B94948</color>
+    <color name="icons_red">#B94A48</color>
+
+    <color name="icons_cyan">#37c8FF</color>
+
+    <color name="icons_grey">@color/gray_dark</color>
+    <color name="icons_grey_light">@color/gray_light</color>
+
+</resources>

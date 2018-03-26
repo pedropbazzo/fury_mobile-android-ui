@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="ui_secondary_action_button_background_disabled">@color/ui_transparent</color>
+    <color name="ui_secondary_action_button_border_disabled">@color/ui_components_primary_color_disabled</color>
+
+    <color name="ui_secondary_action_button_background_pressed">@color/ui_second_action_button_pressed</color>
+    <color name="ui_secondary_action_button_border_pressed">@color/ui_components_primary_color_pressed</color>
+
+    <color name="ui_secondary_action_button_background_enabled">@color/ui_transparent</color>
+    <color name="ui_secondary_action_button_border_enabled">@color/ui_components_primary_color</color>
+
+    <color name="ui_option_button_background_disabled">@color/ui_transparent</color>
+    <color name="ui_option_button_background_enabled">@color/ui_transparent</color>
+    <color name="ui_option_button_background_pressed">@color/ui_second_action_button_pressed</color>
+
+
+    <!-- Buttons Text Colors -->
+    <color name="ui_primary_action_button_text_disabled">@color/ui_meli_white</color>
+    <color name="ui_primary_action_button_text_pressed">@color/ui_meli_white</color>
+    <color name="ui_primary_action_button_text_enabled">@color/ui_meli_white</color>
+
+    <color name="ui_secondary_action_button_text_disabled">@color/ui_components_primary_color_disabled</color>
+    <color name="ui_secondary_action_button_text_pressed">@color/ui_components_primary_color_pressed</color>
+    <color name="ui_secondary_action_button_text_enabled">@color/ui_components_primary_color</color>
+
+    <color name="ui_primary_option_button_text_disabled">@color/ui_components_primary_color_disabled</color>
+    <color name="ui_primary_option_button_text_pressed">@color/ui_components_primary_color_pressed</color>
+    <color name="ui_primary_option_button_text_enabled">@color/ui_components_primary_color</color>
+
+    <color name="ui_secondary_option_button_text_disabled">@color/ui_meli_mid_grey</color>
+    <color name="ui_secondary_option_button_text_pressed">#808080</color>
+    <color name="ui_secondary_option_button_text_enabled">@color/ui_meli_grey</color>
+    <!-- EOF: Buttons Text Color-->
+
+</resources>

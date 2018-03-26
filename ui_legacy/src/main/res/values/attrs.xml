@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HelloGallery">
+        <attr name="android:galleryItemBackground" />
+    </declare-styleable>
+
+    <declare-styleable name="CardLayout">
+        <attr name="cardTitle" format="string" />
+        <attr name="cardSubtitle" format="string" />
+        <attr name="cardTitleTextSizeDp" format="integer" />
+        <attr name="cardContentPadding" format="dimension" />
+        <attr name="showLineSeparator" format="boolean" />
+        <attr name="android:orientation" />
+    </declare-styleable>
+
+    <declare-styleable name="MLWarningNotificationView">
+        <attr name="warningSubtitle" format="string" />
+        <attr name="warningTitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ListingTypeBar">
+        <attr name="dashWidth" format="dimension" />
+        <attr name="dashGapWidth" format="dimension" />
+        <attr name="dashStrokeWidth" format="dimension" />
+        <attr name="percentage" format="float" />
+        <attr name="dashQuantity" format="integer" />
+        <attr name="android:orientation" />
+    </declare-styleable>
+
+    <declare-styleable name="MLImage">
+        <attr name="isZoomable" format="boolean" />
+        <attr name="forceDimension" format="boolean" />
+        <!-- Color to use to paint the bitmap.
+        This UC is not thought to be used when loading from network-->
+        <attr name="colorFilter" format="color|reference" />
+        <attr name="drawableStart" format="reference" />
+        <attr name="drawableTop" format="reference" />
+
+        <attr name="layout_mode" format="enum">
+            <enum name="align_left" value="0" />
+            <enum name="centered" value="1" />
+        </attr>
+
+        <attr name="img_vertical_alignment" format="enum">
+            <enum name="center" value="0" />
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+
+        <attr name="txt_vertical_alignment" format="enum">
+            <enum name="center" value="0" />
+            <enum name="top" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+
+        <attr name="scaleImage" format="boolean" />
+        <attr name="colorFilterAlpha" format="integer" />
+        <attr name="scaleType" format="enum|string" />
+    </declare-styleable>
+
+    <declare-styleable name="MLPriceView">
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ItemCarousel">
+        <attr name="title_layout" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ErrorType">
+        <attr name="errorType" format="enum">
+            <enum name="server" value="0" />
+            <enum name="connection" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

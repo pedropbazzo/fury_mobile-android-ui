@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ui_error_view_title" parent="MLFont.Light">
+        <item name="android:textSize">@dimen/ui_fontsize_large</item>
+        <item name="android:textColor">@color/ui_meli_black</item>
+        <item name="android:lineSpacingExtra">@dimen/ui_linespacing_medium</item>
+    </style>
+
+    <style name="ui_error_view_subtitle" parent="MLFont.Light.Medium">
+        <item name="android:textColor">@color/ui_meli_dark_grey</item>
+    </style>
+
+</resources>

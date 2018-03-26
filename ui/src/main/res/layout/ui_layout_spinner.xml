@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="@color/ui_transparent"
+    android:gravity="center"
+    android:orientation="vertical"
+    style="?attr/ui_meliSpinnerStyle">
+
+    <com.mercadolibre.android.ui.widgets.LoadingSpinner
+        android:id="@+id/ui_spinner"
+        android:layout_width="@dimen/ui_spinner_size"
+        android:layout_height="@dimen/ui_spinner_size"
+        app:ui_primaryColor="@color/ui_components_spinner_primary_color"
+        app:ui_secondaryColor="@color/ui_components_spinner_secondary_color"
+        app:ui_stroke="@dimen/ui_spinner_stroke" />
+
+    <TextView
+        android:id="@+id/ui_spinner_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spinner_text_margin"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:maxLines="2"
+        android:textAppearance="@style/MLFont.Regular"
+        android:textColor="@color/ui_components_dark_grey_color"
+        android:textSize="@dimen/ui_fontsize_medium"
+        android:visibility="gone"
+        tools:text="Texto de soporte hasta dos lineas"
+        tools:visibility="visible" />
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="vip_template_gallery_height">220dp</dimen>
+    <dimen name="vip_color_picker_size">45dp</dimen>
+    <dimen name="vip_color_picker_vip_size">42dp</dimen>
+    <dimen name="vip_size_picker_fontsize">15sp</dimen>
+    <dimen name="vip_color_picker_border">2dp</dimen>
+    <dimen name="vip_color_picker_second_border">4dp</dimen>
+    
+    <dimen name="my_purchases_variation_box_size">30dp</dimen>
+    
+    <dimen name="box_default_stroke">1dp</dimen>
+    
+    <!-- ATableView -->
+
+
+    <dimen name="drawer_layout_width">240dp</dimen>
+
+    <dimen name="syi_listing_type_error_padding">15dp</dimen>
+
+    <dimen name="default_margin_left">10dp</dimen>
+    <dimen name="default_margin_right">10dp</dimen>
+    <dimen name="default_margin_top">10dp</dimen>
+    <dimen name="default_margin_bottom">10dp</dimen>
+
+    <!-- Splash -->
+    <dimen name="splash_with_fb">289px</dimen>
+    <dimen name="splash_with_no_fb">270px</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button_padding">6dp</dimen>
+    <dimen name="button_padding_bottom">8dp</dimen>
+    <dimen name="button_corners_radius">2dp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+    <dimen name="button_height">44dp</dimen>
+    <dimen name="button_stoke_size">3dp</dimen>
+
+    <dimen name="actionbar_indicator_height">1dp</dimen>
+
+    <dimen name="mltable_margin_left_right">10dp</dimen>
+    <dimen name="mltable_margin_top_bottom">5dp</dimen>
+
+    <dimen name="mltextview_img_margintop">2dp</dimen>
+    <dimen name="mltextview_image_text_space">12dp</dimen>
+    <dimen name="mltextview_imagetop_text_margin">20dp</dimen>
+    <dimen name="mltextview_min_padding">5dp</dimen>
+    <dimen name="mltextview_min_text_margin">55dp</dimen>
+
+    <!-- Dimensions for ButtonsListView -->
+    <dimen name="buttonlist_row_horizontal_margin">10dp</dimen>
+    <dimen name="buttonlist_row_padding">15dp</dimen>
+    <dimen name="dividerLine_height">1dp</dimen>
+
+    <!-- Dimensions for generic banners -->
+    <dimen name="ui_widget_banner_title_text_size">18sp</dimen>
+    <dimen name="ui_widget_banner_subtitle_text_size">12sp</dimen>
+    <dimen name="ui_widget_banner_root_layout_padding">8dp</dimen>
+
+    <!-- Official Store banner -->
+    <dimen name="ui_widget_banner_officialstore_logo_width">52dp</dimen>
+    <dimen name="ui_widget_banner_officialstore_logo_height">36dp</dimen>
+    <dimen name="ui_widget_banner_officialstore_verified_icon_padding">5dp</dimen>
+    <item name="ui_widget_banner_background_alpha" format="float" type="dimen">0.80</item>
+
+    <!-- User message widget -->
+    <dimen name="ui_widget_usermessage_padding">12dp</dimen>
+    <dimen name="ui_widget_usermessage_width">16dp</dimen>
+    <dimen name="ui_widget_usermessage_height">16dp</dimen>
+    <dimen name="ui_widget_usermessage_textsize">14sp</dimen>
+    <dimen name="ui_widget_usermessage_message_marginleft">12dp</dimen>
+    <dimen name="ui_widget_usermessage_icon_margintop">4dp</dimen>
+
+    <!-- floating action button -->
+    <dimen name="ui_fab_elevation">2dp</dimen>
+    <dimen name="ui_fab_border_width">0dp</dimen>
+
+</resources>

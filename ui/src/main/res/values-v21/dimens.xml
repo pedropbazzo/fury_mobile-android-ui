@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dialog -->
+    <dimen name="ui_dialog_title_linespacing">5dp</dimen>
+
+</resources>

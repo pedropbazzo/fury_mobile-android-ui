@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Widget"></style>
+
+    <!-- Search Banner divider -->
+    <style name="divider">
+        <item name="android:id">@id/divider</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/gray_light</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- LEGACY styles, must reorganize and remove someday -->
+    <style name="listview_row">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/listview_row_background</item>
+    </style>
+
+    <style name="listview_table">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/listview_table_back_stroke</item>
+    </style>
+
+    <style name="seller_reputation_header_text" parent="android:Widget.TextView">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="seller_reputation_button" parent="android:Widget.Button">
+        <item name="android:background">@drawable/black_button</item>
+        <item name="android:layout_marginBottom">7dp</item>
+        <item name="android:layout_marginLeft">7dp</item>
+        <item name="android:layout_marginRight">7dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="congrats_row">
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:minHeight">60dp</item>
+    </style>
+
+    <style name="CustomCirclePageIndicator">
+        <item name="fillColor">#333333</item>
+        <item name="strokeColor">#999999</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="radius">3dp</item>
+        <item name="centered">true</item>
+        <item name="pageColor">#CACACA</item>
+        <item name="snap">true</item>
+    </style>
+
+    <style name="box_linear_default">
+        <item name="android:background">@drawable/box_default_shape</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="box_linear_default_header">
+        <item name="android:background">@drawable/box_default_shape</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="box_linear_blue" parent="box_linear_default">
+        <item name="android:background">@drawable/box_blue_shape</item>
+    </style>
+
+    <style name="box_frame_default">
+        <item name="android:background">@drawable/box_default_shape</item>
+    </style>
+
+    <style name="box_frame_default_with_separator_and_radius_off">
+        <item name="android:background">@drawable/box_default_shape_with_separator_and_radius_off
+        </item>
+    </style>
+
+    <!-- SYI photo checkbox -->
+    <style name="Widget.MercadoLibre.CompoundButton.CheckBox" parent="android:Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/syi_item_checkbox</item>
+    </style>
+
+    <style name="Widget.MercadoLibre.ProgressBar.Horizontal" parent="@style/Widget.AppCompat.ProgressBar">
+        <item name="android:maxHeight">32dp</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:indeterminate">true</item>
+        <!--<item name="android:indeterminateDrawable">@drawable/progress_indeterminate_horizontal_material</item>-->
+        <!--<item name="android:indeterminateDrawable">@drawable/progress_indeterminate_horizontal</item>-->
+    </style>
+
+
+    <!---->
+    
+    
+    <style name="Widget.ScrollView.Default" parent="android:Widget.ScrollView">
+        <item name="android:background">@color/background_color</item>
+    </style>
+
+
+
+    <style name="MLDialog" parent="@style/android:Theme.Holo.Light.Dialog">
+        <item name="android:windowTitleStyle">@style/DialogTextAppearance</item>
+        <item name="android:windowNoTitle">false</item>
+
+        <item name="android:windowBackground">@color/white</item>
+
+        <!--<item name="android:windowActionModeOverlay">true</item>-->
+
+        <item name="android:colorBackgroundCacheHint">@null</item>
+
+        <item name="android:listPreferredItemPaddingLeft">10dip</item>
+        <item name="android:listPreferredItemPaddingRight">10dip</item>
+        <item name="android:listPreferredItemPaddingStart">10dip</item>
+        <item name="android:listPreferredItemPaddingEnd">10dip</item>
+
+        <!--<item name="preferencePanelStyle">@style/PreferencePanel.Dialog</item>-->
+    </style>
+
+    <style name="MLDialog.Alert">
+        <item name="android:windowTitleStyle">@style/DialogTextAppearance</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+
+    <style name="DialogTextAppearance">
+        <item name="android:textColorHighlight">@android:color/holo_blue_light</item>
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+        <item name="android:textColorHint">@android:color/holo_blue_light</item>
+        <item name="android:textColorLink">@android:color/holo_blue_light</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="CongratsDescription" >
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CXSeparatorLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginLeft">18dp</item>
+        <item name="android:src">@drawable/solid_line</item>
+    </style>
+
+    <style name="CXOptionBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:background">@drawable/box_clickable_selector</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="MLTextViewCongrats" parent="@style/textview_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="layout_mode">align_left</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="MLDropDownItemStyle" parent="@style/Base.Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="MLTextViewHelp">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="MLTextViewHelp.Description">
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_marginLeft">26dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
+    <!--textAppearanceSearchResultTitle-->
+
+    <style name="MLListItem">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+
+
+    <style name="MLSpinnerItem" parent="@style/textview_dialog_content">
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="MLPreference" >
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="MLPreference.ListHeader" >
+        <item name="android:background">@drawable/preference_header_line</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="paddingStart">8dp</item>
+    </style>
+
+    <style name="MLPreference.Item" >
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:fadingEdge">horizontal</item>
+    </style>
+
+
+    <style name="MLPreference.Summary" >
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:maxLines">4</item>
+    </style>
+
+    <style name="MLPreference.Item.CheckBox" >
+    </style>
+
+    <style name="MLPreference.Summary.CheckBox" >
+    </style>
+
+
+    <!---->
+    <!--<style name="listViewPrefs" parent="@android:style/Widget.ListView">-->
+    <!--<item name="android:background">@drawable/listing_background</item>-->
+    <!--</style>-->
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/black</item>
+    </style>
+
+
+
+    <style name="Widget.MLTheme.ActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="titleTextStyle">@style/TextAppearance.MLTheme.ActionBar.Title</item>
+        <!--<item name="titleTextStyle">@style/TextAppearance.MLTheme.ActionBar.Title</item>-->
+
+        <item name="subtitleTextStyle">@style/TextAppearance.MLTheme.ActionBar.Subtitle</item>
+        <!--<item name="subtitleTextStyle">@style/TextAppearance.MLTheme.ActionBar.Subtitle</item>-->
+
+        <item name="background">@color/yellow</item>
+        <!--<item name="background">@drawable/ab_solid</item>-->
+
+        <item name="backgroundStacked">@drawable/ab_stacked_solid</item>
+        <!--<item name="backgroundStacked">@drawable/ab_stacked_solid</item>-->
+        <item name="backgroundSplit">@color/yellow</item>
+        <!--<item name="backgroundSplit">@drawable/ab_solid</item>-->
+
+        <!--<item name="height">55dp</item>-->
+    </style>
+
+    <style name="TextAppearance.MLTheme.ActionBar.Title" parent="@style/Widget.AppCompat.ActionBar.TabBar">
+        <item name="android:textColor">@color/gray_dark</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="TextAppearance.MLTheme.ActionBar.Subtitle" parent="android:TextAppearance.Holo.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="Widget.MLTheme.ActionBar.TabView" parent="@style/Widget.AppCompat.ActionBar.TabView">
+        <item name="android:background">@drawable/actionbar_tab_background</item>
+        <!--<item name="background">@drawable/actionbar_tab_background</item>-->
+    </style>
+
+    <style name="Widget.MLTheme.ActionBar.TabText" parent="@style/Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+</resources>

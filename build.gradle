@@ -1,0 +1,50 @@
+apply plugin: 'idea'
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        maven {
+            url "https://dl.bintray.com/mercadolibre/android-releases"
+            credentials {
+                username 'bintray-read'
+                password 'ff5072eaf799961add07d5484a6283eb3939556b'
+            }
+        }
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
+        classpath "com.monits:static-code-analysis-plugin:$scaPluginVersion"
+        classpath "com.novoda:bintray-release:$bintrayReleasePluginVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven {
+            url "https://dl.bintray.com/mercadolibre/android-releases"
+            credentials {
+                username 'bintray-read'
+                password 'ff5072eaf799961add07d5484a6283eb3939556b'
+            }
+        }
+    }
+
+    group = libraryGroup
+    version = libraryVersion
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+wrapper {
+    gradleVersion = gradleWrapperVersion
+    distributionType = System.getenv('CI') ? Wrapper.DistributionType.BIN : Wrapper.DistributionType.ALL
+}

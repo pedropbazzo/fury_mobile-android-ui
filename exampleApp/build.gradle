@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+apply from: rootProject.file('jacoco.gradle')
+
+android {
+    compileSdkVersion targetSdkApiVersion.toInteger()
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        applicationId "com.mercadolibre.android.ui.example"
+        minSdkVersion minSdkApiVersion
+        targetSdkVersion targetSdkApiVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    implementation project(':ui')
+    implementation project(':ui_legacy')
+
+    implementation "com.android.support:design:$supportLibraryVersion"
+    implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
+
+    // **** Stetho ****
+    compile 'com.facebook.stetho:stetho:1.1.1'
+}

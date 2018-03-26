@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/ui_text_field_label"
+        style="@style/MeliTextField.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/ui_textfield_label_margin_left"
+        android:layout_marginStart="@dimen/ui_textfield_label_margin_left"
+        tools:text="Label" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/ui_text_field_input_container"
+        style="@style/MeliTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        app:errorTextAppearance="@style/MeliTextField.ErrorText"
+        app:hintTextAppearance="@style/MeliTextField.Label">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ui_text_field_input"
+            style="@style/MeliTextField.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:inputType="textFilter|textMultiLine"
+            android:textColorHint="@color/ui_components_grey_color"
+            android:textCursorDrawable="@null"
+            tools:hint="Hint" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/ui_text_field_helper"
+        style="@style/MeliTextField.HelperText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/ui_textfield_label_margin_left"
+        android:layout_marginStart="@dimen/ui_textfield_label_margin_left"
+        tools:text="Helper Text" />
+</merge>

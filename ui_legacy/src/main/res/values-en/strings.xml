@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_password_hint">Password</string>
+    <string name="login_password_show">Show</string>
+    <string name="login_password_hide">Hide</string>
+    <string name="loading_message">Loading…</string>
+
+    <string name="ui_widget_banner_officialstore_label">Official store</string>
+</resources>

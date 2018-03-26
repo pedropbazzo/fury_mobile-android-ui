@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="@dimen/box_default_stroke" android:height="@dimen/box_default_stroke" android:color="@color/atv_grouped_separator" />
+            <solid android:color="@color/atv_cell_grouped_background" />
+            <corners android:radius="3dp"/>
+        </shape>
+    </item>
+
+</layer-list>

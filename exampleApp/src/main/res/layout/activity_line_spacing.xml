@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.mercadolibre.android.ui.example.ui.widgets.OtherWidgetsActivity">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Light"
+                    android:textColor="@color/ui_meli_black"
+                    android:textSize="@dimen/ui_fontsize_large" />
+
+                <TextView
+                    style="@style/MLFont.Light.XXSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Light XXSmall con interlineado de 2sp en un texto de dos líneas." />
+
+                <TextView
+                    style="@style/MLFont.Light.XSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Light XSmall con interlineado de 2sp en un texto de dos líneas." />
+
+                <TextView
+                    style="@style/MLFont.Light.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Light Small con interlineado de 2sp en un texto de dos líneas." />
+
+                <TextView
+                    style="@style/MLFont.Light.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Light Medium con interlineado de 2sp en un texto de dos líneas." />
+
+                <TextView
+                    style="@style/MLFont.Light.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Light Large con interlineado de 4sp." />
+
+                <TextView
+                    style="@style/MLFont.Light.XLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Light XSmall con interlineado de 4sp." />
+
+                <TextView
+                    style="@style/MLFont.Light.XXLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Light XXLarge con interlineado de 4sp." />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Regular"
+                    android:textColor="@color/ui_meli_black"
+                    android:textSize="@dimen/ui_fontsize_large" />
+
+                <TextView
+                    style="@style/MLFont.Regular.XXSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Regular XXSmall con interlineado de 2sp en un texto de dos líneas." />
+
+                <TextView
+                    style="@style/MLFont.Regular.XSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Regular XSmall con interlineado de 2sp en un texto de dos líneas." />
+
+                <TextView
+                    style="@style/MLFont.Regular.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Regular Small con interlineado de 2sp en un texto de dos líneas." />
+
+                <TextView
+                    style="@style/MLFont.Regular.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Regular Medium con interlineado de 2sp en un texto de dos líneas." />
+
+                <TextView
+                    style="@style/MLFont.Regular.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Regular Large con interlineado de 4sp." />
+
+                <TextView
+                    style="@style/MLFont.Regular.XLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Regular XSmall con interlineado de 4sp." />
+
+                <TextView
+                    style="@style/MLFont.Regular.XXLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="MLFont Regular XXLarge con interlineado de 4sp." />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

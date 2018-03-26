@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="meli_yellow">#fedc13</color>
+	<color name="mp_text">#1967A4</color>
+    <color name="blue_background_warning">#E4F2F9</color>
+    <color name="selection_color">#999999</color>
+    <color name="selection_color_trans">#AA999999</color>
+    <color name="background_color">#EEE</color>
+
+    <!-- Contextualized colors -->
+    <color name="success_text">#468847</color>
+    <color name="success_background">@color/green_light_dark</color>
+
+    <color name="info_text">#3A87AD</color>
+    <color name="info_background">#D9EDF7</color>
+
+    <color name="warning_text">@color/yellow_dark</color>
+    <color name="warning_background">@color/yellow_light_dark</color>
+
+    <color name="danger_text">#B94A48</color>
+    <color name="danger_background">@color/red_light</color>
+
+    <color name="help_text">@color/gray_light</color>
+    <color name="help_background">#f7f7f7</color>
+    <!-- END-Contextualized colors -->
+
+</resources>

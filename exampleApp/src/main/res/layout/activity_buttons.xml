@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mercadolibre.android.ui.example.ui.widgets.ButtonsActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context="com.mercadolibre.android.ui.example.ui.widgets.ButtonsActivity"
+        tools:ignore="HardcodedText">
+
+        <Button
+            android:id="@+id/action_enabled_button"
+            style="@style/Button.Action.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Primary action button enabled" />
+
+        <Button
+            android:id="@+id/action_disabled_button"
+            style="@style/Button.Action.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/action_enabled_button"
+            android:layout_marginBottom="10dp"
+            android:enabled="false"
+            android:text="Primary action button disabled" />
+
+        <Button
+            android:id="@+id/secondary_action_enabled_button"
+            style="@style/Button.Action.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/action_disabled_button"
+            android:layout_marginBottom="10dp"
+            android:text="Secondary action button enabled" />
+
+        <Button
+            android:id="@+id/secondary_action_disabled_button"
+            style="@style/Button.Action.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/secondary_action_enabled_button"
+            android:layout_marginBottom="10dp"
+            android:enabled="false"
+            android:text="Secondary action button disabled" />
+
+        <Button
+            android:id="@+id/primary_option_enabled_button"
+            style="@style/Button.Option.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/secondary_action_disabled_button"
+            android:layout_marginBottom="10dp"
+            android:text="Primary option button enabled" />
+
+        <Button
+            android:id="@+id/primary_option_disabled_button"
+            style="@style/Button.Option.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/primary_option_enabled_button"
+            android:layout_marginBottom="10dp"
+            android:enabled="false"
+            android:text="Primary option button disabled" />
+
+        <Button
+            android:id="@+id/secondary_option_enabled_button"
+            style="@style/Button.Option.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/primary_option_disabled_button"
+            android:layout_marginBottom="10dp"
+            android:text="Secondary option button enabled" />
+
+        <Button
+            android:id="@+id/secondary_option_disabled_button"
+            style="@style/Button.Option.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/secondary_option_enabled_button"
+            android:layout_marginBottom="10dp"
+            android:enabled="false"
+            android:text="Secondary option button disabled" />
+
+    </RelativeLayout>
+</ScrollView>

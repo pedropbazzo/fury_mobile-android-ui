@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.monits.staticCodeAnalysis'
+apply from: rootProject.file('jacoco.gradle')
+apply from: rootProject.file('publish.gradle')
+
+android {
+    compileSdkVersion targetSdkApiVersion.toInteger()
+    buildToolsVersion androidBuildToolsVersion
+
+    packagingOptions {
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'LICENSE.txt'
+        exclude 'license.txt'
+    }
+
+    defaultConfig {
+        minSdkVersion minSdkApiVersion
+        targetSdkVersion targetSdkApiVersion
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    testOptions {
+        unitTests {
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
+    }
+
+    resourcePrefix 'ui_'
+}
+
+dependencies {
+    api project(":ui_legacy")
+
+    api "com.android.support:design:$supportLibraryVersion"
+
+    api "com.facebook.fresco:fresco:$frescoVersion"
+    api "com.facebook.fresco:webpsupport:$frescoVersion"
+
+    api "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
+
+    testImplementation "com.mercadolibre.android.testing:core:$testingVersion"
+    testImplementation "com.mercadolibre.android.testing:shadows:$testingVersion"
+}
+
+/**
+ * pmdTest is failing with
+ Execution failed for task ':ui:pmdTest'.
+ > java.lang.NoClassDefFoundError: com/mercadolibre/android/ui/widgets/MeliDialog
+ * When the class exists, thus we disable it
+ */
+project.tasks.whenTaskAdded { task ->
+    if (task.name == 'pmdTest') {
+        task.enabled = false
+    }
+}
+
+staticCodeAnalysis {
+    ignoreErrors = false
+    androidLint = false
+    checkstyle = false
+    cpd = false
+
+    // We disable findbugs, too slow for some checks that don't provide that much already
+    findbugs = false
+}

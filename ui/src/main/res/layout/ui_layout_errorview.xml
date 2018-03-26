@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="SelectableText">
+
+    <ImageView
+        android:id="@+id/ui_error_view_image"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/ui_error_view_image_margin"
+        android:contentDescription="@null"/>
+
+    <TextView
+        android:id="@+id/ui_error_view_title"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ui_error_view_title"
+        android:gravity="center"
+        tools:text="¡Parece que no hay Internet!"/>
+
+    <TextView
+        android:id="@+id/ui_error_view_subtitle"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ui_error_view_subtitle"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/ui_error_view_subtitle_margin"
+        tools:text="Revisa tu conexión para seguir navegando."/>
+
+    <Button
+        android:id="@+id/ui_error_view_button"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_error_view_button_margin"
+        style="@style/Button.Option.Primary"
+        tools:text="Reintentar"/>
+</merge>

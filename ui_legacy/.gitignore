@@ -1,0 +1,6 @@
+/build
+*.iml
+android_ui.iml
+
+src/main/project.properties
+src/main/test-project.properties

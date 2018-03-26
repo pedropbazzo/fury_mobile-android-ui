@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    style="@style/MLTableRow"
+    android:layout_width="match_parent">
+
+    <com.mercadolibre.android.ui.legacy.widgets.image.MLImageView
+        android:id="@+id/start_image"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/no_pic_i"
+        android:visibility="gone"
+        android:layout_width="40dp" />
+
+
+    <TextView
+        android:id="@+id/row_title"
+        style="@style/Widget.ATableViewCell.TextLabel.Bold"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/start_image"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:text="Titulo" />
+
+    <TextView
+        android:id="@+id/row_content"
+        android:layout_below="@+id/row_title"
+        android:layout_alignLeft="@+id/row_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Content"
+        style="@style/Widget.ATableViewCell.TextLabel.Default" />
+
+
+    <com.mercadolibre.android.ui.legacy.widgets.image.MLImageView
+        android:id="@+id/disclosure"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/atv_disclosure"
+        android:visibility="gone"
+        android:layout_width="wrap_content" />
+
+    <com.mercadolibre.android.ui.legacy.widgets.image.MLImageView
+        android:id="@+id/end_image"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_toLeftOf="@+id/disclosure"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:src="@drawable/no_pic_i"
+        android:layout_width="20dp" />
+
+
+</RelativeLayout>

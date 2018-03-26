@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="ui_dialog_side_padding">80dp</dimen>
+    <dimen name="ui_dialog_max_width">640dp</dimen> <!-- 480dp + side paddings -->
+    <dimen name="ui_dialog_bottom_padding_with_keyboard">32dp</dimen>
+
+
+    <!--Error View-->
+    <dimen name="ui_error_view_subtitle_margin">8dp</dimen>
+    <dimen name="ui_error_view_padding">40dp</dimen>
+
+</resources>

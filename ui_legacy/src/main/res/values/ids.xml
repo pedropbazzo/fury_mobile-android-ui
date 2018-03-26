@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="ml_view_pager_id"/>
+    <!--<item type="id" name="balloon_inner_layout" />-->
+	<!--<item type="id" name="balloon_close" />-->
+	<!--<item type="id" name="error_overlay" />-->
+	<!--<item type="id" name="error_overlay_mercadolibre_logo" />-->
+	<!--<item type="id" name="error_overlay_mercadolivre_logo" />-->
+	<!--<item type="id" name="error_overlay_message" />-->
+	<!--<item type="id" name="error_overlay_reload_button" />-->
+	<!--<item type="id" name="progress_bar_overlay" />-->
+	<!--<item type="id" name="box_frame_title" />-->
+	<!--<item type="id" name="box_frame_line" />-->
+    <!--<item type="id" name="card_layout_title" />-->
+    <!--<item type="id" name="card_layout_subtitle" />-->
+    <!--<item type="id" name="card_layout_helper" />-->
+    <!--<item type="id" name="card_layout_line_separator" />-->
+    <!--<item type="id" name="card_layout_content" />-->
+	<!---->
+	<item type="id" name="view_pager_image_view" />
+<!---->
+    <!--<item type="id" name="attribute_view" />-->
+<!---->
+    <!--<item type="id" name="vip_shipping_item" />-->
+<!---->
+    <!--<item type="id" name="shipping_item_zones_excluded" />-->
+<!---->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_0" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_1" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_2" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_3" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_4" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_5" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_6" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_7" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_8" />-->
+    <!--<item type="id" name="my_listings_detail_items_field_layout_9" />-->
+<!---->
+    <!--<item type="id" name="banner_view" />-->
+
+    <item type="id" name="divider"/>
+
+    <item type="id" name="mltextview_text_id"/>
+    <item type="id" name="mltextview_img_id"/>
+    
+    <item type="id" name="circle_page_indicator" />
+    
+</resources>

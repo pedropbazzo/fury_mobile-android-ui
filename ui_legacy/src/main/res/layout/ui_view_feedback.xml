@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/ui_view_feedback_container">
+
+    <ImageView
+        android:id="@+id/ui_view_feedback_image_view"
+        style="@style/UI.Feedback.ImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/ui_feedback_margin_horizontal"
+        android:layout_marginRight="@dimen/ui_feedback_margin_horizontal"
+        android:layout_marginTop="@dimen/ui_feedback_margin_vertical"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ui_ic_view_feedback_default" />
+
+    <Space
+        android:id="@+id/ui_view_feedback_title_margin_top_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_feedback_title_margin_top"
+        android:layout_below="@id/ui_view_feedback_image_view" />
+
+    <TextView
+        android:id="@+id/ui_view_feedback_title_text_view"
+        style="@style/UI.Feedback.TextView.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ui_view_feedback_title_margin_top_space"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/ui_feedback_title_margin_bottom"
+        android:layout_marginLeft="@dimen/ui_feedback_margin_horizontal"
+        android:layout_marginRight="@dimen/ui_feedback_margin_horizontal"
+        tools:text="This is the title" />
+
+    <TextView
+        android:id="@+id/ui_view_feedback_first_subtitle_text_view"
+        style="@style/UI.Feedback.TextView.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ui_view_feedback_title_text_view"
+        android:layout_marginLeft="@dimen/ui_feedback_margin_horizontal"
+        android:layout_marginRight="@dimen/ui_feedback_margin_horizontal"
+        android:visibility="gone"
+        tools:text="This is the first subtitle"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/ui_view_feedback_second_subtitle_text_view"
+        style="@style/UI.Feedback.TextView.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ui_view_feedback_first_subtitle_text_view"
+        android:layout_marginLeft="@dimen/ui_feedback_margin_horizontal"
+        android:layout_marginRight="@dimen/ui_feedback_margin_horizontal"
+        android:visibility="gone"
+        tools:text="This is the second subtitle"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/ui_view_feedback_button"
+        style="@style/UI.Feedback.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ui_view_feedback_second_subtitle_text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/ui_feedback_margin_horizontal"
+        android:layout_marginRight="@dimen/ui_feedback_margin_horizontal"
+        android:layout_marginTop="@dimen/ui_feedback_button_margin_top"
+        android:visibility="gone"
+        tools:text="Do something!"
+        tools:visibility="visible" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_feedback_margin_vertical"
+        android:layout_below="@id/ui_view_feedback_button" />
+
+</merge>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_components_white_color"
+    tools:context="com.mercadolibre.android.ui.example.ui.widgets.ButtonsActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        tools:context="com.mercadolibre.android.ui.example.ui.widgets.ButtonsActivity"
+        tools:ignore="HardcodedText">
+
+        <com.mercadolibre.android.ui.widgets.MeliButton
+            android:id="@+id/action_enabled_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Primary action button enabled"
+            app:state="normal"
+            app:type="actionPrimary" />
+
+        <com.mercadolibre.android.ui.widgets.MeliButton
+            android:id="@+id/action_disabled_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Primary action button disabled"
+            app:state="disable"
+            app:type="actionPrimary"/>
+
+        <com.mercadolibre.android.ui.widgets.MeliButton
+            android:id="@+id/secondary_action_enabled_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Secondary action button enabled"
+            app:type="actionSecondary"
+            app:state="normal"/>
+
+        <com.mercadolibre.android.ui.widgets.MeliButton
+            android:id="@+id/secondary_action_disabled_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Secondary action button disabled"
+            app:type="actionSecondary"
+            app:state="disable"/>
+
+        <com.mercadolibre.android.ui.widgets.MeliButton
+            android:id="@+id/primary_option_enabled_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Option button enabled"
+            app:type="optionPrimary"
+            app:state="normal"/>
+
+        <com.mercadolibre.android.ui.widgets.MeliButton
+            android:id="@+id/primary_option_disabled_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Option button disabled"
+            app:type="optionPrimary"
+            app:state="disable"/>
+
+    </LinearLayout>
+</ScrollView>

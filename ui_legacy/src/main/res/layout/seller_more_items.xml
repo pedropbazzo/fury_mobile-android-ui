@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ui="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:padding="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <com.mercadolibre.android.ui.legacy.widgets.MLTextView
+        style="@style/textview_title_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Más publicaciones"
+        android:textColor="@color/gray_dark"
+        ui:drawableStart="@drawable/ic_more_info"
+        ui:colorFilter="@color/icons_grey"
+        ui:layout_mode="align_left" />
+
+
+</FrameLayout>

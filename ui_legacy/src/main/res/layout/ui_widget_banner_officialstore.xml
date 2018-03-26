@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:alpha="@dimen/ui_widget_banner_background_alpha"
+    android:background="@color/gray"
+    android:padding="@dimen/ui_widget_banner_root_layout_padding">
+
+    <TextView
+        android:id="@+id/ui_widget_banner_officialstore_brandname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/ui_widget_banner_title_text_size"/>
+
+    <TextView
+        android:id="@+id/ui_widget_banner_officialstore_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/ui_widget_banner_officialstore_brandname"
+        android:drawableLeft="@drawable/ic_official_store_bg"
+        android:drawableStart="@drawable/ic_official_store_bg"
+        android:drawablePadding="@dimen/ui_widget_banner_officialstore_verified_icon_padding"
+        android:gravity="center"
+        android:text="@string/ui_widget_banner_officialstore_label"
+        android:textColor="@color/white"/>
+
+    <ImageView
+        android:id="@+id/ui_widget_banner_officialstore_brandlogo"
+        android:layout_width="@dimen/ui_widget_banner_officialstore_logo_width"
+        android:layout_height="@dimen/ui_widget_banner_officialstore_logo_height"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>
