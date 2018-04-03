@@ -69,6 +69,11 @@ default-workflow: &defaultWorkflow
       ignore:
         - master
         - /release\/.*$/
+deploy-release-workflow: &deployReleaseWorkflow
+  filters:
+    branches:
+      only:
+        - /release\/.*$/
 ##
 # Create our jobs, making them inherit from the defined jobs
 # The ones that will inherit from buildJob need to create the environment variable
@@ -88,6 +93,8 @@ jobs:
     <<: *buildJob
     environment:
       MODULE: exampleApp
+  deploy:
+    <<: *deployReleaseJob
 ##
 # We define here workflows. We will add all our jobs
 # to a common workflow, and for each job of the workflow we will make it
@@ -103,3 +110,5 @@ workflows:
           <<: *defaultWorkflow
       - exampleApp:
           <<: *defaultWorkflow
+      - deploy:
+          <<: *deployReleaseWorkflow
