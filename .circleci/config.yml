@@ -57,7 +57,7 @@ deploy-release-job: &deployReleaseJob
           key: jars-{{ checksum "build.gradle" }}
       - run:
           name: Run Deploy
-          command: ./gradlew bintrayUpload
+          command: ./gradlew assemble bintrayUpload
 ##
 # We define our default workflow
 # This workflow will be used by our default builds
