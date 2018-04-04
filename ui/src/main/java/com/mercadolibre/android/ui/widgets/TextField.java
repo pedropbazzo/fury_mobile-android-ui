@@ -417,9 +417,9 @@ public final class TextField extends LinearLayout {
             helper.setVisibility(GONE);
             isShowingHelper = false;
         }
-        container.setError(error);
         changeErrorVisibility(true);
 
+        container.setError(error);
 
         final TextView errorView = (TextView) container
                 .findViewById(android.support.design.R.id.textinput_error);
@@ -431,6 +431,8 @@ public final class TextField extends LinearLayout {
         errorViewParams.gravity = textAlign;
         errorView.setGravity(textAlign);
         errorView.setLayoutParams(errorViewParams);
+
+        container.setErrorEnabled(!TextUtils.isEmpty(error));
     }
 
     /**
