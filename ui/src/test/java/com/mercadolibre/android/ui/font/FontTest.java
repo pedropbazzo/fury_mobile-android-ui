@@ -1,7 +1,5 @@
 package com.mercadolibre.android.ui.font;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,7 +7,7 @@ import java.util.EnumMap;
 
 import static org.junit.Assert.assertEquals;
 
-public class FontTest extends AbstractRobolectricTest {
+public class FontTest {
 
     @Before
     public void initFonts(){
@@ -26,7 +24,7 @@ public class FontTest extends AbstractRobolectricTest {
         Font.FontConfig.setFonts(fontsHashMap);
     }
     @Test
-    public void testFontType_fontName() throws Exception {
+    public void testFontType_fontName() {
         assertEquals("Roboto-Black.ttf", Font.BLACK.getFontName());
         assertEquals("Roboto-Bold.ttf", Font.BOLD.getFontName());
         assertEquals("RobotoCondensed-Bold.ttf", Font.EXTRA_BOLD.getFontName());
@@ -38,7 +36,7 @@ public class FontTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testFontType_fontPath() throws Exception {
+    public void testFontType_fontPath() {
         assertEquals("Roboto-Black.ttf", Font.BLACK.getFontPath());
         assertEquals("Roboto-Bold.ttf", Font.BOLD.getFontPath());
         assertEquals("RobotoCondensed-Bold.ttf", Font.EXTRA_BOLD.getFontPath());

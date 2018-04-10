@@ -14,7 +14,6 @@ import android.view.SubMenu;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.legacy.R;
 import com.mercadolibre.android.ui.legacy.utils.BitmapUtils;
 

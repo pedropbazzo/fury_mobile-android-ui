@@ -3,8 +3,6 @@ package com.mercadolibre.android.ui.legacy.widgets.image;
 import android.support.annotation.NonNull;
 import android.view.MotionEvent;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
-
 import org.junit.Test;
 import org.mockito.Mockito;
 

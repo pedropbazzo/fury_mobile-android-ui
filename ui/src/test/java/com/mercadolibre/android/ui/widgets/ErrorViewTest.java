@@ -1,22 +1,27 @@
 package com.mercadolibre.android.ui.widgets;
 
+import android.os.Build;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.R;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 
-public class ErrorViewTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+public class ErrorViewTest {
 
     private static final String TEST_TEXT = "testText";
 

@@ -3,8 +3,6 @@ package com.mercadolibre.android.ui.legacy.widgets.image;
 import android.graphics.PointF;
 import android.view.MotionEvent;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -20,7 +18,7 @@ public class DoubleTapZoomableControllerTest extends AbstractRobolectricTest {
 
         Mockito.doAnswer(new Answer() {
             @Override
-            public Object answer(final InvocationOnMock invocation) throws Throwable {
+            public Object answer(final InvocationOnMock invocation) {
                 Assert.assertEquals(4f, invocation.getArguments()[0]);
                 called[0] = true;
                 return null;

@@ -1,22 +1,27 @@
 package com.mercadolibre.android.ui.drawee.state;
 
+import android.os.Build;
 import android.view.View;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.drawee.StateDraweeView;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.fail;
 
 @SuppressWarnings("PMD.EmptyCatchBlock")
-public class FocusStateTest extends AbstractRobolectricTest{
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+public class FocusStateTest {
 
     @Before
     public void setUp() {

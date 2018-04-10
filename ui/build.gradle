@@ -50,8 +50,10 @@ dependencies {
 
     api "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
 
-    testImplementation "com.mercadolibre.android.testing:core:$testingVersion"
-    testImplementation "com.mercadolibre.android.testing:shadows:$testingVersion"
+    testImplementation "org.robolectric:robolectric:3.5.+"
+    testImplementation "org.robolectric:shadows-support-v4:3.1"
+    testImplementation "junit:junit:4.12"
+    testImplementation "org.mockito:mockito-inline:2.+"
 }
 
 /**

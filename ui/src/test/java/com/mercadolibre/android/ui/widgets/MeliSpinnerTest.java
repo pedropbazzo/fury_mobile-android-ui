@@ -1,16 +1,19 @@
 package com.mercadolibre.android.ui.widgets;
 
+import android.os.Build;
 import android.support.v7.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.TextView;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.R;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 import org.robolectric.util.ReflectionHelpers;
 
 /**
@@ -18,7 +21,9 @@ import org.robolectric.util.ReflectionHelpers;
  *
  * @since 3/5/16
  */
-public class MeliSpinnerTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+public class MeliSpinnerTest {
 
     private static final String TEXT = "TEXT";
 
