@@ -50,10 +50,10 @@ dependencies {
 
     api "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
 
-    testImplementation "org.robolectric:robolectric:3.5.+"
-    testImplementation "org.robolectric:shadows-support-v4:3.1"
-    testImplementation "junit:junit:4.12"
-    testImplementation "org.mockito:mockito-inline:2.+"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation "org.robolectric:shadows-support-v4:$robolectricVersion"
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
 }
 
 /**
