@@ -32,7 +32,7 @@ import static org.robolectric.shadows.support.v4.SupportFragmentTestUtil.startFr
  */
 @SuppressWarnings("CPD-START")
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class MeliSnackbarTest {
 
     private static final String TEST_STRING = "This is a test";

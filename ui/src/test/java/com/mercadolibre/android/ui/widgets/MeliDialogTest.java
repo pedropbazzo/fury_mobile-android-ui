@@ -27,7 +27,7 @@ import static org.robolectric.shadows.support.v4.SupportFragmentTestUtil.startFr
  * @since 14/4/16
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class MeliDialogTest {
 
     private MeliDialog meliDialog;

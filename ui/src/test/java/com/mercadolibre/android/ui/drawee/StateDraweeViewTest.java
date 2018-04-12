@@ -25,7 +25,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class StateDraweeViewTest {
 
     @Before

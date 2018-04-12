@@ -22,7 +22,7 @@ import org.robolectric.util.ReflectionHelpers;
  * @since 3/5/16
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class MeliSpinnerTest {
 
     private static final String TEXT = "TEXT";

@@ -22,7 +22,7 @@ import static org.junit.Assert.assertNotNull;
  * Test class for {@link ContextualMenu}.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class ContextualMenuTest {
 
     private ContextualMenu contextualMenu;

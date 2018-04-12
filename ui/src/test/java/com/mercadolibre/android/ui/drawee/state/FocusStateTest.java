@@ -20,7 +20,7 @@ import static org.junit.Assert.fail;
 
 @SuppressWarnings("PMD.EmptyCatchBlock")
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class FocusStateTest {
 
     @Before

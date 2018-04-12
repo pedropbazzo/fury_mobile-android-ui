@@ -23,7 +23,7 @@ import org.robolectric.annotation.Config;
 import java.io.File;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class FrescoImageControllerTest {
 
     @Before

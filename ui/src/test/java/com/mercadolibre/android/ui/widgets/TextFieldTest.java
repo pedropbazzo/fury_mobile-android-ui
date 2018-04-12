@@ -2,6 +2,7 @@ package com.mercadolibre.android.ui.widgets;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.font.Font;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -63,13 +65,14 @@ import static org.mockito.Mockito.when;
  */
 // CHECKSTYLE:OFF
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class TextFieldTest {
 
     private TextField textField;
     private EditText editText;
     private TextView label;
     private TextInputLayout container;
+    private Context context;
 
     @Before
     public void setUp() {
@@ -86,11 +89,18 @@ public class TextFieldTest {
 
         Font.FontConfig.setFonts(fontsHashMap);
 
-        RuntimeEnvironment.application.setTheme(R.style.Theme_MLTheme);
-        textField = new TextField(RuntimeEnvironment.application);
+        context = new ContextWrapper(RuntimeEnvironment.application);
+        context.setTheme(R.style.Theme_MLTheme);
+        textField = new TextField(context);
         editText = textField.getEditText();
         label = ReflectionHelpers.getField(textField, "label");
         container = ReflectionHelpers.getField(textField, "container");
+    }
+
+    @After
+    public void tearDown() {
+        // Clear the fonts to avoid side effects
+        Font.FontConfig.setFonts(null);
     }
 
     @Test
@@ -121,7 +131,7 @@ public class TextFieldTest {
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
         assertEquals(TextUtils.TruncateAt.END, editText.getEllipsize());
-        assertEquals(TypefaceUtils.load(RuntimeEnvironment.application.getAssets(), Font.LIGHT.getFontPath()), editText.getTypeface());
+        assertEquals(TypefaceUtils.load(context.getAssets(), Font.LIGHT.getFontPath()), editText.getTypeface());
         assertTrue(container.isHintEnabled());
 
 
@@ -258,7 +268,7 @@ public class TextFieldTest {
         textField.setTextFont(Font.BOLD);
 
         final EditText editText = textField.getEditText();
-        assertEquals(TypefaceUtils.load(RuntimeEnvironment.application.getAssets(), Font.BOLD.getFontPath()), editText.getTypeface());
+        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BOLD.getFontPath()), editText.getTypeface());
     }
 
     @Test
@@ -266,7 +276,7 @@ public class TextFieldTest {
         textField.setLabelFont(Font.BLACK);
 
         final TextView label = ReflectionHelpers.getField(textField, "label");
-        assertEquals(TypefaceUtils.load(RuntimeEnvironment.application.getAssets(), Font.BLACK.getFontPath()), label.getTypeface());
+        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BLACK.getFontPath()), label.getTypeface());
     }
 
     @Test
@@ -412,7 +422,7 @@ public class TextFieldTest {
 
     @Test
     public void testOnTouch_shouldOpenKeyboard() {
-        Context context = spy(RuntimeEnvironment.application);
+        Context context = spy(this.context);
         InputMethodManager imm = mock(InputMethodManager.class);
 
         doReturn(imm).when(context).getSystemService(Context.INPUT_METHOD_SERVICE);

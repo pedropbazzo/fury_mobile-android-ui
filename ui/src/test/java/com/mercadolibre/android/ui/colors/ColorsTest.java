@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
  * Color tests.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP, manifest = "AndroidManifest.xml")
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class ColorsTest {
 
     @Test
