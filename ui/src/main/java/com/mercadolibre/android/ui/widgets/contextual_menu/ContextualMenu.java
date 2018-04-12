@@ -585,6 +585,15 @@ public final class ContextualMenu extends ViewGroup {
         return center;
     }
 
+    /**
+     * Converts the given {@code pd} size to a {@code px} size.
+     * <p>
+     * This code snippet was taken from <a href="https://github.com/lawloretienne/QuickReturn/blob/master/library/src/main/java/com/etiennelawlor/quickreturn/library/utils/QuickReturnUtils.java">https://github.com/lawloretienne/QuickReturn/blob/master/library/src/main/java/com/etiennelawlor/quickreturn/library/utils/QuickReturnUtils.java</a>
+     *
+     * @param context The context to get a valid {@link android.view.WindowManager}.
+     * @param dp      The size to convert.
+     * @return The same size given in {@code dp} but using {@code px} unit.
+     */
     private int dp2px(Context context, int dp) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
@@ -592,7 +601,7 @@ public final class ContextualMenu extends ViewGroup {
         DisplayMetrics displaymetrics = new DisplayMetrics();
         display.getMetrics(displaymetrics);
 
-        return (int) (dp * displaymetrics.density + 0.5f);
+        return (int) Math.ceil(dp * displaymetrics.density);
     }
 
     @Override
