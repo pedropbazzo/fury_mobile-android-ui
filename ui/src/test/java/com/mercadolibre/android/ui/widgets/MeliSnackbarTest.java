@@ -1,6 +1,7 @@
 package com.mercadolibre.android.ui.widgets;
 
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -8,13 +9,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.R;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 import org.robolectric.util.ReflectionHelpers;
 
 import static org.mockito.Mockito.mock;
@@ -28,7 +31,9 @@ import static org.robolectric.shadows.support.v4.SupportFragmentTestUtil.startFr
  * @since 25/2/16
  */
 @SuppressWarnings("CPD-START")
-public class MeliSnackbarTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+public class MeliSnackbarTest {
 
     private static final String TEST_STRING = "This is a test";
     private static final String ACTION_STRING = "action";

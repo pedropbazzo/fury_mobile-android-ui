@@ -27,7 +27,6 @@ import android.widget.TextView;
 import com.mercadolibre.android.ui.KeyboardEventCallback;
 import com.mercadolibre.android.ui.KeyboardEventListener;
 import com.mercadolibre.android.ui.R;
-import com.mercadolibre.android.ui.legacy.utils.DimensionUtils;
 
 /**
  * Base class for MercadoLibre's dialogs.
@@ -346,7 +345,7 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
      */
     private void setupSecondaryExitButton(final boolean animate) {
         if (shouldShowSecondaryExit()) {
-            secondaryExitButton = (Button) root.findViewById(R.id.ui_melidialog_secondary_exit_button);
+            secondaryExitButton = root.findViewById(R.id.ui_melidialog_secondary_exit_button);
             secondaryExitButton.setText(getSecondaryExitString());
             secondaryExitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -444,7 +443,7 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
             ViewCompat.setAlpha(root, INVISIBLE);
             ViewCompat.animate(root).alpha(VISIBLE).setDuration(FADE_ANIMATION_DURATION).start();
 
-            final Animation anim = new TranslateAnimation(0, 0, DimensionUtils.dp2px(getContext(), Y_TRANSLATION), 0);
+            final Animation anim = new TranslateAnimation(0, 0, getResources().getDimensionPixelSize(R.dimen.ui_dialog_y_translation), 0);
             anim.setDuration(TRANSLATE_ANIMATION_DURATION);
             anim.setAnimationListener(new Animation.AnimationListener() {
                 @Override
@@ -481,7 +480,7 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
         if (shouldAnimate() && isVisible() && root != null) {
             ViewCompat.animate(root).alpha(INVISIBLE).setDuration(FADE_ANIMATION_DURATION).start();
 
-            final Animation anim = new TranslateAnimation(0, 0, 0, DimensionUtils.dp2px(getContext(), Y_TRANSLATION));
+            final Animation anim = new TranslateAnimation(0, 0, 0, getResources().getDimensionPixelSize(R.dimen.ui_dialog_y_translation));
             anim.setDuration(TRANSLATE_ANIMATION_DURATION);
             dialogContainer.startAnimation(anim);
             return true;

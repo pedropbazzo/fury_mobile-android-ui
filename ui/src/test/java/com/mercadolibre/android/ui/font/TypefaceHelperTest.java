@@ -2,6 +2,7 @@ package com.mercadolibre.android.ui.font;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -10,11 +11,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
-
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 
 import java.util.EnumMap;
 
@@ -24,7 +26,9 @@ import uk.co.chrisjenx.calligraphy.TypefaceUtils;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class TypefaceHelperTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+public class TypefaceHelperTest {
 
     @Before
     public void setUp() {
@@ -43,42 +47,42 @@ public class TypefaceHelperTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetTypeface_withTextView() throws Exception {
+    public void testSetTypeface_withTextView() {
         verifyFontCanBeSet(new TextView(RuntimeEnvironment.application), Font.BLACK);
     }
 
     @Test
-    public void testSetTypeface_withEditText() throws Exception {
+    public void testSetTypeface_withEditText() {
         verifyFontCanBeSet(new EditText(RuntimeEnvironment.application), Font.LIGHT);
     }
 
     @Test
-    public void testSetTypeface_withButton() throws Exception {
+    public void testSetTypeface_withButton() {
         verifyFontCanBeSet(new Button(RuntimeEnvironment.application), Font.REGULAR);
     }
 
     @Test
-    public void testSetTypeface_withToggleButton() throws Exception {
+    public void testSetTypeface_withToggleButton() {
         verifyFontCanBeSet(new ToggleButton(RuntimeEnvironment.application), Font.BOLD);
     }
 
     @Test
-    public void testSetTypeface_withSwitch() throws Exception {
+    public void testSetTypeface_withSwitch() {
         verifyFontCanBeSet(new Switch(RuntimeEnvironment.application), Font.EXTRA_BOLD);
     }
 
     @Test
-    public void testSetTypeface_withCheckBox() throws Exception {
+    public void testSetTypeface_withCheckBox() {
         verifyFontCanBeSet(new CheckBox(RuntimeEnvironment.application), Font.SEMI_BOLD);
     }
 
     @Test
-    public void testSetTypeface_withRadioButton() throws Exception {
+    public void testSetTypeface_withRadioButton() {
         verifyFontCanBeSet(new RadioButton(RuntimeEnvironment.application), Font.LIGHT);
     }
 
     @Test
-    public void testSetTypeface_withPaint() throws Exception {
+    public void testSetTypeface_withPaint() {
         final Paint paint = new Paint();
 
         assertNull(paint.getTypeface());

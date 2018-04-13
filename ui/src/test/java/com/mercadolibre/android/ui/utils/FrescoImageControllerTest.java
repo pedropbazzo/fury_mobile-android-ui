@@ -1,6 +1,7 @@
 package com.mercadolibre.android.ui.utils;
 
 import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.os.OperationCanceledException;
 
@@ -9,17 +10,21 @@ import com.facebook.drawee.view.DraweeView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.common.RotationOptions;
 import com.facebook.imagepipeline.image.ImageInfo;
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.utils.facebook.fresco.FrescoImageController;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 
 import java.io.File;
 
-public class FrescoImageControllerTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+public class FrescoImageControllerTest {
 
     @Before
     public void setUp() {
@@ -107,7 +112,7 @@ public class FrescoImageControllerTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testImageCallbacks() throws Exception {
+    public void testImageCallbacks() {
         final FrescoImageController.Callback callback = new FrescoImageController.Callback() {
             @Override
             public void onSuccess(final ImageInfo info) {

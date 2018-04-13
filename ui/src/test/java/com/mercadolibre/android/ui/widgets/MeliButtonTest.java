@@ -1,15 +1,19 @@
 package com.mercadolibre.android.ui.widgets;
 
 import android.graphics.Color;
-
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
+import android.os.Build;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 
-public class MeliButtonTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+public class MeliButtonTest {
 
     private static final String buttonText = "bntTEXT";
 

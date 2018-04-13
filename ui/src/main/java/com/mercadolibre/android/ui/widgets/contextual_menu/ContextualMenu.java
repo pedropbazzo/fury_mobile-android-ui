@@ -12,15 +12,17 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 import android.support.v4.content.ContextCompat;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.font.Font;
 import com.mercadolibre.android.ui.font.TypefaceHelper;
-import com.mercadolibre.android.ui.legacy.utils.DimensionUtils;
 import com.mercadolibre.android.ui.utils.UIUtil;
 
 /**
@@ -150,7 +152,7 @@ public final class ContextualMenu extends ViewGroup {
         showCenteredAt(contextualMenuInfo.getTouch());
         setBackgroundColor(ContextCompat.getColor(getContext(), R.color.ui_contextual_menu_background_color));
 
-        radius = DimensionUtils.dp2px(getContext(), DEFAULT_RADIUS);
+        radius = resources.getDimensionPixelSize(R.dimen.ui_contextual_menu_radius);
         childSize = resources.getDimensionPixelSize(R.dimen.ui_contextual_menu_child_size);
 
         tooltipBkgPaint = new Paint();
@@ -268,7 +270,7 @@ public final class ContextualMenu extends ViewGroup {
             addView(icon);
         }
 
-        radius = DimensionUtils.dp2px(getContext(), DEFAULT_RADIUS - (icons.length - 2) * 5);
+        radius = dp2px(getContext(), DEFAULT_RADIUS - (icons.length - 2) * 5);
         angleBetweenItems = angleBetweenItems - (icons.length - 2 * 10);
     }
 
@@ -581,6 +583,25 @@ public final class ContextualMenu extends ViewGroup {
      */
     public PointF getCenter() {
         return center;
+    }
+
+    /**
+     * Converts the given {@code pd} size to a {@code px} size.
+     * <p>
+     * This code snippet was taken from <a href="https://github.com/lawloretienne/QuickReturn/blob/master/library/src/main/java/com/etiennelawlor/quickreturn/library/utils/QuickReturnUtils.java">https://github.com/lawloretienne/QuickReturn/blob/master/library/src/main/java/com/etiennelawlor/quickreturn/library/utils/QuickReturnUtils.java</a>
+     *
+     * @param context The context to get a valid {@link android.view.WindowManager}.
+     * @param dp      The size to convert.
+     * @return The same size given in {@code dp} but using {@code px} unit.
+     */
+    private int dp2px(Context context, int dp) {
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        display.getMetrics(displaymetrics);
+
+        return (int) Math.ceil(dp * displaymetrics.density);
     }
 
     @Override

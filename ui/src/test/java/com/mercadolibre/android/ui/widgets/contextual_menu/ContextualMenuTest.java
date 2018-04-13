@@ -1,14 +1,17 @@
 package com.mercadolibre.android.ui.widgets.contextual_menu;
 
 import android.graphics.PointF;
+import android.os.Build;
 import android.support.v4.content.ContextCompat;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.R;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 
 import java.util.HashMap;
 
@@ -18,7 +21,9 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Test class for {@link ContextualMenu}.
  */
-public class ContextualMenuTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+public class ContextualMenuTest {
 
     private ContextualMenu contextualMenu;
 

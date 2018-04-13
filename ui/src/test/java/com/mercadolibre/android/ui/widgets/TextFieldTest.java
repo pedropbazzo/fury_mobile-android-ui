@@ -2,9 +2,11 @@ package com.mercadolibre.android.ui.widgets;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
@@ -18,14 +20,16 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.font.Font;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 import org.robolectric.util.ReflectionHelpers;
@@ -60,12 +64,15 @@ import static org.mockito.Mockito.when;
  * @since 26/5/16
  */
 // CHECKSTYLE:OFF
-public class TextFieldTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+public class TextFieldTest {
 
     private TextField textField;
     private EditText editText;
     private TextView label;
     private TextInputLayout container;
+    private Context context;
 
     @Before
     public void setUp() {
@@ -82,15 +89,22 @@ public class TextFieldTest extends AbstractRobolectricTest {
 
         Font.FontConfig.setFonts(fontsHashMap);
 
-        RuntimeEnvironment.application.setTheme(R.style.Theme_MLTheme);
-        textField = new TextField(RuntimeEnvironment.application);
+        context = new ContextWrapper(RuntimeEnvironment.application);
+        context.setTheme(R.style.Theme_MLTheme);
+        textField = new TextField(context);
         editText = textField.getEditText();
         label = ReflectionHelpers.getField(textField, "label");
         container = ReflectionHelpers.getField(textField, "container");
     }
 
+    @After
+    public void tearDown() {
+        // Clear the fonts to avoid side effects
+        Font.FontConfig.setFonts(null);
+    }
+
     @Test
-    public void testSetHelper_shouldNotSetError() throws Exception{
+    public void testSetHelper_shouldNotSetError() {
         /*
             we set the helper, the method use reflection,
             if the method isErrorEnable returns false, it means that the exception was not thrown
@@ -106,7 +120,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testDefaultConfig() throws Exception {
+    public void testDefaultConfig() {
         //Default drawables
         final Drawable[] drawables = editText.getCompoundDrawables();
         assertNull(drawables[0]);
@@ -117,7 +131,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
         assertEquals(TextUtils.TruncateAt.END, editText.getEllipsize());
-        assertEquals(TypefaceUtils.load(RuntimeEnvironment.application.getAssets(), Font.LIGHT.getFontPath()), editText.getTypeface());
+        assertEquals(TypefaceUtils.load(context.getAssets(), Font.LIGHT.getFontPath()), editText.getTypeface());
         assertTrue(container.isHintEnabled());
 
 
@@ -141,7 +155,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
 
     @Test
     public void testText() {
-        final EditText text = (EditText) textField.findViewById(R.id.ui_text_field_input);
+        final EditText text = textField.findViewById(R.id.ui_text_field_input);
         final String testText = "testText";
         textField.setText(testText);
         assertNotNull(text);
@@ -150,7 +164,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
 
     @Test
     public void testLabel() {
-        final TextView label = (TextView) textField.findViewById(R.id.ui_text_field_label);
+        final TextView label = textField.findViewById(R.id.ui_text_field_label);
         final String testText = "testLabel";
         textField.setLabel(testText);
         assertNotNull(label);
@@ -158,9 +172,9 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetHint_withLabelAlreadySet_shouldSetItToTheInput() throws Exception {
-        final TextInputLayout container = (TextInputLayout) textField.findViewById(R.id.ui_text_field_input_container);
-        final EditText input = (EditText) textField.findViewById(R.id.ui_text_field_input);
+    public void testSetHint_withLabelAlreadySet_shouldSetItToTheInput() {
+        final TextInputLayout container = textField.findViewById(R.id.ui_text_field_input_container);
+        final EditText input = textField.findViewById(R.id.ui_text_field_input);
         textField.setLabel("A label");
 
         textField.setHint("A hint");
@@ -172,7 +186,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetHint_withLabelNotSet_shouldSetItToTheContainer() throws Exception {
+    public void testSetHint_withLabelNotSet_shouldSetItToTheContainer() {
         textField.setHint("A hint");
         assertNull(editText.getHint());
 
@@ -182,7 +196,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testDisableHintAnimation_shouldChangeTheHintToTheInput() throws Exception {
+    public void testDisableHintAnimation_shouldChangeTheHintToTheInput() {
         textField.setHint("A hint");
 
         assertTrue(textField.isHintAnimationEnabled());
@@ -200,7 +214,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     public void testMaximumNumberOfCharacters() {
         final  int maximumNumberOfCharacters = 10;
         textField.setMaxCharacters(maximumNumberOfCharacters);
-        final EditText text = (EditText) textField.findViewById(R.id.ui_text_field_input);
+        final EditText text = textField.findViewById(R.id.ui_text_field_input);
         final String testText = "012345678912";
         textField.setText(testText);
         assertNotNull(text);
@@ -223,8 +237,8 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetDrawables_shouldSetDrawables() throws Exception {
-        final EditText input = (EditText) textField.findViewById(R.id.ui_text_field_input);
+    public void testSetDrawables_shouldSetDrawables() {
+        final EditText input = textField.findViewById(R.id.ui_text_field_input);
 
         final Drawable drawableLeft = mock(Drawable.class);
         final Drawable drawableBottom = mock(Drawable.class);
@@ -238,8 +252,8 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testConfigurePasswordToggle_shouldConfigureItCorrectly() throws Exception {
-        final TextInputLayout container = (TextInputLayout) textField.findViewById(R.id.ui_text_field_input_container);
+    public void testConfigurePasswordToggle_shouldConfigureItCorrectly() {
+        final TextInputLayout container = textField.findViewById(R.id.ui_text_field_input_container);
 
         final Drawable toggleDrawable = mock(Drawable.class);
         textField.setPasswordVisibilityToggleDrawable(toggleDrawable);
@@ -250,23 +264,23 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetTextFont_withValidFont_shouldSetItToTheInput() throws Exception {
+    public void testSetTextFont_withValidFont_shouldSetItToTheInput() {
         textField.setTextFont(Font.BOLD);
 
         final EditText editText = textField.getEditText();
-        assertEquals(TypefaceUtils.load(RuntimeEnvironment.application.getAssets(), Font.BOLD.getFontPath()), editText.getTypeface());
+        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BOLD.getFontPath()), editText.getTypeface());
     }
 
     @Test
-    public void testSetLabelFont_withValidFont_shouldSetItToTheInput() throws Exception {
+    public void testSetLabelFont_withValidFont_shouldSetItToTheInput() {
         textField.setLabelFont(Font.BLACK);
 
         final TextView label = ReflectionHelpers.getField(textField, "label");
-        assertEquals(TypefaceUtils.load(RuntimeEnvironment.application.getAssets(), Font.BLACK.getFontPath()), label.getTypeface());
+        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BLACK.getFontPath()), label.getTypeface());
     }
 
     @Test
-    public void testSetTextColor_withResource_shouldSetTheColorToTheInput() throws Exception {
+    public void testSetTextColor_withResource_shouldSetTheColorToTheInput() {
         final int color = Color.parseColor("#fedc13");
         textField.setTextColor(color);
 
@@ -274,7 +288,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetTextColor_withHexColor_shouldSetTheColorToTheInput() throws Exception {
+    public void testSetTextColor_withHexColor_shouldSetTheColorToTheInput() {
         final int color = Color.parseColor("#A4C8D1");
 
         textField.setTextColor(color);
@@ -283,7 +297,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetTextColor_withColorStateList_shouldSetTheColorToTheInput() throws Exception {
+    public void testSetTextColor_withColorStateList_shouldSetTheColorToTheInput() {
         final ColorStateList color = ColorStateList.valueOf(Color.parseColor("#A4C8D1"));
 
         textField.setTextColor(color);
@@ -292,7 +306,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetLabelColor_withResource_shouldSetTheColorToTheLabel() throws Exception {
+    public void testSetLabelColor_withResource_shouldSetTheColorToTheLabel() {
         final int color = Color.parseColor("#fedc13");
 
         textField.setLabelColor(color);
@@ -301,7 +315,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetLabelColor_withHexColor_shouldSetTheColorToTheLabel() throws Exception {
+    public void testSetLabelColor_withHexColor_shouldSetTheColorToTheLabel() {
         final int color = Color.parseColor("#A4C8D1");
 
         textField.setLabelColor(color);
@@ -311,7 +325,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetLabelColor_withColorStateList_shouldSetTheColorToTheLabel() throws Exception {
+    public void testSetLabelColor_withColorStateList_shouldSetTheColorToTheLabel() {
         final ColorStateList color = ColorStateList.valueOf(Color.parseColor("#A4C8D1"));
 
         textField.setLabelColor(color);
@@ -321,7 +335,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetHintColor_withResource_shouldSetTheColorToTheHint() throws Exception {
+    public void testSetHintColor_withResource_shouldSetTheColorToTheHint() {
         final int color = Color.parseColor("#fedc13");
 
         textField.setHintColor(color);
@@ -330,7 +344,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetHintColor_withHexColor_shouldSetTheColorToTheHint() throws Exception {
+    public void testSetHintColor_withHexColor_shouldSetTheColorToTheHint() {
         final int color = Color.parseColor("#A4C8D1");
 
         textField.setHintColor(color);
@@ -339,7 +353,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetHintColor_withColorStateList_shouldSetTheColorToTheHint() throws Exception {
+    public void testSetHintColor_withColorStateList_shouldSetTheColorToTheHint() {
         final ColorStateList color = ColorStateList.valueOf(Color.parseColor("#A4C8D1"));
 
         textField.setHintColor(color);
@@ -350,7 +364,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     @Test
     @TargetApi(24)
     @Config(sdk = 24)
-    public void testSetTextGravity_shouldSetItToTheInput() throws Exception {
+    public void testSetTextGravity_shouldSetItToTheInput() {
         textField.setTextGravity(Gravity.CENTER);
 
         assertEquals(17, textField.getEditText().getGravity());
@@ -358,7 +372,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetEllipsize_withInt_shouldCallSetEllipsizeWithValue() throws Exception {
+    public void testSetEllipsize_withInt_shouldCallSetEllipsizeWithValue() {
         final TextField spyTextField = spy(textField);
 
         int ellipsize = 0;
@@ -383,14 +397,14 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetInputType_withAnyNumber_shouldSetItToTheInput() throws Exception {
+    public void testSetInputType_withAnyNumber_shouldSetItToTheInput() {
         textField.setInputType(521);
 
         assertEquals(521, textField.getEditText().getInputType());
     }
 
     @Test
-    public void testSetEnabled_withEnabledTrue_shouldChangeTheState() throws Exception {
+    public void testSetEnabled_withEnabledTrue_shouldChangeTheState() {
         textField.setEnabled(true);
 
         assertTrue(container.isFocusableInTouchMode());
@@ -398,7 +412,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSetEnabled_withEnabledFalse_shouldChangeTheState() throws Exception {
+    public void testSetEnabled_withEnabledFalse_shouldChangeTheState() {
         textField.setEnabled(false);
 
         assertFalse(container.isFocusableInTouchMode());
@@ -407,8 +421,8 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testOnTouch_shouldOpenKeyboard() throws Exception {
-        Context context = spy(RuntimeEnvironment.application);
+    public void testOnTouch_shouldOpenKeyboard() {
+        Context context = spy(this.context);
         InputMethodManager imm = mock(InputMethodManager.class);
 
         doReturn(imm).when(context).getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -436,7 +450,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
     }
 
     @Test
-    public void testSaveState_shouldSaveTheStateCorrectly() throws Exception {
+    public void testSaveState_shouldSaveTheStateCorrectly() {
         final List<Object> parcelMemory = new ArrayList<>();
         textField.setHint("hint");
         textField.setText("text");
@@ -479,7 +493,7 @@ public class TextFieldTest extends AbstractRobolectricTest {
 
 
     @Test
-    public void testRestoreState_shouldRestoreCorrectly() throws Exception {
+    public void testRestoreState_shouldRestoreCorrectly() {
         final ArrayList<Object> parcelMemory = new ArrayList<>();
         final AtomicInteger index = new AtomicInteger(0);
 

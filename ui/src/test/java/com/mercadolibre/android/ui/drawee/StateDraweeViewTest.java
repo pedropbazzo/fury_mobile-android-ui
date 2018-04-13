@@ -1,11 +1,11 @@
 package com.mercadolibre.android.ui.drawee;
 
 import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.drawee.state.BinaryState;
 import com.mercadolibre.android.ui.drawee.state.EnableState;
@@ -15,13 +15,18 @@ import com.mercadolibre.android.ui.drawee.state.State;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.when;
 
-public class StateDraweeViewTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+public class StateDraweeViewTest {
 
     @Before
     public void setUp() {

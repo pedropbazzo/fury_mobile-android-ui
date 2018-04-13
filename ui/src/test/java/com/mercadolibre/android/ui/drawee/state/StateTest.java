@@ -1,17 +1,23 @@
 package com.mercadolibre.android.ui.drawee.state;
 
 import android.content.res.Resources;
+import android.os.Build;
 import android.support.annotation.NonNull;
-import com.mercadolibre.android.testing.AbstractRobolectricTest;
+
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.drawee.StateDraweeView;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.fail;
 
-public class StateTest extends AbstractRobolectricTest {
+@RunWith(RobolectricTestRunner.class)
+@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+public class StateTest {
 
     @Test
     public void test_IsValidKeyIsTakenIntoAccount() {
