@@ -82,7 +82,7 @@ public final class MeliButton extends AppCompatButton {
         final int buttonType = a.getInt(R.styleable.MeliButton_type, ACTION_PRIMARY);
         final int buttonState = a.getInt(R.styleable.MeliButton_state, NORMAL);
 
-        final int textAppearance = a.getInt(R.styleable.MeliButton_textAppearance, R.style.MLFont_Regular);
+        final int textAppearance = a.getResourceId(R.styleable.MeliButton_textAppearance, R.style.MLFont_Regular);
 
         setTextAppearance(context, textAppearance);
         setGravity(Gravity.CENTER);
