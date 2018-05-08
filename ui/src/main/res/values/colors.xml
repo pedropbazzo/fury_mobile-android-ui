@@ -11,6 +11,7 @@
     <color name="ui_components_secondary_color_text_disabled">#332681FF</color>
     <color name="ui_components_success_color">#39B54A</color>
     <color name="ui_components_error_color">#F04449</color>
+    <color name="ui_components_warning_color">#FBAB60</color>
     <color name="ui_components_black_color">#333333</color>
     <color name="ui_components_dark_grey_color">#666666</color>
     <color name="ui_components_grey_color">#999999</color>
@@ -39,11 +40,13 @@
     <color name="ui_meli_blue">#3483FA</color>
     <color name="ui_meli_green">#39B54A</color>
     <color name="ui_meli_red">#F04449</color>
+    <color name="ui_meli_orange">#FBAB60</color>
 
     <!-- Contextualized colors -->
     <color name="ui_meli_background">@color/ui_meli_light_grey</color>
     <color name="ui_meli_success">@color/ui_meli_green</color>
     <color name="ui_meli_error">@color/ui_meli_red</color>
+    <color name="ui_meli_warning">@color/ui_meli_orange</color>
     <color name="ui_ripple_mask">#1A333333</color>
 
     <color name="ui_transparent">#00000000</color>

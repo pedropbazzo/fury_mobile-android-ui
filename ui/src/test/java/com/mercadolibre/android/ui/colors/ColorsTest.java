@@ -35,6 +35,7 @@ public class ColorsTest {
         assertColors(R.color.ui_meli_blue, "#3483FA");
         assertColors(R.color.ui_meli_green, "#39B54A");
         assertColors(R.color.ui_meli_red, "#F04449");
+        assertColors(R.color.ui_meli_orange, "#FBAB60");
     }
 
     @Test
@@ -43,6 +44,7 @@ public class ColorsTest {
                      ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_light_grey));
         assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_success), ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_green));
         assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_error), ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_red));
+        assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_warning), ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_orange));
     }
 
     private void assertColors(@ColorRes final int colorRes, final String colorString) {
