@@ -54,12 +54,13 @@ public final class MeliSnackbar {
 
     @SuppressWarnings("PMD.RedundantFieldInitializer")
     @Retention(RetentionPolicy.SOURCE)
-    @IntDef({SnackbarType.MESSAGE, SnackbarType.SUCCESS, SnackbarType.ERROR})
+    @IntDef({SnackbarType.MESSAGE, SnackbarType.SUCCESS, SnackbarType.ERROR, SnackbarType.WARNING})
 
     public @interface SnackbarType {
         /* default */ int MESSAGE = 0;
         /* default */ int SUCCESS = 1;
         /* default */ int ERROR = 2;
+        /* default */ int WARNING = 3;
     }
 
     private MeliSnackbar(@NonNull final Snackbar snackbar, @SnackbarType final int type) {
@@ -71,6 +72,9 @@ public final class MeliSnackbar {
                 break;
             case SnackbarType.ERROR:
                 snackbarColor = R.color.ui_components_error_color;
+                break;
+            case SnackbarType.WARNING:
+                snackbarColor = R.color.ui_components_warning_color;
                 break;
             case SnackbarType.MESSAGE:
             default:

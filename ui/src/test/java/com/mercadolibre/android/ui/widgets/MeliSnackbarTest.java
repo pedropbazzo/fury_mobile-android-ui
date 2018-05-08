@@ -155,7 +155,7 @@ public class MeliSnackbarTest {
 
     @Test
     public void testMessageType() {
-        final MeliSnackbar snackbar = MeliSnackbar.make(view, TEST_STRING, Snackbar.LENGTH_INDEFINITE, MeliSnackbar.Type.MESSAGE)
+        final MeliSnackbar snackbar = MeliSnackbar.make(view, TEST_STRING, Snackbar.LENGTH_INDEFINITE, MeliSnackbar.SnackbarType.MESSAGE)
                                                   .setAction(ACTION_STRING,
                                                              new View.OnClickListener() {
                                                                  @Override
@@ -168,16 +168,16 @@ public class MeliSnackbarTest {
         Assert.assertEquals(TEST_STRING, getTextView(snackbar).getText());
         Assert.assertEquals(Snackbar.LENGTH_INDEFINITE, getSnackbar(snackbar).getDuration());
         // Test background color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_black), getBackgroundColor(snackbar));
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_black_color), getBackgroundColor(snackbar));
         // Test text color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_white), getTextView(snackbar).getTextColors().getDefaultColor());
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_white_color), getTextView(snackbar).getTextColors().getDefaultColor());
         // Test action text color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_white), getActionButton(snackbar).getTextColors().getDefaultColor());
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_white_color), getActionButton(snackbar).getTextColors().getDefaultColor());
     }
 
     @Test
     public void testSuccessType() {
-        final MeliSnackbar snackbar = MeliSnackbar.make(view, TEST_STRING, Snackbar.LENGTH_INDEFINITE, MeliSnackbar.Type.SUCCESS)
+        final MeliSnackbar snackbar = MeliSnackbar.make(view, TEST_STRING, Snackbar.LENGTH_INDEFINITE, MeliSnackbar.SnackbarType.SUCCESS)
                                                   .setAction(ACTION_STRING,
                                                              new View.OnClickListener() {
                                                                  @Override
@@ -190,32 +190,53 @@ public class MeliSnackbarTest {
         Assert.assertEquals(TEST_STRING, getTextView(snackbar).getText());
         Assert.assertEquals(Snackbar.LENGTH_INDEFINITE, getSnackbar(snackbar).getDuration());
         // Test background color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_success), getBackgroundColor(snackbar));
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_success_color), getBackgroundColor(snackbar));
         // Test text color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_white), getTextView(snackbar).getTextColors().getDefaultColor());
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_white_color), getTextView(snackbar).getTextColors().getDefaultColor());
         // Test action text color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_white), getActionButton(snackbar).getTextColors().getDefaultColor());
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_white_color), getActionButton(snackbar).getTextColors().getDefaultColor());
     }
 
     @Test
     public void testErrorType() {
-        final MeliSnackbar snackbar = MeliSnackbar.make(view, TEST_STRING, Snackbar.LENGTH_INDEFINITE, MeliSnackbar.Type.ERROR)
-                                                  .setAction(ACTION_STRING, new View.OnClickListener() {
-                                                      @Override
-                                                      public void onClick(View v) {
-                                                          // Do nothing.
-                                                      }
-                                                  });
+        final MeliSnackbar snackbar = MeliSnackbar.make(view, TEST_STRING, Snackbar.LENGTH_INDEFINITE, MeliSnackbar.SnackbarType.ERROR)
+            .setAction(ACTION_STRING, new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Do nothing.
+                }
+            });
 
         Assert.assertNotNull(snackbar);
         Assert.assertEquals(TEST_STRING, getTextView(snackbar).getText());
         Assert.assertEquals(Snackbar.LENGTH_INDEFINITE, getSnackbar(snackbar).getDuration());
         // Test background color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_error), getBackgroundColor(snackbar));
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_error_color), getBackgroundColor(snackbar));
         // Test text color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_white), getTextView(snackbar).getTextColors().getDefaultColor());
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_white_color), getTextView(snackbar).getTextColors().getDefaultColor());
         // Test action text color.
-        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_meli_white), getActionButton(snackbar).getTextColors().getDefaultColor());
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_white_color), getActionButton(snackbar).getTextColors().getDefaultColor());
+    }
+
+    @Test
+    public void testWarningType() {
+        final MeliSnackbar snackbar = MeliSnackbar.make(view, TEST_STRING, Snackbar.LENGTH_INDEFINITE, MeliSnackbar.SnackbarType.WARNING)
+            .setAction(ACTION_STRING, new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Do nothing.
+                }
+            });
+
+        Assert.assertNotNull(snackbar);
+        Assert.assertEquals(TEST_STRING, getTextView(snackbar).getText());
+        Assert.assertEquals(Snackbar.LENGTH_INDEFINITE, getSnackbar(snackbar).getDuration());
+        // Test background color.
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_warning_color), getBackgroundColor(snackbar));
+        // Test text color.
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_white_color), getTextView(snackbar).getTextColors().getDefaultColor());
+        // Test action text color.
+        Assert.assertEquals(ContextCompat.getColor(RuntimeEnvironment.application, R.color.ui_components_white_color), getActionButton(snackbar).getTextColors().getDefaultColor());
     }
 
     @Test

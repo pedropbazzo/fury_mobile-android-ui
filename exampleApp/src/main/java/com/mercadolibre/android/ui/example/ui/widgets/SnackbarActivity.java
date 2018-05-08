@@ -46,6 +46,17 @@ public class SnackbarActivity extends BaseActivity {
                 .show();
     }
 
+    public void showOrangeSnackbar(View view) {
+        MeliSnackbar.make(view, "Feedback de warning", Snackbar.LENGTH_LONG, MeliSnackbar.SnackbarType.WARNING)
+                .setAction("Salida", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(v.getContext(), "Dismiss!", Toast.LENGTH_LONG).show();
+                    }
+                })
+                .show();
+    }
+
     public void showBlackSnackbar(View view) {
         MeliSnackbar.make(view, "Mensaje genérico multilínea sin salida donde hay mucho texto", Snackbar.LENGTH_LONG)
                 .show();
