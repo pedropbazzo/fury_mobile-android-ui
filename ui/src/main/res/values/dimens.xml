@@ -68,4 +68,26 @@
     <dimen name="ui_error_view_image_margin">29dp</dimen>
     <dimen name="ui_error_view_padding">32dp</dimen>
 
+    <!-- New Style Dimens -->
+    <dimen name="ui_0125m">1dp</dimen>
+    <dimen name="ui_025m">2dp</dimen>
+    <dimen name="ui_050m">4dp</dimen>
+    <dimen name="ui_075m">6dp</dimen>
+    <dimen name="ui_1m">8dp</dimen>
+    <dimen name="ui_1_25m">10dp</dimen>
+    <dimen name="ui_1_5m">12dp</dimen>
+    <dimen name="ui_1_75m">14dp</dimen>
+    <dimen name="ui_2m">16dp</dimen>
+    <dimen name="ui_2_5m">20dp</dimen>
+    <dimen name="ui_3m">24dp</dimen>
+    <dimen name="ui_3_5m">28dp</dimen>
+    <dimen name="ui_4m">32dp</dimen>
+    <dimen name="ui_5m">40dp</dimen>
+    <dimen name="ui_6m">48dp</dimen>
+    <dimen name="ui_6_25m">50dp</dimen>
+    <dimen name="ui_6_5m">52dp</dimen>
+    <dimen name="ui_7m">56dp</dimen>
+    <dimen name="ui_8m">64dp</dimen>
+    <dimen name="ui_9m">72dp</dimen>
+    <dimen name="ui_10m">80dp</dimen>
 </resources>
