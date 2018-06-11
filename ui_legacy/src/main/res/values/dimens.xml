@@ -74,4 +74,27 @@
     <dimen name="ui_fab_elevation">2dp</dimen>
     <dimen name="ui_fab_border_width">0dp</dimen>
 
+    <!-- New Style Dimens -->
+    <dimen name="_0125m">1dp</dimen>
+    <dimen name="_025m">2dp</dimen>
+    <dimen name="_050m">4dp</dimen>
+    <dimen name="_075m">6dp</dimen>
+    <dimen name="_1m">8dp</dimen>
+    <dimen name="_1_25m">10dp</dimen>
+    <dimen name="_1_5m">12dp</dimen>
+    <dimen name="_1_75m">14dp</dimen>
+    <dimen name="_2m">16dp</dimen>
+    <dimen name="_2_5m">20dp</dimen>
+    <dimen name="_3m">24dp</dimen>
+    <dimen name="_3_5m">28dp</dimen>
+    <dimen name="_4m">32dp</dimen>
+    <dimen name="_5m">40dp</dimen>
+    <dimen name="_6m">48dp</dimen>
+    <dimen name="_6_25m">50dp</dimen>
+    <dimen name="_6_5m">52dp</dimen>
+    <dimen name="_7m">56dp</dimen>
+    <dimen name="_8m">64dp</dimen>
+    <dimen name="_9m">72dp</dimen>
+    <dimen name="_10m">80dp</dimen>
+
 </resources>

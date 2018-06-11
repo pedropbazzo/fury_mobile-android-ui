@@ -16,6 +16,8 @@ import android.util.TypedValue;
 import android.view.Gravity;
 
 import com.mercadolibre.android.ui.R;
+import com.mercadolibre.android.ui.font.Font;
+import com.mercadolibre.android.ui.font.TypefaceHelper;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -82,9 +84,7 @@ public final class MeliButton extends AppCompatButton {
         final int buttonType = a.getInt(R.styleable.MeliButton_type, ACTION_PRIMARY);
         final int buttonState = a.getInt(R.styleable.MeliButton_state, NORMAL);
 
-        final int textAppearance = a.getResourceId(R.styleable.MeliButton_textAppearance, R.style.MLFont_Regular);
-
-        setTextAppearance(context, textAppearance);
+        TypefaceHelper.setTypeface(this, Font.REGULAR);
         setGravity(Gravity.CENTER);
         setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.ui_fontsize_medium));
 
