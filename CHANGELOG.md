@@ -1,4 +1,4 @@
-## v5.2.1
+## v5.3.0
 - Fix font set on MeliButton
 - Dimens added
 
