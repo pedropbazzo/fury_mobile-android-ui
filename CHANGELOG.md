@@ -1,3 +1,6 @@
+## v5.3.0
+- MLTheme deja de extender de MLThemeLegacy y ahora permite ser customizado
+
 ## v5.2.1
 - Fix font set on MeliButton
 - Dimens added
