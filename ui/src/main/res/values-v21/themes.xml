@@ -22,39 +22,31 @@
 
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
 
-        <!--<item name="actionBarStyle">@style/Widget.ActionMode</item>-->
-        <item name="colorAccent">@color/ui_components_colorAccent</item>
-
         <item name="android:actionBarSize">@dimen/abc_action_bar_default_height_material</item>
 
         <item name="android:colorPressedHighlight">@color/selection_color</item>
         <item name="android:colorLongPressedHighlight">@color/selection_color</item>
-        <!--<item name="colorPrimary">@color/blue</item>-->
-        <!--<item name="android:textColorSecondary">@color/blue</item>-->
-        <!--<item name="android:colorControlNormal">@color/blue</item>-->
 
         <item name="android:spinnerItemStyle">@style/MLSpinnerItem</item>
 
-        <!--<item name="colorSwitchThumbNormal">@color/blue</item>-->
         <item name="android:listSeparatorTextViewStyle">@style/MLPreference.ListHeader</item>
 
         <item name="android:dropDownItemStyle">@style/MLDropDownItemStyle</item>
 
         <item name="actionBarItemBackground">?attr/selectableItemBackgroundBorderless</item>
-        <!-- for native ActionBar -->
         <item name="android:actionBarItemBackground">?attr/selectableItemBackgroundBorderless</item>
 
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
 
-        <item name="android:colorPrimary">@color/ui_components_colorPrimary</item>
-        <item name="android:colorPrimaryDark">@color/ui_components_colorPrimaryDark</item>
+        <item name="android:colorPrimary">@color/ui_components_android_color_primary</item>
+        <item name="android:colorPrimaryDark">@color/ui_components_android_color_primary_dark</item>
         <item name="android:textAppearance">@style/MLFont.Light</item>
 
         <item name="android:buttonStyle">@style/Button.Action.Primary</item>
         <item name="buttonStyle">@style/Button.Action.Primary</item>
         <item name="buttonBarButtonStyle">@style/Button.Action.Primary</item>
 
-        <item name="android:colorAccent">@color/ui_components_colorAccent</item>
+        <item name="android:colorAccent">@color/ui_components_android_color_accent</item>
 
         <!-- Ripple mask color -->
         <item name="android:colorControlHighlight">@color/ui_ripple_mask</item>

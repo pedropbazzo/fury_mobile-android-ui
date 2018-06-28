@@ -46,15 +46,15 @@
 
         <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
 
-        <item name="android:colorPrimary">@color/ui_components_colorPrimary</item>
-        <item name="android:colorPrimaryDark">@color/ui_components_colorPrimaryDark</item>
+        <item name="android:colorPrimary">@color/ui_components_android_color_primary</item>
+        <item name="android:colorPrimaryDark">@color/ui_components_android_color_primary_dark</item>
         <item name="android:textAppearance">@style/MLFont.Light</item>
 
         <item name="android:buttonStyle">@style/Button.Action.Primary</item>
         <item name="buttonStyle">@style/Button.Action.Primary</item>
         <item name="buttonBarButtonStyle">@style/Button.Action.Primary</item>
 
-        <item name="colorAccent">@color/ui_components_colorAccent</item>
+        <item name="colorAccent">@color/ui_components_android_color_accent</item>
 
         <!-- Ripple mask color -->
         <item name="android:colorControlHighlight">@color/ui_ripple_mask</item>

@@ -26,9 +26,9 @@
     <color name="ui_components_spinner_primary_color">@color/ui_components_primary_color</color>
     <color name="ui_components_spinner_secondary_color">@color/ui_base_color</color>
     <color name="ui_components_spinner_alternate_color">@color/ui_components_white_color</color>
-    <color name="ui_components_colorPrimary">@color/meli_yellow</color>
-    <color name="ui_components_colorPrimaryDark">#F5D315</color>
-    <color name="ui_components_colorAccent">@color/ui_meli_blue</color>
+    <color name="ui_components_android_color_primary">@color/meli_yellow</color>
+    <color name="ui_components_android_color_primary_dark">#F5D315</color>
+    <color name="ui_components_android_color_accent">@color/ui_meli_blue</color>
     <color name="ui_components_actionModeBackground">@color/ui_meli_yellow</color>
 
 
