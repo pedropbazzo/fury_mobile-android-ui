@@ -26,13 +26,8 @@
 
         <item name="android:colorPressedHighlight">@color/selection_color</item>
         <item name="android:colorLongPressedHighlight">@color/selection_color</item>
-        <!--<item name="colorPrimary">@color/blue</item>-->
-        <!--<item name="android:textColorSecondary">@color/blue</item>-->
-        <!--<item name="android:colorControlNormal">@color/blue</item>-->
-
         <item name="android:spinnerItemStyle">@style/MLSpinnerItem</item>
 
-        <!--<item name="colorSwitchThumbNormal">@color/blue</item>-->
         <item name="android:listSeparatorTextViewStyle">@style/MLPreference.ListHeader</item>
 
         <item name="android:dropDownItemStyle">@style/MLDropDownItemStyle</item>
