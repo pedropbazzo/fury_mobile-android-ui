@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.MLTheme" parent="@style/Theme.MLThemeLegacy" tools:ignore="ResourceName">
+    <style name="Theme.MLTheme" parent="@style/Theme.AppCompat.Light.NoActionBar" tools:ignore="ResourceName">
+
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="vpiCirclePageIndicatorStyle">@style/CustomCirclePageIndicator</item>
+        <item name="android:actionMenuTextColor">@color/gray_dark</item>
+
+        <item name="actionBarTabBarStyle">@style/Widget.MLTheme.ActionBar</item>
+        <item name="actionBarStyle">@style/Widget.MLTheme.ActionBar</item>
+        <item name="actionBarTabStyle">@style/Widget.MLTheme.ActionBar.TabView</item>
+        <item name="actionBarTabTextStyle">@style/Widget.MLTheme.ActionBar.TabText</item>
+
+        <item name="android:textViewStyle">@style/textview_default</item>
+        <item name="android:progressBarStyle">@style/Widget.MercadoLibre.ProgressBar.Horizontal</item>
+        <item name="android:progressBarStyleHorizontal">@style/Widget.MercadoLibre.ProgressBar.Horizontal</item>
+        <item name="android:progressBarStyleLarge">@style/Widget.MercadoLibre.ProgressBar.Horizontal</item>
+        <item name="android:scrollViewStyle">@style/Widget.ScrollView.Default</item>
+
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+        <item name="android:actionBarSize">@dimen/abc_action_bar_default_height_material</item>
+
+        <item name="android:colorPressedHighlight">@color/selection_color</item>
+        <item name="android:colorLongPressedHighlight">@color/selection_color</item>
+        <!--<item name="colorPrimary">@color/blue</item>-->
+        <!--<item name="android:textColorSecondary">@color/blue</item>-->
+        <!--<item name="android:colorControlNormal">@color/blue</item>-->
+
+        <item name="android:spinnerItemStyle">@style/MLSpinnerItem</item>
+
+        <!--<item name="colorSwitchThumbNormal">@color/blue</item>-->
+        <item name="android:listSeparatorTextViewStyle">@style/MLPreference.ListHeader</item>
+
+        <item name="android:dropDownItemStyle">@style/MLDropDownItemStyle</item>
+
+        <item name="actionBarItemBackground">@drawable/actionbar_home_background</item>
+        <!-- for native ActionBar -->
+        <item name="android:actionBarItemBackground">@drawable/actionbar_home_background</item>
+
+        <item name="android:selectableItemBackground">@drawable/actionbar_home_background</item>
+        <item name="selectableItemBackground">@drawable/actionbar_home_background</item>
 
         <item name="android:textAppearance">@style/MLFont.Light</item>
 
@@ -9,10 +50,10 @@
         <item name="buttonStyle">@style/Button.Action.Primary</item>
         <item name="buttonBarButtonStyle">@style/Button.Action.Primary</item>
 
-        <item name="colorAccent">@color/ui_meli_blue</item>
+        <item name="colorAccent">@color/ui_components_colorAccent</item>
 
-        <item name="android:actionModeBackground">@color/ui_meli_yellow</item>
-        <item name="actionModeBackground">@color/ui_meli_yellow</item>
+        <item name="android:actionModeBackground">@color/ui_components_actionModeBackground</item>
+        <item name="actionModeBackground">@color/ui_components_actionModeBackground</item>
 
         <item name="ui_meliSpinnerStyle">@style/ui_meli_spinner</item>
     </style>
