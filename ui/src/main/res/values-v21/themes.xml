@@ -9,13 +9,16 @@
         <item name="buttonStyle">@style/Button.Action.Primary</item>
         <item name="buttonBarButtonStyle">@style/Button.Action.Primary</item>
 
-        <item name="android:colorAccent">@color/ui_meli_blue</item>
+        <item name="colorAccent">@color/ui_components_android_color_accent</item>
+        <item name="colorPrimary">@color/ui_components_android_color_primary</item>
+        <item name="colorPrimaryDark">@color/ui_components_android_color_primary_dark</item>
+
 
         <!-- Ripple mask color -->
         <item name="android:colorControlHighlight">@color/ui_ripple_mask</item>
 
-        <item name="android:actionModeBackground">@color/ui_meli_yellow</item>
-        <item name="actionModeBackground">@color/ui_meli_yellow</item>
+        <item name="android:actionModeBackground">@color/ui_components_actionModeBackground</item>
+        <item name="actionModeBackground">@color/ui_components_actionModeBackground</item>
 
         <!-- Line spacing -->
         <item name="android:lineSpacingExtra">2dp</item>
