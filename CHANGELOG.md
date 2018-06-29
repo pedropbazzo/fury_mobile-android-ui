@@ -1,4 +1,4 @@
-## v5.3.0
+## v5.4.0
 - MLTheme deja de extender de MLThemeLegacy y ahora permite ser customizado
 
 ## v5.2.1
