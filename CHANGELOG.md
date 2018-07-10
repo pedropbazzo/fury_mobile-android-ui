@@ -1,3 +1,6 @@
+## v5.5.0
+- Se agregaron otros 3 colores para poder customizar le theme desde las apps
+
 ## v5.4.1
 - MLTheme customizations added
 
