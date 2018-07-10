@@ -1,5 +1,11 @@
-## v5.4.0 [unreleased]
-- 
+## v5.5.0
+- Se agregaron otros 3 colores para poder customizar le theme desde las apps
+
+## v5.4.1
+- MLTheme customizations added
+
+## v5.4.0
+- MLTheme ahora permite ser customizado
 
 ## v5.3.0
 - MLTheme deja de extender de MLThemeLegacy y ahora permite ser customizado
