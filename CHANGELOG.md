@@ -1,5 +1,10 @@
+## v5.5.1
+### Arreglado
+- No incluye nada, es una publicación para limpiar el delta de commits de develop para que no parezca que hay que relseasearla.
+
 ## v5.5.0
-- Se agregaron otros 3 colores para poder customizar le theme desde las apps
+### Nuevo
+- Se agregaron otros 3 colores para poder customizar el theme desde las apps.
 
 ## v5.4.1
 - MLTheme customizations added
