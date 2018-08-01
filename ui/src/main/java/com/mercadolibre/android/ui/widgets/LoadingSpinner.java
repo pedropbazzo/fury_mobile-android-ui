@@ -92,6 +92,8 @@ public class LoadingSpinner extends View {
         updateColor();
 
         a.recycle();
+
+        setupAnimations();
     }
 
     /**
@@ -164,8 +166,6 @@ public class LoadingSpinner extends View {
             }
         });
 
-        sweepAnim.start();
-        startAnim.start();
     }
 
     /**
@@ -247,8 +247,9 @@ public class LoadingSpinner extends View {
      * Call this on activity start to begin animations
      */
     public void onStart() {
-        if (startAnim == null || !startAnim.isRunning()) {
-            setupAnimations();
+        if (!startAnim.isRunning()) {
+            sweepAnim.start();
+            startAnim.start();
         }
     }
 
@@ -267,11 +268,9 @@ public class LoadingSpinner extends View {
      * @param animator the animator to clean
      */
     private void cleanAnimator(final ValueAnimator animator) {
-        if (animator != null) {
             animator.cancel();
             animator.removeAllListeners();
             animator.removeAllUpdateListeners();
-        }
     }
 
     /**
