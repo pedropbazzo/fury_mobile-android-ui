@@ -1,3 +1,7 @@
+## v5.6.0
+### Arreglado
+- Fix memory leak en el MeliSpinner
+
 ## v5.5.1
 ### Arreglado
 - No incluye nada, es una publicación para limpiar el delta de commits de develop para que no parezca que hay que relseasearla.
