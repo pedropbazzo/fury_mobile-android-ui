@@ -1,4 +1,8 @@
-## v5.6.0
+## v5.6.1
+## Arreglado
+- No publicó 5.6.0
+
+## v5.6.0 
 ### Arreglado
 - Fix memory leak en el MeliSpinner
 
