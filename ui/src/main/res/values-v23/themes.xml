@@ -36,6 +36,8 @@
         <item name="android:lineSpacingExtra">2dp</item>
 
         <item name="ui_meliSpinnerStyle">@style/ui_meli_spinner</item>
+
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
 </resources>

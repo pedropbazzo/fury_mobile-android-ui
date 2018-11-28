@@ -1,3 +1,7 @@
+## v5.6.2
+## Arreglado
+- Para android 23+ se muestra el status bar light (con icono oscuros).
+
 ## v5.6.1
 ## Arreglado
 - No publicó 5.6.0
