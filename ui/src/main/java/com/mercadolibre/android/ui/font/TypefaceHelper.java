@@ -38,8 +38,7 @@ public final class TypefaceHelper {
             }
 
             @Nullable
-            @Override
-            public Typeface createTypeface(@NonNull Context context, @Nullable Font font) {
+            private Typeface createTypeface(@NonNull Context context, @Nullable Font font) {
                 if (font == null) {
                     return null;
                 }
@@ -82,16 +81,6 @@ public final class TypefaceHelper {
     }
 
     /**
-     * Crates a typeface given a {@link Font}
-     * @param context   The context of execution
-     * @param font  The {@link Font} that contains the path
-     * @return          A Typeface from a custom font
-     */
-    private static Typeface createTypeface(final Context context, final Font font) {
-        return typefaceSetter.createTypeface(context, font);
-    }
-
-    /**
      * Setter for typeface
      */
     public interface TypefaceSetter {
@@ -111,15 +100,6 @@ public final class TypefaceHelper {
          * @param font to set
          */
         void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font);
-
-        /**
-         * Create a typeface
-         * @param context to use
-         * @param font to create a typeface for
-         * @return Typeface created, null otherwise
-         */
-        @Nullable
-        Typeface createTypeface(@NonNull final Context context, @Nullable final Font font);
 
     }
 
