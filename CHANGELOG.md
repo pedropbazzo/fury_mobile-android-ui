@@ -1,3 +1,12 @@
+## v5.7.0
+## Nuevo
+- Se agrega un theme `Theme.Base` que tiene **temporalmente** como parent a `Theme.MLTheme`. Este theme se encuentra vacio para ser overwriteado por los configurators de apps correspondientes.
+- Se agrega una interfaz `TypefaceHelper.TypefaceSetter` que permite customizar el comportamiento de como el `TypefaceHelper` setea las fuentes, esto nos permite descoplarnos de `Calligraphy` para el seteo de las mismas y utilizar otros features availables como Downloadable Fonts o alguna imple propia.
+
+## v5.6.2
+## Arreglado
+- Para android 23+ se muestra el status bar light (con icono oscuros).
+
 ## v5.6.1
 ## Arreglado
 - No publicó 5.6.0

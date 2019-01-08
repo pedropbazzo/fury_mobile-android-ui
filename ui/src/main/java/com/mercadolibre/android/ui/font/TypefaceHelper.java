@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -15,8 +16,47 @@ import uk.co.chrisjenx.calligraphy.TypefaceUtils;
  */
 public final class TypefaceHelper {
 
+    @NonNull
+    private static TypefaceSetter typefaceSetter;
+
+    static {
+        typefaceSetter = new TypefaceSetter() {
+            @Override
+            public <T extends TextView> void setTypeface(@NonNull T view, @NonNull Font font) {
+                final Typeface typeface = createTypeface(view.getContext(), font);
+                view.setTypeface(typeface);
+
+                if (view instanceof Switch) {
+                    ((Switch) view).setSwitchTypeface(typeface);
+                }
+            }
+
+            @Override
+            public void setTypeface(@NonNull Context context, @NonNull Paint paint, @NonNull Font font) {
+                final Typeface typeface = createTypeface(context, font);
+                paint.setTypeface(typeface);
+            }
+
+            @Nullable
+            private Typeface createTypeface(@NonNull Context context, @Nullable Font font) {
+                if (font == null) {
+                    return null;
+                }
+                return TypefaceUtils.load(context.getAssets(), font.getFontPath());
+            }
+        };
+    }
+
     private TypefaceHelper() {
         //Do nothing, this class should not be instantiated
+    }
+
+    /**
+     * Attach a typeface setter to this helper class
+     * @param typefaceSetter field
+     */
+    public static void attachTypefaceSetter(@NonNull final TypefaceSetter typefaceSetter) {
+        TypefaceHelper.typefaceSetter = typefaceSetter;
     }
 
     /**
@@ -26,12 +66,7 @@ public final class TypefaceHelper {
      * @param font  The {@link Font} the text should have
      */
     public static <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font) {
-        final Typeface typeface = createTypeface(view.getContext(), font);
-        view.setTypeface(typeface);
-
-        if (view instanceof Switch) {
-            ((Switch) view).setSwitchTypeface(typeface);
-        }
+        typefaceSetter.setTypeface(view, font);
     }
 
     /**
@@ -42,17 +77,30 @@ public final class TypefaceHelper {
      * @param font    The {@link Font} the text should have
      */
     public static void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font) {
-        final Typeface typeface = createTypeface(context, font);
-        paint.setTypeface(typeface);
+        typefaceSetter.setTypeface(context, paint, font);
     }
 
     /**
-     * Crates a typeface given a {@link Font}
-     * @param context   The context of execution
-     * @param font  The {@link Font} that contains the path
-     * @return          A Typeface from a custom font
+     * Setter for typeface
      */
-    private static Typeface createTypeface(final Context context, final Font font) {
-        return TypefaceUtils.load(context.getAssets(), font.getFontPath());
+    public interface TypefaceSetter {
+
+        /**
+         * Set a typeface to a view
+         * @param view to set the typeface to
+         * @param font to set
+         * @param <T> extends TextView
+         */
+        <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font);
+
+        /**
+         * Set a typeface to the paint
+         * @param context to use
+         * @param paint to set the typeface
+         * @param font to set
+         */
+        void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font);
+
     }
+
 }

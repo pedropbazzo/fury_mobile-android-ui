@@ -17,4 +17,6 @@
         <item name="ui_meliSpinnerStyle">@style/ui_meli_spinner</item>
     </style>
 
+    <style name="Theme.Base" parent="Theme.MLTheme" tools:ignore="ResourceName" />
+
 </resources>
