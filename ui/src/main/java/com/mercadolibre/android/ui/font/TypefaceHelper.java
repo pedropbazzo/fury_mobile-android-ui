@@ -5,6 +5,8 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.provider.FontsContractCompat;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -22,7 +24,7 @@ public final class TypefaceHelper {
     static {
         typefaceSetter = new TypefaceSetter() {
             @Override
-            public <T extends TextView> void setTypeface(@NonNull T view, @NonNull Font font) {
+            public <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font) {
                 final Typeface typeface = createTypeface(view.getContext(), font);
                 view.setTypeface(typeface);
 
@@ -32,9 +34,20 @@ public final class TypefaceHelper {
             }
 
             @Override
-            public void setTypeface(@NonNull Context context, @NonNull Paint paint, @NonNull Font font) {
+            public void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font) {
                 final Typeface typeface = createTypeface(context, font);
                 paint.setTypeface(typeface);
+            }
+
+            @Override
+            public void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
+                final Typeface typeface = createTypeface(context, font);
+
+                if (typeface == null) {
+                    fontCallback.onFontRetrievalFailed(FontsContractCompat.FontRequestCallback.FAIL_REASON_FONT_NOT_FOUND);
+                } else {
+                    fontCallback.onFontRetrieved(typeface);
+                }
             }
 
             @Nullable
@@ -81,6 +94,18 @@ public final class TypefaceHelper {
     }
 
     /**
+     * Get a typeface associated to the font passed. The typeface will be sent through the
+     * font callback passed as param
+     *
+     * @param context to use
+     * @param font to retrieve its typeface
+     * @param fontCallback to call when the typeface is retrieved
+     */
+    public static void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
+        typefaceSetter.getTypeface(context, font, fontCallback);
+    }
+
+    /**
      * Setter for typeface
      */
     public interface TypefaceSetter {
@@ -100,6 +125,16 @@ public final class TypefaceHelper {
          * @param font to set
          */
         void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font);
+
+        /**
+         * Get a typeface associated to the font passed. The typeface will be sent through the
+         * font callback passed as param
+         *
+         * @param context to use
+         * @param font to retrieve its typeface
+         * @param fontCallback to call when the typeface is retrieved
+         */
+        void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback);
 
     }
 
