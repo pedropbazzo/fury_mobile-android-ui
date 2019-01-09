@@ -1,3 +1,7 @@
+## v5.7.1
+## Agregado
+- Se agrega metodo a TypefaceHelper para obtener un typeface. `#getTypeface(context, font, fontCallback)`. El mismo se recibe desde el callback ya que dependiendo de la imple puede ser sincronico o asincronico el fetch
+
 ## v5.7.0
 ## Nuevo
 - Se agrega un theme `Theme.Base` que tiene **temporalmente** como parent a `Theme.MLTheme`. Este theme se encuentra vacio para ser overwriteado por los configurators de apps correspondientes.
