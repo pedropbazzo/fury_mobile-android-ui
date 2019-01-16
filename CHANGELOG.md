@@ -1,3 +1,7 @@
+# v5.8.0
+## Cambiado
+- Actualizado bintray user
+
 # v5.7.2
 ## Agregado
 - Se agrega metodo a TypefaceHelper para obtener un typeface. `#getTypeface(context, font, fontCallback)`. El mismo se recibe desde el callback ya que dependiendo de la imple puede ser sincronico o asincronico el fetch
