@@ -1,3 +1,6 @@
+# v6.0.0
+- Se agrega dialogo que permite agrupación
+
 # v5.8.0
 ## Cambiado
 - Actualizado bintray user
