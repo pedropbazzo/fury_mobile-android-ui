@@ -8,6 +8,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.mercadolibre.android.ui.R;
+import com.mercadolibre.android.ui.widgets.dialogs.MeliDialog;
 
 import org.junit.Before;
 import org.junit.Test;

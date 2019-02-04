@@ -3,6 +3,7 @@ package com.mercadolibre.android.ui.widgets;
 import android.view.View;
 
 import com.mercadolibre.android.ui.R;
+import com.mercadolibre.android.ui.widgets.dialogs.MeliDialog;
 
 /**
  * Dummy {@link MeliDialog} meant for testing purposes.

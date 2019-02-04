@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.mercadolibre.android.ui.example.R;
 import com.mercadolibre.android.ui.example.ui.SimpleAdapter;
-import com.mercadolibre.android.ui.widgets.MeliDialog;
+import com.mercadolibre.android.ui.widgets.dialogs.MeliDialog;
 
 public class DummyListDialog extends MeliDialog {
 

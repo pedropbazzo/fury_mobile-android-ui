@@ -1,4 +1,4 @@
-package com.mercadolibre.android.ui.widgets;
+package com.mercadolibre.android.ui.widgets.dialogs;
 
 import android.content.DialogInterface;
 import android.content.res.Resources;
