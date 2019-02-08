@@ -1,89 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ui_melidialog_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:ignore="RtlHardcoded">
-
-    <ImageView
-        android:id="@+id/ui_melidialog_close_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:padding="16dp"
-        android:src="@drawable/ui_ic_clear"
-        android:tint="#3c74f7" />
-
-    <LinearLayout
-        android:id="@+id/ui_melidialog_dialog_container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/ui_dialog_vertical_padding"
-        android:paddingLeft="@dimen/ui_dialog_side_padding"
-        android:paddingRight="@dimen/ui_dialog_side_padding"
-        android:paddingTop="@dimen/ui_dialog_vertical_padding" >
-
-        <com.mercadolibre.android.ui.RoundedRelativeLayout
-            android:id="@+id/ui_melidialog_rounded_container"
+        android:fitsSystemWindows="true">
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            app:ui_cornerRadius="4dp">
-
-            <RelativeLayout
-                android:id="@+id/ui_melidialog_title_container"
+            android:layout_height="150dp"
+            android:fitsSystemWindows="true">
+            <android.support.design.widget.CollapsingToolbarLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:minHeight="@dimen/ui_dialog_title_height"
-                android:visibility="gone"
-                tools:visibility="visible">
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/ui_meli_white"
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginEnd="64dp">
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:titleTextColor="@color/ui_meli_black"
+                    app:layout_collapseMode="pin" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
 
-                <TextView
-                    android:id="@+id/ui_melidialog_title"
-                    android:layout_width="wrap_content"
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:id="@+id/ui_melidialog_content_container"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:ellipsize="end"
+                    android:background="@color/ui_components_white_color"
+                    android:clickable="true"
                     android:gravity="center"
-                    android:maxLines="2"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:lineSpacingExtra="@dimen/ui_dialog_title_linespacing"
-                    android:textAppearance="@style/MLFont.Light.Large"
-                    android:textSize="@dimen/ui_fontsize_xlarge"
-                    android:textColor="@color/ui_components_black_color"
-                    tools:text="Título" />
-
-            </RelativeLayout>
-
-            <FrameLayout
-                android:id="@+id/ui_melidialog_content_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ui_melidialog_title_container"
-                android:background="@color/ui_components_white_color"
-                android:clickable="true"
-                android:gravity="center"
-                android:orientation="vertical" />
-
-        </com.mercadolibre.android.ui.RoundedRelativeLayout>
-
-        <Button
-            android:id="@+id/ui_melidialog_secondary_exit_button"
-            style="@style/Button.Option.Primary"
-            android:layout_marginTop="16dp"
-            android:textAppearance="@style/MLFont.Regular"
-            android:textColor="@color/ui_components_melidialog_tint"
-            android:textSize="@dimen/ui_fontsize_medium"
-            android:visibility="gone"
-            tools:text="Salida secundaria"
-            tools:visibility="visible" />
-
-    </LinearLayout>
-
-</RelativeLayout>
+                    android:orientation="vertical" />
+                <Button
+                    android:id="@+id/ui_melidialog_secondary_exit_button"
+                    style="@style/Button.Option.Primary"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="@style/MLFont.Regular"
+                    android:textColor="@color/ui_meli_black"
+                    android:textSize="@dimen/ui_fontsize_medium"
+                    android:visibility="gone"
+                    android:text="Salida secundaria"/>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+     </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

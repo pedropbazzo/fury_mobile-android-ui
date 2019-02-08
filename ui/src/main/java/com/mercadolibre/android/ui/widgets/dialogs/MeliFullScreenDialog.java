@@ -45,7 +45,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
     public final View onCreateView(@NonNull final LayoutInflater inflater,
                                    @Nullable final ViewGroup container,
                                    @Nullable final Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.ui_layout_melifullscreendialog_toolbar, container, false);
+        root = inflater.inflate(R.layout.ui_layout_melifullscreendialog, container, false);
         contentContainer = root.findViewById(R.id.ui_melidialog_content_container);
         setupView();
 
