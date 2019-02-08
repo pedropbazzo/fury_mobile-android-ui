@@ -29,8 +29,11 @@ public class DialogActivity extends BaseActivity implements DummyInterface {
     public void showDialogWithBigView(final View view) {
 
         final  FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        final DummyFeedBackDialogWithTitle frag = new DummyFeedBackDialogWithTitle();
+        /*final DummyFeedBackDialogWithTitle frag = new DummyFeedBackDialogWithTitle();
         frag.setListener(this);
+        frag.show(ft, TAG);*/
+
+        final DummyFullScreenDialog frag = new DummyFullScreenDialog();
         frag.show(ft, TAG);
     }
 
