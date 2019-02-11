@@ -133,7 +133,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        activity.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ui_ic_clear);
+        activity.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ui_ic_clear_fullscreen);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
