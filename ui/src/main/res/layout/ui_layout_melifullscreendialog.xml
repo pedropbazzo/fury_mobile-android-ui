@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="125dp"
+        android:layout_height="140dp"
         android:fitsSystemWindows="true">
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -15,7 +15,8 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:fitsSystemWindows="true"
             app:contentScrim="@color/ui_meli_white"
-            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleTextAppearance="@style/ExpandedTitleAppearance"
+            app:expandedTitleMarginStart="20dp"
             app:expandedTitleMarginEnd="64dp">
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -47,7 +48,7 @@
                 style="@style/Button.Option.Primary"
                 android:layout_marginTop="16dp"
                 android:textAppearance="@style/MLFont.Regular"
-                android:textColor="@color/ui_meli_black"
+                android:textColor="@color/ui_meli_blue"
                 android:textSize="@dimen/ui_fontsize_medium"
                 android:visibility="gone"
                 android:text="Salida secundaria"/>
