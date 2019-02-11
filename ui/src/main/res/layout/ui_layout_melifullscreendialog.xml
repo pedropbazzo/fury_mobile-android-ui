@@ -45,11 +45,18 @@
                 android:orientation="vertical" />
             <Button
                 android:id="@+id/ui_melidialog_secondary_exit_button"
-                style="@style/Button.Option.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_marginTop="16dp"
+                android:paddingLeft="18dp"
+                android:paddingStart="18dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="start"
+                android:textSize="16sp"
                 android:textAppearance="@style/MLFont.Regular"
                 android:textColor="@color/ui_meli_blue"
-                android:textSize="@dimen/ui_fontsize_medium"
+                android:lineSpacingExtra="2sp"
                 android:visibility="gone"
                 android:text="Salida secundaria"/>
         </LinearLayout>
