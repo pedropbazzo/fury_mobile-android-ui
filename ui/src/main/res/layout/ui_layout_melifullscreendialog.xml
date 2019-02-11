@@ -51,14 +51,15 @@
                 android:layout_marginTop="16dp"
                 android:paddingLeft="18dp"
                 android:paddingStart="18dp"
+                android:paddingRight="18dp"
+                android:paddingEnd="18dp"
                 android:layout_marginBottom="20dp"
                 android:gravity="start"
                 android:textSize="16sp"
                 android:textAppearance="@style/MLFont.Regular"
                 android:textColor="@color/ui_meli_blue"
                 android:lineSpacingExtra="2sp"
-                android:visibility="gone"
-                android:text="Salida secundaria"/>
+                android:visibility="gone"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>
