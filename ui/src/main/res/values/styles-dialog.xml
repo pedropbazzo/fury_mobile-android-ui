@@ -9,4 +9,12 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+
+    <style name="MeliDialogFullScreen" parent="Theme.MLTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:background">@color/ui_meli_white</item>
+    </style>
 </resources>
