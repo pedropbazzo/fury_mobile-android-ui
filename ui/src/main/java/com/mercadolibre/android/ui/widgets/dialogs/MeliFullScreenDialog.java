@@ -104,15 +104,6 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
     }
 
     /**
-     * Override to prevent the dialog from scrolling by default.
-     *
-     * @return {@code true} if the dialog should scroll by default, {@code false} otherwise.
-     */
-    public boolean shouldScroll() {
-        return true;
-    }
-
-    /**
      * Sets the view up.
      */
     private void setupView() {
