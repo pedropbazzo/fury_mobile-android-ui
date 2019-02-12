@@ -1,5 +1,9 @@
 # v6.0.0
-- Se agrega dialogo que permite agrupación
+- Se agrega dialogo que se muestra en pantalla completa y con nuevo estilo
+
+# v5.9.0
+## Nuevo
+- Se marca como deprecado el Theme.MLTheme, en pos del nuevo Theme.Base que favorece la agregacion haciendo que cada negocio lo implemente con sus propios items
 
 # v5.8.0
 ## Cambiado
