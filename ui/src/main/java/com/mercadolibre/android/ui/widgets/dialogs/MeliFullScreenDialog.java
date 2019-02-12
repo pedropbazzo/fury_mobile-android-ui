@@ -235,7 +235,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
 
     @Override
     public String toString() {
-        return "MeliDialog{"
+        return "MeliFullScreenDialog{"
                 + "root=" + root
                 + ", contentContainer=" + contentContainer
                 + ", secondaryExitButton=" + secondaryExitButton
