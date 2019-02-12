@@ -191,17 +191,6 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
     }
 
     /**
-     * Whether or not a ScrollView should be added.
-     *
-     * @param content The content view.
-     * @return {@code true} if it should be added, {@code false} otherwise.
-     */
-    /* default */ boolean shouldAddScrollView(@Nullable final View content) {
-        return shouldScroll() && !(content instanceof ScrollView)
-                && !(content instanceof ScrollingView) && !(content instanceof AbsListView);
-    }
-
-    /**
      * Sets custom behaviour for the back button to play the out animation when the dialog is dismissed.
      */
     private void setupAnimationOnBackPressed() {
