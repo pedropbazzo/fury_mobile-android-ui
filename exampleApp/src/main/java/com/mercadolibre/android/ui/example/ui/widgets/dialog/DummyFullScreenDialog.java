@@ -15,7 +15,7 @@ public class DummyFullScreenDialog extends MeliFullScreenDialog {
 
     @Nullable
     @Override
-    public String getTitleForDialog() {
+    public String getTitle() {
         return "Modificar envío";
     }
 

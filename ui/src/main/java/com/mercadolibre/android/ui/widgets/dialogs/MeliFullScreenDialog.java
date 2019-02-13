@@ -63,7 +63,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
      */
     @SuppressWarnings("PMD.EmptyMethodInAbstractClassShouldBeAbstract")
     @Nullable
-    public String getTitleForDialog() {
+    public String getTitle() {
         return null;
     }
 
@@ -134,7 +134,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
             }
         });
 
-        activity.setTitle(getTitleForDialog());
+        activity.setTitle(getTitle());
     }
 
     /**
