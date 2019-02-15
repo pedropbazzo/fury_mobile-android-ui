@@ -6,7 +6,7 @@ import android.widget.Toast;
 
 import com.mercadolibre.android.ui.example.R;
 import com.mercadolibre.android.ui.widgets.ErrorView;
-import com.mercadolibre.android.ui.widgets.dialogs.MeliDialog;
+import com.mercadolibre.android.ui.widgets.MeliDialog;
 
 public class DummyFeedbackDialog extends MeliDialog {
 

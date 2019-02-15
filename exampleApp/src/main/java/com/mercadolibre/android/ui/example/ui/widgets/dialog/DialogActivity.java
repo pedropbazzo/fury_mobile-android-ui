@@ -7,7 +7,7 @@ import android.view.View;
 import com.mercadolibre.android.ui.example.BaseActivity;
 import com.mercadolibre.android.ui.example.R;
 import com.mercadolibre.android.ui.example.ui.widgets.dialog.DummyFeedBackDialogWithTitle.DummyInterface;
-import com.mercadolibre.android.ui.widgets.dialogs.MeliDialog;
+import com.mercadolibre.android.ui.widgets.MeliDialog;
 
 public class DialogActivity extends BaseActivity implements DummyInterface {
 

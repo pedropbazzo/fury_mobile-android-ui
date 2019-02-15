@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mercadolibre.android.ui.example.R;
-import com.mercadolibre.android.ui.widgets.dialogs.MeliFullScreenDialog;
+import com.mercadolibre.android.ui.widgets.MeliFullScreenDialog;
 
 public class DummyFullScreenDialog extends MeliFullScreenDialog {
     @Override
