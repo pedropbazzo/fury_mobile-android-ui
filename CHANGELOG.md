@@ -1,3 +1,7 @@
+# v5.10.0
+## Nuevo
+- Se agrega el color ui_components_action_bar_text_color a la paleta.
+
 # v5.9.0
 ## Nuevo
 - Se marca como deprecado el Theme.MLTheme, en pos del nuevo Theme.Base que favorece la agregacion haciendo que cada negocio lo implemente con sus propios items
