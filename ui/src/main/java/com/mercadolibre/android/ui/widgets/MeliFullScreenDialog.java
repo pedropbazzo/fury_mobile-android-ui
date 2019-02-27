@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.mercadolibre.android.ui.R;
-import com.mercadolibre.android.ui.widgets.MeliDialog;
 
 /**
  * Created by Mauro Rodriguez on 02/04/2019
