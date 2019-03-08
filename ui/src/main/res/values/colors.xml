@@ -30,6 +30,7 @@
     <color name="ui_components_android_color_primary_dark">#F5D315</color>
     <color name="ui_components_android_color_accent">@color/ui_meli_blue</color>
     <color name="ui_components_actionModeBackground">@color/ui_meli_yellow</color>
+    <color name="ui_components_action_bar_text_color">@color/ui_components_black_color</color>
 
 
     <!-- Meli Color palette -->

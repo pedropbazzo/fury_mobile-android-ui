@@ -1,5 +1,9 @@
-# v6.0.0
+# v5.11.0
 - Se agrega dialogo que se muestra en pantalla completa y con nuevo estilo
+
+# v5.10.0
+## Nuevo
+- Se agrega el color ui_components_action_bar_text_color a la paleta.
 
 # v5.9.0
 ## Nuevo
