@@ -130,12 +130,12 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
      * Sets the toolbar.
      */
     private void setUpToolbar() {
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
         Toolbar toolbar = root.findViewById(R.id.ui_melifullscreendialog_toolbar);
-        activity.setSupportActionBar(toolbar);
-        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        activity.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ui_ic_clear_fullscreen);
 
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        activity.setSupportActionBar(toolbar);
+
+        toolbar.setNavigationIcon(R.drawable.ui_ic_clear_fullscreen);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,7 +147,8 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
             }
         });
 
-        activity.setTitle(getTitle());
+
+        toolbar.setTitle(getTitle());
     }
 
     /**
