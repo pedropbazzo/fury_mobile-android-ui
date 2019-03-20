@@ -44,6 +44,9 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
         root = inflater.inflate(R.layout.ui_layout_melifullscreendialog, container, false);
         contentContainer = root.findViewById(R.id.ui_melidialog_content_container);
         setupView();
+        if (shouldAnimate()) {
+            getDialog().getWindow().getAttributes().windowAnimations = R.style.MeliFullscreenDialogAnimation;
+        }
 
         return root;
     }
@@ -104,6 +107,16 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
     }
 
     /**
+     * Override to avoid the dialog from animating when showed and dismissed.
+     * Dialogs are animated by default.
+     *
+     * @return {@code true} if the dialog should be animated, {@code false} otherwise.
+     */
+    public boolean shouldAnimate() {
+        return true;
+    }
+
+    /**
      * Sets the view up.
      */
     private void setupView() {
@@ -125,10 +138,10 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 final View.OnClickListener dismissListener = getOnDismissListener();
                 if (dismissListener != null) {
-                    dismissListener.onClick(null);
+                    dismissListener.onClick(view);
                 }
                 dismiss();
             }
