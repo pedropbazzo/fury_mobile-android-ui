@@ -42,7 +42,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
                                    @Nullable final ViewGroup container,
                                    @Nullable final Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.ui_layout_melifullscreendialog, container, false);
-        contentContainer = root.findViewById(R.id.ui_melidialog_content_container);
+        contentContainer = root.findViewById(R.id.ui_melifullscreendialog_content_container);
         setupView();
         if (shouldAnimate()) {
             getDialog().getWindow().getAttributes().windowAnimations = R.style.MeliFullscreenDialogAnimation;
@@ -72,7 +72,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
 
     /**
      * Override to set the secondary exit string.
-     * The secondary exit button won't be visible unless you override {@link MeliDialog#getSecondaryExitClickListener()} too.
+     * The secondary exit button won't be visible unless you override {@link MeliFullScreenDialog#getSecondaryExitClickListener()} too.
      *
      * @return A string to be set to the secondary exit button.
      */
@@ -84,7 +84,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
 
     /**
      * Override to set the secondary exit's click listener.
-     * The secondary exit button won't be visible unless you override {@link MeliDialog#getSecondaryExitString()} too.
+     * The secondary exit button won't be visible unless you override {@link MeliFullScreenDialog#getSecondaryExitString()} too.
      *
      * @return The secondary exit's OnClickListener.
      */
@@ -130,8 +130,8 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
      * Sets the toolbar.
      */
     private void setUpToolbar() {
-        Toolbar toolbar = root.findViewById(R.id.toolbar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
+        Toolbar toolbar = root.findViewById(R.id.ui_melifullscreendialog_toolbar);
         activity.setSupportActionBar(toolbar);
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         activity.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ui_ic_clear_fullscreen);
@@ -167,7 +167,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
      */
     private void setupSecondaryExitButton() {
         if (shouldShowSecondaryExit()) {
-            secondaryExitButton = root.findViewById(R.id.ui_melidialog_secondary_exit_button);
+            secondaryExitButton = root.findViewById(R.id.ui_melifullscreendialog_secondary_exit_button);
             secondaryExitButton.setText(getSecondaryExitString());
             secondaryExitButton.setOnClickListener(new View.OnClickListener() {
                 @Override

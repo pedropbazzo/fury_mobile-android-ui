@@ -19,7 +19,7 @@
             app:expandedTitleMarginStart="20dp"
             app:expandedTitleMarginEnd="64dp">
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/ui_melifullscreendialog_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:titleTextColor="@color/ui_meli_black"
@@ -40,14 +40,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <FrameLayout
-                android:id="@+id/ui_melidialog_content_container"
+                android:id="@+id/ui_melifullscreendialog_content_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/ui_components_white_color"
                 android:gravity="center"
                 android:orientation="vertical" />
             <Button
-                android:id="@+id/ui_melidialog_secondary_exit_button"
+                android:id="@+id/ui_melifullscreendialog_secondary_exit_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="?android:attr/borderlessButtonStyle"
