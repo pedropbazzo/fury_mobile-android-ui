@@ -129,7 +129,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
     /**
      * Sets the toolbar.
      */
-    private void setUpToolbar() {
+    protected void setUpToolbar() {
         Toolbar toolbar = root.findViewById(R.id.ui_melifullscreendialog_toolbar);
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
