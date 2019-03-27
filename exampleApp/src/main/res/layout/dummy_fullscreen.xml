@@ -43,4 +43,60 @@
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:background="@color/ui_meli_blue" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@color/ui_meli_black"
+        android:text="Grupo 4"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@color/ui_meli_blue" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@color/ui_meli_black"
+        android:text="Grupo 5"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@color/ui_meli_blue" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@color/ui_meli_black"
+        android:text="Grupo 6"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@color/ui_meli_blue" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@color/ui_meli_black"
+        android:text="Grupo 7"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@color/ui_meli_blue" />
 </LinearLayout>
