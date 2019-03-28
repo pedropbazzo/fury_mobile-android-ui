@@ -1,3 +1,7 @@
+# v5.10.1
+## Eliminado
+- Cosas de los build.gradle que están de más.
+
 # v5.10.0
 ## Nuevo
 - Se agrega el color ui_components_action_bar_text_color a la paleta.
