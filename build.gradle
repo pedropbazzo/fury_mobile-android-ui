@@ -23,5 +23,5 @@ allprojects {
 
 wrapper {
     gradleVersion = gradleWrapperVersion
-    distributionType = System.getenv('CI') ? Wrapper.DistributionType.BIN : Wrapper.DistributionType.ALL
+    distributionType = Wrapper.DistributionType.BIN
 }
