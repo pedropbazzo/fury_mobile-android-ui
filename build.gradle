@@ -1,16 +1,7 @@
-apply plugin: 'idea'
-
 buildscript {
     repositories {
         jcenter()
         google()
-        maven {
-            url "https://dl.bintray.com/mercadolibre/android-releases"
-            credentials {
-                username 'bintray-read-only'
-                password 'f8a81e46551b9e29af6b3bd449a96bddff58cbd7'
-            }
-        }
     }
 
     dependencies {
@@ -24,24 +15,10 @@ allprojects {
     repositories {
         jcenter()
         google()
-        maven {
-            url "https://dl.bintray.com/mercadolibre/android-releases"
-            credentials {
-                username 'bintray-read-only'
-                password 'f8a81e46551b9e29af6b3bd449a96bddff58cbd7'
-            }
-        }
     }
 
     group = libraryGroup
     version = libraryVersion
-}
-
-idea {
-    module {
-        downloadJavadoc = true
-        downloadSources = true
-    }
 }
 
 wrapper {
