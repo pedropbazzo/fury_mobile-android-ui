@@ -147,7 +147,6 @@ public abstract class FullScreenModal extends DialogFragment {
             }
         });
 
-
         toolbar.setTitle(getTitle());
     }
 
