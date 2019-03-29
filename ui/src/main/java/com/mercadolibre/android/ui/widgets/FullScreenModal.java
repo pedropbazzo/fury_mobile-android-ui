@@ -167,20 +167,22 @@ public abstract class FullScreenModal extends DialogFragment {
      * Sets the secondary exit button up.
      */
     private void setupSecondaryExitButton() {
-        if (shouldShowSecondaryExit()) {
-            secondaryExitButton = root.findViewById(R.id.ui_fullscreenmodal_secondary_exit_button);
-            secondaryExitButton.setText(getSecondaryExitString());
-            secondaryExitButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(final View v) {
-                    if (getSecondaryExitClickListener() != null) {
-                        getSecondaryExitClickListener().onClick(v);
-                        dismiss();
-                    }
-                }
-            });
-            secondaryExitButton.setVisibility(View.VISIBLE);
+        if (!shouldShowSecondaryExit()) {
+            return;
         }
+
+        secondaryExitButton = root.findViewById(R.id.ui_fullscreenmodal_secondary_exit_button);
+        secondaryExitButton.setText(getSecondaryExitString());
+        secondaryExitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                if (getSecondaryExitClickListener() != null) {
+                    getSecondaryExitClickListener().onClick(v);
+                    dismiss();
+                }
+            }
+        });
+        secondaryExitButton.setVisibility(View.VISIBLE);
     }
 
     /**
