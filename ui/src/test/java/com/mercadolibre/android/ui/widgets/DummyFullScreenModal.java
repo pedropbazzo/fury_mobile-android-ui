@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.mercadolibre.android.ui.R;
 
-public class DummyMeliFullScreenDialog extends MeliFullScreenDialog {
+public class DummyFullScreenModal extends FullScreenModal {
     public static final String TITLE = "Title";
     public static final String SECONDARY_EXIT = "Secondary exit";
 

@@ -9,7 +9,7 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
-    <style name="MeliDialogFullScreen" parent="Theme.MLTheme">
+    <style name="FullScreenModal" parent="Theme.MLTheme">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
@@ -24,8 +24,8 @@
         <item name="android:lineSpacingExtra">4sp</item>
     </style>
 
-    <style name="MeliFullscreenDialogAnimation">
-        <item name="android:windowEnterAnimation">@anim/ui_melifullscreendialog_in</item>
-        <item name="android:windowExitAnimation">@anim/ui_melifullscreendialog_out</item>
+    <style name="FullscreenModalAnimation">
+        <item name="android:windowEnterAnimation">@anim/ui_fullscreenmodal_in</item>
+        <item name="android:windowExitAnimation">@anim/ui_fullscreenmodal_out</item>
     </style>
 </resources>

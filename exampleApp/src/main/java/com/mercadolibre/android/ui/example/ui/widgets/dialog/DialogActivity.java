@@ -58,7 +58,7 @@ public class DialogActivity extends BaseActivity implements DummyInterface {
     public void showDialogFullScreen(View view) {
 
         final  FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        final DummyFullScreenDialog frag = new DummyFullScreenDialog();
+        final DummyFullScreenModal frag = new DummyFullScreenModal();
         frag.show(ft, TAG);
     }
 

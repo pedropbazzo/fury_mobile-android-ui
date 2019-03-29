@@ -21,7 +21,7 @@ import com.mercadolibre.android.ui.R;
 /**
  * Created by Mauro Rodriguez on 02/04/2019
  */
-public abstract class MeliFullScreenDialog extends DialogFragment {
+public abstract class FullScreenModal extends DialogFragment {
     private View root;
     private ViewGroup contentContainer;
     /* default */ Button secondaryExitButton;
@@ -31,7 +31,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setStyle(DialogFragment.STYLE_NORMAL, R.style.MeliDialogFullScreen);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.FullScreenModal);
     }
 
     /**
@@ -41,11 +41,11 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
     public final View onCreateView(@NonNull final LayoutInflater inflater,
                                    @Nullable final ViewGroup container,
                                    @Nullable final Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.ui_layout_melifullscreendialog, container, false);
-        contentContainer = root.findViewById(R.id.ui_melifullscreendialog_content_container);
+        root = inflater.inflate(R.layout.ui_layout_fullscreenmodal, container, false);
+        contentContainer = root.findViewById(R.id.ui_fullscreenmodal_content_container);
         setupView();
         if (shouldAnimate()) {
-            getDialog().getWindow().getAttributes().windowAnimations = R.style.MeliFullscreenDialogAnimation;
+            getDialog().getWindow().getAttributes().windowAnimations = R.style.FullscreenModalAnimation;
         }
 
         return root;
@@ -72,7 +72,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
 
     /**
      * Override to set the secondary exit string.
-     * The secondary exit button won't be visible unless you override {@link MeliFullScreenDialog#getSecondaryExitClickListener()} too.
+     * The secondary exit button won't be visible unless you override {@link FullScreenModal#getSecondaryExitClickListener()} too.
      *
      * @return A string to be set to the secondary exit button.
      */
@@ -84,7 +84,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
 
     /**
      * Override to set the secondary exit's click listener.
-     * The secondary exit button won't be visible unless you override {@link MeliFullScreenDialog#getSecondaryExitString()} too.
+     * The secondary exit button won't be visible unless you override {@link FullScreenModal#getSecondaryExitString()} too.
      *
      * @return The secondary exit's OnClickListener.
      */
@@ -130,7 +130,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
      * Sets the toolbar.
      */
     protected void setUpToolbar() {
-        Toolbar toolbar = root.findViewById(R.id.ui_melifullscreendialog_toolbar);
+        Toolbar toolbar = root.findViewById(R.id.ui_fullscreenmodal_toolbar);
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
@@ -168,7 +168,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
      */
     private void setupSecondaryExitButton() {
         if (shouldShowSecondaryExit()) {
-            secondaryExitButton = root.findViewById(R.id.ui_melifullscreendialog_secondary_exit_button);
+            secondaryExitButton = root.findViewById(R.id.ui_fullscreenmodal_secondary_exit_button);
             secondaryExitButton.setText(getSecondaryExitString());
             secondaryExitButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -226,7 +226,7 @@ public abstract class MeliFullScreenDialog extends DialogFragment {
 
     @Override
     public String toString() {
-        return "MeliFullScreenDialog{"
+        return "FullScreenModal{"
                 + "root=" + root
                 + ", contentContainer=" + contentContainer
                 + ", secondaryExitButton=" + secondaryExitButton

@@ -9,12 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
 import com.mercadolibre.android.ui.R;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
@@ -26,32 +24,32 @@ import static org.junit.Assert.*;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = Build.VERSION_CODES.LOLLIPOP)
-public class MeliFullScreenDialogTest {
-    private MeliFullScreenDialog meliFullScreenDialog;
+public class FullScreenModalTest {
+    private FullScreenModal fullScreenModal;
 
     private View root;
 
     @Before
     public void setUp() {
-        meliFullScreenDialog = new DummyMeliFullScreenDialog();
-        SupportFragmentTestUtil.startFragment(meliFullScreenDialog);
-        root = getRootView(meliFullScreenDialog);
+        fullScreenModal = new DummyFullScreenModal();
+        SupportFragmentTestUtil.startFragment(fullScreenModal);
+        root = getRootView(fullScreenModal);
     }
 
     @Test
     public void testNotNull() {
-        assertNotNull(meliFullScreenDialog);
-        assertNotNull(getRootView(meliFullScreenDialog));
+        assertNotNull(fullScreenModal);
+        assertNotNull(getRootView(fullScreenModal));
     }
 
     @Test
     public void testTitle() {
-        assertEquals(DummyMeliDialog.TITLE, meliFullScreenDialog.getTitle());
+        assertEquals(DummyMeliDialog.TITLE, fullScreenModal.getTitle());
     }
 
     @Test
     public void testSecondaryExit() {
-        final Button secondaryExit = root.findViewById(R.id.ui_melifullscreendialog_secondary_exit_button);
+        final Button secondaryExit = root.findViewById(R.id.ui_fullscreenmodal_secondary_exit_button);
         assertNotNull(secondaryExit);
         assertEquals(View.VISIBLE, secondaryExit.getVisibility());
         assertEquals(DummyMeliDialog.SECONDARY_EXIT, secondaryExit.getText().toString());
@@ -59,7 +57,7 @@ public class MeliFullScreenDialogTest {
 
     @Test
     public void testContentViewHierarchy() {
-        final ViewGroup contentContainer = root.findViewById(R.id.ui_melifullscreendialog_parent_container);
+        final ViewGroup contentContainer = root.findViewById(R.id.ui_fullscreenmodal_parent_container);
         assertNotNull(contentContainer);
         // Check toolbar
         final AppBarLayout appBarLayout = (AppBarLayout) contentContainer.getChildAt(0);
@@ -86,7 +84,7 @@ public class MeliFullScreenDialogTest {
         assertEquals(DummyMeliDialog.SECONDARY_EXIT, secondaryExit.getText().toString());
     }
 
-    private View getRootView(final MeliFullScreenDialog meliFullScreenDialog) {
-        return ReflectionHelpers.getField(meliFullScreenDialog, "root");
+    private View getRootView(final FullScreenModal fullScreenModal) {
+        return ReflectionHelpers.getField(fullScreenModal, "root");
     }
 }

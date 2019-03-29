@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.mercadolibre.android.ui.example.R;
-import com.mercadolibre.android.ui.widgets.MeliFullScreenDialog;
+import com.mercadolibre.android.ui.widgets.FullScreenModal;
 
-public class DummyFullScreenDialog extends MeliFullScreenDialog {
+public class DummyFullScreenModal extends FullScreenModal {
     @Override
     public int getContentView() {
         return R.layout.dummy_fullscreen;
