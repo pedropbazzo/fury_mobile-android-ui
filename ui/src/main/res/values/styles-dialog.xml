@@ -9,7 +9,7 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
-    <style name="FullScreenModal" parent="Theme.MLTheme">
+    <style name="FullScreenModal" parent="Theme.Base">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
