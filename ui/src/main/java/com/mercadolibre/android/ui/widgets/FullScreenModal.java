@@ -25,6 +25,7 @@ public abstract class FullScreenModal extends DialogFragment {
     private ViewGroup contentContainer;
     /* default */ Button secondaryExitButton;
     /* default */ View closeButton;
+    private final static String EMPTY = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -130,6 +131,7 @@ public abstract class FullScreenModal extends DialogFragment {
      */
     protected void setUpToolbar() {
         Toolbar toolbar = root.findViewById(R.id.ui_fullscreenmodal_toolbar);
+        toolbar.setTitle(EMPTY);
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
