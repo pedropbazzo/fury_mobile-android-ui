@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/ui_appbarlayout_fullscreenmodal_height"
+        android:layout_height="@dimen/ui_fullscreenmodal_appbarlayout_height"
         android:fitsSystemWindows="true">
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -17,8 +17,8 @@
             android:fitsSystemWindows="true"
             app:contentScrim="@color/ui_meli_white"
             app:expandedTitleTextAppearance="@style/ExpandedTitleAppearance"
-            app:expandedTitleMarginStart="@dimen/ui_toolbar_expanded_margin_start"
-            app:expandedTitleMarginEnd="@dimen/ui_toolbar_expanded_margin_end">
+            app:expandedTitleMarginStart="@dimen/ui_fullscreenmodal_toolbar_expanded_margin_start"
+            app:expandedTitleMarginEnd="@dimen/ui_fullscreenmodal_toolbar_expanded_margin_end">
             <android.support.v7.widget.Toolbar
                 android:id="@+id/ui_fullscreenmodal_toolbar"
                 android:layout_width="match_parent"
@@ -36,7 +36,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="@dimen/ui_content_fullscreenmodal_padding_bottom"
+            android:paddingBottom="@dimen/ui_fullscreenmodal_content_padding_bottom"
             android:orientation="vertical">
             <FrameLayout
                 android:id="@+id/ui_fullscreenmodal_content_container"
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="?android:attr/borderlessButtonStyle"
-                android:layout_marginTop="@dimen/ui_secondary_exit_fullscreenmodal_margin_top"
+                android:layout_marginTop="@dimen/ui_fullscreenmodal_secondary_exit_margin_top"
                 android:paddingLeft="18dp"
                 android:paddingStart="18dp"
                 android:paddingRight="18dp"

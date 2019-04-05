@@ -38,11 +38,11 @@
     <dimen name="ui_dialog_y_translation">30dp</dimen>
 
     <!-- FullScreenModal -->
-    <dimen name="ui_content_fullscreenmodal_padding_bottom">20dp</dimen>
-    <dimen name="ui_appbarlayout_fullscreenmodal_height">145dp</dimen>
-    <dimen name="ui_toolbar_expanded_margin_start">20dp</dimen>
-    <dimen name="ui_toolbar_expanded_margin_end">64dp</dimen>
-    <dimen name="ui_secondary_exit_fullscreenmodal_margin_top">16dp</dimen>
+    <dimen name="ui_fullscreenmodal_content_padding_bottom">20dp</dimen>
+    <dimen name="ui_fullscreenmodal_appbarlayout_height">145dp</dimen>
+    <dimen name="ui_fullscreenmodal_toolbar_expanded_margin_start">20dp</dimen>
+    <dimen name="ui_fullscreenmodal_toolbar_expanded_margin_end">64dp</dimen>
+    <dimen name="ui_fullscreenmodal_secondary_exit_margin_top">16dp</dimen>
 
     <!-- Snackbar -->
     <dimen name="ui_snackbar_text_linespacing">5dp</dimen>
