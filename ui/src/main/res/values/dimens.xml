@@ -90,4 +90,9 @@
     <dimen name="ui_8m">64dp</dimen>
     <dimen name="ui_9m">72dp</dimen>
     <dimen name="ui_10m">80dp</dimen>
+    <dimen name="ui_content_fullscreenmodal_padding_bottom">20dp</dimen>
+    <dimen name="ui_appbarlayout_fullscreenmodal_height">145dp</dimen>
+    <dimen name="ui_toolbar_expanded_margin_start">20dp</dimen>
+    <dimen name="ui_toolbar_expanded_margin_end">64dp</dimen>
+    <dimen name="ui_secondary_exit_fullscreenmodal_margin_top">16dp</dimen>
 </resources>
