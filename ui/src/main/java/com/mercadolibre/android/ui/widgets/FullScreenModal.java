@@ -1,6 +1,5 @@
 package com.mercadolibre.android.ui.widgets;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -210,19 +209,6 @@ public abstract class FullScreenModal extends DialogFragment {
                 return false;
             }
         });
-    }
-
-    @Override
-    public void onStart()
-    {
-        super.onStart();
-        Dialog dialog = getDialog();
-        if (dialog != null)
-        {
-            int width = ViewGroup.LayoutParams.MATCH_PARENT;
-            int height = ViewGroup.LayoutParams.MATCH_PARENT;
-            dialog.getWindow().setLayout(width, height);
-        }
     }
 
     @Override
