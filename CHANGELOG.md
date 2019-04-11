@@ -1,5 +1,11 @@
 # v5.11.0
+## Agregado
 - Se agrega dialogo que se muestra en pantalla completa y con nuevo estilo
+
+# v5.10.1
+## Arreglado
+- Se corrige el comportamiento del teclado cuando el componente `TextField` toma el foco.
+- Se corrige la reconstrución de la instancia del componente `TextField` cuando ocurre un cambio de configuración.
 
 # v5.10.0
 ## Nuevo
