@@ -1,6 +1,10 @@
 # v5.10.1
+
 ## Eliminado
 - Cosas de los build.gradle que están de más.
+## Arreglado
+- Se corrige el comportamiento del teclado cuando el componente `TextField` toma el foco.
+- Se corrige la reconstrución de la instancia del componente `TextField` cuando ocurre un cambio de configuración.
 
 # v5.10.0
 ## Nuevo
