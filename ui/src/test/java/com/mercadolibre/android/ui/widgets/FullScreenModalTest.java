@@ -85,6 +85,6 @@ public class FullScreenModalTest {
     }
 
     private View getRootView(final FullScreenModal fullScreenModal) {
-        return ReflectionHelpers.getField(fullScreenModal, "root");
+        return fullScreenModal.getView();
     }
 }
