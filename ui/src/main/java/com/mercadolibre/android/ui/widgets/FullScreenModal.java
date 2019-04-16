@@ -18,7 +18,10 @@ import android.widget.Button;
 import com.mercadolibre.android.ui.R;
 
 /**
- * Created by Mauro Rodriguez on 02/04/2019
+ * Base class for Meradolibre's full screen modals
+ *
+ * You can use this class to create full screen modals with a expansible toolbar, and set you custom content
+ * @since 02/04/2019
  */
 public abstract class FullScreenModal extends DialogFragment {
     private View root;
