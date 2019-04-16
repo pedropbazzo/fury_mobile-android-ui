@@ -17,7 +17,7 @@
         <item name="android:background">@color/ui_meli_white</item>
     </style>
 
-    <style name="ExpandedTitleAppearance">
+    <style name="FullScreenModalExpandedToolbarAppearance">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">#cc000000</item>
         <item name="android:textStyle">bold</item>

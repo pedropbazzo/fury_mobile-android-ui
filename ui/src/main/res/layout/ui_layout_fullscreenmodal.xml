@@ -16,7 +16,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:fitsSystemWindows="true"
             app:contentScrim="@color/ui_meli_white"
-            app:expandedTitleTextAppearance="@style/ExpandedTitleAppearance"
+            app:expandedTitleTextAppearance="@style/FullScreenModalExpandedToolbarAppearance"
             app:expandedTitleMarginStart="@dimen/ui_fullscreenmodal_toolbar_expanded_margin_start"
             app:expandedTitleMarginEnd="@dimen/ui_fullscreenmodal_toolbar_expanded_margin_end">
             <android.support.v7.widget.Toolbar
