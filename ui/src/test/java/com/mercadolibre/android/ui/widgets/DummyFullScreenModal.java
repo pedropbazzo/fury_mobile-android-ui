@@ -31,7 +31,7 @@ public class DummyFullScreenModal extends FullScreenModal {
     }
 
     @Override
-    protected void setUpToolbar() { /*Do nothing because AppCompatActivity its not supported by Robolectric Shadow's*/ }
+    protected void setUpToolbar(View root) { /*Do nothing because AppCompatActivity its not supported by Robolectric Shadow's*/ }
 
     @Override
     public View.OnClickListener getSecondaryExitClickListener() {
