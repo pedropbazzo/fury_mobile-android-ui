@@ -70,7 +70,7 @@ public abstract class FullScreenModal extends DialogFragment {
     @SuppressWarnings("PMD.EmptyMethodInAbstractClassShouldBeAbstract")
     @Nullable
     public String getTitle() {
-        return null;
+        return EMPTY_TITLE;
     }
 
     /**
