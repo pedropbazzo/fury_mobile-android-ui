@@ -24,6 +24,9 @@ import com.mercadolibre.android.ui.R;
  * @since 02/04/2019
  */
 public abstract class FullScreenModal extends DialogFragment {
+    /**
+     * contentContainer should have one child at most
+     */
     private ViewGroup contentContainer;
     /* default */ Button secondaryExitButton;
     /* default */ View closeButton;
@@ -162,7 +165,7 @@ public abstract class FullScreenModal extends DialogFragment {
      */
     private void setupContentView() {
         final int contentView = getContentView();
-        if (contentView <= 0) {
+        if (contentView <= 0 || contentContainer.getChildCount() > 0) {
             return;
         }
         final View content = LayoutInflater.from(getActivity()).inflate(contentView, contentContainer, false);
