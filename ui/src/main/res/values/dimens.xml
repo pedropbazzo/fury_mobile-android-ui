@@ -43,6 +43,7 @@
     <dimen name="ui_fullscreenmodal_toolbar_expanded_margin_start">20dp</dimen>
     <dimen name="ui_fullscreenmodal_toolbar_expanded_margin_end">64dp</dimen>
     <dimen name="ui_fullscreenmodal_secondary_exit_margin_top">16dp</dimen>
+    <dimen name="ui_fullscreenmodal_secondary_internal_padding">18dp</dimen>
 
     <!-- Snackbar -->
     <dimen name="ui_snackbar_text_linespacing">5dp</dimen>
