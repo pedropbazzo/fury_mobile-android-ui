@@ -24,7 +24,6 @@ import com.mercadolibre.android.ui.R;
  * @since 02/04/2019
  */
 public abstract class FullScreenModal extends DialogFragment {
-    private View root;
     private ViewGroup contentContainer;
     /* default */ Button secondaryExitButton;
     /* default */ View closeButton;
@@ -44,9 +43,9 @@ public abstract class FullScreenModal extends DialogFragment {
     public final View onCreateView(@NonNull final LayoutInflater inflater,
                                    @Nullable final ViewGroup container,
                                    @Nullable final Bundle savedInstanceState) {
-        root = inflater.inflate(R.layout.ui_layout_fullscreenmodal, container, false);
+        View root = inflater.inflate(R.layout.ui_layout_fullscreenmodal, container, false);
         contentContainer = root.findViewById(R.id.ui_fullscreenmodal_content_container);
-        setupView();
+        setupView(root);
         if (shouldAnimate()) {
             getDialog().getWindow().getAttributes().windowAnimations = R.style.FullscreenModalAnimation;
         }
@@ -122,17 +121,17 @@ public abstract class FullScreenModal extends DialogFragment {
     /**
      * Sets the view up.
      */
-    private void setupView() {
-        setUpToolbar();
+    private void setupView(View root) {
+        setUpToolbar(root);
         setupAnimationOnBackPressed();
-        setupSecondaryExitButton();
+        setupSecondaryExitButton(root);
         setupContentView();
     }
 
     /**
      * Sets the toolbar.
      */
-    protected void setUpToolbar() {
+    protected void setUpToolbar(View root) {
         if (!(getActivity() instanceof AppCompatActivity)) {
             throw new IllegalArgumentException("Context must extend from AppCompatActivity");
         }
@@ -173,7 +172,7 @@ public abstract class FullScreenModal extends DialogFragment {
     /**
      * Sets the secondary exit button up.
      */
-    private void setupSecondaryExitButton() {
+    private void setupSecondaryExitButton(View root) {
         secondaryExitButton = root.findViewById(R.id.ui_fullscreenmodal_secondary_exit_button);
 
         if (!shouldShowSecondaryExit()) {
@@ -225,7 +224,6 @@ public abstract class FullScreenModal extends DialogFragment {
     @Override
     public String toString() {
         return "FullScreenModal{"
-                + "root=" + root
                 + ", contentContainer=" + contentContainer
                 + ", secondaryExitButton=" + secondaryExitButton
                 + ", closeButton=" + closeButton
