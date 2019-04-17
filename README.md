@@ -36,3 +36,10 @@ Interesting links and examples of how to integrate the new Material Design in an
 
 ## Color palette
 Check out the [wiki](https://github.com/mercadolibre/fury_mobile-android-ui/wiki/Color-Palette) for the color palette.
+
+
+## How to make a local publish
+```
+./gradlew build publishToMavenLocal
+```
+Pro tip: first change the version name in ```gradle.properties``` to ```X.XX.X-LOCAL```

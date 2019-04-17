@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ui_fullscreenmodal_parent_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_fullscreenmodal_appbarlayout_height"
+        android:fitsSystemWindows="true">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/ui_meli_white"
+            app:expandedTitleTextAppearance="@style/FullScreenModalExpandedToolbarAppearance"
+            app:expandedTitleMarginStart="@dimen/ui_fullscreenmodal_toolbar_expanded_margin_start"
+            app:expandedTitleMarginEnd="@dimen/ui_fullscreenmodal_toolbar_expanded_margin_end">
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/ui_fullscreenmodal_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:titleTextColor="@color/ui_meli_black"
+                app:theme="@style/ToolBarTheme.ToolBarStyle"
+                app:layout_collapseMode="pin"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/ui_fullscreenmodal_content_padding_bottom"
+            android:orientation="vertical">
+            <FrameLayout
+                android:id="@+id/ui_fullscreenmodal_content_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ui_components_white_color"
+                android:gravity="center"
+                android:orientation="vertical" />
+            <Button
+                android:id="@+id/ui_fullscreenmodal_secondary_exit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_marginTop="@dimen/ui_fullscreenmodal_secondary_exit_margin_top"
+                android:paddingLeft="@dimen/ui_fullscreenmodal_secondary_internal_padding"
+                android:paddingStart="@dimen/ui_fullscreenmodal_secondary_internal_padding"
+                android:paddingRight="@dimen/ui_fullscreenmodal_secondary_internal_padding"
+                android:paddingEnd="@dimen/ui_fullscreenmodal_secondary_internal_padding"
+                android:gravity="start"
+                android:textSize="@dimen/ui_fontsize_small"
+                android:textAppearance="@style/MLFont.Regular"
+                android:textColor="@color/ui_meli_blue"
+                android:lineSpacingExtra="2sp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

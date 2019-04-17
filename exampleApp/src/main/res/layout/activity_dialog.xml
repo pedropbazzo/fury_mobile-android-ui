@@ -50,4 +50,12 @@
         android:onClick="showDialogWithListNoTitle"
         android:text="Dialog with list and no title" />
 
+    <Button
+        style="@style/Button.Action.Primary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:onClick="showDialogFullScreen"
+        android:text="Dialog full screen" />
+
 </LinearLayout>
