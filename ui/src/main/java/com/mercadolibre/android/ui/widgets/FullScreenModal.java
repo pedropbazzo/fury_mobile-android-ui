@@ -1,5 +1,6 @@
 package com.mercadolibre.android.ui.widgets;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -54,6 +55,14 @@ public abstract class FullScreenModal extends DialogFragment {
         }
 
         return root;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (!(context instanceof AppCompatActivity)) {
+            throw new IllegalArgumentException("Context must extend from AppCompatActivity");
+        }
     }
 
     /**
