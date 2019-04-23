@@ -34,7 +34,9 @@ public class DialogAnimationManager implements DialogAnimationEvents {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    dialogFragment.getDialog().getWindow().setWindowAnimations(R.style.FullscreenModalAnimation);
+                    if (dialogFragment.getDialog() != null) {
+                        dialogFragment.getDialog().getWindow().setWindowAnimations(R.style.FullscreenModalAnimation);
+                    }
                 }
             }, animationDuration);
         }
