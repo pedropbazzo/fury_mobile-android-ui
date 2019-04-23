@@ -19,11 +19,17 @@ public class DialogDialogAnimationManager implements DialogAnimationEvents {
         this.animationDuration = animationDuration;
     }
 
+    /**
+     * Sets the animation
+     */
     @Override
     public void onCreateView() {
         dialogFragment.getDialog().getWindow().setWindowAnimations(animations);
     }
 
+    /**
+     * Waits until the animation ends to set the new animation
+     */
     @Override
     public void onResume() {
         if (dialogFragment.getDialog() != null) {
@@ -36,6 +42,9 @@ public class DialogDialogAnimationManager implements DialogAnimationEvents {
         }
     }
 
+    /**
+     * Sets a default animation to prevent animate when stopping the app
+     */
     @Override
     public void onStop() {
         if (dialogFragment.getDialog() != null) {
