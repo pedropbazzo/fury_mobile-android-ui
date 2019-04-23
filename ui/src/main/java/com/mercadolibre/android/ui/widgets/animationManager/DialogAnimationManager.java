@@ -7,6 +7,10 @@ import android.support.v4.app.DialogFragment;
 
 import com.mercadolibre.android.ui.R;
 
+/**
+ * Enables or disables the animations of a DialogFragment
+ * @since 23/04/2019
+ */
 public class DialogAnimationManager implements DialogAnimationEvents {
     /* default */ final DialogFragment dialogFragment;
     private final int animations;
