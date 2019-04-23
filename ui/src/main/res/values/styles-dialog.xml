@@ -19,7 +19,7 @@
 
     <style name="FullScreenModalExpandedToolbarAppearance">
         <item name="android:textSize">@dimen/ui_fontsize_xlarge</item>
-        <item name="android:textColor">#cc000000</item>
+        <item name="android:textColor">@color/ui_fullscreenmodal_toolbar_text_color</item>
         <item name="android:textStyle">bold</item>
         <item name="android:lineSpacingExtra">4sp</item>
     </style>

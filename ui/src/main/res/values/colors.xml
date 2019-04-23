@@ -62,5 +62,6 @@
     <color name="ui_option_button_text_disabled">#4D333333</color>
     <color name="ui_action_button_default">#3483FA</color>
     <color name="ui_contextual_menu_background_color">#80000000</color>
+    <color name="ui_fullscreenmodal_toolbar_text_color">#cc000000</color>
 
 </resources>
