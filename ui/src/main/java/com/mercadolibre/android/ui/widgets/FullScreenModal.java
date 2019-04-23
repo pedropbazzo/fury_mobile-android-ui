@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.mercadolibre.android.ui.R;
-import com.mercadolibre.android.ui.widgets.animationManager.DialogDialogAnimationManager;
+import com.mercadolibre.android.ui.widgets.animationManager.DialogAnimationManager;
 
 /**
  * Base class for Meradolibre's full screen modals
@@ -32,7 +32,7 @@ public abstract class FullScreenModal extends DialogFragment {
     private ViewGroup contentContainer;
     /* default */ Button secondaryExitButton;
     /* default */ View closeButton;
-    private DialogDialogAnimationManager dialogAnimationManager;
+    private DialogAnimationManager dialogAnimationManager;
     private final static String EMPTY_TITLE = "";
 
     @Override
@@ -51,7 +51,7 @@ public abstract class FullScreenModal extends DialogFragment {
                                    @Nullable final Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.ui_layout_fullscreenmodal, container, false);
         contentContainer = root.findViewById(R.id.ui_fullscreenmodal_content_container);
-        dialogAnimationManager = new DialogDialogAnimationManager(this, R.style.FullscreenModalAnimation, getContext().getResources().getInteger(R.integer.ui_anim_time));
+        dialogAnimationManager = new DialogAnimationManager(this, R.style.FullscreenModalAnimation, getContext().getResources().getInteger(R.integer.ui_anim_time));
         setupView(root);
         if (shouldAnimate()) {
             dialogAnimationManager.onCreateView();
