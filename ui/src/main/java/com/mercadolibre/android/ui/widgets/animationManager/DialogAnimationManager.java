@@ -8,7 +8,7 @@ import android.support.v4.app.DialogFragment;
 import com.mercadolibre.android.ui.R;
 
 public class DialogAnimationManager implements DialogAnimationEvents {
-    /* package */ final DialogFragment dialogFragment;
+    /* default */ final DialogFragment dialogFragment;
     private final int animations;
     private final int animationDuration;
     private static final int defaultAnimation = R.style.DefaultModalAnimation;
