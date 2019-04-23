@@ -54,7 +54,7 @@ public abstract class FullScreenModal extends DialogFragment {
         dialogAnimationManager = new DialogAnimationManager(this, R.style.FullscreenModalAnimation, getContext().getResources().getInteger(R.integer.ui_anim_time));
         setupView(root);
         if (shouldAnimate()) {
-            dialogAnimationManager.onCreateView();
+            dialogAnimationManager.enableAnimations();
         }
 
         return root;
@@ -65,7 +65,7 @@ public abstract class FullScreenModal extends DialogFragment {
         super.onStop();
 
         if (shouldAnimate()) {
-            dialogAnimationManager.onStop();
+            dialogAnimationManager.disableAnimations();
         }
     }
 
@@ -74,7 +74,7 @@ public abstract class FullScreenModal extends DialogFragment {
         super.onResume();
 
         if (shouldAnimate()) {
-            dialogAnimationManager.onResume();
+            dialogAnimationManager.restoreAnimations();
         }
     }
 
