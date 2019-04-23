@@ -51,7 +51,7 @@ public abstract class FullScreenModal extends DialogFragment {
                                    @Nullable final Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.ui_layout_fullscreenmodal, container, false);
         contentContainer = root.findViewById(R.id.ui_fullscreenmodal_content_container);
-        dialogAnimationManager = new DialogAnimationManager(this, R.style.FullscreenModalAnimation, getContext().getResources().getInteger(R.integer.ui_anim_time));
+        dialogAnimationManager = new DialogAnimationManager(this, R.style.FullscreenModalAnimation, getContext().getResources().getInteger(R.integer.ui_fullscreenmodal_anim_time));
         setupView(root);
         if (shouldAnimate()) {
             dialogAnimationManager.enableAnimations();
