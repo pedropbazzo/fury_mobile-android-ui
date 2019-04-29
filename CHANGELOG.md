@@ -3,7 +3,6 @@
 - Se agrega dialogo que se muestra en pantalla completa y con nuevo estilo
 
 # v5.10.1
-
 ## Eliminado
 - Cosas de los build.gradle que están de más.
 ## Arreglado
