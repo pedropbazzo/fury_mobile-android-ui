@@ -1,3 +1,7 @@
+# v5.12.0
+## Cambiado
+- Se actualiza la lib de fresco 1.13.0.
+
 # v5.11.0
 ## Agregado
 - Se agrega dialogo que se muestra en pantalla completa y con nuevo estilo
