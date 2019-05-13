@@ -25,7 +25,7 @@ import static org.junit.Assert.fail;
 public class EnableStateTest {
 
     @BeforeClass
-    public static void before() {
+    public static void beforeClass() {
         SoLoader.setInTestMode();
     }
 
