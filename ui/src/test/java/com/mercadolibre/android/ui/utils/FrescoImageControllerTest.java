@@ -10,10 +10,12 @@ import com.facebook.drawee.view.DraweeView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.common.RotationOptions;
 import com.facebook.imagepipeline.image.ImageInfo;
+import com.facebook.soloader.SoLoader;
 import com.mercadolibre.android.ui.utils.facebook.fresco.FrescoImageController;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
@@ -25,6 +27,11 @@ import java.io.File;
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class FrescoImageControllerTest {
+
+    @BeforeClass
+    public static void before() {
+        SoLoader.setInTestMode();
+    }
 
     @Before
     public void setUp() {
