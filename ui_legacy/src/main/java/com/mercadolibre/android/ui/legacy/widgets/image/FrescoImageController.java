@@ -17,7 +17,6 @@ import com.facebook.imagepipeline.common.RotationOptions;
 import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
-import com.facebook.imagepipeline.request.MediaVariations;
 import com.facebook.imagepipeline.request.Postprocessor;
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -47,7 +46,6 @@ class FrescoImageController {
     private final @NonNull FrescoControllerListener frescoCallback;
 
     private final @NonNull Uri uri;
-    private final @Nullable MediaVariations mediaVariations;
     private final @Nullable Priority priority;
 
     private final @Nullable ResizeOptions resizeOptions;
@@ -76,10 +74,9 @@ class FrescoImageController {
         boolean noCache, boolean noDiskCache, boolean noMemoryCache,
         boolean autoPlayAnimations,
         @Nullable ImageRequest.CacheChoice cacheChoice, @Nullable Priority priority,
-        @Nullable RotationOptions rotationOptions, @Nullable MediaVariations mediaVariations) {
+        @Nullable RotationOptions rotationOptions) {
         this.view = new WeakReference<>(view);
         this.uri = uri;
-        this.mediaVariations = mediaVariations;
         this.priority = priority;
 
         this.resizeOptions = resizeOpt;
@@ -125,10 +122,6 @@ class FrescoImageController {
 
         if (rotationOptions != null) {
             request.setRotationOptions(rotationOptions);
-        }
-
-        if (mediaVariations != null) {
-            request.setMediaVariations(mediaVariations);
         }
 
         if (decodeOptions != null) {
@@ -195,14 +188,6 @@ class FrescoImageController {
     @Nullable
     public Postprocessor getPostprocessor() {
         return postprocessor;
-    }
-
-    /**
-     * @return media variations of the uri provided
-     */
-    @Nullable
-    public MediaVariations getMediaVariations() {
-        return mediaVariations;
     }
 
     /**
@@ -347,10 +332,6 @@ class FrescoImageController {
             builder.noMemoryCache();
         }
 
-        if (getMediaVariations() != null) {
-            builder.mediaVariations(getMediaVariations());
-        }
-
         if (getRotationOptions() != null) {
             builder.rotationOptions(getRotationOptions());
         }
@@ -392,7 +373,6 @@ class FrescoImageController {
             "view=" + view +
             ", frescoCallback=" + frescoCallback +
             ", uri=" + uri +
-            ", mediaVariations=" + mediaVariations +
             ", priority=" + priority +
             ", resizeOptions=" + resizeOptions +
             ", rotationOptions=" + rotationOptions +
@@ -421,7 +401,6 @@ class FrescoImageController {
         private @Nullable RotationOptions rotationOptions = RotationOptions.autoRotate();
         private @Nullable ImageRequest.CacheChoice cacheChoice;
         private @Nullable Priority priority;
-        private @Nullable MediaVariations mediaVariations;
         private boolean tapToRetry;
         private boolean progressiveRendering;
         private boolean localThumbnailPreview;
@@ -584,20 +563,6 @@ class FrescoImageController {
         }
 
         /**
-         * When having multiple uris that reference a single image but with different dimensions,
-         * you can set a media variations for all the variants that if you have already cached
-         * a different sized image (of the same variant), when loading a new one instead of downloading
-         * it, it will just retrieve the other and onRender it for the new size.
-         *
-         * @param mediaVariations variations
-         * @return Builder
-         */
-        public @NonNull Builder mediaVariations(@NonNull MediaVariations mediaVariations) {
-            this.mediaVariations = mediaVariations;
-            return this;
-        }
-
-        /**
          * Priority for the rendering of the image (for higher priorities, it will be picked faster from the
          * queue for rendering)
          *
@@ -753,7 +718,7 @@ class FrescoImageController {
                 noCache, noDiskCache, noMemoryCache,
                 autoPlayAnimations,
                 cacheChoice, priority,
-                rotationOptions, mediaVariations);
+                rotationOptions);
         }
 
         @Override
@@ -766,7 +731,6 @@ class FrescoImageController {
                 ", rotationOptions=" + rotationOptions +
                 ", cacheChoice=" + cacheChoice +
                 ", priority=" + priority +
-                ", mediaVariations=" + mediaVariations +
                 ", tapToRetry=" + tapToRetry +
                 ", progressiveRendering=" + progressiveRendering +
                 ", localThumbnailPreview=" + localThumbnailPreview +
