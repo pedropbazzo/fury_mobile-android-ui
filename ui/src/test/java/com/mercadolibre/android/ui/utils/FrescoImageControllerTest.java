@@ -29,7 +29,7 @@ import java.io.File;
 public class FrescoImageControllerTest {
 
     @BeforeClass
-    public static void before() {
+    public static void beforeClass() {
         SoLoader.setInTestMode();
     }
 

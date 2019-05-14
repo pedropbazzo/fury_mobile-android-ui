@@ -26,7 +26,7 @@ import static org.junit.Assert.fail;
 public class FocusStateTest {
 
     @BeforeClass
-    public static void before() {
+    public static void beforeClass() {
         SoLoader.setInTestMode();
     }
 
