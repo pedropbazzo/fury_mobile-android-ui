@@ -1,4 +1,4 @@
-package com.mercadolibre.android.ui.widgets.animationManager;
+package com.mercadolibre.android.ui.widgets.animationmanager;
 
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -15,7 +15,7 @@ public class DialogAnimationManager implements DialogAnimationEvents {
     /* default */ final DialogFragment dialogFragment;
     private final int animations;
     private final int animationDuration;
-    private static final int defaultAnimation = R.style.DefaultModalAnimation;
+    private static final int DEFAULT_ANIMATION = R.style.DefaultModalAnimation;
 
     public DialogAnimationManager(@NonNull DialogFragment dialogFragment, @StyleRes int animations, int animationDuration) {
         this.dialogFragment = dialogFragment;
@@ -48,7 +48,7 @@ public class DialogAnimationManager implements DialogAnimationEvents {
     @Override
     public void disableAnimations() {
         if (dialogFragment.getDialog() != null) {
-            dialogFragment.getDialog().getWindow().setWindowAnimations(defaultAnimation);
+            dialogFragment.getDialog().getWindow().setWindowAnimations(DEFAULT_ANIMATION);
         }
     }
 }

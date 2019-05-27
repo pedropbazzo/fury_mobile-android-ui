@@ -25,6 +25,7 @@ import java.lang.annotation.RetentionPolicy;
  *
  * @since 28/4/16
  */
+@SuppressWarnings("PMD.LinguisticNaming")
 public class MeliSpinner extends FrameLayout {
 
     /* default */ static final float INVISIBLE = 0f;

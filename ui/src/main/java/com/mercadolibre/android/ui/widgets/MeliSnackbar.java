@@ -33,6 +33,7 @@ import static com.mercadolibre.android.ui.widgets.MeliSnackbar.Type.SUCCESS;
  *
  * @since 24/2/16.
  */
+@SuppressWarnings("PMD.LinguisticNaming")
 public final class MeliSnackbar {
 
     private final Snackbar snackbar;

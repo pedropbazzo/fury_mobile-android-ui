@@ -1,3 +1,9 @@
+# v6.0.0
+## Cambiado
+- Se sube el min API level al que usamos (16)
+- Actualización de dependencias
+- Actualización de Gradle 4.10.3
+
 # v5.11.0
 ## Agregado
 - Se agrega dialogo que se muestra en pantalla completa y con nuevo estilo

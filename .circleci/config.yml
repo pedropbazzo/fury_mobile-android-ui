@@ -6,8 +6,7 @@
 default: &defaultJob
   # The docker image all jobs that inherit from us will have (Which should be all of them)
   docker:
-      - image: circleci/android:api-27-alpha
-  resource_class: medium+
+      - image: circleci/android:api-28
 
 ##
 # We define a job for building. This job will be in charge of running:
@@ -22,9 +21,12 @@ build-job: &buildJob
       # Checkout to our repo and add the ssh keys for doing git stuff
       - checkout
       - add_ssh_keys
-      # Restore the cache if a hashed build.gradle is found as key
       - restore_cache:
-          key: jars-{{ checksum  "build.gradle" }}
+          key: buildscript-{{ checksum "build.gradle" }}
+      - restore_cache:
+          key: gradlew-{{ checksum "./gradle/wrapper/gradle-wrapper.properties" }}
+      - restore_cache:
+          key: dependencies-{{ checksum "exampleApp/build.gradle" }-{{ checksum "ui/build.gradle" }}-{{ checksum "ui_legacy/build.gradle" }}
       - run:
           name: Run Code Analysis
           command: ./gradlew $MODULE:check -x test
@@ -41,7 +43,16 @@ build-job: &buildJob
       - save_cache:
           paths:
           - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}
+          key: buildscript-{{ checksum "build.gradle" }}
+      - save_cache:
+          paths:
+          - ./gradle
+          key: gradlew-{{ checksum "./gradle/wrapper/gradle-wrapper.properties" }}
+      - save_cache:
+          paths:
+          - ./.gradle
+          - ~/.android/build-cache/
+          key: dependencies-{{ checksum "exampleApp/build.gradle" }-{{ checksum "ui/build.gradle" }}-{{ checksum "ui_legacy/build.gradle" }}
 ##
 # We define a job for deploying. This job will be in charge of running:
 # - Run deploy of a lib as release
@@ -52,9 +63,6 @@ deploy-release-job: &deployReleaseJob
       # Checkout to our repo and add the ssh keys for doing git stuff
       - checkout
       - add_ssh_keys
-      # Restore the cache if a hashed build.gradle is found as key
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}
       - run:
           name: Run Deploy
           command: ./gradlew assemble bintrayUpload
