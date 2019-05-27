@@ -4,6 +4,7 @@
 - Actualización de dependencias
 - Actualización de Gradle 4.10.3
 - Se cambia el package de `com.mercadolibre.android.ui.widgets.animationManager` a `com.mercadolibre.android.ui.widgets.animationmanager` por un lint de PMD
+- Migración a API 28 y Support Library 28.0.0
 
 # v5.11.0
 ## Agregado
