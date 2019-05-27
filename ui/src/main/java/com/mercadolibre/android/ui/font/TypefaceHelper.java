@@ -40,6 +40,7 @@ public final class TypefaceHelper {
             }
 
             @Override
+            @SuppressWarnings("PMD.LinguisticNaming")
             public void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
                 final Typeface typeface = createTypeface(context, font);
 
@@ -101,6 +102,7 @@ public final class TypefaceHelper {
      * @param font to retrieve its typeface
      * @param fontCallback to call when the typeface is retrieved
      */
+    @SuppressWarnings("PMD.LinguisticNaming")
     public static void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
         typefaceSetter.getTypeface(context, font, fontCallback);
     }
@@ -134,6 +136,7 @@ public final class TypefaceHelper {
          * @param font to retrieve its typeface
          * @param fontCallback to call when the typeface is retrieved
          */
+        @SuppressWarnings("PMD.LinguisticNaming")
         void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback);
 
     }

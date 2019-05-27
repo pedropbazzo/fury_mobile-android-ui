@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.mercadolibre.android.ui.R;
-import com.mercadolibre.android.ui.widgets.animationManager.DialogAnimationManager;
+import com.mercadolibre.android.ui.widgets.animationmanager.DialogAnimationManager;
 
 /**
  * Base class for Meradolibre's full screen modals

@@ -89,7 +89,7 @@ public final class ContextualMenuOption extends LinearLayout {
      * @param color the color
      */
     public void setFillColor(final int color) {
-        final GradientDrawable background = ((GradientDrawable) image.getBackground());
+        final GradientDrawable background = (GradientDrawable) image.getBackground();
         background.setColor(color);
     }
 
