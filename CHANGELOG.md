@@ -3,6 +3,7 @@
 - Se sube el min API level al que usamos (16)
 - Actualización de dependencias
 - Actualización de Gradle 4.10.3
+- Se cambia el package de `com.mercadolibre.android.ui.widgets.animationManager` a `com.mercadolibre.android.ui.widgets.animationmanager` por un lint de PMD
 
 # v5.11.0
 ## Agregado
