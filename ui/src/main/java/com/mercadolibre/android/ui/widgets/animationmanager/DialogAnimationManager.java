@@ -1,4 +1,4 @@
-package com.mercadolibre.android.ui.widgets.animationManager;
+package com.mercadolibre.android.ui.widgets.animationmanager;
 
 import android.os.Handler;
 import android.support.annotation.NonNull;
