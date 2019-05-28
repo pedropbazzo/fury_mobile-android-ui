@@ -28,6 +28,6 @@ allprojects {
     }
 
     // It's our convention to keep all modules in the same GitHub repository with the same group and version.
-    group = libraryGroup
+    group = libraryGroupId
     version = libraryVersion
 }
