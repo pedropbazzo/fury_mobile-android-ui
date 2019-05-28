@@ -1,3 +1,8 @@
+# v6.0.1
+## Cambiado
+- Downgraded Bintray Plugin version.
+- Downgraded Gradle version.
+
 # v6.0.0
 ## Cambiado
 - Se sube el min API level al que usamos (16)
