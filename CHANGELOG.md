@@ -1,3 +1,10 @@
+# v6.0.2
+## Cambiado
+- MeliSpinner autostart attr deprecado.
+- MeliSpinner.start() y MeliSpinner.stop deprecado.
+- MeliSpinner controla ciclo de animacion basandose en onAttachedToWindow / onDetachedFromWindow
+- LoadingSpinner ahora solo agrega listener de animations cuando se va ejecutar la animacion y no en su constructor para prevenir leaks de memoria.
+
 # v6.0.1
 ## Cambiado
 - Downgraded Bintray Plugin version.
@@ -16,7 +23,6 @@
 - Se agrega dialogo que se muestra en pantalla completa y con nuevo estilo
 
 # v5.10.1
-
 ## Eliminado
 - Cosas de los build.gradle que están de más.
 ## Arreglado
