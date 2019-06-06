@@ -98,12 +98,16 @@ public class MeliSpinner extends FrameLayout {
             setSpinnerMode(mode);
         }
 
-        final boolean autostart = a.getBoolean(R.styleable.MeliSpinner_autostart, true);
-
         a.recycle();
-        if (autostart) {
-            start();
-        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void onAttachedToWindow() {
+        spinner.onStart();
+        super.onAttachedToWindow();
     }
 
     /**
@@ -111,7 +115,7 @@ public class MeliSpinner extends FrameLayout {
      */
     @Override
     protected void onDetachedFromWindow() {
-        stop();
+        spinner.onStop();
         super.onDetachedFromWindow();
     }
 
@@ -170,16 +174,18 @@ public class MeliSpinner extends FrameLayout {
 
     /**
      * Starts the spinner.
+     * @deprecated No longer necessary. Spinner start/stop automatically.
      */
+    @Deprecated
     public void start() {
-        spinner.onStart();
     }
 
     /**
      * Stops the spinner.
+     * @deprecated No longer necessary. Spinner start/stop automatically.
      */
+    @Deprecated
     public void stop() {
-        spinner.onStop();
     }
 
     private void configureSpinner(@ColorRes final int primaryColor, @ColorRes final int secondaryColor) {

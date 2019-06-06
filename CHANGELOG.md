@@ -1,3 +1,23 @@
+# v6.0.2
+## Cambiado
+- MeliSpinner autostart attr deprecado.
+- MeliSpinner.start() y MeliSpinner.stop deprecado.
+- MeliSpinner controla ciclo de animacion basandose en onAttachedToWindow / onDetachedFromWindow
+- LoadingSpinner ahora solo agrega listener de animations cuando se va ejecutar la animacion y no en su constructor para prevenir leaks de memoria.
+
+# v6.0.1
+## Cambiado
+- Downgraded Bintray Plugin version.
+- Downgraded Gradle version.r
+
+# v6.0.0
+## Cambiado
+- Se sube el min API level al que usamos (16)
+- Actualización de dependencias
+- Actualización de Gradle 4.10.3
+- Se cambia el package de `com.mercadolibre.android.ui.widgets.animationManager` a `com.mercadolibre.android.ui.widgets.animationmanager` por un lint de PMD
+- Migración a API 28 y Support Library 28.0.0
+
 # v6.0.1
 ## Cambiado
 - Downgraded Bintray Plugin version.
@@ -16,7 +36,6 @@
 - Se agrega dialogo que se muestra en pantalla completa y con nuevo estilo
 
 # v5.10.1
-
 ## Eliminado
 - Cosas de los build.gradle que están de más.
 ## Arreglado
