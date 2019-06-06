@@ -178,6 +178,8 @@ public class MeliSpinner extends FrameLayout {
      */
     @Deprecated
     public void start() {
+        // Start is automatic since 6.0.2
+        // Method only maintained for retro compatibility
     }
 
     /**
@@ -186,6 +188,8 @@ public class MeliSpinner extends FrameLayout {
      */
     @Deprecated
     public void stop() {
+        // Stop is automatic since 6.0.2
+        // Method only maintained for retro compatibility
     }
 
     private void configureSpinner(@ColorRes final int primaryColor, @ColorRes final int secondaryColor) {
