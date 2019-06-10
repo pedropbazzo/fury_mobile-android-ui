@@ -29,8 +29,8 @@ import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -412,9 +412,8 @@ public final class TextField extends LinearLayout {
                 .findViewById(android.support.design.R.id.textinput_error);
 
         TypefaceHelper.setTypeface(errorView, Font.SEMI_BOLD);
-        final LinearLayout.LayoutParams errorViewParams =
-                new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT);
+        final FrameLayout.LayoutParams errorViewParams =
+                new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
         errorViewParams.gravity = textAlign;
         errorView.setGravity(textAlign);
         errorView.setLayoutParams(errorViewParams);
@@ -873,10 +872,12 @@ public final class TextField extends LinearLayout {
 
         public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
 
+            @Override
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
 
+            @Override
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

@@ -183,7 +183,7 @@ public class TextFieldTest {
     @Test
     public void testSetHint_withLabelNotSet_shouldSetItToTheContainer() {
         textField.setHint("A hint");
-        assertNull(editText.getHint());
+        assertNotNull(editText.getHint());
 
         assertTrue(container.isHintAnimationEnabled());
         assertTrue(container.isHintEnabled());
@@ -196,7 +196,7 @@ public class TextFieldTest {
 
         assertTrue(textField.isHintAnimationEnabled());
         assertEquals("A hint", container.getHint());
-        assertNull(editText.getHint());
+        assertNotNull(editText.getHint());
 
         textField.setHintAnimationEnabled(false);
 

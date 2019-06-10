@@ -77,6 +77,7 @@ public final class ContextualMenuOption extends LinearLayout {
      * Set if the option is currently being hovered
      * @param isHovered is the option hovered
      */
+    @Override
     public void setHovered(final boolean isHovered) {
         if (usesHoveredTint) {
             icon.setColorFilter(isHovered ? new PorterDuffColorFilter(hoveredTintColor, PorterDuff.Mode.SRC_IN) : null);
@@ -89,7 +90,7 @@ public final class ContextualMenuOption extends LinearLayout {
      * @param color the color
      */
     public void setFillColor(final int color) {
-        final GradientDrawable background = ((GradientDrawable) image.getBackground());
+        final GradientDrawable background = (GradientDrawable) image.getBackground();
         background.setColor(color);
     }
 

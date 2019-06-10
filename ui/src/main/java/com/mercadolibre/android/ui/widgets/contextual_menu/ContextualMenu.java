@@ -140,7 +140,7 @@ public final class ContextualMenu extends ViewGroup {
         final int childCenterX = (int) (centerX + radius * Math.cos(Math.toRadians(degrees)));
         final int childCenterY = (int) (centerY + radius * Math.sin(Math.toRadians(degrees)));
 
-        return new Rect(childCenterX - size / 2, (childCenterY - size / 2), (childCenterX + size / 2), (childCenterY + size / 2));
+        return new Rect(childCenterX - size / 2, childCenterY - size / 2, childCenterX + size / 2, childCenterY + size / 2);
     }
 
     /**
@@ -236,9 +236,9 @@ public final class ContextualMenu extends ViewGroup {
         }
 
         arcLength = (getChildCount() - 2) * angleBetweenItems;
-        arcCenter = (270 - (ratioX) * 90);
-        fromDegrees = (arcCenter - arcLength / 2);
-        toDegrees = (arcCenter + arcLength / 2);
+        arcCenter = 270 - (ratioX) * 90;
+        fromDegrees = arcCenter - arcLength / 2;
+        toDegrees = arcCenter + arcLength / 2;
 
         requestLayout();
     }

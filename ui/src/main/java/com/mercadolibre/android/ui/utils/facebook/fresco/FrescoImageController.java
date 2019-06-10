@@ -62,7 +62,7 @@ public class FrescoImageController {
     /**
      * Package visibility constructor. Since its an immutable object, use builders.
      */
-    FrescoImageController(@NonNull final Uri uri, @NonNull DraweeView view,
+    /* default */ FrescoImageController(@NonNull final Uri uri, @NonNull DraweeView view,
         @Nullable Callback deprecatedCallback, @Nullable FrescoImageListener callback,
         @Nullable ResizeOptions resizeOpt, @Nullable ImageDecodeOptions decodeOpt,
         @Nullable Postprocessor postprocessor,
@@ -388,6 +388,7 @@ public class FrescoImageController {
     /**
      * Builder class to create an immutable FrescoController
      */
+    @SuppressWarnings("PMD.AvoidFieldNameMatchingMethodName")
     public static class Builder {
 
         private @Nullable Uri mUri;

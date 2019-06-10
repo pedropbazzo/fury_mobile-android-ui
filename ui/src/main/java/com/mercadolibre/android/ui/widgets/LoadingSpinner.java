@@ -36,17 +36,17 @@ public class LoadingSpinner extends View {
     private Paint primaryColor;
     private Paint secondaryColor;
 
-    /* default */int sweepAngle;
-    /* default */ int startAngle;
+    private int sweepAngle;
+    private int startAngle;
 
     private int strokeSize;
 
     private RectF viewBounds;
     private Paint currentColor;
 
-    /* default */ ValueAnimator sweepAnim;
-    /* default */ ValueAnimator startAnim;
-    /* default */ ValueAnimator finalAnim;
+    private ValueAnimator sweepAnim;
+    private ValueAnimator startAnim;
+    private ValueAnimator finalAnim;
 
     /**
      * Default constructor to use by code
@@ -80,20 +80,19 @@ public class LoadingSpinner extends View {
     }
 
     private void init(final AttributeSet attrs, final int defStyleAttr) {
-        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.LoadingSpinner, defStyleAttr, 0);
+        bindAttrs(attrs, defStyleAttr);
+        updateColor();
+        createAnimators();
+    }
 
+    private void bindAttrs(AttributeSet attrs, int defStyleAttr) {
+        final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.LoadingSpinner, defStyleAttr, 0);
         final int primaryColorInt = loadColor(a, R.styleable.LoadingSpinner_ui_primaryColor, R.color.ui_meli_blue);
         final int secondaryColorInt = loadColor(a, R.styleable.LoadingSpinner_ui_secondaryColor, R.color.ui_meli_yellow);
         strokeSize = a.getDimensionPixelSize(R.styleable.LoadingSpinner_ui_stroke, getResources().getDimensionPixelSize(R.dimen.ui_spinner_stroke));
-
         primaryColor = createPaint(Paint.Style.STROKE, strokeSize, primaryColorInt);
         secondaryColor = createPaint(Paint.Style.STROKE, strokeSize, secondaryColorInt);
-
-        updateColor();
-
         a.recycle();
-
-        setupAnimations();
     }
 
     /**
@@ -119,11 +118,10 @@ public class LoadingSpinner extends View {
     /**
      * Configure the animations that interpolate the arc values to achieve the loading effect
      */
-    private void setupAnimations() {
-        final int duration = getResources().getInteger(R.integer.ui_spinner_spinning_time);
+    private void setupListeners() {
+        cleanListeners();
 
         // - Head and tail start together, when the head finishes the full spin the tail catches up - //
-        sweepAnim = createAnimator(0, FULL_CIRCLE, duration);
         sweepAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(final ValueAnimator animation) {
@@ -131,7 +129,6 @@ public class LoadingSpinner extends View {
             }
         });
 
-        startAnim = createAnimator(0, QUARTER_CIRCLE, duration);
         startAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(final ValueAnimator animation) {
@@ -140,7 +137,7 @@ public class LoadingSpinner extends View {
             }
         });
 
-        finalAnim = createAnimator(QUARTER_CIRCLE, FULL_CIRCLE, duration);
+
         finalAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(final ValueAnimator animation) {
@@ -148,6 +145,7 @@ public class LoadingSpinner extends View {
                 invalidate();
             }
         });
+
         finalAnim.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(final Animator animation) {
@@ -248,6 +246,7 @@ public class LoadingSpinner extends View {
      */
     public void onStart() {
         if (!startAnim.isRunning()) {
+            setupListeners();
             sweepAnim.start();
             startAnim.start();
         }
@@ -257,9 +256,7 @@ public class LoadingSpinner extends View {
      * Call this on activity stop to finish animations
      */
     public void onStop() {
-        cleanAnimator(startAnim);
-        cleanAnimator(sweepAnim);
-        cleanAnimator(finalAnim);
+        cleanListeners();
     }
 
     /**
@@ -317,5 +314,18 @@ public class LoadingSpinner extends View {
                 + ", startAnim=" + startAnim
                 + ", finalAnim=" + finalAnim
                 + '}';
+    }
+
+    private void cleanListeners() {
+        cleanAnimator(sweepAnim);
+        cleanAnimator(startAnim);
+        cleanAnimator(finalAnim);
+    }
+
+    private void createAnimators() {
+        final int duration = getResources().getInteger(R.integer.ui_spinner_spinning_time);
+        sweepAnim = createAnimator(0, FULL_CIRCLE, duration);
+        startAnim = createAnimator(0, QUARTER_CIRCLE, duration);
+        finalAnim = createAnimator(QUARTER_CIRCLE, FULL_CIRCLE, duration);
     }
 }

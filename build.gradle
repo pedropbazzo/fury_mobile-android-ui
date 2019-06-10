@@ -11,17 +11,23 @@ buildscript {
     }
 }
 
+wrapper {
+    gradleVersion = gradleWrapperVersion
+    distributionType = Wrapper.DistributionType.BIN
+}
+
 allprojects {
     repositories {
         jcenter()
         google()
     }
 
-    group = libraryGroup
-    version = libraryVersion
-}
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 
-wrapper {
-    gradleVersion = gradleWrapperVersion
-    distributionType = Wrapper.DistributionType.BIN
+    // It's our convention to keep all modules in the same GitHub repository with the same group and version.
+    group = libraryGroupId
+    version = libraryVersion
 }
