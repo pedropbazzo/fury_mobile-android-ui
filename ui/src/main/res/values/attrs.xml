@@ -18,6 +18,7 @@
     <declare-styleable name="MeliSpinner">
         <attr name="spinnerText" format="string" />
         <attr name="textDelay" format="integer" />
+        <attr name="autostart" format="boolean" />
         <attr name="textFadeInDuration" format="integer" />
 
         <attr name="size" format="enum">
