@@ -45,10 +45,10 @@ dependencies {
 
     implementation "com.android.support:design:$supportLibraryVersion"
 
-    implementation "com.facebook.fresco:fresco:$frescoVersion"
-    implementation "com.facebook.fresco:webpsupport:$frescoVersion"
+    api "com.facebook.fresco:fresco:$frescoVersion"
+    api "com.facebook.fresco:webpsupport:$frescoVersion"
 
-    implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
+    api "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
 
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation "org.robolectric:shadows-supportv4:$robolectricVersion"
