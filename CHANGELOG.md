@@ -1,4 +1,7 @@
-# v6.1.1
+#7.0.0
+## Arreglado
+- Se vuelve a agregar el attr autostart en MeliSpinner por retro compatibilidad
+
 ## Cambiado
 - Se actualiza la lib de fresco 1.13.0.
 
