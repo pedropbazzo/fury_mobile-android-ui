@@ -43,7 +43,7 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$supportLibraryVersion"
     implementation "com.android.support:design:$supportLibraryVersion"
 
-    implementation "org.apache.commons:commons-lang3:$apacheCommonsVersion"
+    api "org.apache.commons:commons-lang3:$apacheCommonsVersion"
 
-    implementation "com.facebook.fresco:fresco:$frescoVersion"
+    api "com.facebook.fresco:fresco:$frescoVersion"
 }
