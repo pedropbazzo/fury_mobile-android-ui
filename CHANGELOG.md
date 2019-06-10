@@ -1,3 +1,7 @@
+#6.0.3
+## Arreglado
+- Se vuelve a agregar el attr autostart en MeliSpinner por retro compatibilidad
+
 # v6.0.2
 ## Cambiado
 - MeliSpinner autostart attr deprecado.
