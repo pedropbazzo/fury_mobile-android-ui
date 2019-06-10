@@ -1,8 +1,11 @@
-#6.0.3
+#7.0.0
 ## Arreglado
 - Se vuelve a agregar el attr autostart en MeliSpinner por retro compatibilidad
 
-# v6.0.2
+## Cambiado
+- Se actualiza la lib de fresco 1.13.0.
+
+# v6.1.0
 ## Cambiado
 - MeliSpinner autostart attr deprecado.
 - MeliSpinner.start() y MeliSpinner.stop deprecado.
@@ -10,12 +13,12 @@
 - LoadingSpinner ahora solo agrega listener de animations cuando se va ejecutar la animacion y no en su constructor para prevenir leaks de memoria.
 
 # v6.0.1
-## Cambiado
+## Cambiado
 - Downgraded Bintray Plugin version.
 - Downgraded Gradle version.
 
 # v6.0.0
-## Cambiado
+## Cambiado
 - Se sube el min API level al que usamos (16)
 - Actualización de dependencias
 - Actualización de Gradle 4.10.3
