@@ -1,3 +1,7 @@
+#7.0.2
+## Arreglado
+- Se cambian 
+
 # v7.0.1
 ## Arreglado
 - Dependencias externas como api
