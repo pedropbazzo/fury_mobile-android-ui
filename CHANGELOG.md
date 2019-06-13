@@ -1,8 +1,12 @@
-#7.1.0
+#7.0.2
 ## Arreglado
 - Se cambian 
 
-#7.0.0
+# v7.0.1
+## Arreglado
+- Dependencias externas como api
+
+# v7.0.0
 ## Arreglado
 - Se vuelve a agregar el attr autostart en MeliSpinner por retro compatibilidad
 
