@@ -1,3 +1,7 @@
+#7.1.0
+## Arreglado
+- Se cambian 
+
 #7.0.0
 ## Arreglado
 - Se vuelve a agregar el attr autostart en MeliSpinner por retro compatibilidad
