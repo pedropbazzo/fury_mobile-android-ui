@@ -91,5 +91,21 @@ public class MeliButtonTest {
                 getColorForState(states, defTextColor));
         Assert.assertEquals(MeliButton.Type.OPTION_PRIMARY, button.getType());
     }
+
+    @Test
+    public void testSizeLarge() {
+        button.setSize(MeliButton.Size.LARGE);
+        final float textSize = 18F;
+        Assert.assertEquals(textSize, button.getTextSize(), 0);
+        Assert.assertEquals(MeliButton.Size.LARGE, button.getSize());
+    }
+
+    @Test
+    public void testSizeSmall() {
+        button.setSize(MeliButton.Size.SMALL);
+        final float textSize = 14F;
+        Assert.assertEquals(textSize, button.getTextSize(), 0);
+        Assert.assertEquals(MeliButton.Size.SMALL, button.getSize());
+    }
 }
 

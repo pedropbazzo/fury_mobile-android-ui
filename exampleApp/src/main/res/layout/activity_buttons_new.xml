@@ -70,5 +70,15 @@
             app:type="optionPrimary"
             app:state="disable"/>
 
+        <com.mercadolibre.android.ui.widgets.MeliButton
+            android:id="@+id/small"
+            style="@style/Button.Action.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/primary_option_disabled_button"
+            android:layout_marginBottom="10dp"
+            android:text="Small button"
+            app:button_size="small"/>
+
     </LinearLayout>
 </ScrollView>
