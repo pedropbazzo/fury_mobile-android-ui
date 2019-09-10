@@ -45,7 +45,7 @@ public final class MeliButton extends AppCompatButton {
     @Type
     private int type;
     /**
-     * The type of button (Large, Small)
+     * The size of button {@link Size}
      */
     @Size
     private int size;
@@ -148,12 +148,13 @@ public final class MeliButton extends AppCompatButton {
                 sizeDimen = R.dimen.ui_fontsize_medium;
                 minHeightDimen = R.dimen.ui_button_height;
         }
-        //setMinHeight(getResources().getDimensionPixelSize(minHeightDimen));
-        setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(sizeDimen));
+
+        setMinHeight(getResources().getDimensionPixelSize(minHeightDimen));
+        setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(sizeDimen));
     }
 
     /*
-        This was modified to reach exactly 48dp in height.
+        This was modified to reach exactly 48dp/36dp in height.
      */
     @Override
     protected void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec) {

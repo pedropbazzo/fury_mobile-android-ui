@@ -93,7 +93,7 @@ public class MeliButtonTest {
     }
 
     @Test
-    public void testSizeLarge() {
+    public void testCorrectValuesInButtonWithSizeLarge() {
         button.setSize(MeliButton.Size.LARGE);
         final float textSize = 18F;
         Assert.assertEquals(textSize, button.getTextSize(), 0);
@@ -101,7 +101,7 @@ public class MeliButtonTest {
     }
 
     @Test
-    public void testSizeSmall() {
+    public void testCorrectValuesInButtonWithSizeSmall() {
         button.setSize(MeliButton.Size.SMALL);
         final float textSize = 14F;
         Assert.assertEquals(textSize, button.getTextSize(), 0);
