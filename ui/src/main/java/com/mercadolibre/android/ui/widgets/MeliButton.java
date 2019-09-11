@@ -248,7 +248,6 @@ public final class MeliButton extends AppCompatButton {
     /**
      * Possible button sizes
      */
-    @SuppressWarnings({"PMD.RedundantFieldInitializer", "PMD.CommentDefaultAccessModifier"})
     @Retention(RetentionPolicy.SOURCE)
     @IntDef({LARGE, SMALL})
     public @interface Size {
