@@ -153,8 +153,8 @@ public final class MeliButton extends AppCompatButton {
         setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(sizeDimen));
     }
 
-    /*
-        This was modified to reach exactly 48dp/36dp in height.
+    /**
+     *  This was modified to reach exactly the desired {@link Size}'s height.
      */
     @Override
     protected void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec) {
@@ -247,6 +247,11 @@ public final class MeliButton extends AppCompatButton {
 
     /**
      * Possible button sizes
+     *
+     * According to <a href="https://mercadolibre.github.io/frontend-andes/componente/button/?unit=ml#tipos">Andes doc: </a>
+     *
+     * Large size has a fixed height of 48dp.
+     * Small size has a fixed height of 36dp.
      */
     @Retention(RetentionPolicy.SOURCE)
     @IntDef({LARGE, SMALL})
