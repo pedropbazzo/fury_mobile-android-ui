@@ -21,6 +21,7 @@
 
     <!-- Buttons -->
     <dimen name="ui_button_height">48dp</dimen>
+    <dimen name="ui_small_button_height">36dp</dimen>
     <dimen name="ui_button_corner_radius">4dp</dimen>
     <dimen name="ui_button_padding">8dp</dimen>
     <dimen name="ui_button_checkbox_margin">16dp</dimen>

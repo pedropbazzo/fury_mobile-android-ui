@@ -2,7 +2,6 @@ package com.mercadolibre.android.ui.widgets;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -14,14 +13,14 @@ import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
-
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.font.Font;
 import com.mercadolibre.android.ui.font.TypefaceHelper;
-
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import static com.mercadolibre.android.ui.widgets.MeliButton.Size.LARGE;
+import static com.mercadolibre.android.ui.widgets.MeliButton.Size.SMALL;
 import static com.mercadolibre.android.ui.widgets.MeliButton.State.DISABLED;
 import static com.mercadolibre.android.ui.widgets.MeliButton.State.NORMAL;
 import static com.mercadolibre.android.ui.widgets.MeliButton.Type.ACTION_PRIMARY;
@@ -45,6 +44,11 @@ public final class MeliButton extends AppCompatButton {
      */
     @Type
     private int type;
+    /**
+     * The size of button {@link Size}
+     */
+    @Size
+    private int size;
 
     /**
      * Default constructor without attrs, defaults will be used: type=ActionPrimary state=Normal.
@@ -82,13 +86,14 @@ public final class MeliButton extends AppCompatButton {
     private void configureButton(@NonNull final Context context, @Nullable final AttributeSet attrs, int defStyleAttr) {
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MeliButton, defStyleAttr, 0);
         final int buttonType = a.getInt(R.styleable.MeliButton_type, ACTION_PRIMARY);
+        final int buttonSize = a.getInt(R.styleable.MeliButton_button_size, LARGE);
         final int buttonState = a.getInt(R.styleable.MeliButton_state, NORMAL);
 
         TypefaceHelper.setTypeface(this, Font.REGULAR);
         setGravity(Gravity.CENTER);
-        setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.ui_fontsize_medium));
 
         setType(buttonType);
+        setSize(buttonSize);
         setState(buttonState);
     }
 
@@ -129,12 +134,41 @@ public final class MeliButton extends AppCompatButton {
         }
     }
 
-    /*
-        This was modified to reach exactly 48dp in height.
+    private void configureSize(@Size final int buttonSize) {
+        final int sizeDimen;
+        final int minHeightDimen;
+
+        switch (buttonSize) {
+            case SMALL:
+                sizeDimen = R.dimen.ui_fontsize_xsmall;
+                minHeightDimen = R.dimen.ui_small_button_height;
+                break;
+            case LARGE:
+            default:
+                sizeDimen = R.dimen.ui_fontsize_medium;
+                minHeightDimen = R.dimen.ui_button_height;
+        }
+
+        setMinHeight(getResources().getDimensionPixelSize(minHeightDimen));
+        setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(sizeDimen));
+    }
+
+    /**
+     *  This was modified to reach exactly the desired {@link Size}'s height.
      */
     @Override
     protected void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec) {
-        final int maxHeight = getResources().getDimensionPixelSize(R.dimen.ui_button_height);
+        final int heightDimen;
+        switch (size) {
+            case SMALL:
+                heightDimen = R.dimen.ui_small_button_height;
+                break;
+            case LARGE:
+            default:
+                heightDimen = R.dimen.ui_button_height;
+        }
+
+        final int maxHeight = getResources().getDimensionPixelSize(heightDimen);
         final int newHeightMeasureSpec = MeasureSpec.makeMeasureSpec(maxHeight, MeasureSpec.EXACTLY);
         super.onMeasure(widthMeasureSpec, newHeightMeasureSpec);
     }
@@ -180,6 +214,26 @@ public final class MeliButton extends AppCompatButton {
     }
 
     /**
+     * Gets the button size {@link #size}
+     *
+     * @return the button's size
+     */
+    @Type
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * Sets the button size {@link #size}
+     *
+     * @param size Button.size
+     */
+    public void setSize(@Type final int size) {
+        this.size = size;
+        configureSize(size);
+    }
+
+    /**
      * Possible button types
      */
     @SuppressWarnings({"PMD.RedundantFieldInitializer", "PMD.CommentDefaultAccessModifier"})
@@ -189,6 +243,21 @@ public final class MeliButton extends AppCompatButton {
         int ACTION_PRIMARY = 0;
         int ACTION_SECONDARY = 1;
         int OPTION_PRIMARY = 2;
+    }
+
+    /**
+     * Possible button sizes
+     *
+     * According to <a href="https://mercadolibre.github.io/frontend-andes/componente/button/?unit=ml#tipos">Andes doc: </a>
+     *
+     * Large size has a fixed height of 48dp.
+     * Small size has a fixed height of 36dp.
+     */
+    @Retention(RetentionPolicy.SOURCE)
+    @IntDef({LARGE, SMALL})
+    public @interface Size {
+        int LARGE = 0;
+        int SMALL = 1;
     }
 
     /**

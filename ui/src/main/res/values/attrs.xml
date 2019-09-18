@@ -235,6 +235,10 @@
             <enum name="actionSecondary" value="1"/>
             <enum name="optionPrimary" value="2"/>
         </attr>
+        <attr name="button_size" format="enum">
+            <enum name="large" value="0"/>
+            <enum name="small" value="1"/>
+        </attr>
         <attr name="state" format="enum">
             <enum name="normal" value="0"/>
             <enum name="disable" value="1"/>
