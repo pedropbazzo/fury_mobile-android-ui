@@ -15,18 +15,11 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.font.Font;
 import com.mercadolibre.android.ui.font.TypefaceHelper;
-
-import java.lang.annotation.Annotation;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-
-import static com.mercadolibre.android.ui.widgets.MeliSnackbar.Type.ERROR;
-import static com.mercadolibre.android.ui.widgets.MeliSnackbar.Type.MESSAGE;
-import static com.mercadolibre.android.ui.widgets.MeliSnackbar.Type.SUCCESS;
 
 /**
  * Snackbar wrapper that allows extra customization.
