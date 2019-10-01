@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import uk.co.chrisjenx.calligraphy.TypefaceUtils;
 
+/**
+ * This TypefaceSetter implements Calligraphy library.
+ */
 public class CalligraphyTypefaceSetter implements TypefaceHelper.TypefaceSetter {
     @Override
     public <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font) {
