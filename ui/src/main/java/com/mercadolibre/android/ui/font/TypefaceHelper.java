@@ -66,7 +66,7 @@ public final class TypefaceHelper {
     @SuppressWarnings("PMD.LinguisticNaming")
     @Deprecated
     public static void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
-        Typeface typeface = typefaceSetter.getTypeface(context, font);
+        Typeface typeface = TypefaceHelper.geyFontTypeface(context, font);
         fontCallback.onFontRetrieved(typeface);
     }
 
