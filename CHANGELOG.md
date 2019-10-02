@@ -1,8 +1,13 @@
-#7.1.0
+# v8.0.0
+## Cambiado
+- TypefaceHelper.getTypeface se depreca por TypefaceHelper.getFontTypeface
+- Se cambia firma de TypefaceHelper.getTypeface para que retorne un Typeface en vez de responde mediante un ResourcesCompat.FontCallback
+
+# v7.1.0
 ## Agregado
 - Se agrega soporte al caso de `Small` para MeliButton, segun Andes.
 
-#7.0.0
+# v7.0.0
 ## Arreglado
 - Se vuelve a agregar el attr autostart en MeliSpinner por retro compatibilidad
 
