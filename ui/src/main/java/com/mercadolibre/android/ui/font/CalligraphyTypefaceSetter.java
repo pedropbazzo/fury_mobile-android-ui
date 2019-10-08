@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -30,10 +31,12 @@ public class CalligraphyTypefaceSetter implements TypefaceHelper.TypefaceSetter 
     }
 
     @Override
+    @Nullable
     public Typeface getTypeface(@NonNull Context context, @NonNull Font font) {
         return createTypeface(context, font);
     }
 
+    @Nullable
     private Typeface createTypeface(@NonNull Context context, @NonNull Font font) {
         return TypefaceUtils.load(context.getAssets(), font.getFontPath());
     }
