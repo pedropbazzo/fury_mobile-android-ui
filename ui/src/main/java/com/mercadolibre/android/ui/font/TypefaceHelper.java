@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.widget.TextView;
 
 /**
@@ -59,6 +60,7 @@ public final class TypefaceHelper {
      * @param font to use
      * @return associated typeface
      */
+    @Nullable
     public static Typeface geyFontTypeface(@NonNull final Context context, @NonNull Font font) {
         return typefaceSetter.getTypeface(context, font);
     }
@@ -90,6 +92,7 @@ public final class TypefaceHelper {
          * @param font to find the typeface
          * @return typeface associated
          */
+        @Nullable
         Typeface getTypeface(@NonNull Context context, @NonNull final Font font);
     }
 }
