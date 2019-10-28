@@ -221,10 +221,9 @@ public final class TextField extends LinearLayout {
         setHint(hint);
         setMaxLines(maxLines);
         setMaxCharacters(maxCharacters);
+        setHelper(helperText);
         setEnabled(enabled);
         setCharactersCountVisible(charactersCountVisible);
-
-        setHelper(helperText);
 
         input.addTextChangedListener(new TextWatcher() {
             @Override
@@ -239,13 +238,9 @@ public final class TextField extends LinearLayout {
 
             @Override
             public void afterTextChanged(final Editable s) {
-                if (hasHelper) {
-                    if (s.length() > 0 && isShowingError) {
-                        clearError();
-                        setHelper(helperText);
-                    }
-                } else {
-                    setError(null);
+                if (s.length() > 0 && isShowingError) {
+                    clearError();
+                    setHelper(helperText);
                 }
             }
         });
@@ -353,15 +348,18 @@ public final class TextField extends LinearLayout {
      * @param helpText the text
      */
     public void setHelper(@Nullable final String helpText) {
-        if (!enabled || TextUtils.isEmpty(helpText)) {
-            helper.setVisibility(GONE);
+        final boolean isEmpty = TextUtils.isEmpty(helpText);
+        helperText = helpText;
+        helper.setText(helperText);
+        hasHelper = !isEmpty;
+        if (!enabled || isEmpty) {
+            hideHelper();
             return;
         }
         ViewCompat.setPaddingRelative(helper, 0,
-                0, 0, input.getPaddingBottom());
+            0, 0, input.getPaddingBottom());
         changeErrorVisibility(false);
         helper.setGravity(textAlign);
-        helper.setText(helpText);
         helper.setVisibility(VISIBLE);
         isShowingHelper = true;
     }
@@ -399,26 +397,29 @@ public final class TextField extends LinearLayout {
         if (!enabled) {
             return;
         }
-        isShowingError = true;
-        if (isShowingHelper) {
-            helper.setVisibility(GONE);
-            isShowingHelper = false;
-        }
-        changeErrorVisibility(true);
+        boolean isEmpty = TextUtils.isEmpty(error);
+        changeErrorVisibility(!isEmpty);
+        if (isEmpty) {
+            setHelper(helperText);
+        } else {
+            isShowingError = true;
+            if (isShowingHelper) {
+                hideHelper();
+            }
 
-        container.setError(error);
-
-        final TextView errorView = (TextView) container
+            final TextView errorView = (TextView) container
                 .findViewById(android.support.design.R.id.textinput_error);
 
-        TypefaceHelper.setTypeface(errorView, Font.SEMI_BOLD);
-        final FrameLayout.LayoutParams errorViewParams =
+            TypefaceHelper.setTypeface(errorView, Font.SEMI_BOLD);
+            final FrameLayout.LayoutParams errorViewParams =
                 new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-        errorViewParams.gravity = textAlign;
-        errorView.setGravity(textAlign);
-        errorView.setLayoutParams(errorViewParams);
+            errorViewParams.gravity = textAlign;
+            errorView.setGravity(textAlign);
+            errorView.setLayoutParams(errorViewParams);
+        }
 
-        container.setErrorEnabled(!TextUtils.isEmpty(error));
+        container.setError(error);
+        container.setErrorEnabled(!isEmpty);
     }
 
     /**
@@ -782,15 +783,22 @@ public final class TextField extends LinearLayout {
 
     private void applyStatus() {
         if (enabled) {
-            container.setFocusableInTouchMode(true);
+            input.setFocusableInTouchMode(true);
             container.setEnabled(true);
             setMaxCharacters(maxCharacters);
+            setHelper(helperText);
         } else {
-            container.setFocusableInTouchMode(false);
+            input.setFocusableInTouchMode(false);
             container.setEnabled(false);
             setCharactersCountVisible(false);
-            setError(null);
+            clearError();
+            hideHelper();
         }
+    }
+
+    private void hideHelper() {
+        helper.setVisibility(GONE);
+        isShowingHelper = false;
     }
 
     @Override
