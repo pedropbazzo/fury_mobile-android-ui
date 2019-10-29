@@ -1,3 +1,7 @@
+# v8.3.0
+## Cambiado
+- Se arregla el helper del TextField para que no se oculte al hacer setError(null). También para que no se oculte al escribir cuando fue seteado por código.
+
 # v8.2.0
 ## Agregado
 - Se vuelve a agregar metodo TypefaceHelper.getTypeface(context, font, callback) por compatabilidad. Se depreca su uso por TypefaceHelper.getFontTypeface(context, font)
