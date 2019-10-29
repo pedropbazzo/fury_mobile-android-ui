@@ -1,3 +1,7 @@
+# v8.3.0
+## Cambiado
+- Al habilitar / desabilitar el TextField se aplica el focusableInTouchMode al editText en lugar del container para permitir pasar foco de un input al siguiente por teclado.
+
 # v8.2.0
 ## Agregado
 - Se vuelve a agregar metodo TypefaceHelper.getTypeface(context, font, callback) por compatabilidad. Se depreca su uso por TypefaceHelper.getFontTypeface(context, font)

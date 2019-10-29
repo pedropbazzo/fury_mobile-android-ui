@@ -402,7 +402,7 @@ public class TextFieldTest {
     public void testSetEnabled_withEnabledTrue_shouldChangeTheState() {
         textField.setEnabled(true);
 
-        assertTrue(container.isFocusableInTouchMode());
+        assertTrue(editText.isFocusableInTouchMode());
         assertTrue(container.isEnabled());
     }
 
@@ -410,7 +410,7 @@ public class TextFieldTest {
     public void testSetEnabled_withEnabledFalse_shouldChangeTheState() {
         textField.setEnabled(false);
 
-        assertFalse(container.isFocusableInTouchMode());
+        assertFalse(editText.isFocusableInTouchMode());
         assertFalse(container.isEnabled());
         assertFalse(container.isCounterEnabled());
     }
