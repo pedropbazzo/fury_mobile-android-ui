@@ -17,7 +17,7 @@ import android.widget.ProgressBar;
 import com.mercadolibre.android.ui.R;
 
 /**
- *
+ * Determinate horizontal progress bar.
  */
 public final class MeliProgressBar extends FrameLayout {
 
@@ -68,8 +68,8 @@ public final class MeliProgressBar extends FrameLayout {
     }
 
     /**
-     *
-     * @param animatorListener
+     * Starts progress animation.
+     * @param animatorListener  to get notified of animation events.
      */
     public void start(@Nullable final Animator.AnimatorListener animatorListener) {
         if (animator != null) {
@@ -86,8 +86,8 @@ public final class MeliProgressBar extends FrameLayout {
     }
 
     /**
-     *
-     * @param animatorListener
+     * Completes progress with an animation.
+     * @param animatorListener  to get notified of animation events.
      */
     public void finish(@Nullable final Animator.AnimatorListener animatorListener) {
         final int progress = progressBar.getProgress();
@@ -106,7 +106,7 @@ public final class MeliProgressBar extends FrameLayout {
     }
 
     /**
-     *
+     *  Restarts the progress bar.
      */
     public void restart() {
         if (animator != null) {
@@ -116,8 +116,7 @@ public final class MeliProgressBar extends FrameLayout {
     }
 
     /**
-     *
-     * @return
+     * @return progress bar's current progress.
      */
     public int getProgress() {
         return progressBar == null ? INITIAL_PROGRESS : progressBar.getProgress();

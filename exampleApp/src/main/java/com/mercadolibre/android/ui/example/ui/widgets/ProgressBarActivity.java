@@ -3,16 +3,14 @@ package com.mercadolibre.android.ui.example.ui.widgets;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
 import com.mercadolibre.android.ui.example.BaseActivity;
 import com.mercadolibre.android.ui.example.R;
 import com.mercadolibre.android.ui.widgets.MeliProgressBar;
+import com.mercadolibre.android.ui.widgets.MeliSnackbar;
 
-/**
- * Created by mmarengo on 2019-11-04.
- */
 public class ProgressBarActivity extends BaseActivity {
 
     private MeliProgressBar progressBar;
@@ -38,10 +36,23 @@ public class ProgressBarActivity extends BaseActivity {
     }
 
     private final AnimatorListenerAdapter progressAnimationListener = new AnimatorListenerAdapter() {
+
+        private boolean cancelled;
+
+        @Override
+        public void onAnimationCancel(final Animator animation) {
+            super.onAnimationCancel(animation);
+            cancelled = true;
+        }
+
         @Override
         public void onAnimationEnd(final Animator animation) {
             super.onAnimationEnd(animation);
-            Toast.makeText(ProgressBarActivity.this, "Progress ended", Toast.LENGTH_SHORT).show();
+            if (!cancelled) {
+                MeliSnackbar.make(progressBar, "Progress ended", Snackbar.LENGTH_SHORT, MeliSnackbar.SnackbarType.SUCCESS)
+                    .show();
+            }
+            cancelled = false;
         }
     };
 }
