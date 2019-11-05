@@ -246,7 +246,10 @@
     </declare-styleable>
 
     <declare-styleable name="MeliProgressBar">
-        <attr name="maxLoadingTime" format="integer" />
+        <attr name="maxProgressTime" format="integer" />
         <attr name="finishAnimTime" format="integer" />
+        <attr name="progressBarText" format="string" />
+        <attr name="progressBarTextDelay" format="integer" />
+        <attr name="progressBarTextFadeInDuration" format="integer" />
     </declare-styleable>
 </resources>

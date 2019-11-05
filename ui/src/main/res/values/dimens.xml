@@ -102,4 +102,5 @@
 
     <!-- MeliProgressBar-->
     <dimen name="ui_progress_bar_radius">6dp</dimen>
+    <dimen name="ui_progress_bar_height">6dp</dimen>
 </resources>

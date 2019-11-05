@@ -13,9 +13,10 @@
     <com.mercadolibre.android.ui.widgets.MeliProgressBar
         android:id="@+id/ui_meli_progress_bar"
         android:layout_width="match_parent"
-        android:layout_height="6dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:maxLoadingTime="15000"/>
+        app:maxProgressTime="10000"
+        app:progressBarText="Texto de soporte de hasta 2 líneas"/>
 
     <Button
         style="@style/Button.Action.Primary"
