@@ -422,6 +422,7 @@ public class TextFieldTest {
         textField.setText("text");
         textField.setLabel("label");
         textField.setError("error");
+        textField.setCharactersCountVisible(true);
         textField.setMaxCharacters(12);
         textField.setMaxLines(3);
         textField.setEnabled(true);
@@ -495,7 +496,7 @@ public class TextFieldTest {
         assertEquals("errorText", "error", textField.getError());
         assertEquals("linesNumber", 3, editText.getMaxLines());
         assertEquals("charactersNumber", 12, container.getCounterMaxLength());
-        assertEquals("charactersVisible ", 1, container.isCounterEnabled() ? 1 : 0);
+        assertEquals("charactersVisible ", 0, container.isCounterEnabled() ? 1 : 0);
         assertEquals("hint", "hint", textField.getHint());
         assertEquals("enabled", 1, textField.isEnabled() ? 1 : 0);
         parcelMemory.clear();
