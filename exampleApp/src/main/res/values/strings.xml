@@ -30,5 +30,6 @@
     <string name="title_activity_contextual_menu">Contextual Menu</string>
     <string name="title_activity_line_spacing">Line spacing</string>
     <string name="title_activity_error_view">Error View</string>
+    <string name="title_activity_chips">Chips</string>
 
 </resources>

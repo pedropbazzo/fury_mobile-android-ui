@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ui_chip_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ui_chip_background">
+
+    <ImageView
+        android:id="@+id/ui_chip_image"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ui_chip_avatar" />
+
+    <TextView
+        android:id="@+id/ui_chip_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constrainedWidth="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toRightOf="@id/ui_chip_image"
+        app:layout_constraintRight_toLeftOf="@id/ui_chip_close_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="nombre de usuario que puede ser muy muy largo y no entrar"
+        android:textSize="14sp"/>
+
+    <ImageView
+        android:id="@+id/ui_chip_close_button"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        android:padding="8dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ui_ic_chip_close" />
+
+</android.support.constraint.ConstraintLayout>
