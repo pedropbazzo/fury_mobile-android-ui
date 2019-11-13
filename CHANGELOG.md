@@ -1,6 +1,7 @@
 # v8.3.0
 ## Cambiado
 - Se arregla el helper del TextField para que no se oculte al hacer setError(null). También para que no se oculte al escribir cuando fue seteado por código.
+- Al habilitar / desabilitar el TextField se aplica el focusableInTouchMode al editText en lugar del container para permitir pasar foco de un input al siguiente por teclado.
 
 # v8.2.0
 ## Agregado

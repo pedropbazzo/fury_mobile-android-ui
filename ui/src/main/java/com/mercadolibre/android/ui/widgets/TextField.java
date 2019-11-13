@@ -783,12 +783,12 @@ public final class TextField extends LinearLayout {
 
     private void applyStatus() {
         if (enabled) {
-            container.setFocusableInTouchMode(true);
+            input.setFocusableInTouchMode(true);
             container.setEnabled(true);
             setMaxCharacters(maxCharacters);
             setHelper(helperText);
         } else {
-            container.setFocusableInTouchMode(false);
+            input.setFocusableInTouchMode(false);
             container.setEnabled(false);
             setCharactersCountVisible(false);
             clearError();
