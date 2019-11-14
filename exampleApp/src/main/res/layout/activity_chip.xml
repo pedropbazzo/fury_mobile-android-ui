@@ -12,9 +12,10 @@
         android:orientation="vertical" >
 
         <com.mercadolibre.android.ui.widgets.MeliChip
+            android:id="@+id/melichip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:text="Hola" />
+            app:text="MeliChip" />
 
     </LinearLayout>
 
