@@ -515,7 +515,7 @@ public final class TextField extends LinearLayout {
             final InputFilter[] filterArray = new InputFilter[1];
             filterArray[0] = new InputFilter.LengthFilter(maxCharacters);
             input.setFilters(filterArray);
-            setCharactersCountVisible(!hasHelper);
+            setCharactersCountVisible(!hasHelper && charactersCountVisible);
             container.setCounterMaxLength(maxChars);
         }
     }
@@ -785,12 +785,10 @@ public final class TextField extends LinearLayout {
         if (enabled) {
             input.setFocusableInTouchMode(true);
             container.setEnabled(true);
-            setMaxCharacters(maxCharacters);
             setHelper(helperText);
         } else {
             input.setFocusableInTouchMode(false);
             container.setEnabled(false);
-            setCharactersCountVisible(false);
             clearError();
             hideHelper();
         }
