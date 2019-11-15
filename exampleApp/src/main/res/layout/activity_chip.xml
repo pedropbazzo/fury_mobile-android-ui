@@ -12,10 +12,45 @@
         android:orientation="vertical" >
 
         <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip"
+            android:id="@+id/melichip1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:text="MeliChip" />
+
+        <com.mercadolibre.android.ui.widgets.MeliChip
+            android:id="@+id/melichip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text="MeliChip"
+            app:textColor="@color/green"/>
+
+        <com.mercadolibre.android.ui.widgets.MeliChip
+            android:id="@+id/melichip3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text="MeliChip"
+            app:containerColor="@color/blue" />
+
+        <com.mercadolibre.android.ui.widgets.MeliChip
+            android:id="@+id/melichip4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text="MeliChip"
+            app:showCloseButton="false"/>
+
+        <com.mercadolibre.android.ui.widgets.MeliChip
+            android:id="@+id/melichip5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text="MeliChip"
+            app:closeButtonDrawable="@drawable/atv_checkmark_normal"/>
+
+        <com.mercadolibre.android.ui.widgets.MeliChip
+            android:id="@+id/melichip6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:text="MeliChip"
+            app:thumbnailDrawable="@drawable/atv_checkmark_normal"/>
 
     </LinearLayout>
 

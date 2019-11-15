@@ -247,6 +247,11 @@
 
     <declare-styleable name="MeliChip">
         <attr name="text" format="string"/>
+        <attr name="showCloseButton" format="boolean"/>
+        <attr name="thumbnailDrawable" format="reference"/>
+        <attr name="closeButtonDrawable" format="reference"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="containerColor" format="color|reference"/>
     </declare-styleable>
 
 </resources>

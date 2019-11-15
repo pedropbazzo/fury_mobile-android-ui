@@ -15,6 +15,6 @@ public class ChipActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chip);
 
-        meliChip = findViewById(R.id.melichip);
+        meliChip = findViewById(R.id.melichip1);
     }
 }
