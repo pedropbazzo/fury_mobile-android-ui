@@ -68,7 +68,7 @@ public class MeliChip extends RelativeLayout {
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MeliChip
                 , defStyleAttr, 0);
 
-        final String text = a.getString(R.styleable.MeliChip_text);
+        text = a.getString(R.styleable.MeliChip_text);
         mustShowCloseButton = a.getBoolean(R.styleable.MeliChip_showCloseButton, true);
         thumbnailResourceId = a.getResourceId(R.styleable.MeliChip_thumbnailDrawable, R.drawable.ui_chip_avatar);
         closeButtonResourceId = a.getResourceId(R.styleable.MeliChip_closeButtonDrawable, R.drawable.ui_ic_chip_close);

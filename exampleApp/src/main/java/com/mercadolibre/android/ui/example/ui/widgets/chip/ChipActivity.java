@@ -1,12 +1,12 @@
 package com.mercadolibre.android.ui.example.ui.widgets.chip;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.mercadolibre.android.ui.example.BaseActivity;
 import com.mercadolibre.android.ui.example.R;
 import com.mercadolibre.android.ui.widgets.MeliChip;
 
-public class ChipActivity extends AppCompatActivity {
+public class ChipActivity extends BaseActivity {
 
     private MeliChip meliChip;
 
