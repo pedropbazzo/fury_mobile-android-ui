@@ -63,6 +63,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            app:text="Clickable MeliChip" />
+
+        <com.mercadolibre.android.ui.widgets.MeliChip
+            android:id="@+id/melichip8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="Closeable MeliChip" />
+
+        <com.mercadolibre.android.ui.widgets.MeliChip
+            android:id="@+id/melichip9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             app:text="MeliChip with everything"
             app:textColor="@color/white"
             app:containerColor="@color/coral"

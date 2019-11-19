@@ -6,19 +6,17 @@
     android:layout_height="wrap_content"
     android:background="@drawable/ui_chip_background">
 
-    <ImageView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/ui_chip_thumbnail"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_margin="4dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:src="@drawable/ui_chip_avatar"
-        android:scaleType="centerCrop"/>
+        app:placeholderImage="@drawable/ui_chip_avatar"
+        android:scaleType="centerCrop"
+        app:roundAsCircle="true"/>
 
     <TextView
         android:id="@+id/ui_chip_text"
@@ -31,6 +29,7 @@
         app:layout_constraintRight_toLeftOf="@id/ui_chip_close_button"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/ui_meli_black"
         android:maxLines="1"
         android:ellipsize="end"
         android:textSize="14sp"/>
