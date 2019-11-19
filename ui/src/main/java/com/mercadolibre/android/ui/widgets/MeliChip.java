@@ -124,7 +124,7 @@ public class MeliChip extends RelativeLayout {
      *
      * @param text the text to be set in the chip
      */
-    public void setText(String text) {
+    final public void setText(String text) {
         this.text = text;
         textView.setText(text);
     }
@@ -143,7 +143,7 @@ public class MeliChip extends RelativeLayout {
      *
      * @param closeButtonShown indicates whether the close button must be shown or not
      */
-    public void setCloseButtonShown(boolean closeButtonShown) {
+    final public void setCloseButtonShown(boolean closeButtonShown) {
         this.closeButtonShown = closeButtonShown;
 
         if (closeButtonShown) {
@@ -161,7 +161,7 @@ public class MeliChip extends RelativeLayout {
      *
      * @param resourceId the drawable resource id for the thumbnail
      */
-    public void setThumbnailDrawable(int resourceId) {
+    final public void setThumbnailDrawable(int resourceId) {
         Uri uri = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME)
                 .path(String.valueOf(resourceId))
@@ -175,7 +175,7 @@ public class MeliChip extends RelativeLayout {
      *
      * @param url the url to get the chip's thumbnail from
      */
-    public void setThumbnailDrawable(String url) {
+    final public void setThumbnailDrawable(String url) {
         Uri uri = Uri.parse(url);
 
         thumbnail.setImageURI(uri);
@@ -186,7 +186,7 @@ public class MeliChip extends RelativeLayout {
      *
      * @param resourceId the drawable resource id for the close button
      */
-    public void setCloseButtonDrawable(int resourceId) {
+    final public void setCloseButtonDrawable(int resourceId) {
         closeButton.setImageResource(resourceId);
     }
 
@@ -195,7 +195,7 @@ public class MeliChip extends RelativeLayout {
      *
      * @param textColor a {@link ColorStateList}
      */
-    public void setTextColor(ColorStateList textColor) {
+    final public void setTextColor(ColorStateList textColor) {
         textView.setTextColor(textColor);
         this.textColor = textColor;
     }
@@ -205,7 +205,7 @@ public class MeliChip extends RelativeLayout {
      *
      * @param color the color to be used for the text
      */
-    public void setTextColor(int color) {
+    final public void setTextColor(int color) {
         textView.setTextColor(color);
         textColor = ColorStateList.valueOf(color);
     }
@@ -216,7 +216,7 @@ public class MeliChip extends RelativeLayout {
      * @param color the color to be used for the background
      */
     @Override
-    public void setBackgroundColor(int color) {
+    final public void setBackgroundColor(int color) {
         Drawable chipBackgroundDrawable = getResources().getDrawable(R.drawable.ui_chip_background);
         chipBackgroundDrawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         container.setBackground(chipBackgroundDrawable);
@@ -227,7 +227,7 @@ public class MeliChip extends RelativeLayout {
      * Sets the listener for the chip's closing
      * @param l the {@link android.view.View.OnClickListener} for the close button
      */
-    public void setOnCloseListener(@Nullable OnClickListener l) {
+    final public void setOnCloseListener(@Nullable OnClickListener l) {
         closeButton.setOnClickListener(l);
     }
 
