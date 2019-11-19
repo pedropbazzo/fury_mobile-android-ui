@@ -22,6 +22,7 @@ import com.mercadolibre.android.ui.R;
 /**
  * Determinate horizontal progress bar.
  */
+@SuppressWarnings("PMD.LinguisticNaming")
 public final class MeliProgressBar extends FrameLayout {
 
     private static final String PROGRESS_PROPERTY = "progress";
