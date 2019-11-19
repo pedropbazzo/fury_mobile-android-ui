@@ -26,36 +26,58 @@ public final class MeliProgressBar extends FrameLayout {
 
     private static final String PROGRESS_PROPERTY = "progress";
 
-    private static final int MAX_LOADING_TIME_DEFAULT = 10_000;
+    private static final int MAX_PROGRESS_TIME_DEFAULT = 10_000;
     private static final int FINISH_ANIM_TIME_DEFAULT = 500;
     private static final int INITIAL_PROGRESS = 0;
     private static final int TEXT_ANIM_DURATION_DEFAULT = 300;
     private static final int TEXT_DELAY_DEFAULT = 0;
 
-    private ProgressBar progressBar;
-    private TextView textView;
+    /* default */ ProgressBar progressBar;
+    /* default */ TextView textView;
 
     private int maxProgressTime;
     private int finishAnimTime;
-    private ObjectAnimator animator;
+    /* default */ ObjectAnimator animator;
     private int textFadeInDuration;
     private int textDelay;
 
+    /**
+     * Constructor for code usage.
+     * @param context   context.
+     */
     public MeliProgressBar(final Context context) {
         super(context);
         init(context, null, 0);
     }
 
+    /**
+     * Constructor for XML usage.
+     * @param context   context.
+     * @param attrs     attributes.
+     */
     public MeliProgressBar(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs, 0);
     }
 
+    /**
+     * Constructor for XML usage.
+     * @param context       context.
+     * @param attrs         attributes.
+     * @param defStyleAttr  default attributes.
+     */
     public MeliProgressBar(final Context context, final AttributeSet attrs, final int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs, defStyleAttr);
     }
 
+    /**
+     * Constructor for XML usage.
+     * @param context       context.
+     * @param attrs         attributes.
+     * @param defStyleAttr  default attributes.
+     * @param defStyleRes   default style resource.
+     */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public MeliProgressBar(final Context context, final AttributeSet attrs,
         final int defStyleAttr, final int defStyleRes) {
@@ -71,7 +93,7 @@ public final class MeliProgressBar extends FrameLayout {
         final TypedArray a =
             context.obtainStyledAttributes(attrs, R.styleable.MeliProgressBar, defStyleAttr, 0);
 
-        maxProgressTime = a.getInt(R.styleable.MeliProgressBar_maxProgressTime, MAX_LOADING_TIME_DEFAULT);
+        maxProgressTime = a.getInt(R.styleable.MeliProgressBar_maxProgressTime, MAX_PROGRESS_TIME_DEFAULT);
         finishAnimTime = a.getInt(R.styleable.MeliProgressBar_finishAnimTime, FINISH_ANIM_TIME_DEFAULT);
         progressBar.setProgress(INITIAL_PROGRESS);
         progressBar.setMax(maxProgressTime);
@@ -126,8 +148,8 @@ public final class MeliProgressBar extends FrameLayout {
     }
 
     /**
-     *  Restarts the progress bar's progress and hides the text.
-     *  If there is an ongoing animation, it'll be cancelled.
+     * Restarts the progress bar's progress and hides the text.
+     * If there is an ongoing animation, it'll be cancelled.
      */
     public void restart() {
         if (animator != null) {

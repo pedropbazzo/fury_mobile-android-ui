@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         app:maxProgressTime="10000"
-        app:progressBarText="Texto de soporte de hasta 2 líneas"/>
+        app:progressBarText="Texto de soporte"/>
 
     <Button
         style="@style/Button.Action.Primary"
