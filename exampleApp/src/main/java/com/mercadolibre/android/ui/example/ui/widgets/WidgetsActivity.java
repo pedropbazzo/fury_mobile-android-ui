@@ -52,6 +52,10 @@ public class WidgetsActivity extends BaseActivity {
         startActivity(new Intent(this, TextFieldActivity.class));
     }
 
+    public void openProgressBarActivity(View view) {
+        startActivity(new Intent(this, ProgressBarActivity.class));
+    }
+
     public void openChipActivity(View view) {
         startActivity(new Intent(this, ChipActivity.class));
     }
