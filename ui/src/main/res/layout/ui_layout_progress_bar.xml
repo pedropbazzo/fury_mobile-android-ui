@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="@color/ui_transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/ui_progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_progress_bar_height"
+        android:progressDrawable="@drawable/ui_progress_bar_rounded"
+        android:indeterminate="false" />
+
+    <TextView
+        android:id="@+id/ui_progress_bar_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ui_spinner_text_margin"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:maxLines="2"
+        android:textAppearance="@style/MLFont.Regular"
+        android:textColor="@color/ui_components_dark_grey_color"
+        android:textSize="@dimen/ui_fontsize_medium"
+        android:visibility="gone"
+        tools:text="Texto de soporte hasta dos lineas"
+        tools:visibility="visible" />
+
+</LinearLayout>
