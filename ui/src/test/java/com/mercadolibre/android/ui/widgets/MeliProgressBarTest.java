@@ -27,7 +27,8 @@ import static org.mockito.Mockito.when;
  * Test class for {@link MeliProgressBar}.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk = Build.VERSION_CODES.LOLLIPOP)
+// TODO: remove this when migrated to Robolectric 4, as current version does not support API level 28.
+@Config(sdk = Build.VERSION_CODES.O)
 public class MeliProgressBarTest {
 
     private MeliProgressBar meliProgressBar;
@@ -68,7 +69,7 @@ public class MeliProgressBarTest {
         meliProgressBar.animator = null;
         meliProgressBar.start(null);
 
-        verify(progressBarMock, times(3)).setProgress(0);
+        verify(progressBarMock, times(2)).setProgress(0);
     }
 
     @Test
@@ -78,7 +79,7 @@ public class MeliProgressBarTest {
         meliProgressBar.start(null);
 
         verify(animatorMock).cancel();
-        verify(progressBarMock, times(3)).setProgress(0);
+        verify(progressBarMock, times(2)).setProgress(0);
     }
 
     @Test
