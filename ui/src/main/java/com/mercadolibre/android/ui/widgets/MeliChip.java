@@ -3,8 +3,7 @@ package com.mercadolibre.android.ui.widgets;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -217,9 +216,7 @@ public class MeliChip extends RelativeLayout {
      */
     @Override
     final public void setBackgroundColor(int color) {
-        Drawable chipBackgroundDrawable = getResources().getDrawable(R.drawable.ui_chip_background);
-        chipBackgroundDrawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-        container.setBackground(chipBackgroundDrawable);
+        ((GradientDrawable) container.getBackground()).setColor(color);
         containerColor = ColorStateList.valueOf(color);
     }
 
