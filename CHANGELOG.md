@@ -1,14 +1,17 @@
-# v8.3.0
+# v8.5.0
 ## Nuevo
 - Se agrega el widget MeliProgressBar: determinate ProgressBar horizontal con texto de soporte.
 
-# v8.3.0
+# v8.4.0
 ## Cambiado
 - Se arregla el helper del TextField para que no se oculte al hacer setError(null). También para que no se oculte al escribir cuando fue seteado por código.
-- Al habilitar / desabilitar el TextField se aplica el focusableInTouchMode al editText en lugar del container para permitir pasar foco de un input al siguiente por teclado.
 
 ## Arreglado
-- Ahora el parámetro charactersCountVisible de TextField se puede setear correctamente por XML, hacer setEnable() a un TextField ya no modifica la visibilidad del contador de caracteres.
+- Ahora el parámetro charactersCountVisible de TextField se puede setear correctamente por XML, al hacer setEnable() a un TextField ya no modifica la visibilidad del contador de caracteres.
+
+# v8.3.0
+## Cambiado
+- Al habilitar / desabilitar el TextField se aplica el focusableInTouchMode al editText en lugar del container para permitir pasar foco de un input al siguiente por teclado.
 
 # v8.2.0
 ## Agregado
