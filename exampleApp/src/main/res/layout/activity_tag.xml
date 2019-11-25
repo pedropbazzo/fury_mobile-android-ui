@@ -6,78 +6,78 @@
     android:fillViewport="true">
 
     <LinearLayout
-        android:id="@+id/activity_chip_container"
+        android:id="@+id/activity_tag_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip1"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="Default MeliChip" />
+            app:text="Default MeliTag" />
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip2"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="MeliChip with text color"
+            app:text="MeliTag with text color"
             app:textColor="@color/green"/>
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip3"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="MeliChip with background color"
+            app:text="MeliTag with background color"
             app:containerColor="@color/blue" />
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip4"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="MeliChip without close button"
+            app:text="MeliTag without close button"
             app:showCloseButton="false"/>
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip5"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="MeliChip with different close button drawable"
+            app:text="MeliTag with different close button drawable"
             app:closeButtonDrawable="@drawable/atv_checkmark_normal"/>
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip6"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="MeliChip with different thumbnail drawable"
+            app:text="MeliTag with different thumbnail drawable"
             app:thumbnailDrawable="@drawable/atv_checkmark_normal"/>
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip7"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="Clickable MeliChip" />
+            app:text="Clickable MeliTag" />
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip8"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="Closeable MeliChip" />
+            app:text="Closeable MeliTag" />
 
-        <com.mercadolibre.android.ui.widgets.MeliChip
-            android:id="@+id/melichip9"
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            app:text="MeliChip with everything"
+            app:text="MeliTag with everything"
             app:textColor="@color/white"
             app:containerColor="@color/coral"
             app:closeButtonDrawable="@drawable/atv_checkmark_normal"

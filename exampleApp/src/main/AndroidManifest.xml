@@ -177,8 +177,8 @@
                 android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
         <activity
-            android:name=".ui.widgets.chip.ChipActivity"
-            android:label="@string/title_activity_chips"
+            android:name=".ui.widgets.tag.TagActivity"
+            android:label="@string/title_activity_tags"
             android:parentActivityName=".ui.widgets.WidgetsActivity"
             android:windowSoftInputMode="adjustResize">
             <meta-data

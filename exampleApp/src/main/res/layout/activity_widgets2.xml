@@ -82,8 +82,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:onClick="openChipActivity"
-            android:text="Chip" />
+            android:onClick="openTagActivity"
+            android:text="Tag" />
 
         <Button
             style="@style/Button.Action.Primary"

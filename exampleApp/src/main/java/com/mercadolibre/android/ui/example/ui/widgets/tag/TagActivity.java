@@ -1,4 +1,4 @@
-package com.mercadolibre.android.ui.example.ui.widgets.chip;
+package com.mercadolibre.android.ui.example.ui.widgets.tag;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,18 +7,18 @@ import android.widget.Toast;
 
 import com.mercadolibre.android.ui.example.BaseActivity;
 import com.mercadolibre.android.ui.example.R;
-import com.mercadolibre.android.ui.widgets.MeliChip;
+import com.mercadolibre.android.ui.widgets.MeliTag;
 
-public class ChipActivity extends BaseActivity {
+public class TagActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chip);
+        setContentView(R.layout.activity_tag);
 
-        MeliChip clickableMeliChip = findViewById(R.id.melichip7);
-        MeliChip closeableMeliChip = findViewById(R.id.melichip8);
-        MeliChip meliChipWithEverything = findViewById(R.id.melichip9);
+        MeliTag clickableMeliTag = findViewById(R.id.melitag7);
+        MeliTag closeableMeliTag = findViewById(R.id.melitag8);
+        MeliTag meliTagWithEverything = findViewById(R.id.melitag9);
 
         final Context context = this;
 
@@ -29,8 +29,8 @@ public class ChipActivity extends BaseActivity {
             }
         };
 
-        clickableMeliChip.setOnClickListener(onClickListener);
-        meliChipWithEverything.setOnClickListener(onClickListener);
+        clickableMeliTag.setOnClickListener(onClickListener);
+        meliTagWithEverything.setOnClickListener(onClickListener);
 
         View.OnClickListener onCloseListener = new View.OnClickListener() {
             @Override
@@ -39,7 +39,7 @@ public class ChipActivity extends BaseActivity {
             }
         };
 
-        closeableMeliChip.setOnCloseListener(onCloseListener);
-        meliChipWithEverything.setOnCloseListener(onCloseListener);
+        closeableMeliTag.setOnCloseListener(onCloseListener);
+        meliTagWithEverything.setOnCloseListener(onCloseListener);
     }
 }

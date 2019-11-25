@@ -19,7 +19,7 @@ import com.facebook.common.util.UriUtil;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.mercadolibre.android.ui.R;
 
-public class MeliChip extends RelativeLayout {
+public class MeliTag extends RelativeLayout {
 
     private ConstraintLayout container;
     private TextView textView;
@@ -31,34 +31,34 @@ public class MeliChip extends RelativeLayout {
     private ColorStateList containerColor;
 
     /**
-     * MeliChip constructor for code usage
+     * MeliTag constructor for code usage
      *
      * @param context the context
      */
-    public MeliChip(Context context) {
+    public MeliTag(Context context) {
         super(context);
         init(context, null, 0);
     }
 
     /**
-     * MeliChip constructor for XML usage
+     * MeliTag constructor for XML usage
      *
      * @param context the context
      * @param attrs   the attributes
      */
-    public MeliChip(Context context, @Nullable AttributeSet attrs) {
+    public MeliTag(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs, 0);
     }
 
     /**
-     * MeliChip constructor for XML usage
+     * MeliTag constructor for XML usage
      *
      * @param context      the context
      * @param attrs        the attributes
      * @param defStyleAttr the default attributes
      */
-    public MeliChip(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MeliTag(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs, defStyleAttr);
     }
@@ -72,24 +72,24 @@ public class MeliChip extends RelativeLayout {
      */
     private void init(@NonNull final Context context, @Nullable final AttributeSet attrs
             , final int defStyleAttr) {
-        LayoutInflater.from(context).inflate(R.layout.ui_layout_chip, this);
-        container = findViewById(R.id.ui_chip_container);
-        textView = findViewById(R.id.ui_chip_text);
-        thumbnail = findViewById(R.id.ui_chip_thumbnail);
-        closeButton = findViewById(R.id.ui_chip_close_button);
+        LayoutInflater.from(context).inflate(R.layout.ui_layout_tag, this);
+        container = findViewById(R.id.ui_tag_container);
+        textView = findViewById(R.id.ui_tag_text);
+        thumbnail = findViewById(R.id.ui_tag_thumbnail);
+        closeButton = findViewById(R.id.ui_tag_close_button);
 
-        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MeliChip
+        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MeliTag
                 , defStyleAttr, 0);
 
-        text = a.getString(R.styleable.MeliChip_text);
-        closeButtonShown = a.getBoolean(R.styleable.MeliChip_showCloseButton, true);
-        int thumbnailResourceId = a.getResourceId(R.styleable.MeliChip_thumbnailDrawable, R.drawable.ui_chip_avatar);
-        int closeButtonResourceId = a.getResourceId(R.styleable.MeliChip_closeButtonDrawable, R.drawable.ui_ic_chip_close);
-        textColor = a.getColorStateList(R.styleable.MeliChip_textColor);
+        text = a.getString(R.styleable.MeliTag_text);
+        closeButtonShown = a.getBoolean(R.styleable.MeliTag_showCloseButton, true);
+        int thumbnailResourceId = a.getResourceId(R.styleable.MeliTag_thumbnailDrawable, R.drawable.ui_tag_avatar);
+        int closeButtonResourceId = a.getResourceId(R.styleable.MeliTag_closeButtonDrawable, R.drawable.ui_ic_tag_close);
+        textColor = a.getColorStateList(R.styleable.MeliTag_textColor);
         if (textColor == null) {
             textColor = ContextCompat.getColorStateList(context, R.color.ui_meli_black);
         }
-        containerColor = a.getColorStateList(R.styleable.MeliChip_containerColor);
+        containerColor = a.getColorStateList(R.styleable.MeliTag_containerColor);
         if (containerColor == null) {
             containerColor = ContextCompat.getColorStateList(context, R.color.ui_meli_white);
         }
@@ -112,7 +112,7 @@ public class MeliChip extends RelativeLayout {
     /**
      * Getter for the text
      *
-     * @return the chip's text
+     * @return the tag's text
      */
     public String getText() {
         return text;
@@ -121,7 +121,7 @@ public class MeliChip extends RelativeLayout {
     /**
      * Setter for the text
      *
-     * @param text the text to be set in the chip
+     * @param text the text to be set in the {@link MeliTag}
      */
     final public void setText(String text) {
         this.text = text;
@@ -156,7 +156,7 @@ public class MeliChip extends RelativeLayout {
     }
 
     /**
-     * Sets the chip's thumbnail from a drawable resource
+     * Sets the tag's thumbnail from a drawable resource
      *
      * @param resourceId the drawable resource id for the thumbnail
      */
@@ -170,9 +170,9 @@ public class MeliChip extends RelativeLayout {
     }
 
     /**
-     * Sets the chip's thumbnail from an image url
+     * Sets the tag's thumbnail from an image url
      *
-     * @param url the url to get the chip's thumbnail from
+     * @param url the url to get the tag's thumbnail from
      */
     final public void setThumbnailDrawable(String url) {
         Uri uri = Uri.parse(url);
@@ -181,7 +181,7 @@ public class MeliChip extends RelativeLayout {
     }
 
     /**
-     * Setter for the chip's close button drawable
+     * Setter for the tag's close button drawable
      *
      * @param resourceId the drawable resource id for the close button
      */
@@ -190,7 +190,7 @@ public class MeliChip extends RelativeLayout {
     }
 
     /**
-     * Sets the chip's text color from a ColorStateList
+     * Sets the tag's text color from a ColorStateList
      *
      * @param textColor a {@link ColorStateList}
      */
@@ -200,7 +200,7 @@ public class MeliChip extends RelativeLayout {
     }
 
     /**
-     * Sets the chip's text color
+     * Sets the tag's text color
      *
      * @param color the color to be used for the text
      */
@@ -210,7 +210,7 @@ public class MeliChip extends RelativeLayout {
     }
 
     /**
-     * Sets the chip's background color
+     * Sets the tag's background color
      *
      * @param color the color to be used for the background
      */
@@ -221,7 +221,7 @@ public class MeliChip extends RelativeLayout {
     }
 
     /**
-     * Sets the listener for the chip's closing
+     * Sets the listener for the tag's closing
      * @param l the {@link android.view.View.OnClickListener} for the close button
      */
     final public void setOnCloseListener(@Nullable OnClickListener l) {
@@ -229,22 +229,22 @@ public class MeliChip extends RelativeLayout {
     }
 
     /**
-     * Getter for the chip's {@link TextView}
-     * @return the {@link TextView} used in the chip
+     * Getter for the tag's {@link TextView}
+     * @return the {@link TextView} used in the {@link MeliTag}
      */
     public TextView getTextView() { return textView; }
 
     /**
-     * Getter for the chip's container
-     * @return the {@link ConstraintLayout} used for the chip
+     * Getter for the tag's container
+     * @return the {@link ConstraintLayout} used for the {@link MeliTag}
      */
     public ConstraintLayout getContainer() {
         return container;
     }
 
     /**
-     * Getter for the chip's {@link ImageView} used as a button for closing
-     * @return the {@link ImageView} used for closing the chip
+     * Getter for the tag's {@link ImageView} used as a button for closing
+     * @return the {@link ImageView} used for closing the {@link MeliTag}
      */
     public ImageView getCloseButton() {
         return closeButton;

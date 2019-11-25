@@ -245,7 +245,7 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="MeliChip">
+    <declare-styleable name="MeliTag">
         <attr name="text" format="string"/>
         <attr name="showCloseButton" format="boolean"/>
         <attr name="thumbnailDrawable" format="reference"/>

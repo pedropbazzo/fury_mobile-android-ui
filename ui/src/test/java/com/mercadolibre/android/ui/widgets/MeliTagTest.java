@@ -32,13 +32,13 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Test class for {@link MeliChip}.
+ * Test class for {@link MeliTag}.
  */
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = Build.VERSION_CODES.LOLLIPOP)
-public class MeliChipTest {
+public class MeliTagTest {
 
-    private MeliChip meliChip;
+    private MeliTag meliTag;
     private Context context;
     private ConstraintLayout container;
     private TextView textView;
@@ -54,27 +54,27 @@ public class MeliChipTest {
         context = new ContextWrapper(RuntimeEnvironment.application);
         context.setTheme(R.style.Theme_MLTheme);
         Fresco.initialize(context);
-        meliChip = new MeliChip(context);
-        container = meliChip.getContainer();
-        textView = meliChip.getTextView();
-        closeButton = meliChip.getCloseButton();
+        meliTag = new MeliTag(context);
+        container = meliTag.getContainer();
+        textView = meliTag.getTextView();
+        closeButton = meliTag.getCloseButton();
     }
 
     @Test
     public void testNotNull() {
-        assertNotNull(meliChip);
+        assertNotNull(meliTag);
     }
 
     @Test
     public void testDefaultConfig() {
-        assertNull(meliChip.getText());
+        assertNull(meliTag.getText());
 
-        assertTrue(meliChip.isCloseButtonShown());
+        assertTrue(meliTag.isCloseButtonShown());
 
         final int currentTextColor = textView.getTextColors().getColorForState(textView.getDrawableState(), 0);
         assertEquals(context.getResources().getColor(R.color.ui_meli_black), currentTextColor);
 
-        final ColorStateList currentContainerColorStateList = ReflectionHelpers.getField(meliChip, "containerColor");
+        final ColorStateList currentContainerColorStateList = ReflectionHelpers.getField(meliTag, "containerColor");
         final int currentContainerColor = currentContainerColorStateList.getColorForState(container.getDrawableState(), 0);
         assertEquals(context.getResources().getColor(R.color.ui_meli_white), currentContainerColor);
     }
@@ -94,7 +94,7 @@ public class MeliChipTest {
                 .getColorForState(textView.getDrawableState(), 0);
         assertNotEquals(context.getResources().getColor(R.color.ui_meli_yellow), currentTextColor);
 
-        meliChip.setTextColor(ContextCompat.getColorStateList(context, R.color.ui_meli_yellow));
+        meliTag.setTextColor(ContextCompat.getColorStateList(context, R.color.ui_meli_yellow));
 
         currentTextColor = textView.getTextColors()
                 .getColorForState(textView.getDrawableState(), 0);
@@ -109,7 +109,7 @@ public class MeliChipTest {
                 .getColorForState(textView.getDrawableState(), 0);
         assertNotEquals(color, currentTextColor);
 
-        meliChip.setTextColor(color);
+        meliTag.setTextColor(color);
 
         currentTextColor = textView.getTextColors()
                 .getColorForState(textView.getDrawableState(), 0);
@@ -120,9 +120,9 @@ public class MeliChipTest {
     public void testSetBackgroundColor() {
         final int color = Color.parseColor("#00FF00");
 
-        meliChip.setBackgroundColor(color);
+        meliTag.setBackgroundColor(color);
 
-        ColorStateList colorStateList = ReflectionHelpers.getField(meliChip, "containerColor");
+        ColorStateList colorStateList = ReflectionHelpers.getField(meliTag, "containerColor");
         int actualColor = colorStateList.getColorForState(container.getBackground().getState(), 0);
         assertEquals(actualColor, color);
     }
@@ -131,10 +131,10 @@ public class MeliChipTest {
     public void testSetCloseButtonShown() {
         assertEquals(closeButton.getVisibility(), View.VISIBLE);
 
-        meliChip.setCloseButtonShown(false);
+        meliTag.setCloseButtonShown(false);
         assertEquals(closeButton.getVisibility(), View.GONE);
 
-        meliChip.setCloseButtonShown(true);
+        meliTag.setCloseButtonShown(true);
         assertEquals(closeButton.getVisibility(), View.VISIBLE);
     }
 
