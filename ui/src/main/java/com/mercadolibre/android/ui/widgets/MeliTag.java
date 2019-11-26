@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -26,9 +27,13 @@ public class MeliTag extends RelativeLayout {
     private SimpleDraweeView thumbnail;
     private ImageView closeButton;
     private String text;
+    private boolean thumbnailShown;
     private boolean closeButtonShown;
     private ColorStateList textColor;
     private ColorStateList containerColor;
+
+    private final int marginBig = (int) getResources().getDimension(R.dimen.ui_tag_background_radius);
+    private final int marginSmall = (int) getResources().getDimension(R.dimen.ui_tag_background_margin);
 
     /**
      * MeliTag constructor for code usage
@@ -82,6 +87,7 @@ public class MeliTag extends RelativeLayout {
                 , defStyleAttr, 0);
 
         text = a.getString(R.styleable.MeliTag_text);
+        thumbnailShown = a.getBoolean(R.styleable.MeliTag_showThumbnail, true);
         closeButtonShown = a.getBoolean(R.styleable.MeliTag_showCloseButton, true);
         int thumbnailResourceId = a.getResourceId(R.styleable.MeliTag_thumbnailDrawable, R.drawable.ui_tag_avatar);
         int closeButtonResourceId = a.getResourceId(R.styleable.MeliTag_closeButtonDrawable, R.drawable.ui_ic_tag_close);
@@ -99,6 +105,8 @@ public class MeliTag extends RelativeLayout {
         setThumbnailDrawable(thumbnailResourceId);
 
         setCloseButtonDrawable(closeButtonResourceId);
+
+        setThumbnailShown(thumbnailShown);
 
         setCloseButtonShown(closeButtonShown);
 
@@ -129,6 +137,52 @@ public class MeliTag extends RelativeLayout {
     }
 
     /**
+     * Returns whether the thumbnail is currently being shown.
+     *
+     * @return true if the thumbnail is being shown, false otherwise
+     */
+    public boolean isThumbnailShown() {
+        return thumbnailShown;
+    }
+
+    /**
+     * Setter for the visibility of the thumbnail
+     *
+     * @param thumbnailShown indicates whether the close button must be shown or not
+     */
+    final public void setThumbnailShown(boolean thumbnailShown) {
+        this.thumbnailShown = thumbnailShown;
+        final ConstraintSet constraintSet = new ConstraintSet();
+
+        if (thumbnailShown) {
+            thumbnail.setVisibility(VISIBLE);
+            constraintSet.clone(container);
+            constraintSet.clear(textView.getId(), ConstraintSet.LEFT);
+            constraintSet.connect(textView.getId(), ConstraintSet.START, thumbnail.getId(), ConstraintSet.END, marginSmall);
+            setEndConstraint(constraintSet);
+        } else {
+            thumbnail.setVisibility(GONE);
+            constraintSet.clone(container);
+            constraintSet.connect(textView.getId(), ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START, marginBig);
+            setEndConstraint(constraintSet);
+        }
+        constraintSet.applyTo(container);
+    }
+
+    /**
+     * Sets the constraint for the rightmost part of the tag according to the visibility of its
+     * close button
+     * @param constraintSet the {@link ConstraintSet} used to set the container's constraints
+     */
+    private void setEndConstraint(ConstraintSet constraintSet) {
+        if (closeButtonShown) {
+            constraintSet.connect(textView.getId(), ConstraintSet.END, closeButton.getId(), ConstraintSet.START);
+        } else {
+            constraintSet.connect(textView.getId(), ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END, marginBig);
+        }
+    }
+
+    /**
      * Returns whether the close button is currently being shown.
      *
      * @return true if the close button is being shown, false otherwise
@@ -144,14 +198,33 @@ public class MeliTag extends RelativeLayout {
      */
     final public void setCloseButtonShown(boolean closeButtonShown) {
         this.closeButtonShown = closeButtonShown;
+        final ConstraintSet constraintSet = new ConstraintSet();
 
         if (closeButtonShown) {
             closeButton.setVisibility(VISIBLE);
+            constraintSet.clone(container);
+            constraintSet.clear(textView.getId(), ConstraintSet.RIGHT);
+            constraintSet.connect(textView.getId(), ConstraintSet.END, closeButton.getId(), ConstraintSet.START);
+            setStartConstraint(constraintSet);
         } else {
             closeButton.setVisibility(GONE);
-            ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) textView.getLayoutParams();
-            layoutParams.setMargins(0, 0, 50, 0);
-            textView.setLayoutParams(layoutParams);
+            constraintSet.clone(container);
+            constraintSet.connect(textView.getId(), ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END, marginBig);
+            setStartConstraint(constraintSet);
+        }
+        constraintSet.applyTo(container);
+    }
+
+    /**
+     * Sets the constraint for the leftmost part of the tag according to the visibility of its
+     * thumbnail
+     * @param constraintSet the {@link ConstraintSet} used to set the container's constraints
+     */
+    private void setStartConstraint(ConstraintSet constraintSet) {
+        if (thumbnailShown) {
+            constraintSet.connect(textView.getId(), ConstraintSet.START, thumbnail.getId(), ConstraintSet.END, marginSmall);
+        } else {
+            constraintSet.connect(textView.getId(), ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START, marginBig);
         }
     }
 
@@ -240,6 +313,14 @@ public class MeliTag extends RelativeLayout {
      */
     public ConstraintLayout getContainer() {
         return container;
+    }
+
+    /**
+     * Getter for the tag's thumbnail
+     * @return the {@link SimpleDraweeView} used for the {@link MeliTag}
+     */
+    public SimpleDraweeView getThumbnail() {
+        return thumbnail;
     }
 
     /**

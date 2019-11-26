@@ -103,4 +103,9 @@
     <!-- MeliProgressBar-->
     <dimen name="ui_progress_bar_radius">6dp</dimen>
     <dimen name="ui_progress_bar_height">6dp</dimen>
+
+    <!-- MeliTag -->
+    <dimen name="ui_tag_background_height">32dp</dimen>
+    <dimen name="ui_tag_background_radius">16dp</dimen>
+    <dimen name="ui_tag_background_margin">8dp</dimen>
 </resources>

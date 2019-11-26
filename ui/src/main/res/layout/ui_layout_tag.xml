@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ui_tag_container"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/ui_tag_background_height"
     android:background="@drawable/ui_tag_background">
 
     <com.facebook.drawee.view.SimpleDraweeView
@@ -32,7 +32,7 @@
         android:textColor="@color/ui_meli_black"
         android:maxLines="1"
         android:ellipsize="end"
-        android:textSize="14sp"/>
+        android:textSize="@dimen/ui_fontsize_xsmall"/>
 
     <ImageView
         android:id="@+id/ui_tag_close_button"

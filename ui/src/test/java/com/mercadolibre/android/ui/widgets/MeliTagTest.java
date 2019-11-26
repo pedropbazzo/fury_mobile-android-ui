@@ -6,12 +6,14 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.soloader.SoLoader;
 import com.mercadolibre.android.ui.R;
 
@@ -42,6 +44,7 @@ public class MeliTagTest {
     private Context context;
     private ConstraintLayout container;
     private TextView textView;
+    private SimpleDraweeView thumbnail;
     private ImageView closeButton;
 
     @BeforeClass
@@ -57,6 +60,7 @@ public class MeliTagTest {
         meliTag = new MeliTag(context);
         container = meliTag.getContainer();
         textView = meliTag.getTextView();
+        thumbnail = meliTag.getThumbnail();
         closeButton = meliTag.getCloseButton();
     }
 
@@ -128,6 +132,17 @@ public class MeliTagTest {
     }
 
     @Test
+    public void testSetThumbnailShown() {
+        assertEquals(thumbnail.getVisibility(), View.VISIBLE);
+
+        meliTag.setThumbnailShown(false);
+        assertEquals(thumbnail.getVisibility(), View.GONE);
+
+        meliTag.setThumbnailShown(true);
+        assertEquals(thumbnail.getVisibility(), View.VISIBLE);
+    }
+
+    @Test
     public void testSetCloseButtonShown() {
         assertEquals(closeButton.getVisibility(), View.VISIBLE);
 
@@ -136,6 +151,64 @@ public class MeliTagTest {
 
         meliTag.setCloseButtonShown(true);
         assertEquals(closeButton.getVisibility(), View.VISIBLE);
+    }
+
+    @Test
+    public void testSetCloseButtonShown_withThumbnailVisible_textViewMarginsAreCorrect() {
+        float density = context.getResources().getDisplayMetrics().density;
+        int marginStart = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_margin) / density);
+        final int marginEndForCloseButtonShown = 0;
+        final int marginEndForCloseButtonNotShown = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+
+        assertEquals(marginStart, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
+        assertEquals(marginEndForCloseButtonShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
+        meliTag.setCloseButtonShown(false);
+        assertEquals(marginStart, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
+        assertEquals(marginEndForCloseButtonNotShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
+    }
+
+    @Test
+    public void testSetCloseButtonShown_withThumbnailNotVisible_textViewMarginsAreCorrect() {
+        meliTag.setThumbnailShown(false);
+        float density = context.getResources().getDisplayMetrics().density;
+        int marginStart = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+        final int marginEndForCloseButtonShown = 0;
+        final int marginEndForCloseButtonNotShown = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+
+        assertEquals(marginStart, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
+        assertEquals(marginEndForCloseButtonShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
+        meliTag.setCloseButtonShown(false);
+        assertEquals(marginStart, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
+        assertEquals(marginEndForCloseButtonNotShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
+    }
+
+    @Test
+    public void testSetThumbnailShown_withCloseButtonVisible_textViewMarginsAreCorrect() {
+        float density = context.getResources().getDisplayMetrics().density;
+        int marginEnd = 0;
+        final int marginStartForThumbnailShown = 8;
+        final int marginStartForThumbnailNotShown = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+
+        assertEquals(marginEnd, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
+        assertEquals(marginStartForThumbnailShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
+        meliTag.setThumbnailShown(false);
+        assertEquals(marginEnd, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
+        assertEquals(marginStartForThumbnailNotShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
+    }
+
+    @Test
+    public void testSetThumbnailShown_withCloseButtonNotVisible_textViewMarginsAreCorrect() {
+        meliTag.setCloseButtonShown(false);
+        float density = context.getResources().getDisplayMetrics().density;
+        int marginEnd = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+        final int marginStartForThumbnailShown = 8;
+        final int marginStartForThumbnailNotShown = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+
+        assertEquals(marginEnd, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
+        assertEquals(marginStartForThumbnailShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
+        meliTag.setThumbnailShown(false);
+        assertEquals(marginEnd, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
+        assertEquals(marginStartForThumbnailNotShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
     }
 
 }

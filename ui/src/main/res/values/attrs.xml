@@ -247,6 +247,7 @@
 
     <declare-styleable name="MeliTag">
         <attr name="text" format="string"/>
+        <attr name="showThumbnail" format="boolean" />
         <attr name="showCloseButton" format="boolean"/>
         <attr name="thumbnailDrawable" format="reference"/>
         <attr name="closeButtonDrawable" format="reference"/>
