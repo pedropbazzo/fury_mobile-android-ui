@@ -97,7 +97,7 @@ public class MeliTag extends RelativeLayout {
         }
         containerColor = a.getColorStateList(R.styleable.MeliTag_containerColor);
         if (containerColor == null) {
-            containerColor = ContextCompat.getColorStateList(context, R.color.ui_meli_white);
+            containerColor = ContextCompat.getColorStateList(context, R.color.ui_transparent);
         }
 
         setText(text);
@@ -112,7 +112,7 @@ public class MeliTag extends RelativeLayout {
 
         setTextColor(textColor);
 
-        setBackgroundColor(containerColor.getColorForState(container.getDrawableState(), R.color.ui_meli_white));
+        setBackgroundColor(containerColor.getColorForState(container.getDrawableState(), R.color.ui_transparent));
 
         a.recycle();
     }

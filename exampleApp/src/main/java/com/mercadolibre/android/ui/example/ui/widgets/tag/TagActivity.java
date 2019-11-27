@@ -16,9 +16,9 @@ public class TagActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tag);
 
-        MeliTag clickableMeliTag = findViewById(R.id.melitag7);
-        MeliTag closeableMeliTag = findViewById(R.id.melitag8);
-        MeliTag meliTagWithEverything = findViewById(R.id.melitag9);
+        MeliTag clickableMeliTag = findViewById(R.id.melitag_clickable);
+        MeliTag closeableMeliTag = findViewById(R.id.melitag_closeable);
+        MeliTag meliTagWithEverything = findViewById(R.id.melitag_everything);
 
         final Context context = this;
 
