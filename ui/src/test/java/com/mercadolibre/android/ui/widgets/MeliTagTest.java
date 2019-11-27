@@ -80,7 +80,7 @@ public class MeliTagTest {
 
         final ColorStateList currentContainerColorStateList = ReflectionHelpers.getField(meliTag, "containerColor");
         final int currentContainerColor = currentContainerColorStateList.getColorForState(container.getDrawableState(), 0);
-        assertEquals(context.getResources().getColor(R.color.ui_meli_white), currentContainerColor);
+        assertEquals(context.getResources().getColor(R.color.ui_transparent), currentContainerColor);
     }
 
     @Test
