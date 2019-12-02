@@ -83,19 +83,19 @@ public class MeliTag extends RelativeLayout {
         thumbnail = findViewById(R.id.ui_tag_thumbnail);
         closeButton = findViewById(R.id.ui_tag_close_button);
 
-        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MeliTag
+        final TypedArray styledAttributes = context.obtainStyledAttributes(attrs, R.styleable.MeliTag
                 , defStyleAttr, 0);
 
-        text = a.getString(R.styleable.MeliTag_text);
-        thumbnailShown = a.getBoolean(R.styleable.MeliTag_showThumbnail, true);
-        closeButtonShown = a.getBoolean(R.styleable.MeliTag_showCloseButton, true);
-        int thumbnailResourceId = a.getResourceId(R.styleable.MeliTag_thumbnailDrawable, R.drawable.ui_tag_avatar);
-        int closeButtonResourceId = a.getResourceId(R.styleable.MeliTag_closeButtonDrawable, R.drawable.ui_ic_tag_close);
-        textColor = a.getColorStateList(R.styleable.MeliTag_textColor);
+        text = styledAttributes.getString(R.styleable.MeliTag_text);
+        thumbnailShown = styledAttributes.getBoolean(R.styleable.MeliTag_showThumbnail, true);
+        closeButtonShown = styledAttributes.getBoolean(R.styleable.MeliTag_showCloseButton, true);
+        int thumbnailResourceId = styledAttributes.getResourceId(R.styleable.MeliTag_thumbnailDrawable, R.drawable.ui_tag_avatar);
+        int closeButtonResourceId = styledAttributes.getResourceId(R.styleable.MeliTag_closeButtonDrawable, R.drawable.ui_ic_tag_close);
+        textColor = styledAttributes.getColorStateList(R.styleable.MeliTag_textColor);
         if (textColor == null) {
             textColor = ContextCompat.getColorStateList(context, R.color.ui_meli_black);
         }
-        containerColor = a.getColorStateList(R.styleable.MeliTag_containerColor);
+        containerColor = styledAttributes.getColorStateList(R.styleable.MeliTag_containerColor);
         if (containerColor == null) {
             containerColor = ContextCompat.getColorStateList(context, R.color.ui_transparent);
         }
@@ -114,7 +114,7 @@ public class MeliTag extends RelativeLayout {
 
         setBackgroundColor(containerColor.getColorForState(container.getDrawableState(), R.color.ui_transparent));
 
-        a.recycle();
+        styledAttributes.recycle();
     }
 
     /**
@@ -122,6 +122,7 @@ public class MeliTag extends RelativeLayout {
      *
      * @return the tag's text
      */
+    @Nullable
     public String getText() {
         return text;
     }
@@ -131,7 +132,7 @@ public class MeliTag extends RelativeLayout {
      *
      * @param text the text to be set in the {@link MeliTag}
      */
-    final public void setText(String text) {
+    final public void setText(@Nullable String text) {
         this.text = text;
         textView.setText(text);
     }
@@ -174,7 +175,7 @@ public class MeliTag extends RelativeLayout {
      * close button
      * @param constraintSet the {@link ConstraintSet} used to set the container's constraints
      */
-    private void setEndConstraint(ConstraintSet constraintSet) {
+    private void setEndConstraint(@NonNull ConstraintSet constraintSet) {
         if (closeButtonShown) {
             constraintSet.connect(textView.getId(), ConstraintSet.END, closeButton.getId(), ConstraintSet.START);
         } else {
@@ -220,7 +221,7 @@ public class MeliTag extends RelativeLayout {
      * thumbnail
      * @param constraintSet the {@link ConstraintSet} used to set the container's constraints
      */
-    private void setStartConstraint(ConstraintSet constraintSet) {
+    private void setStartConstraint(@NonNull ConstraintSet constraintSet) {
         if (thumbnailShown) {
             constraintSet.connect(textView.getId(), ConstraintSet.START, thumbnail.getId(), ConstraintSet.END, marginSmall);
         } else {
@@ -247,7 +248,7 @@ public class MeliTag extends RelativeLayout {
      *
      * @param url the url to get the tag's thumbnail from
      */
-    final public void setThumbnailDrawable(String url) {
+    final public void setThumbnailDrawable(@NonNull String url) {
         Uri uri = Uri.parse(url);
 
         thumbnail.setImageURI(uri);
@@ -267,7 +268,7 @@ public class MeliTag extends RelativeLayout {
      *
      * @param textColor a {@link ColorStateList}
      */
-    final public void setTextColor(ColorStateList textColor) {
+    final public void setTextColor(@NonNull ColorStateList textColor) {
         textView.setTextColor(textColor);
         this.textColor = textColor;
     }
@@ -311,6 +312,7 @@ public class MeliTag extends RelativeLayout {
      * Getter for the tag's container
      * @return the {@link ConstraintLayout} used for the {@link MeliTag}
      */
+    @NonNull
     public ConstraintLayout getContainer() {
         return container;
     }
@@ -319,6 +321,7 @@ public class MeliTag extends RelativeLayout {
      * Getter for the tag's thumbnail
      * @return the {@link SimpleDraweeView} used for the {@link MeliTag}
      */
+    @NonNull
     public SimpleDraweeView getThumbnail() {
         return thumbnail;
     }
@@ -327,6 +330,7 @@ public class MeliTag extends RelativeLayout {
      * Getter for the tag's {@link ImageView} used as a button for closing
      * @return the {@link ImageView} used for closing the {@link MeliTag}
      */
+    @NonNull
     public ImageView getCloseButton() {
         return closeButton;
     }

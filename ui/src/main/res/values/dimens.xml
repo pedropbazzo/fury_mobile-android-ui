@@ -105,7 +105,13 @@
     <dimen name="ui_progress_bar_height">6dp</dimen>
 
     <!-- MeliTag -->
+    <dimen name="ui_tag_background_stroke">1dp</dimen>
     <dimen name="ui_tag_background_height">32dp</dimen>
     <dimen name="ui_tag_background_radius">16dp</dimen>
     <dimen name="ui_tag_background_margin">8dp</dimen>
+    <dimen name="ui_tag_thumbnail_size">24dp</dimen>
+    <dimen name="ui_tag_thumbnail_margin">4dp</dimen>
+    <dimen name="ui_tag_text_margin">8dp</dimen>
+    <dimen name="ui_tag_close_button_size">32dp</dimen>
+    <dimen name="ui_tag_close_button_padding">8dp</dimen>
 </resources>
