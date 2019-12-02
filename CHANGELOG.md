@@ -1,3 +1,7 @@
+# v8.6.0
+## Cambiado
+- Mejoras a la MeliProgressBar: eliminar listeners de animaciones y flag de progreso.
+
 # v8.5.0
 ## Nuevo
 - Se agrega el widget MeliProgressBar: determinate ProgressBar horizontal con texto de soporte.
