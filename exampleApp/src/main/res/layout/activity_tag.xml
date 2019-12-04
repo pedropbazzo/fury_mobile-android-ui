@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:id="@+id/activity_tag_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default Tag, shows thumbnail and close button, has transparent background. Only passed parameter is text:" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="Default MeliTag" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with text that doesn't completely fit in it" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with custom text color: " />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="MeliTag with text color"
+            app:textColor="@color/green"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with custom background color: " />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_background_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="MeliTag with background color"
+            app:containerColor="@color/blue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with thumbnail's visibility set to 'false':" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_no_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="MeliTag without thumbnail "
+            app:showThumbnail="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with close button's visibility set to 'false':" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_no_close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="MeliTag without close button"
+            app:showCloseButton="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with both thumbnail's and close button's visibility set to 'false':" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_no_thumbnail_no_close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="MeliTag without thumbnail or close button"
+            app:showThumbnail="false"
+            app:showCloseButton="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with custom image for the close button:" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_custom_close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="MeliTag with different close button drawable"
+            app:closeButtonDrawable="@drawable/atv_checkmark_normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with custom image for the thumbnail:" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_custom_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="MeliTag with different thumbnail drawable"
+            app:thumbnailDrawable="@drawable/atv_checkmark_normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with a click listener:" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_clickable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="Clickable MeliTag" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with a click listener set on its close button:" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_closeable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="Closeable MeliTag" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Tag with both click listeners set, with custom colors for text and background and custom images for close button and thumbnail:" />
+
+        <com.mercadolibre.android.ui.widgets.MeliTag
+            android:id="@+id/melitag_everything"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="MeliTag with everything"
+            app:textColor="@color/white"
+            app:containerColor="@color/coral"
+            app:closeButtonDrawable="@drawable/atv_checkmark_normal"
+            app:thumbnailDrawable="@drawable/atv_checkmark_normal" />
+
+    </LinearLayout>
+
+</ScrollView>

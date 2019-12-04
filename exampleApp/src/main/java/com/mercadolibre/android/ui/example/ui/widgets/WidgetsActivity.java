@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.mercadolibre.android.ui.example.BaseActivity;
 import com.mercadolibre.android.ui.example.R;
+import com.mercadolibre.android.ui.example.ui.widgets.tag.TagActivity;
 import com.mercadolibre.android.ui.example.ui.widgets.contextual_menu.ContextualMenuActivity;
 import com.mercadolibre.android.ui.example.ui.widgets.dialog.DialogActivity;
 import com.mercadolibre.android.ui.example.ui.widgets.spinner.SpinnerActivity;
@@ -53,5 +54,9 @@ public class WidgetsActivity extends BaseActivity {
 
     public void openProgressBarActivity(View view) {
         startActivity(new Intent(this, ProgressBarActivity.class));
+    }
+
+    public void openTagActivity(View view) {
+        startActivity(new Intent(this, TagActivity.class));
     }
 }

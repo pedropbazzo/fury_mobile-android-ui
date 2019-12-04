@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.mercadolibre.android.ui.example">
-
+    package="com.mercadolibre.android.ui.example">
     <!-- To access Google+ APIs: -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".SampleApplication"
@@ -14,27 +13,27 @@
         <activity
             android:name=".legacy.MainLegacyActivity"
             android:label="@string/app_name"
-            android:parentActivityName=".SplashActivity"/>
+            android:parentActivityName=".SplashActivity" />
         <activity
             android:name=".legacy.DefaultComponentsActivity"
             android:label="@string/title_activity_default"
-            android:parentActivityName=".legacy.MainLegacyActivity"/>
+            android:parentActivityName=".legacy.MainLegacyActivity" />
         <activity
             android:name=".legacy.widgets.mlimageview.MLImagePagerActivity"
             android:label="@string/title_activity_ml_imagepager"
-            android:parentActivityName=".legacy.WidgetsActivity"/>
+            android:parentActivityName=".legacy.WidgetsActivity" />
         <activity
             android:name=".legacy.widgets.atableview.ATableViewActivity"
             android:label="@string/title_activity_atable_view"
-            android:parentActivityName=".legacy.WidgetsActivity"/>
+            android:parentActivityName=".legacy.WidgetsActivity" />
         <activity
             android:name=".legacy.WidgetsActivity"
             android:label="@string/title_activity_widgets"
-            android:parentActivityName=".legacy.MainLegacyActivity"/>
+            android:parentActivityName=".legacy.MainLegacyActivity" />
         <activity
             android:name=".legacy.widgets.banner.officialstore.BannerOfficialStoreActivity"
             android:label="Banner/Official Store"
-            android:parentActivityName=".legacy.WidgetsActivity"/>
+            android:parentActivityName=".legacy.WidgetsActivity" />
         <activity
             android:name=".ui.drawee.DraweeStateActivity"
             android:label="@string/title_activity_drawee" />
@@ -42,9 +41,9 @@
             android:name=".SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -53,7 +52,7 @@
             android:parentActivityName=".SplashActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SplashActivity"/>
+                android:value=".SplashActivity" />
         </activity>
         <activity
             android:name=".ui.fonts.FontsActivity"
@@ -62,7 +61,7 @@
             android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.MainActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.ButtonsActivity"
@@ -70,7 +69,7 @@
             android:parentActivityName=".ui.widgets.WidgetsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.MLButtonsActivity"
@@ -78,7 +77,7 @@
             android:parentActivityName=".ui.widgets.WidgetsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
         <activity
             android:name=".ui.ColorsActivity"
@@ -86,7 +85,7 @@
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.MainActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.fonts.FontSizeActivity"
@@ -94,7 +93,7 @@
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.MainActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.SnackbarActivity"
@@ -103,7 +102,7 @@
             android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.ProgressBarActivity"
@@ -119,7 +118,7 @@
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.MainActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.dialog.DialogActivity"
@@ -127,7 +126,7 @@
             android:parentActivityName=".ui.widgets.WidgetsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.spinner.SpinnerActivity"
@@ -135,7 +134,7 @@
             android:parentActivityName=".ui.widgets.WidgetsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.OtherWidgetsActivity"
@@ -143,7 +142,7 @@
             android:parentActivityName=".ui.widgets.WidgetsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.contextual_menu.ContextualMenuActivity"
@@ -151,7 +150,7 @@
             android:parentActivityName=".ui.widgets.WidgetsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.widgets.WidgetsActivity"/>
+                android:value=".ui.widgets.WidgetsActivity" />
         </activity>
         <activity
             android:name=".ui.LineSpacingActivity"
@@ -159,23 +158,32 @@
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MainActivity"/>
+                android:value=".ui.MainActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.textfield.TextFieldActivity"
             android:label="@string/title_activity_textfield"
-            android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".ui.widgets.WidgetsActivity">
+            android:parentActivityName=".ui.widgets.WidgetsActivity"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
         <activity
             android:name=".ui.widgets.ErrorViewActivity"
             android:label="@string/title_activity_error_view">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity"/>
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
+        </activity>
+        <activity
+            android:name=".ui.widgets.tag.TagActivity"
+            android:label="@string/title_activity_tags"
+            android:parentActivityName=".ui.widgets.WidgetsActivity"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mercadolibre.android.ui.example.ui.widgets.WidgetsActivity" />
         </activity>
     </application>
 
