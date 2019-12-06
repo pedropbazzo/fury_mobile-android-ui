@@ -15,9 +15,11 @@ import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -42,7 +44,6 @@ public class MeliProgressBarTest {
         meliProgressBar = new MeliProgressBar(new ContextThemeWrapper(RuntimeEnvironment.application, R.style.Theme_MLTheme));
     }
 
-
     @After
     public void tearDown() {
         progressBarMock = null;
@@ -61,6 +62,7 @@ public class MeliProgressBarTest {
         assertEquals("", 10000, meliProgressBar.progressBar.getMax());
         assertEquals("", "", meliProgressBar.textView.getText().toString());
         assertEquals("", View.GONE, meliProgressBar.textView.getVisibility());
+        assertFalse("", meliProgressBar.isInProgress());
     }
 
     @Test
@@ -70,6 +72,7 @@ public class MeliProgressBarTest {
         meliProgressBar.start(null);
 
         verify(progressBarMock, times(2)).setProgress(0);
+        assertTrue("", meliProgressBar.isInProgress());
     }
 
     @Test
@@ -104,6 +107,7 @@ public class MeliProgressBarTest {
         meliProgressBar.finish(null);
         verify(animatorMock).cancel();
         assertNotEquals("", animatorMock, meliProgressBar.animator);
+        assertFalse("", meliProgressBar.isInProgress());
     }
 
     @Test
@@ -113,6 +117,7 @@ public class MeliProgressBarTest {
 
         meliProgressBar.finish(null);
         assertNull("", meliProgressBar.animator);
+        assertFalse("", meliProgressBar.isInProgress());
     }
 
     @Test
@@ -124,6 +129,7 @@ public class MeliProgressBarTest {
         meliProgressBar.restart();
         verify(progressBarMock).setProgress(0);
         assertEquals("", View.GONE, meliProgressBar.textView.getVisibility());
+        assertFalse("", meliProgressBar.isInProgress());
     }
 
     @Test
@@ -137,5 +143,14 @@ public class MeliProgressBarTest {
         verify(animatorMock).cancel();
         verify(progressBarMock).setProgress(0);
         assertEquals("", View.INVISIBLE, meliProgressBar.textView.getVisibility());
+        assertFalse("", meliProgressBar.isInProgress());
+    }
+
+    @Test
+    public void removeAnimListeners_shouldCallRemoveAllListeners() {
+        meliProgressBar.animator = animatorMock;
+        meliProgressBar.removeAnimListeners();
+
+        verify(animatorMock).removeAllListeners();
     }
 }

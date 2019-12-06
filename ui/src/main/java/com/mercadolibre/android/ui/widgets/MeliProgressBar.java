@@ -41,6 +41,7 @@ public final class MeliProgressBar extends FrameLayout {
     /* default */ ObjectAnimator animator;
     private int textFadeInDuration;
     private int textDelay;
+    private boolean inProgress;
 
     /**
      * Constructor for code usage.
@@ -115,6 +116,7 @@ public final class MeliProgressBar extends FrameLayout {
      */
     public void start(@Nullable final Animator.AnimatorListener animatorListener) {
         if (animator != null) {
+            animator.removeAllListeners();
             animator.cancel();
         }
         progressBar.setProgress(INITIAL_PROGRESS);
@@ -125,6 +127,7 @@ public final class MeliProgressBar extends FrameLayout {
         }
         animator.setDuration(maxProgressTime);
         showText();
+        inProgress = true;
         animator.start();
     }
 
@@ -135,6 +138,7 @@ public final class MeliProgressBar extends FrameLayout {
     public void finish(@Nullable final Animator.AnimatorListener animatorListener) {
         final int progress = progressBar.getProgress();
         if (animator != null) {
+            animator.removeAllListeners();
             animator.cancel();
         }
         if (progress > INITIAL_PROGRESS) {
@@ -146,6 +150,7 @@ public final class MeliProgressBar extends FrameLayout {
             }
             animator.start();
         }
+        inProgress = false;
     }
 
     /**
@@ -154,10 +159,21 @@ public final class MeliProgressBar extends FrameLayout {
      */
     public void restart() {
         if (animator != null) {
+            animator.removeAllListeners();
             animator.cancel();
         }
         setTextInitialVisibility();
         progressBar.setProgress(INITIAL_PROGRESS);
+        inProgress = false;
+    }
+
+    /**
+     * Remove all listeners to current animation.
+     */
+    public void removeAnimListeners() {
+        if (animator != null) {
+            animator.removeAllListeners();
+        }
     }
 
     /**
@@ -223,6 +239,13 @@ public final class MeliProgressBar extends FrameLayout {
         return progressBar == null ? INITIAL_PROGRESS : progressBar.getProgress();
     }
 
+    /**
+     * @return true if it's in progress, false if not.
+     */
+    public boolean isInProgress() {
+        return inProgress;
+    }
+
     private void showText() {
         if (!TextUtils.isEmpty(textView.getText())) {
             textView.setAlpha(0f);
@@ -259,6 +282,7 @@ public final class MeliProgressBar extends FrameLayout {
             ", animator=" + animator +
             ", textFadeInDuration=" + textFadeInDuration +
             ", textDelay=" + textDelay +
+            ", inProgress=" + inProgress +
             '}';
     }
 }
