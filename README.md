@@ -4,13 +4,13 @@
 #### Legacy module (Deprecated)
 You can include this module by adding the dependency to your build.gradle
 ```gradle
-implementation com.mercadolibre.android:ui_legacy:1.1.0
+implementation com.mercadolibre.android:ui_legacy:8.X.X
 ```
 
 #### UI module (New)
 You can include this module by adding the dependency to your build.gradle
 ```gradle
-implementation com.mercadolibre.android:ui:6.X.X
+implementation com.mercadolibre.android:ui:8.X.X
 ```
 ##### For more detailed information please check out [the wiki](https://github.com/mercadolibre/fury_mobile-android-ui/wiki/UI-Home)
 
