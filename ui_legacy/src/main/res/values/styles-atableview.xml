@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res-auto">
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="Widget.ATableView.Section.TextLabel" parent="@style/Widget">
         <item name="android:includeFontPadding">false</item>
@@ -18,20 +18,17 @@
         <item name="android:shadowColor">@android:color/white</item>
     </style>
 
-    <style name="Widget.ATableView.Section.Plain.Header.TextLabel"
-        parent="@style/Widget.ATableView.Section.Plain.TextLabel">
+    <style name="Widget.ATableView.Section.Plain.Header.TextLabel" parent="@style/Widget.ATableView.Section.Plain.TextLabel">
         <item name="android:textSize">@dimen/atv_plain_header_text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="Widget.ATableView.Section.Grouped.Header.TextLabel"
-        parent="@style/Widget.ATableView.Section.Grouped.TextLabel">
+    <style name="Widget.ATableView.Section.Grouped.Header.TextLabel" parent="@style/Widget.ATableView.Section.Grouped.TextLabel">
         <item name="android:textSize">@dimen/atv_grouped_section_header_text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="Widget.ATableView.Section.Grouped.Footer.TextLabel"
-        parent="@style/Widget.ATableView.Section.Grouped.TextLabel">
+    <style name="Widget.ATableView.Section.Grouped.Footer.TextLabel" parent="@style/Widget.ATableView.Section.Grouped.TextLabel">
         <item name="android:textSize">@dimen/atv_grouped_section_footer_text_size</item>
         <item name="android:gravity">left</item>
     </style>

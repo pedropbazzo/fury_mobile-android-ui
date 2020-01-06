@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <style name="MLButton" parent="android:Widget.Button">
         <item name="android:layout_height">@dimen/button_height</item>
@@ -15,12 +15,16 @@
 
     <!--Define default look & feel for FABs on Meli-->
     <style name="Widget.Design.FloatingActionButton" parent="android:Widget">
-        <item name="android:background">@drawable/design_fab_background</item>
+        <item name="android:background" tools:ignore="PrivateResource">
+            @drawable/design_fab_background
+        </item>
         <item name="backgroundTint">@color/ui_fab_color</item>
 
         <item name="fabSize">normal</item>
         <item name="elevation">@dimen/ui_fab_elevation</item>
-        <item name="pressedTranslationZ">@dimen/design_fab_translation_z_pressed</item>
+        <item name="pressedTranslationZ" tools:ignore="PrivateResource">
+            @dimen/design_fab_translation_z_pressed
+        </item>
         <item name="rippleColor">?attr/colorControlHighlight</item>
         <item name="borderWidth">@dimen/ui_fab_border_width</item>
     </style>

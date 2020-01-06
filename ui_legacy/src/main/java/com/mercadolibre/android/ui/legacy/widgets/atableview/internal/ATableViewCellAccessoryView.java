@@ -1,5 +1,6 @@
 package com.mercadolibre.android.ui.legacy.widgets.atableview.internal;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.view.View;
@@ -11,13 +12,12 @@ import com.mercadolibre.android.ui.legacy.R;
 import com.mercadolibre.android.ui.legacy.widgets.atableview.view.ATableViewCell;
 
 // TODO this class should be generic, maybe we could change extension into a ViewGroup and place accessory within.
+@SuppressLint("AppCompatCustomView")
 @Deprecated
 public class ATableViewCellAccessoryView extends ImageView {
     public ATableViewCellAccessoryView(Context context) {
         super(context);
     }
-
-    ;
 
     public enum ATableViewCellAccessoryType {None, DisclosureIndicator, DisclosureButton, Checkmark}
 
@@ -30,10 +30,10 @@ public class ATableViewCellAccessoryView extends ImageView {
         }
 
         private static ImageView getAccessoryView(ATableViewCell cell, ATableViewCellAccessoryType accessoryType) {
-            LinearLayout containerView = (LinearLayout) cell.findViewById(R.id.containerView);
+            LinearLayout containerView = cell.findViewById(R.id.containerView);
 
             // check if accessoryView already exists for current cell before creating a new instance.
-            ImageView accessoryView = (ImageView) containerView.findViewById(R.id.accessoryView);
+            ImageView accessoryView = containerView.findViewById(R.id.accessoryView);
             if (accessoryView == null) {
                 Resources res = cell.getResources();
 

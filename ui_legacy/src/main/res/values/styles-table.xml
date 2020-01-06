@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res-auto">
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="MLTable">
         <!--<item name="android:layout_marginTop">@dimen/mltable_margin_top_bottom</item>-->

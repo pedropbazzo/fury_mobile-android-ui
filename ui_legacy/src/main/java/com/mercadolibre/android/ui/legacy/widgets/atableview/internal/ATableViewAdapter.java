@@ -1,5 +1,6 @@
 package com.mercadolibre.android.ui.legacy.widgets.atableview.internal;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -52,14 +53,14 @@ public class ATableViewAdapter extends BaseAdapter {
     }
 
     private void initialize() {
-        mHasHeader = new ArrayList<Boolean>();
-        mHasFooter = new ArrayList<Boolean>();
-        mHeadersHeight = new ArrayList<Integer>();
-        mFootersHeight = new ArrayList<Integer>();
-        mRows = new ArrayList<Integer>();
-        mRowsHeight = new ArrayList<List<Integer>>();
+        mHasHeader = new ArrayList<>();
+        mHasFooter = new ArrayList<>();
+        mHeadersHeight = new ArrayList<>();
+        mFootersHeight = new ArrayList<>();
+        mRows = new ArrayList<>();
+        mRowsHeight = new ArrayList<>();
 
-        int sections = 0;
+        int sections;
 
         ATableViewDataSource dataSource = mTableView.getDataSource();
         ATableViewDelegate delegate = mTableView.getDelegate();
@@ -68,7 +69,7 @@ public class ATableViewAdapter extends BaseAdapter {
         if (dataSource != null) {
             sections = dataSource.numberOfSectionsInTableView(mTableView);
             for (int s = 0; s < sections; s++) {
-                Boolean hasHeader = false, hasFooter = false;
+                boolean hasHeader = false, hasFooter = false;
 
                 // mark header if overridden in delegate, otherwise try to pull title instead.
                 int headerHeight = delegate.heightForHeaderInSection(mTableView, s);
@@ -195,7 +196,7 @@ public class ATableViewAdapter extends BaseAdapter {
         int tableWidth = size.x;
 
         int widthMeasureSpec = MeasureSpec.makeMeasureSpec(tableWidth, MeasureSpec.EXACTLY);
-        int heightMeasureSpec = MeasureSpec.makeMeasureSpec(AbsListView.LayoutParams.WRAP_CONTENT, getHeightMeasureMode());
+        @SuppressLint("Range") int heightMeasureSpec = MeasureSpec.makeMeasureSpec(AbsListView.LayoutParams.WRAP_CONTENT, getHeightMeasureMode());
         cell.measure(widthMeasureSpec, heightMeasureSpec);
 
         // add measured height to cache, so we don't have to recalculate every time.
