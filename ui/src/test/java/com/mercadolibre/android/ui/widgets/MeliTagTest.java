@@ -6,7 +6,6 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
-import android.support.constraint.ConstraintSet;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.ImageView;
@@ -156,9 +155,9 @@ public class MeliTagTest {
     @Test
     public void testSetCloseButtonShown_withThumbnailVisible_textViewMarginsAreCorrect() {
         float density = context.getResources().getDisplayMetrics().density;
-        int marginStart = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_margin) / density);
+        int marginStart = (int) (context.getResources().getDimension(R.dimen.ui_tag_background_margin) / density);
         final int marginEndForCloseButtonShown = 0;
-        final int marginEndForCloseButtonNotShown = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+        final int marginEndForCloseButtonNotShown = (int) (context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
 
         assertEquals(marginStart, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
         assertEquals(marginEndForCloseButtonShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
@@ -171,9 +170,9 @@ public class MeliTagTest {
     public void testSetCloseButtonShown_withThumbnailNotVisible_textViewMarginsAreCorrect() {
         meliTag.setThumbnailShown(false);
         float density = context.getResources().getDisplayMetrics().density;
-        int marginStart = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+        int marginStart = (int) (context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
         final int marginEndForCloseButtonShown = 0;
-        final int marginEndForCloseButtonNotShown = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+        final int marginEndForCloseButtonNotShown = (int) (context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
 
         assertEquals(marginStart, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
         assertEquals(marginEndForCloseButtonShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
@@ -187,7 +186,7 @@ public class MeliTagTest {
         float density = context.getResources().getDisplayMetrics().density;
         int marginEnd = 0;
         final int marginStartForThumbnailShown = 8;
-        final int marginStartForThumbnailNotShown = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+        final int marginStartForThumbnailNotShown = (int) (context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
 
         assertEquals(marginEnd, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
         assertEquals(marginStartForThumbnailShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());
@@ -200,9 +199,9 @@ public class MeliTagTest {
     public void testSetThumbnailShown_withCloseButtonNotVisible_textViewMarginsAreCorrect() {
         meliTag.setCloseButtonShown(false);
         float density = context.getResources().getDisplayMetrics().density;
-        int marginEnd = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+        int marginEnd = (int) (context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
         final int marginStartForThumbnailShown = 8;
-        final int marginStartForThumbnailNotShown = (int)(context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
+        final int marginStartForThumbnailNotShown = (int) (context.getResources().getDimension(R.dimen.ui_tag_background_radius) / density);
 
         assertEquals(marginEnd, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginEnd());
         assertEquals(marginStartForThumbnailShown, ((ConstraintLayout.LayoutParams) textView.getLayoutParams()).getMarginStart());

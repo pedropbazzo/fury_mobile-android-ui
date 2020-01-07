@@ -37,6 +37,7 @@ public class TypefaceSpanCompat extends TypefaceSpan {
         apply(paint);
     }
 
+    @SuppressWarnings("PMD.UnusedPrivateMethod")
     private void apply(@NonNull final Paint paint) {
         final Typeface oldTypeface = paint.getTypeface();
         final int oldStyle = getOldStyle(oldTypeface);

@@ -58,8 +58,8 @@ public class MLPriceView extends RelativeLayout {
         LayoutInflater.from(context).inflate(R.layout.view_mlprice, this);
 
         if (!isInEditMode()) {
-            entirePartTextView = (TextView) findViewById(R.id.mlprice_entire_part);
-            decimalsPartTextView = (TextView) findViewById(R.id.mlprice_decimal_part);
+            entirePartTextView = findViewById(R.id.mlprice_entire_part);
+            decimalsPartTextView = findViewById(R.id.mlprice_decimal_part);
 
             if (attrs != null) {
                 applyCustomStyles(context, attrs);
@@ -76,7 +76,7 @@ public class MLPriceView extends RelativeLayout {
     private void applyCustomStyles(Context context, AttributeSet attrs) {
         final String namespace = "http://schemas.android.com/apk/res/android";
 
-        Integer userCustomId = attrs.getAttributeValue(namespace, "id").hashCode();
+        int userCustomId = attrs.getAttributeValue(namespace, "id").hashCode();
         entirePartTextView.setId(userCustomId + ENTIRE);
         decimalsPartTextView.setId(userCustomId + DECIMALS);
 
@@ -85,7 +85,7 @@ public class MLPriceView extends RelativeLayout {
             int userCustomTextSize = (int) DimensionUtils.px2sp(context, typedArray.getDimensionPixelSize(R.styleable.MLPriceView_textSize, 0));
             setTextSize(userCustomTextSize);
 
-            int color = typedArray.getColor(R.styleable.MLPriceView_textColor, R.color.black);
+            int color = typedArray.getColor(R.styleable.MLPriceView_textColor, getResources().getColor(R.color.black));
             entirePartTextView.setTextColor(color);
             decimalsPartTextView.setTextColor(color);
         } finally {
