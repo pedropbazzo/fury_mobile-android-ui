@@ -1,3 +1,7 @@
+# v8.7.0
+## Cambiado
+- Migramos a Gradle 5
+
 # v8.6.0
 ## Cambiado
 - Mejoras a la MeliProgressBar: eliminar listeners de animaciones y flag de progreso.
