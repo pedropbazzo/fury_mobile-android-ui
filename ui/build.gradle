@@ -47,7 +47,7 @@ dependencies {
 
     implementation "com.facebook.fresco:fresco:$frescoVersion"
     implementation "com.facebook.fresco:webpsupport:$frescoVersion"
-    implementation 'com.facebook.soloader:soloader:0.6.0+'
+    implementation "com.facebook.soloader:soloader:$soLoaderVersion"
 
     implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
 
