@@ -20,7 +20,7 @@ public final class TypefaceHelper {
     private static TypefaceSetter typefaceSetter;
 
     static {
-        typefaceSetter = new CalligraphyTypefaceSetter();
+        typefaceSetter = new DefaultTypefaceSetter();
     }
 
     private TypefaceHelper() {

@@ -35,8 +35,6 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import uk.co.chrisjenx.calligraphy.TypefaceUtils;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -126,7 +124,6 @@ public class TextFieldTest {
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
         assertEquals(TextUtils.TruncateAt.END, editText.getEllipsize());
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.LIGHT.getFontPath()), editText.getTypeface());
         assertTrue(container.isHintEnabled());
 
 
@@ -256,22 +253,6 @@ public class TextFieldTest {
 
         assertTrue(container.isPasswordVisibilityToggleEnabled());
         assertEquals(toggleDrawable, container.getPasswordVisibilityToggleDrawable());
-    }
-
-    @Test
-    public void testSetTextFont_withValidFont_shouldSetItToTheInput() {
-        textField.setTextFont(Font.BOLD);
-
-        final EditText editText = textField.getEditText();
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BOLD.getFontPath()), editText.getTypeface());
-    }
-
-    @Test
-    public void testSetLabelFont_withValidFont_shouldSetItToTheInput() {
-        textField.setLabelFont(Font.BLACK);
-
-        final TextView label = ReflectionHelpers.getField(textField, "label");
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BLACK.getFontPath()), label.getTypeface());
     }
 
     @Test
