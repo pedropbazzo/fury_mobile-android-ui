@@ -14,11 +14,13 @@ import android.widget.TextView;
 public class DefaultTypefaceSetter implements TypefaceHelper.TypefaceSetter {
     @Override
     public <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font) {
+        //DONOTHING
     }
 
     @Override
     public void setTypeface(@NonNull final Context context, @NonNull final Paint paint,
         @NonNull final Font font) {
+        //DONOTHING
     }
 
     @Override
