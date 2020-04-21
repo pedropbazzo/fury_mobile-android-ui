@@ -20,6 +20,7 @@ public class StateDraweeView extends SimpleDraweeView {
 
     private @Nullable OnEnabledListener enabledListener;
     private @Nullable OnLevelListener levelListener;
+    private static final String MESSAGE = "This class doesnt support setting images, please use #setState";
 
     @VisibleForTesting
     @Nullable
@@ -56,12 +57,16 @@ public class StateDraweeView extends SimpleDraweeView {
 
     private void checkAttrs(@Nullable AttributeSet attrs) {
         if (attrs != null) {
-            TypedArray gdhAttrs = getContext().obtainStyledAttributes(attrs, com.facebook.drawee.R.styleable.SimpleDraweeView);
+            TypedArray gdhAttrs = getContext()
+                .obtainStyledAttributes(attrs, com.facebook.drawee.R.styleable.SimpleDraweeView);
 
             try {
-                if(gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageUri) ||
-                        gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) {
-                    throw new IllegalStateException("This class doesnt support xml images, please use #setState");
+                if (gdhAttrs
+                    .hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageUri) ||
+                    gdhAttrs.hasValue(
+                        com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) {
+                    throw new IllegalStateException(
+                        "This class doesnt support xml images, please use #setState");
                 }
             } finally {
                 gdhAttrs.recycle();
@@ -123,8 +128,9 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     /**
-     * When using this listener, always detach when you wont be having the view anymore, since it keeps
-     * a strong reference to the parameter class
+     * When using this listener, always detach when you wont be having the view anymore, since it
+     * keeps a strong reference to the parameter class
+     *
      * @param listener strong reference to listener
      */
     public void setOnLevelListener(@Nullable OnLevelListener listener) {
@@ -132,8 +138,9 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     /**
-     * When using this listener, always detach when you wont be having the view anymore, since it keeps
-     * a strong reference to the parameter class
+     * When using this listener, always detach when you wont be having the view anymore, since it
+     * keeps a strong reference to the parameter class
+     *
      * @param listener strong reference to listener
      */
     public void setOnEnabledListener(@Nullable OnEnabledListener listener) {
@@ -146,49 +153,49 @@ public class StateDraweeView extends SimpleDraweeView {
 
     @Override
     public void setImageDrawable(final Drawable drawable) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageBitmap(final Bitmap bm) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageResource(final int resId) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageURI(final Uri uri) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setActualImageResource(@DrawableRes final int resourceId) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setActualImageResource(@DrawableRes final int resourceId,
         @javax.annotation.Nullable final Object callerContext) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageURI(final Uri uri, @javax.annotation.Nullable final Object callerContext) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageURI(@javax.annotation.Nullable final String uriString) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageURI(@javax.annotation.Nullable final String uriString,
         @javax.annotation.Nullable final Object callerContext) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     public interface OnEnabledListener {

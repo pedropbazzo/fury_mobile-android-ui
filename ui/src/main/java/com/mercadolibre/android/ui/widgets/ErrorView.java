@@ -291,12 +291,12 @@ public class ErrorView extends LinearLayout {
     @SuppressWarnings("checkstyle:multiplestringliterals")
     public String toString() {
         return "ErrorView{"
-                + "image=" + image
-                + ", title=" + title
-                + ", subtitle=" + subtitle
-                + ", button=" + button
-                + ", buttonClickListener=" + buttonClickListener
-                + ", imageRes=" + imageRes
+                + "Image=" + image
+                + ", Title=" + title
+                + ", Subtitle=" + subtitle
+                + ", Button=" + button
+                + ", ButtonClickListener=" + buttonClickListener
+                + ", ImageRes=" + imageRes
                 + '}';
     }
 

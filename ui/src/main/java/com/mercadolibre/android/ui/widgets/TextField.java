@@ -850,13 +850,13 @@ public final class TextField extends LinearLayout {
     @SuppressWarnings("checkstyle:multiplestringliterals")
     public String toString() {
         return "TextField{"
-                + "label=" + label
-                + ", maxLines=" + maxLines
-                + ", maxCharacters=" + maxCharacters
-                + ", charactersCountVisible=" + charactersCountVisible
-                + ", hint='" + hint + '\''
-                + ", labelText='" + labelText + '\''
-                + ", enabled=" + enabled
+                + "Label=" + label
+                + ", MaxLines=" + maxLines
+                + ", MaxCharacters=" + maxCharacters
+                + ", CharactersCountVisible=" + charactersCountVisible
+                + ", Hint='" + hint + '\''
+                + ", LabelText='" + labelText + '\''
+                + ", Enabled=" + enabled
                 + '}';
     }
 

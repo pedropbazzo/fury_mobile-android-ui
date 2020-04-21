@@ -34,6 +34,7 @@ public abstract class FullScreenModal extends DialogFragment {
     /* default */ View closeButton;
     private DialogAnimationManager dialogAnimationManager;
     private final static String EMPTY_TITLE = "";
+    private final static String MESSAGE = "Context must extend from AppCompatActivity";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,7 @@ public abstract class FullScreenModal extends DialogFragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (!(context instanceof AppCompatActivity)) {
-            throw new IllegalArgumentException("Context must extend from AppCompatActivity");
+            throw new IllegalArgumentException(MESSAGE);
         }
     }
 
@@ -166,7 +167,7 @@ public abstract class FullScreenModal extends DialogFragment {
      */
     protected void setUpToolbar(View root) {
         if (!(getActivity() instanceof AppCompatActivity)) {
-            throw new IllegalArgumentException("Context must extend from AppCompatActivity");
+            throw new IllegalArgumentException(MESSAGE);
         }
 
         Toolbar toolbar = root.findViewById(R.id.ui_fullscreenmodal_toolbar);
