@@ -49,8 +49,8 @@ dependencies {
     api "com.facebook.fresco:webpsupport:$frescoVersion"
 
     implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
-
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    implementation "com.mercadolibre.android.andesui:components:$andesVersion"
 
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation "org.robolectric:shadows-supportv4:$robolectricVersion"
