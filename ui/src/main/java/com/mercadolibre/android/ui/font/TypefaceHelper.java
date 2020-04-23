@@ -13,6 +13,8 @@ import static android.support.v4.provider.FontsContractCompat.FontRequestCallbac
 /**
  * This class is used as a wrapper for our custom font.
  * If you code create a View that supports typeface you should call one of this methods.
+ *
+ * @deprecated migrate to https://github.com/mercadolibre/fury_andesui-android
  */
 @Deprecated
 public final class TypefaceHelper {
@@ -24,7 +26,6 @@ public final class TypefaceHelper {
         typefaceSetter = new CalligraphyTypefaceSetter();
     }
 
-    @Deprecated
     private TypefaceHelper() {
         //Do nothing, this class should not be instantiated
     }
