@@ -14,6 +14,7 @@ import static android.support.v4.provider.FontsContractCompat.FontRequestCallbac
  * This class is used as a wrapper for our custom font.
  * If you code create a View that supports typeface you should call one of this methods.
  */
+@Deprecated
 public final class TypefaceHelper {
 
     @NonNull
@@ -23,6 +24,7 @@ public final class TypefaceHelper {
         typefaceSetter = new CalligraphyTypefaceSetter();
     }
 
+    @Deprecated
     private TypefaceHelper() {
         //Do nothing, this class should not be instantiated
     }
@@ -30,7 +32,10 @@ public final class TypefaceHelper {
     /**
      * Attach a typeface setter to this helper class
      * @param typefaceSetter field
+     *
+     * @deprecated migrate to https://github.com/mercadolibre/fury_andesui-android
      */
+    @Deprecated
     public static void attachTypefaceSetter(@NonNull final TypefaceSetter typefaceSetter) {
         TypefaceHelper.typefaceSetter = typefaceSetter;
     }
@@ -40,7 +45,10 @@ public final class TypefaceHelper {
      * @param <T>   A generic for the textview
      * @param view  The view to which apply the font
      * @param font  The {@link Font} the text should have
+     *
+     * @deprecated migrate to https://github.com/mercadolibre/fury_andesui-android
      */
+    @Deprecated
     public static <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font) {
         typefaceSetter.setTypeface(view, font);
     }
@@ -51,7 +59,10 @@ public final class TypefaceHelper {
      * @param context A context to obtain the font
      * @param paint   The paint to which apply the font
      * @param font    The {@link Font} the text should have
+     *
+     * @deprecated migrate to https://github.com/mercadolibre/fury_andesui-android
      */
+    @Deprecated
     public static void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font) {
         typefaceSetter.setTypeface(context, paint, font);
     }
@@ -79,19 +90,25 @@ public final class TypefaceHelper {
 
     /**
      * Get a typeface associated to the font passed.
-
+     *
      * @param context to use
      * @param font to use
      * @return associated typeface
+     *
+     * @deprecated use TypefaceHelper{@link #getFontTypeface(Context, Font)} instead
      */
     @Nullable
+    @Deprecated
     public static Typeface getFontTypeface(@NonNull final Context context, @NonNull Font font) {
         return typefaceSetter.getTypeface(context, font);
     }
 
     /**
      * Setter for typeface
+     *
+     * @deprecated use TypefaceHelper{@link #getFontTypeface(Context, Font)} instead
      */
+    @Deprecated
     public interface TypefaceSetter {
 
         /**
