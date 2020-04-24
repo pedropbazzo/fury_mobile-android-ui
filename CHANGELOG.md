@@ -1,3 +1,7 @@
+# v8.7.1
+## Cambiado
+- Se deprecó TypefaceHelper ya que se migró a andes.
+
 # v8.7.0
 ## Cambiado
 - Migramos a Gradle 5

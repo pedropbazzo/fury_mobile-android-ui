@@ -20,6 +20,7 @@ public class StateDraweeView extends SimpleDraweeView {
 
     private @Nullable OnEnabledListener enabledListener;
     private @Nullable OnLevelListener levelListener;
+    private static final String MESSAGE = "This class doesnt support setting images, please use #setState";
 
     @VisibleForTesting
     @Nullable
@@ -146,49 +147,49 @@ public class StateDraweeView extends SimpleDraweeView {
 
     @Override
     public void setImageDrawable(final Drawable drawable) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageBitmap(final Bitmap bm) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageResource(final int resId) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageURI(final Uri uri) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setActualImageResource(@DrawableRes final int resourceId) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setActualImageResource(@DrawableRes final int resourceId,
         @javax.annotation.Nullable final Object callerContext) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageURI(final Uri uri, @javax.annotation.Nullable final Object callerContext) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageURI(@javax.annotation.Nullable final String uriString) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     @Override
     public void setImageURI(@javax.annotation.Nullable final String uriString,
         @javax.annotation.Nullable final Object callerContext) {
-        throw new IllegalStateException("This class doesnt support setting images, please use #setState");
+        throw new IllegalStateException(MESSAGE);
     }
 
     public interface OnEnabledListener {
