@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class DefaultTypefaceSetter implements TypefaceHelper.TypefaceSetter {
     @Override
     public <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font) {
-        //DONOTHING
+        // Do nothing
     }
 
     @Override
