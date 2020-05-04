@@ -56,6 +56,7 @@ public class FrescoImageController {
     /**
      * Package visibility constructor. Since its an immutable object, use builders.
      */
+    @SuppressWarnings("PMD.NPathComplexity")
     /* default */ FrescoImageController(@NonNull final Uri uri, @NonNull DraweeView view,
         @Nullable Callback deprecatedCallback, @Nullable FrescoImageListener callback,
         @Nullable ResizeOptions resizeOpt, @Nullable ImageDecodeOptions decodeOpt,
@@ -333,6 +334,7 @@ public class FrescoImageController {
      *
      * @return new builder with current state
      */
+    @SuppressWarnings("PMD.NPathComplexity")
     public @NonNull
     Builder newBuilder() {
         Builder builder = new Builder()
@@ -430,24 +432,25 @@ public class FrescoImageController {
     }
 
     @Override
+    @SuppressWarnings("PMD.AvoidDuplicateLiterals")
     public String toString() {
         return "FrescoImageController{" +
-            "View=" + view +
-            ", FrescoCallback=" + frescoCallback +
-            ", Uri=" + uri +
-            ", Priority=" + priority +
-            ", ResizeOptions=" + resizeOptions +
-            ", RotationOptions=" + rotationOptions +
-            ", DecodeOptions=" + decodeOptions +
-            ", Postprocessor=" + postprocessor +
-            ", TapToRetry=" + tapToRetry +
-            ", ProgressiveRendering=" + progressiveRendering +
-            ", LocalThumbnailPreview=" + localThumbnailPreview +
-            ", AutoPlayAnimations=" + autoPlayAnimations +
-            ", NoCache=" + noCache +
-            ", NoDiskCache=" + noDiskCache +
-            ", NoMemoryCache=" + noMemoryCache +
-            ", CacheChoice=" + cacheChoice +
+            "view=" + view +
+            ", frescoCallback=" + frescoCallback +
+            ", uri=" + uri +
+            ", priority=" + priority +
+            ", resizeOptions=" + resizeOptions +
+            ", rotationOptions=" + rotationOptions +
+            ", decodeOptions=" + decodeOptions +
+            ", postprocessor=" + postprocessor +
+            ", tapToRetry=" + tapToRetry +
+            ", progressiveRendering=" + progressiveRendering +
+            ", localThumbnailPreview=" + localThumbnailPreview +
+            ", autoPlayAnimations=" + autoPlayAnimations +
+            ", noCache=" + noCache +
+            ", noDiskCache=" + noDiskCache +
+            ", noMemoryCache=" + noMemoryCache +
+            ", cacheChoice=" + cacheChoice +
             '}';
     }
 

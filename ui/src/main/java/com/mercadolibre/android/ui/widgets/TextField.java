@@ -847,7 +847,7 @@ public final class TextField extends LinearLayout {
     }
 
     @Override
-    @SuppressWarnings("checkstyle:multiplestringliterals")
+    @SuppressWarnings({"checkstyle:multiplestringliterals", "PMD.AvoidDuplicateLiterals"})
     public String toString() {
         return "TextField{"
                 + "Label=" + label

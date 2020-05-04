@@ -288,7 +288,7 @@ public class ErrorView extends LinearLayout {
     }
 
     @Override
-    @SuppressWarnings("checkstyle:multiplestringliterals")
+    @SuppressWarnings({"checkstyle:multiplestringliterals", "PMD.AvoidDuplicateLiterals"})
     public String toString() {
         return "ErrorView{"
                 + "Image=" + image
