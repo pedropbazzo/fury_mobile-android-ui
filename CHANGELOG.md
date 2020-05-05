@@ -2,7 +2,7 @@
 ## Eliminado
 - Se removio calligraphy de android:ui
 
-# v8.7.1
+# v8.8.0
 ## Cambiado
 - Se deprecó TypefaceHelper ya que se migró a andes.
 
