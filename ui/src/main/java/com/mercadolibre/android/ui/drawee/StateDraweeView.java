@@ -66,7 +66,7 @@ public class StateDraweeView extends SimpleDraweeView {
                     gdhAttrs.hasValue(
                         com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) {
                     throw new IllegalStateException(
-                        "This class doesnt support xml images, please use #setState");
+                        MESSAGE);
                 }
             } finally {
                 gdhAttrs.recycle();
