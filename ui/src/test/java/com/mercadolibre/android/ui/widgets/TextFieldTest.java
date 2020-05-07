@@ -261,8 +261,6 @@ public class TextFieldTest {
     public void testSetTextFont_withValidFont_shouldSetItToTheInput() {
         textField.setTextFont(Font.BOLD);
 
-        typefaceSetterMocker = TypefaceSetterMocker.init();
-
         final EditText editText = textField.getEditText();
         assertEquals(typefaceSetterMocker.typefaceBold, editText.getTypeface());
     }
@@ -270,8 +268,6 @@ public class TextFieldTest {
     @Test
     public void testSetLabelFont_withValidFont_shouldSetItToTheInput() {
         textField.setLabelFont(Font.BLACK);
-
-        typefaceSetterMocker = TypefaceSetterMocker.init();
 
         final TextView label = ReflectionHelpers.getField(textField, "label");
         assertEquals(typefaceSetterMocker.typefaceBlack, label.getTypeface());
@@ -281,8 +277,6 @@ public class TextFieldTest {
     public void testSetTextFontSEMI_BOLD_withValidFont_shouldSetItToTheInput() {
         textField.setTextFont(Font.SEMI_BOLD);
 
-        typefaceSetterMocker = TypefaceSetterMocker.init();
-
         final EditText editText = textField.getEditText();
         assertEquals(typefaceSetterMocker.typefaceSemiBold, editText.getTypeface());
     }
@@ -290,8 +284,6 @@ public class TextFieldTest {
     @Test
     public void testSetLabelFontREGULAR_withValidFont_shouldSetItToTheInput() {
         textField.setLabelFont(Font.REGULAR);
-
-        typefaceSetterMocker = TypefaceSetterMocker.init();
 
         final TextView label = ReflectionHelpers.getField(textField, "label");
         assertEquals(typefaceSetterMocker.typefaceRegular, label.getTypeface());
@@ -301,8 +293,6 @@ public class TextFieldTest {
     public void testSetTextFontMEDIUM_withValidFont_shouldSetItToTheInput() {
         textField.setTextFont(Font.MEDIUM);
 
-        typefaceSetterMocker = TypefaceSetterMocker.init();
-
         final EditText editText = textField.getEditText();
         assertEquals(typefaceSetterMocker.typefaceMedium, editText.getTypeface());
     }
@@ -310,8 +300,6 @@ public class TextFieldTest {
     @Test
     public void testSetLabelFontEXTRA_BOLD_withValidFont_shouldSetItToTheInput() {
         textField.setLabelFont(Font.EXTRA_BOLD);
-
-        typefaceSetterMocker = TypefaceSetterMocker.init();
 
         final TextView label = ReflectionHelpers.getField(textField, "label");
         assertEquals(typefaceSetterMocker.typefaceExtraBold, label.getTypeface());
@@ -321,12 +309,10 @@ public class TextFieldTest {
     public void testSetLabelFontTHIN_withValidFont_shouldSetItToTheInput() {
         textField.setLabelFont(Font.THIN);
 
-        typefaceSetterMocker = TypefaceSetterMocker.init();
-
         final TextView label = ReflectionHelpers.getField(textField, "label");
         assertEquals(typefaceSetterMocker.typefaceThin, label.getTypeface());
     }
-    
+
     @Test
     public void testSetTextColor_withResource_shouldSetTheColorToTheInput() {
         final int color = Color.parseColor("#fedc13");
