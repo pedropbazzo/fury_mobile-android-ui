@@ -89,6 +89,7 @@ public class TextFieldTest {
         editText = textField.getEditText();
         label = ReflectionHelpers.getField(textField, "label");
         container = ReflectionHelpers.getField(textField, "container");
+        typefaceSetterMocker = TypefaceSetterMocker.init();
     }
 
     @After
@@ -121,7 +122,6 @@ public class TextFieldTest {
         assertNull(drawables[1]);
         assertNull(drawables[2]);
         assertNull(drawables[3]);
-        typefaceSetterMocker = TypefaceSetterMocker.init();
 
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
