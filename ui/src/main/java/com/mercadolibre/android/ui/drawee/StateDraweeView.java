@@ -56,15 +56,11 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     private void checkAttrs(@Nullable AttributeSet attrs) {
-
         if (attrs != null) {
             TypedArray gdhAttrs = getContext().obtainStyledAttributes(attrs, com.facebook.drawee.R.styleable.SimpleDraweeView);
 
             try {
-                if (gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageUri) ||
-                    gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) {
-                    throw new IllegalStateException(MESSAGE);
-                }
+                if(gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageUri) || gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) { throw new IllegalStateException(MESSAGE); }
             } finally {
                 gdhAttrs.recycle();
             }
@@ -125,8 +121,7 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     /**
-     * When using this listener, always detach when you wont be having the view anymore, since it
-     * keeps a strong reference to the parameter class
+     * When using this listener, always detach when you wont be having the view anymore, since it keepsa strong reference to the parameter class
      * @param listener strong reference to listener
      */
     public void setOnLevelListener(@Nullable OnLevelListener listener) {
@@ -134,8 +129,7 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     /**
-     * When using this listener, always detach when you wont be having the view anymore, since it
-     * keeps a strong reference to the parameter class
+     * When using this listener, always detach when you wont be having the view anymore, since itkeeps a strong reference to the parameter class
      * @param listener strong reference to listener
      */
     public void setOnEnabledListener(@Nullable OnEnabledListener listener) {
@@ -147,9 +141,7 @@ public class StateDraweeView extends SimpleDraweeView {
      */
 
     @Override
-    public void setImageDrawable(final Drawable drawable) {
-        throw new IllegalStateException(MESSAGE);
-    }
+    public void setImageDrawable(final Drawable drawable) {throw new IllegalStateException("This class doesnt support xml images, please use #setState"); }
 
     @Override
     public void setImageBitmap(final Bitmap bm) {

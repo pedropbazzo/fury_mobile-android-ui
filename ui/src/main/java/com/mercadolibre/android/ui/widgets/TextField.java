@@ -48,7 +48,7 @@ import static java.lang.Integer.MAX_VALUE;
 /**
  * MercadoLibre's TextField class.
  */
-@SuppressWarnings("PMD.GodClass")
+@SuppressWarnings("PMD")
 public final class TextField extends LinearLayout {
 
     /* default */ String helperText;
@@ -847,7 +847,6 @@ public final class TextField extends LinearLayout {
     }
 
     @Override
-    @SuppressWarnings({"PMD"})
     public String toString() {
         return "TextField{"
                 + "label=" + label

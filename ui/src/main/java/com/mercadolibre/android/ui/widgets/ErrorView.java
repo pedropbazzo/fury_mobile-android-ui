@@ -29,6 +29,7 @@ import com.mercadolibre.android.ui.R;
  * Comments: If you want to center the content you should specify "match_parent" to layout_width and layout_height
  * in your xml file. Otherwise it might be shown on the top of the screen.
  */
+@SuppressWarnings("PMD")
 public class ErrorView extends LinearLayout {
 
     private ImageView image;
@@ -288,7 +289,6 @@ public class ErrorView extends LinearLayout {
     }
 
     @Override
-    @SuppressWarnings("PMD")
     public String toString() {
         return "ErrorView{"
                 + "image=" + image
