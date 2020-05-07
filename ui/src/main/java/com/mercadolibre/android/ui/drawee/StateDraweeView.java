@@ -121,7 +121,8 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     /**
-     * When using this listener, always detach when you wont be having the view anymore, since it keepsa strong reference to the parameter class
+     * When using this listener, always detach when you wont be having the view anymore, since it keeps
+     * a strong reference to the parameter class
      * @param listener strong reference to listener
      */
     public void setOnLevelListener(@Nullable OnLevelListener listener) {
@@ -129,7 +130,8 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     /**
-     * When using this listener, always detach when you wont be having the view anymore, since itkeeps a strong reference to the parameter class
+     * When using this listener, always detach when you wont be having the view anymore, since itkeeps
+     * a strong reference to the parameter class
      * @param listener strong reference to listener
      */
     public void setOnEnabledListener(@Nullable OnEnabledListener listener) {
@@ -141,8 +143,9 @@ public class StateDraweeView extends SimpleDraweeView {
      */
 
     @Override
-    public void setImageDrawable(final Drawable drawable) {throw new IllegalStateException("This class doesnt support xml images, please use #setState"); }
-
+    public void setImageDrawable(final Drawable drawable) {
+        throw new IllegalStateException(MESSAGE);
+    }
     @Override
     public void setImageBitmap(final Bitmap bm) {
         throw new IllegalStateException(MESSAGE);
