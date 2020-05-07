@@ -847,16 +847,16 @@ public final class TextField extends LinearLayout {
     }
 
     @Override
-    @SuppressWarnings({"checkstyle:multiplestringliterals", "PMD.AvoidDuplicateLiterals"})
+    @SuppressWarnings({"PMD"})
     public String toString() {
         return "TextField{"
-                + "Label=" + label
-                + ", MaxLines=" + maxLines
-                + ", MaxCharacters=" + maxCharacters
-                + ", CharactersCountVisible=" + charactersCountVisible
-                + ", Hint='" + hint + '\''
-                + ", LabelText='" + labelText + '\''
-                + ", Enabled=" + enabled
+                + "label=" + label
+                + ", maxLines=" + maxLines
+                + ", maxCharacters=" + maxCharacters
+                + ", charactersCountVisible=" + charactersCountVisible
+                + ", hint='" + hint + '\''
+                + ", labelText='" + labelText + '\''
+                + ", enabled=" + enabled
                 + '}';
     }
 
