@@ -60,7 +60,7 @@ public class StateDraweeView extends SimpleDraweeView {
             TypedArray gdhAttrs = getContext().obtainStyledAttributes(attrs, com.facebook.drawee.R.styleable.SimpleDraweeView);
 
             try {
-                if(gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageUri) || gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) { throw new IllegalStateException(MESSAGE); }
+                if(gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageUri) || gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) { throw new IllegalStateException("This class doesnt support xml images, please use #setState"); }
             } finally {
                 gdhAttrs.recycle();
             }
