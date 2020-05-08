@@ -60,7 +60,10 @@ public class StateDraweeView extends SimpleDraweeView {
             TypedArray gdhAttrs = getContext().obtainStyledAttributes(attrs, com.facebook.drawee.R.styleable.SimpleDraweeView);
 
             try {
-                if(gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageUri) || gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) { throw new IllegalStateException("This class doesnt support xml images, please use #setState"); }
+                if(gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageUri) ||
+                        gdhAttrs.hasValue(com.facebook.drawee.R.styleable.SimpleDraweeView_actualImageResource)) {
+                    throw new IllegalStateException("This class doesnt support xml images, please use #setState");
+                }
             } finally {
                 gdhAttrs.recycle();
             }
@@ -130,7 +133,7 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     /**
-     * When using this listener, always detach when you wont be having the view anymore, since itkeeps
+     * When using this listener, always detach when you wont be having the view anymore, since it keeps
      * a strong reference to the parameter class
      * @param listener strong reference to listener
      */
@@ -146,6 +149,7 @@ public class StateDraweeView extends SimpleDraweeView {
     public void setImageDrawable(final Drawable drawable) {
         throw new IllegalStateException(MESSAGE);
     }
+
     @Override
     public void setImageBitmap(final Bitmap bm) {
         throw new IllegalStateException(MESSAGE);
