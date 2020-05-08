@@ -126,6 +126,7 @@ public class TextFieldTest {
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
         assertEquals(TextUtils.TruncateAt.END, editText.getEllipsize());
+        assertEquals(typefaceSetterMocker.typefaceLight, editText.getTypeface());
         assertTrue(container.isHintEnabled());
 
         final int greyColor = Color.parseColor("#999999");
