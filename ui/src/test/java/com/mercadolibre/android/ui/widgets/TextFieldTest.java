@@ -35,8 +35,6 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import uk.co.chrisjenx.calligraphy.TypefaceUtils;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -68,6 +66,7 @@ public class TextFieldTest {
     private TextView label;
     private TextInputLayout container;
     private Context context;
+    private TypefaceSetterMocker typefaceSetterMocker;
 
     @Before
     public void setUp() {
@@ -90,6 +89,7 @@ public class TextFieldTest {
         editText = textField.getEditText();
         label = ReflectionHelpers.getField(textField, "label");
         container = ReflectionHelpers.getField(textField, "container");
+        typefaceSetterMocker = TypefaceSetterMocker.init();
     }
 
     @After
@@ -126,9 +126,7 @@ public class TextFieldTest {
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
         assertEquals(TextUtils.TruncateAt.END, editText.getEllipsize());
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.LIGHT.getFontPath()), editText.getTypeface());
         assertTrue(container.isHintEnabled());
-
 
         final int greyColor = Color.parseColor("#999999");
 
@@ -263,15 +261,64 @@ public class TextFieldTest {
         textField.setTextFont(Font.BOLD);
 
         final EditText editText = textField.getEditText();
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BOLD.getFontPath()), editText.getTypeface());
+        assertEquals(typefaceSetterMocker.typefaceBold, editText.getTypeface());
     }
+
+    @Test
+    public void testSetTextFontLIGHT_withValidFont_shouldSetItToTheInput() {
+        textField.setTextFont(Font.LIGHT);
+
+        final EditText editText = textField.getEditText();
+        assertEquals(typefaceSetterMocker.typefaceLight, editText.getTypeface());
+    }
+
 
     @Test
     public void testSetLabelFont_withValidFont_shouldSetItToTheInput() {
         textField.setLabelFont(Font.BLACK);
 
         final TextView label = ReflectionHelpers.getField(textField, "label");
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BLACK.getFontPath()), label.getTypeface());
+        assertEquals(typefaceSetterMocker.typefaceBlack, label.getTypeface());
+    }
+
+    @Test
+    public void testSetTextFontSEMI_BOLD_withValidFont_shouldSetItToTheInput() {
+        textField.setTextFont(Font.SEMI_BOLD);
+
+        final EditText editText = textField.getEditText();
+        assertEquals(typefaceSetterMocker.typefaceSemiBold, editText.getTypeface());
+    }
+
+    @Test
+    public void testSetLabelFontREGULAR_withValidFont_shouldSetItToTheInput() {
+        textField.setLabelFont(Font.REGULAR);
+
+        final TextView label = ReflectionHelpers.getField(textField, "label");
+        assertEquals(typefaceSetterMocker.typefaceRegular, label.getTypeface());
+    }
+
+    @Test
+    public void testSetTextFontMEDIUM_withValidFont_shouldSetItToTheInput() {
+        textField.setTextFont(Font.MEDIUM);
+
+        final EditText editText = textField.getEditText();
+        assertEquals(typefaceSetterMocker.typefaceMedium, editText.getTypeface());
+    }
+
+    @Test
+    public void testSetLabelFontEXTRA_BOLD_withValidFont_shouldSetItToTheInput() {
+        textField.setLabelFont(Font.EXTRA_BOLD);
+
+        final TextView label = ReflectionHelpers.getField(textField, "label");
+        assertEquals(typefaceSetterMocker.typefaceExtraBold, label.getTypeface());
+    }
+
+    @Test
+    public void testSetLabelFontTHIN_withValidFont_shouldSetItToTheInput() {
+        textField.setLabelFont(Font.THIN);
+
+        final TextView label = ReflectionHelpers.getField(textField, "label");
+        assertEquals(typefaceSetterMocker.typefaceThin, label.getTypeface());
     }
 
     @Test

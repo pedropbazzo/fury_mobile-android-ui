@@ -44,7 +44,6 @@ dependencies {
     implementation project(':ui_legacy')
 
     implementation "com.android.support:design:$supportLibraryVersion"
-    implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
 
     implementation "com.facebook.stetho:stetho:$stethoVersion"
     implementation "com.facebook.fresco:fresco:$frescoVersion"

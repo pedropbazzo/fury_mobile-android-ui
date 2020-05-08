@@ -48,8 +48,6 @@ dependencies {
     api "com.facebook.fresco:fresco:$frescoVersion"
     api "com.facebook.fresco:webpsupport:$frescoVersion"
 
-    implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
-
     implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
 
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
