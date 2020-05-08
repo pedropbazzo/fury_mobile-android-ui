@@ -122,6 +122,7 @@ public class TextFieldTest {
         assertNull(drawables[1]);
         assertNull(drawables[2]);
         assertNull(drawables[3]);
+        textField.setTextFont(Font.LIGHT);
 
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
