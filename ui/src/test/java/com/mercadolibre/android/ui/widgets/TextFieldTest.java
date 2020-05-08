@@ -122,12 +122,10 @@ public class TextFieldTest {
         assertNull(drawables[1]);
         assertNull(drawables[2]);
         assertNull(drawables[3]);
-        textField.setTextFont(Font.LIGHT);
 
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
         assertEquals(TextUtils.TruncateAt.END, editText.getEllipsize());
-        assertEquals(typefaceSetterMocker.typefaceLight, editText.getTypeface());
         assertTrue(container.isHintEnabled());
 
         final int greyColor = Color.parseColor("#999999");
@@ -265,6 +263,15 @@ public class TextFieldTest {
         final EditText editText = textField.getEditText();
         assertEquals(typefaceSetterMocker.typefaceBold, editText.getTypeface());
     }
+
+    @Test
+    public void testSetTextFontLIGHT_withValidFont_shouldSetItToTheInput() {
+        textField.setTextFont(Font.LIGHT);
+
+        final EditText editText = textField.getEditText();
+        assertEquals(typefaceSetterMocker.typefaceLight, editText.getTypeface());
+    }
+
 
     @Test
     public void testSetLabelFont_withValidFont_shouldSetItToTheInput() {
