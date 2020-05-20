@@ -531,8 +531,11 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
      * Gets contentDescription for close button (for accessibility)
      */
     protected String getCloseButtonContentDescription() {
-        closeButton = root.findViewById(R.id.ui_melidialog_close_button);
-        return closeButton.getContentDescription().toString();
+        CharSequence closeButtonContentDescription = root.findViewById(R.id.ui_melidialog_close_button).getContentDescription();
+        if (closeButtonContentDescription == null)
+            return null;
+        else
+            return closeButtonContentDescription.toString();
     }
 
     /**
