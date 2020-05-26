@@ -1,3 +1,7 @@
+# v8.10.0
+## Cambiado
+- Se cambia el helper del TextField, para usar el helper del TextInputLayout
+
 # v8.9.0
 ## Eliminado
 - Se removio calligraphy de android:ui
