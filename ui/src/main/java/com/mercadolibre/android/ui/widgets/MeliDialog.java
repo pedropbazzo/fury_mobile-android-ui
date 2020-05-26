@@ -526,4 +526,25 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
                 + ", dismissed=" + dismissed
                 + '}';
     }
+
+    /**
+     * Gets contentDescription for close button (for accessibility)
+     */
+
+    @Nullable
+    public String getCloseButtonContentDescription() {
+        CharSequence closeButtonContentDescription = root.findViewById(R.id.ui_melidialog_close_button).getContentDescription();
+        if (closeButtonContentDescription == null) {
+            return null;
+        } else {
+            return closeButtonContentDescription.toString(); }
+    }
+
+    /**
+     * Sets contentDescription for close button (for accessibility)
+     */
+    public void setCloseButtonContentDescription(String contentDescription) {
+        closeButton = root.findViewById(R.id.ui_melidialog_close_button);
+        closeButton.setContentDescription(contentDescription);
+    }
 }
