@@ -18,7 +18,6 @@ import android.support.annotation.StringRes;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -61,7 +60,6 @@ public final class TextField extends LinearLayout {
     private TextInputLayout container;
     private TextInputEditText input;
     private TextView label;
-    private TextView helper;
 
     /**
      * Attributes
@@ -135,7 +133,6 @@ public final class TextField extends LinearLayout {
         container = (TextInputLayout) findViewById(R.id.ui_text_field_input_container);
         input = (TextInputEditText) findViewById(R.id.ui_text_field_input);
         label = (TextView) findViewById(R.id.ui_text_field_label);
-        helper = (TextView) findViewById(R.id.ui_text_field_helper);
 
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TextField, defStyleAttr, 0);
         textAlign = a.getInt(R.styleable.TextField_ui_textFieldAlign, LEFT);
@@ -350,17 +347,15 @@ public final class TextField extends LinearLayout {
     public void setHelper(@Nullable final String helpText) {
         final boolean isEmpty = TextUtils.isEmpty(helpText);
         helperText = helpText;
-        helper.setText(helperText);
+        container.setHelperText(helperText);
+        container.setHelperTextEnabled(true);
+        container.setGravity(textAlign);
         hasHelper = !isEmpty;
         if (!enabled || isEmpty) {
             hideHelper();
             return;
         }
-        ViewCompat.setPaddingRelative(helper, 0,
-            0, 0, input.getPaddingBottom());
         changeErrorVisibility(false);
-        helper.setGravity(textAlign);
-        helper.setVisibility(VISIBLE);
         isShowingHelper = true;
     }
 
@@ -515,7 +510,7 @@ public final class TextField extends LinearLayout {
             final InputFilter[] filterArray = new InputFilter[1];
             filterArray[0] = new InputFilter.LengthFilter(maxCharacters);
             input.setFilters(filterArray);
-            setCharactersCountVisible(!hasHelper && charactersCountVisible);
+            setCharactersCountVisible(charactersCountVisible);
             container.setCounterMaxLength(maxChars);
         }
     }
@@ -795,7 +790,7 @@ public final class TextField extends LinearLayout {
     }
 
     private void hideHelper() {
-        helper.setVisibility(GONE);
+        container.setHelperTextEnabled(false);
         isShowingHelper = false;
     }
 

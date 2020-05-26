@@ -1,6 +1,8 @@
 # v8.10.0
 ## Agregado
 - Se agregó soporte de accesibilidad a widget MeliDialog
+## Cambiado
+- Se cambia el helper del TextField, para usar el helper del TextInputLayout
 
 # v8.9.0
 ## Eliminado

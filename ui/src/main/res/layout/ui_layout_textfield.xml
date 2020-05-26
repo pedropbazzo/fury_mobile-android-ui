@@ -34,14 +34,4 @@
             tools:hint="Hint" />
 
     </android.support.design.widget.TextInputLayout>
-
-    <TextView
-        android:id="@+id/ui_text_field_helper"
-        style="@style/MeliTextField.HelperText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginLeft="@dimen/ui_textfield_label_margin_left"
-        android:layout_marginStart="@dimen/ui_textfield_label_margin_left"
-        tools:text="Helper Text" />
 </merge>
