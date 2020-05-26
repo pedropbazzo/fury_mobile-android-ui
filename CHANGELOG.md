@@ -1,3 +1,7 @@
+# v8.10.0
+## Agregado
+- Se agregó soporte de accesibilidad a widget MeliDialog
+
 # v8.9.0
 ## Eliminado
 - Se removio calligraphy de android:ui
