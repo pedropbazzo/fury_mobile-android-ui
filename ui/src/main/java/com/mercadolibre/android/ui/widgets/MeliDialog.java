@@ -33,7 +33,7 @@ import com.mercadolibre.android.ui.R;
  *
  * @since 6/4/16
  */
-@SuppressWarnings("PMD.GodClass")
+@SuppressWarnings("PMD")
 public abstract class MeliDialog extends DialogFragment implements KeyboardEventCallback {
 
     /**
