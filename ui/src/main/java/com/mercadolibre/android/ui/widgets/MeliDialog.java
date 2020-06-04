@@ -1,5 +1,6 @@
 package com.mercadolibre.android.ui.widgets;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -413,19 +414,22 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
      * Sets custom behaviour for the back button to play the out animation when the dialog is dismissed.
      */
     private void setupAnimationOnBackPressed() {
-        getDialog().setOnKeyListener(new DialogInterface.OnKeyListener() {
-            @Override
-            public boolean onKey(final DialogInterface dialog, final int keyCode, final KeyEvent event) {
-                if (!dismissed && keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
-                    if (getOnDismissListener() != null) {
-                        getOnDismissListener().onClick(getView());
+        final Dialog dialog = getDialog();
+        if (dialog != null) {
+            dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+                @Override
+                public boolean onKey(final DialogInterface dialog, final int keyCode, final KeyEvent event) {
+                    if (!dismissed && keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                        if (getOnDismissListener() != null) {
+                            getOnDismissListener().onClick(getView());
+                        }
+                        dismiss();
+                        return true;
                     }
-                    dismiss();
-                    return true;
+                    return false;
                 }
-                return false;
-            }
-        });
+            });
+        }
     }
 
     /**
