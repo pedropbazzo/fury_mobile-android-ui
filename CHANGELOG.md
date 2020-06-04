@@ -1,3 +1,7 @@
+# v8.11.0
+## Arreglado
+- Se corrige fix en MeliDialog, al hacer dismiss del dialog crasheaba por estar destuida la instancia del fragment.
+
 # v8.10.0
 ## Agregado
 - Se agregó soporte de accesibilidad a widget MeliDialog
