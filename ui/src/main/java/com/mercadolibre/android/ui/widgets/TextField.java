@@ -363,7 +363,7 @@ public final class TextField extends LinearLayout {
     /**
      * Setter for the helper text appearance
      *
-     * @param appearance the text
+     * @param appearance the appearance (style)
      */
     public void setHelperTextAppearance(@StyleRes final int appearance) {
         container.setHelperTextTextAppearance(appearance);
