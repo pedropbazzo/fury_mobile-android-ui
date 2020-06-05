@@ -46,6 +46,7 @@ public class DialogActivity extends BaseActivity implements DummyInterface {
         final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         final MeliDialog frag = new DummyListDialogWithTitle();
         frag.show(ft, TAG);
+
     }
 
     public void showDialogWithListNoTitle(final View view) {
@@ -67,4 +68,3 @@ public class DialogActivity extends BaseActivity implements DummyInterface {
         finish();
     }
 }
-

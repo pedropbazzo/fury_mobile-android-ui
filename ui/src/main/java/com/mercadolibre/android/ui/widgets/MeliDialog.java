@@ -33,7 +33,7 @@ import com.mercadolibre.android.ui.R;
  *
  * @since 6/4/16
  */
-@SuppressWarnings("PMD.GodClass")
+@SuppressWarnings("PMD")
 public abstract class MeliDialog extends DialogFragment implements KeyboardEventCallback {
 
     /**
@@ -96,6 +96,12 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
         return root;
     }
 
+    @Override
+    public void onDestroy() {
+        MeliDialog.super.dismissAllowingStateLoss();
+        super.onDestroy();
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -107,7 +113,9 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
                 root.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MeliDialog.super.dismissAllowingStateLoss();
+                        if (isAdded()) {
+                            MeliDialog.super.dismissAllowingStateLoss();
+                        }
                     }
                 }, FADE_ANIMATION_DURATION);
             } else {
