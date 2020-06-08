@@ -3,6 +3,9 @@
 - Se agrego el android: a las properties de background en el xml y se agrego un null check en el
 MeliDialog
 
+## Arreglado
+- Se corrige fix en MeliDialog, al hacer dismiss del dialog crasheaba por estar destuida la instancia del fragment.
+
 # v8.10.0
 ## Agregado
 - Se agregó soporte de accesibilidad a widget MeliDialog
