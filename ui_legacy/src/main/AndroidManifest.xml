@@ -4,7 +4,7 @@
     <!--<uses-sdk-->
         <!--tools:node="replace" />-->
 
-    <application android:allowBackup="true">
+    <application>
 
         <activity android:name="com.mercadolibre.android.ui.activities.LayoutUtilsActivity">
         </activity>
