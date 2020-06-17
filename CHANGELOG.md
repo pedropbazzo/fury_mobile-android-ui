@@ -1,3 +1,7 @@
+# v8.13.0
+## Cambiado
+- Se elimina el atributo allowBackup=true del Manifest, para que tome el valor establecido en las apps.
+
 # v8.12.0
 ## Cambiado
 - Se agrego el android: a las properties de background en el xml y se agrego un null check en el
