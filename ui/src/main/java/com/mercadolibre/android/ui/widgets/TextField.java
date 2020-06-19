@@ -15,7 +15,6 @@ import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.annotation.StyleRes;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
@@ -149,6 +148,7 @@ public final class TextField extends LinearLayout {
         hasHelper = !TextUtils.isEmpty(helperText);
 
         container.setErrorTextAppearance(R.style.MeliTextField_ErrorText);
+        container.setHelperTextTextAppearance(R.style.MeliTextField_HelperText);
         container.setHintTextAppearance(R.style.MeliTextField_Label);
 
         init();
@@ -358,15 +358,6 @@ public final class TextField extends LinearLayout {
         }
         changeErrorVisibility(false);
         isShowingHelper = true;
-    }
-
-    /**
-     * Setter for the helper text appearance
-     *
-     * @param appearance the appearance (style)
-     */
-    public void setHelperTextAppearance(@StyleRes final int appearance) {
-        container.setHelperTextTextAppearance(appearance);
     }
 
     private void changeErrorVisibility(final boolean isVisible) {
