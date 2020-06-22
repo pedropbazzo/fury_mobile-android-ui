@@ -1,6 +1,7 @@
 # v8.13.0
 ## Cambiado
 - Se elimina el atributo allowBackup=true del Manifest, para que tome el valor establecido en las apps.
+- Se agrega soporte a helper text de TextField para que matchee con el estilo del error
 
 # v8.12.0
 ## Cambiado
