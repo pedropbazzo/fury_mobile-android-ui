@@ -148,6 +148,7 @@ public final class TextField extends LinearLayout {
         hasHelper = !TextUtils.isEmpty(helperText);
 
         container.setErrorTextAppearance(R.style.MeliTextField_ErrorText);
+        container.setHelperTextTextAppearance(R.style.MeliTextField_HelperText);
         container.setHintTextAppearance(R.style.MeliTextField_Label);
 
         init();
