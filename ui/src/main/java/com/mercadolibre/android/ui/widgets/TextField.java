@@ -350,7 +350,7 @@ public final class TextField extends LinearLayout {
         helperText = helpText;
         container.setHelperText(helperText);
         container.setHelperTextEnabled(true);
-        container.setGravity(textAlign);
+        setHelperGravity();
         hasHelper = !isEmpty;
         if (!enabled || isEmpty) {
             hideHelper();
@@ -358,6 +358,15 @@ public final class TextField extends LinearLayout {
         }
         changeErrorVisibility(false);
         isShowingHelper = true;
+    }
+
+    private void setHelperGravity() {
+        if (textAlign == CENTER || textAlign == android.view.Gravity.CENTER_HORIZONTAL) {
+                TextView helperView = container.findViewById(R.id.textinput_helper_text);
+                FrameLayout errorViewParent = (FrameLayout) helperView.getParent();
+                errorViewParent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                helperView.setGravity(textAlign);
+        }
     }
 
     private void changeErrorVisibility(final boolean isVisible) {
