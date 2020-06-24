@@ -1,3 +1,7 @@
+# v8.14.0
+## Cambiado
+- Se corrige el gravity del helper en el TextField, cuando esta centrado.
+
 # v8.13.0
 ## Cambiado
 - Se elimina el atributo allowBackup=true del Manifest, para que tome el valor establecido en las apps.
