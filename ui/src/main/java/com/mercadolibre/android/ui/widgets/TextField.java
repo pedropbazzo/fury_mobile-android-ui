@@ -28,6 +28,7 @@ import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -49,6 +50,8 @@ import static java.lang.Integer.MAX_VALUE;
  */
 @SuppressWarnings("PMD")
 public final class TextField extends LinearLayout {
+
+    public static final double WIDTH_TEXTFIELD_FIX = 0.8;
 
     /* default */ String helperText;
     /* default */ boolean isShowingError;
@@ -361,11 +364,13 @@ public final class TextField extends LinearLayout {
     }
 
     private void setHelperGravity() {
+        final TextView helperView = container.findViewById(R.id.textinput_helper_text);
         if (textAlign == CENTER || textAlign == android.view.Gravity.CENTER_HORIZONTAL) {
-                TextView helperView = container.findViewById(R.id.textinput_helper_text);
-                FrameLayout errorViewParent = (FrameLayout) helperView.getParent();
-                errorViewParent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                helperView.setGravity(textAlign);
+            final FrameLayout helperViewParent = (FrameLayout) helperView.getParent();
+            helperViewParent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            helperView.setGravity(textAlign);
+        } else if (container.isCounterEnabled()) {
+            setWidthToTextInputLayout(helperView, WIDTH_TEXTFIELD_FIX);
         }
     }
 
@@ -413,18 +418,38 @@ public final class TextField extends LinearLayout {
             }
 
             final TextView errorView = (TextView) container
-                .findViewById(android.support.design.R.id.textinput_error);
-
+                    .findViewById(android.support.design.R.id.textinput_error);
             TypefaceHelper.setTypeface(errorView, Font.SEMI_BOLD);
-            final FrameLayout.LayoutParams errorViewParams =
-                new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-            errorViewParams.gravity = textAlign;
-            errorView.setGravity(textAlign);
-            errorView.setLayoutParams(errorViewParams);
+
+            if (textAlign == CENTER || textAlign == android.view.Gravity.CENTER_HORIZONTAL) {
+                final FrameLayout.LayoutParams errorViewParams =
+                        new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+                errorViewParams.gravity = textAlign;
+                errorView.setGravity(textAlign);
+                errorView.setLayoutParams(errorViewParams);
+            } else if(container.isCounterEnabled()){
+                setWidthToTextInputLayout(errorView, WIDTH_TEXTFIELD_FIX);
+            }
         }
 
         container.setError(error);
         container.setErrorEnabled(!isEmpty);
+    }
+
+    /**
+     * This is a fix to android helper and error, when counter is showing
+     */
+    private void setWidthToTextInputLayout(final TextView textView, final double width) {
+        container.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                final int widthLayout = (int) (container.getWidth() * width);
+                final FrameLayout.LayoutParams viewParams =
+                        new FrameLayout.LayoutParams(widthLayout, FrameLayout.LayoutParams.WRAP_CONTENT);
+                textView.setLayoutParams(viewParams);
+                container.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
     }
 
     /**
