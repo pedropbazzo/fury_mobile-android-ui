@@ -1,6 +1,7 @@
 # v8.14.0
 ## Cambiado
 - Se corrige el gravity del helper en el TextField, cuando esta centrado.
+- Se agrega estilo al counter del TextField.
 
 # v8.13.0
 ## Cambiado

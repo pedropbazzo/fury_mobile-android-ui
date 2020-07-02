@@ -20,7 +20,8 @@
         android:layout_centerVertical="true"
         android:orientation="horizontal"
         app:errorTextAppearance="@style/MeliTextField.ErrorText"
-        app:hintTextAppearance="@style/MeliTextField.Label">
+        app:hintTextAppearance="@style/MeliTextField.Label"
+        app:counterTextAppearance="@style/MeliTextField.CounterText">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/ui_text_field_input"
