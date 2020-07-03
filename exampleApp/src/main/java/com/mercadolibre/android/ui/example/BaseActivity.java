@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.mercadolibre.android.ui.font.Font;
 import com.mercadolibre.android.ui.font.TypefaceHelper;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -61,10 +60,5 @@ public abstract class BaseActivity extends AppCompatActivity {
                 TypefaceHelper.setTypeface(textView, Font.LIGHT);
             }
         }
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }

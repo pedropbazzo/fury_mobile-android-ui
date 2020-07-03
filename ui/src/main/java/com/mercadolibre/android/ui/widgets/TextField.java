@@ -18,7 +18,6 @@ import android.support.annotation.StringRes;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewCompat;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -28,11 +27,10 @@ import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
+import android.view.ViewTreeObserver;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -43,7 +41,6 @@ import com.mercadolibre.android.ui.font.TypefaceHelper;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import static android.content.Context.INPUT_METHOD_SERVICE;
 import static com.mercadolibre.android.ui.widgets.TextField.type.CENTER;
 import static com.mercadolibre.android.ui.widgets.TextField.type.LEFT;
 import static java.lang.Integer.MAX_VALUE;
@@ -51,8 +48,10 @@ import static java.lang.Integer.MAX_VALUE;
 /**
  * MercadoLibre's TextField class.
  */
-@SuppressWarnings("PMD.GodClass")
+@SuppressWarnings("PMD")
 public final class TextField extends LinearLayout {
+
+    public static final double WIDTH_TEXTFIELD_FIX = 0.8;
 
     /* default */ String helperText;
     /* default */ boolean isShowingError;
@@ -64,7 +63,6 @@ public final class TextField extends LinearLayout {
     private TextInputLayout container;
     private TextInputEditText input;
     private TextView label;
-    private TextView helper;
 
     /**
      * Attributes
@@ -138,7 +136,6 @@ public final class TextField extends LinearLayout {
         container = (TextInputLayout) findViewById(R.id.ui_text_field_input_container);
         input = (TextInputEditText) findViewById(R.id.ui_text_field_input);
         label = (TextView) findViewById(R.id.ui_text_field_label);
-        helper = (TextView) findViewById(R.id.ui_text_field_helper);
 
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TextField, defStyleAttr, 0);
         textAlign = a.getInt(R.styleable.TextField_ui_textFieldAlign, LEFT);
@@ -154,14 +151,13 @@ public final class TextField extends LinearLayout {
         hasHelper = !TextUtils.isEmpty(helperText);
 
         container.setErrorTextAppearance(R.style.MeliTextField_ErrorText);
+        container.setHelperTextTextAppearance(R.style.MeliTextField_HelperText);
         container.setHintTextAppearance(R.style.MeliTextField_Label);
 
         init();
         initDefaults(context, a);
 
         a.recycle();
-
-
     }
 
     private void initDefaults(@NonNull final Context context, @NonNull final TypedArray a) {
@@ -226,18 +222,9 @@ public final class TextField extends LinearLayout {
         setHint(hint);
         setMaxLines(maxLines);
         setMaxCharacters(maxCharacters);
+        setHelper(helperText);
         setEnabled(enabled);
         setCharactersCountVisible(charactersCountVisible);
-
-        setHelper(helperText);
-
-        input.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(final View arg0, final MotionEvent arg1) {
-                showSoftKeyboard();
-                return false;
-            }
-        });
 
         input.addTextChangedListener(new TextWatcher() {
             @Override
@@ -252,13 +239,9 @@ public final class TextField extends LinearLayout {
 
             @Override
             public void afterTextChanged(final Editable s) {
-                if (hasHelper) {
-                    if (s.length() > 0 && isShowingError) {
-                        clearError();
-                        setHelper(helperText);
-                    }
-                } else {
-                    setError(null);
+                if (s.length() > 0 && isShowingError) {
+                    clearError();
+                    setHelper(helperText);
                 }
             }
         });
@@ -287,8 +270,8 @@ public final class TextField extends LinearLayout {
         } else {
             label.setText(labelText);
             label.setVisibility(View.VISIBLE);
+            setHintAnimationEnabled(false);
         }
-        setHintAnimationEnabled(textIsEmpty);
 
         final LinearLayout.LayoutParams params =
                 (LinearLayout.LayoutParams) label.getLayoutParams();
@@ -366,17 +349,29 @@ public final class TextField extends LinearLayout {
      * @param helpText the text
      */
     public void setHelper(@Nullable final String helpText) {
-        if (!enabled || TextUtils.isEmpty(helpText)) {
-            helper.setVisibility(GONE);
+        final boolean isEmpty = TextUtils.isEmpty(helpText);
+        helperText = helpText;
+        container.setHelperText(helperText);
+        container.setHelperTextEnabled(true);
+        setHelperGravity();
+        hasHelper = !isEmpty;
+        if (!enabled || isEmpty) {
+            hideHelper();
             return;
         }
-        ViewCompat.setPaddingRelative(helper, 0,
-                0, 0, input.getPaddingBottom());
         changeErrorVisibility(false);
-        helper.setGravity(textAlign);
-        helper.setText(helpText);
-        helper.setVisibility(VISIBLE);
         isShowingHelper = true;
+    }
+
+    private void setHelperGravity() {
+        final TextView helperView = container.findViewById(R.id.textinput_helper_text);
+        if (textAlign == CENTER || textAlign == android.view.Gravity.CENTER_HORIZONTAL) {
+            final FrameLayout helperViewParent = (FrameLayout) helperView.getParent();
+            helperViewParent.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            helperView.setGravity(textAlign);
+        } else if (container.isCounterEnabled()) {
+            setWidthToTextInputLayout(helperView, WIDTH_TEXTFIELD_FIX);
+        }
     }
 
     private void changeErrorVisibility(final boolean isVisible) {
@@ -412,27 +407,49 @@ public final class TextField extends LinearLayout {
         if (!enabled) {
             return;
         }
-        isShowingError = true;
-        if (isShowingHelper) {
-            helper.setVisibility(GONE);
-            isShowingHelper = false;
+        boolean isEmpty = TextUtils.isEmpty(error);
+        changeErrorVisibility(!isEmpty);
+        if (isEmpty) {
+            setHelper(helperText);
+        } else {
+            isShowingError = true;
+            if (isShowingHelper) {
+                hideHelper();
+            }
+
+            final TextView errorView = (TextView) container
+                    .findViewById(android.support.design.R.id.textinput_error);
+            TypefaceHelper.setTypeface(errorView, Font.SEMI_BOLD);
+
+            if (textAlign == CENTER || textAlign == android.view.Gravity.CENTER_HORIZONTAL) {
+                final FrameLayout.LayoutParams errorViewParams =
+                        new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+                errorViewParams.gravity = textAlign;
+                errorView.setGravity(textAlign);
+                errorView.setLayoutParams(errorViewParams);
+            } else if(container.isCounterEnabled()){
+                setWidthToTextInputLayout(errorView, WIDTH_TEXTFIELD_FIX);
+            }
         }
-        changeErrorVisibility(true);
 
         container.setError(error);
+        container.setErrorEnabled(!isEmpty);
+    }
 
-        final TextView errorView = (TextView) container
-                .findViewById(android.support.design.R.id.textinput_error);
-
-        TypefaceHelper.setTypeface(errorView, Font.SEMI_BOLD);
-        final LinearLayout.LayoutParams errorViewParams =
-                new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT);
-        errorViewParams.gravity = textAlign;
-        errorView.setGravity(textAlign);
-        errorView.setLayoutParams(errorViewParams);
-
-        container.setErrorEnabled(!TextUtils.isEmpty(error));
+    /**
+     * This is a fix to android helper and error, when counter is showing
+     */
+    private void setWidthToTextInputLayout(final TextView textView, final double width) {
+        container.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                final int widthLayout = (int) (container.getWidth() * width);
+                final FrameLayout.LayoutParams viewParams =
+                        new FrameLayout.LayoutParams(widthLayout, FrameLayout.LayoutParams.WRAP_CONTENT);
+                textView.setLayoutParams(viewParams);
+                container.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
     }
 
     /**
@@ -528,7 +545,7 @@ public final class TextField extends LinearLayout {
             final InputFilter[] filterArray = new InputFilter[1];
             filterArray[0] = new InputFilter.LengthFilter(maxCharacters);
             input.setFilters(filterArray);
-            setCharactersCountVisible(!hasHelper);
+            setCharactersCountVisible(charactersCountVisible);
             container.setCounterMaxLength(maxChars);
         }
     }
@@ -559,15 +576,6 @@ public final class TextField extends LinearLayout {
      */
     public void setInputType(final int type) {
         input.setInputType(type);
-    }
-
-    /**
-     * Check if the view is focused
-     *
-     * @return true if the view is focused, false otherwise
-     */
-    public boolean isFocused() {
-        return super.isFocused() || input.isFocused() || container.isFocused();
     }
 
     /**
@@ -805,25 +813,20 @@ public final class TextField extends LinearLayout {
 
     private void applyStatus() {
         if (enabled) {
-            container.setFocusableInTouchMode(true);
+            input.setFocusableInTouchMode(true);
             container.setEnabled(true);
-            setMaxCharacters(maxCharacters);
+            setHelper(helperText);
         } else {
-            container.setFocusableInTouchMode(false);
+            input.setFocusableInTouchMode(false);
             container.setEnabled(false);
-            setCharactersCountVisible(false);
-            setError(null);
+            clearError();
+            hideHelper();
         }
     }
 
-    /**
-     * Shows the soft keyboard
-     */
-    /* default */ void showSoftKeyboard() {
-        if (isEnabled()) {
-            ((InputMethodManager) getContext().getSystemService(INPUT_METHOD_SERVICE))
-                    .showSoftInput(this, InputMethodManager.SHOW_IMPLICIT);
-        }
+    private void hideHelper() {
+        container.setHelperTextEnabled(false);
+        isShowingHelper = false;
     }
 
     @Override
@@ -874,7 +877,6 @@ public final class TextField extends LinearLayout {
     }
 
     @Override
-    @SuppressWarnings("checkstyle:multiplestringliterals")
     public String toString() {
         return "TextField{"
                 + "label=" + label
@@ -905,10 +907,12 @@ public final class TextField extends LinearLayout {
 
         public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
 
+            @Override
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
 
+            @Override
             public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

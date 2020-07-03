@@ -46,6 +46,7 @@ public class DialogActivity extends BaseActivity implements DummyInterface {
         final FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         final MeliDialog frag = new DummyListDialogWithTitle();
         frag.show(ft, TAG);
+
     }
 
     public void showDialogWithListNoTitle(final View view) {
@@ -55,9 +56,15 @@ public class DialogActivity extends BaseActivity implements DummyInterface {
         frag.show(ft, TAG);
     }
 
+    public void showDialogFullScreen(View view) {
+
+        final  FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        final DummyFullScreenModal frag = new DummyFullScreenModal();
+        frag.show(ft, TAG);
+    }
+
     @Override
     public void dismissed() {
         finish();
     }
 }
-

@@ -30,6 +30,8 @@
     <color name="ui_components_android_color_primary_dark">#F5D315</color>
     <color name="ui_components_android_color_accent">@color/ui_meli_blue</color>
     <color name="ui_components_actionModeBackground">@color/ui_meli_yellow</color>
+    <color name="ui_components_action_bar_text_color">@color/ui_components_black_color</color>
+    <color name="ui_components_progress_bar_background">#19000000</color>
 
 
     <!-- Meli Color palette -->
@@ -61,5 +63,6 @@
     <color name="ui_option_button_text_disabled">#4D333333</color>
     <color name="ui_action_button_default">#3483FA</color>
     <color name="ui_contextual_menu_background_color">#80000000</color>
+    <color name="ui_fullscreenmodal_toolbar_text_color">#cc000000</color>
 
 </resources>

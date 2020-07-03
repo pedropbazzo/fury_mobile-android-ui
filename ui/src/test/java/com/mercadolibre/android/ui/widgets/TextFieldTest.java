@@ -9,14 +9,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.SystemClock;
 import android.support.design.widget.TextInputLayout;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.view.Gravity;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -39,8 +35,6 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import uk.co.chrisjenx.calligraphy.TypefaceUtils;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -51,7 +45,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
@@ -73,6 +66,7 @@ public class TextFieldTest {
     private TextView label;
     private TextInputLayout container;
     private Context context;
+    private TypefaceSetterMocker typefaceSetterMocker;
 
     @Before
     public void setUp() {
@@ -95,6 +89,7 @@ public class TextFieldTest {
         editText = textField.getEditText();
         label = ReflectionHelpers.getField(textField, "label");
         container = ReflectionHelpers.getField(textField, "container");
+        typefaceSetterMocker = TypefaceSetterMocker.init();
     }
 
     @After
@@ -131,9 +126,7 @@ public class TextFieldTest {
         //Default configs
         assertEquals(InputType.TYPE_CLASS_TEXT, editText.getInputType());
         assertEquals(TextUtils.TruncateAt.END, editText.getEllipsize());
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.LIGHT.getFontPath()), editText.getTypeface());
         assertTrue(container.isHintEnabled());
-
 
         final int greyColor = Color.parseColor("#999999");
 
@@ -188,7 +181,7 @@ public class TextFieldTest {
     @Test
     public void testSetHint_withLabelNotSet_shouldSetItToTheContainer() {
         textField.setHint("A hint");
-        assertNull(editText.getHint());
+        assertNotNull(editText.getHint());
 
         assertTrue(container.isHintAnimationEnabled());
         assertTrue(container.isHintEnabled());
@@ -201,7 +194,7 @@ public class TextFieldTest {
 
         assertTrue(textField.isHintAnimationEnabled());
         assertEquals("A hint", container.getHint());
-        assertNull(editText.getHint());
+        assertNotNull(editText.getHint());
 
         textField.setHintAnimationEnabled(false);
 
@@ -268,15 +261,64 @@ public class TextFieldTest {
         textField.setTextFont(Font.BOLD);
 
         final EditText editText = textField.getEditText();
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BOLD.getFontPath()), editText.getTypeface());
+        assertEquals(typefaceSetterMocker.typefaceBold, editText.getTypeface());
     }
+
+    @Test
+    public void testSetTextFontLIGHT_withValidFont_shouldSetItToTheInput() {
+        textField.setTextFont(Font.LIGHT);
+
+        final EditText editText = textField.getEditText();
+        assertEquals(typefaceSetterMocker.typefaceLight, editText.getTypeface());
+    }
+
 
     @Test
     public void testSetLabelFont_withValidFont_shouldSetItToTheInput() {
         textField.setLabelFont(Font.BLACK);
 
         final TextView label = ReflectionHelpers.getField(textField, "label");
-        assertEquals(TypefaceUtils.load(context.getAssets(), Font.BLACK.getFontPath()), label.getTypeface());
+        assertEquals(typefaceSetterMocker.typefaceBlack, label.getTypeface());
+    }
+
+    @Test
+    public void testSetTextFontSEMI_BOLD_withValidFont_shouldSetItToTheInput() {
+        textField.setTextFont(Font.SEMI_BOLD);
+
+        final EditText editText = textField.getEditText();
+        assertEquals(typefaceSetterMocker.typefaceSemiBold, editText.getTypeface());
+    }
+
+    @Test
+    public void testSetLabelFontREGULAR_withValidFont_shouldSetItToTheInput() {
+        textField.setLabelFont(Font.REGULAR);
+
+        final TextView label = ReflectionHelpers.getField(textField, "label");
+        assertEquals(typefaceSetterMocker.typefaceRegular, label.getTypeface());
+    }
+
+    @Test
+    public void testSetTextFontMEDIUM_withValidFont_shouldSetItToTheInput() {
+        textField.setTextFont(Font.MEDIUM);
+
+        final EditText editText = textField.getEditText();
+        assertEquals(typefaceSetterMocker.typefaceMedium, editText.getTypeface());
+    }
+
+    @Test
+    public void testSetLabelFontEXTRA_BOLD_withValidFont_shouldSetItToTheInput() {
+        textField.setLabelFont(Font.EXTRA_BOLD);
+
+        final TextView label = ReflectionHelpers.getField(textField, "label");
+        assertEquals(typefaceSetterMocker.typefaceExtraBold, label.getTypeface());
+    }
+
+    @Test
+    public void testSetLabelFontTHIN_withValidFont_shouldSetItToTheInput() {
+        textField.setLabelFont(Font.THIN);
+
+        final TextView label = ReflectionHelpers.getField(textField, "label");
+        assertEquals(typefaceSetterMocker.typefaceThin, label.getTypeface());
     }
 
     @Test
@@ -407,7 +449,7 @@ public class TextFieldTest {
     public void testSetEnabled_withEnabledTrue_shouldChangeTheState() {
         textField.setEnabled(true);
 
-        assertTrue(container.isFocusableInTouchMode());
+        assertTrue(editText.isFocusableInTouchMode());
         assertTrue(container.isEnabled());
     }
 
@@ -415,38 +457,9 @@ public class TextFieldTest {
     public void testSetEnabled_withEnabledFalse_shouldChangeTheState() {
         textField.setEnabled(false);
 
-        assertFalse(container.isFocusableInTouchMode());
+        assertFalse(editText.isFocusableInTouchMode());
         assertFalse(container.isEnabled());
         assertFalse(container.isCounterEnabled());
-    }
-
-    @Test
-    public void testOnTouch_shouldOpenKeyboard() {
-        Context context = spy(this.context);
-        InputMethodManager imm = mock(InputMethodManager.class);
-
-        doReturn(imm).when(context).getSystemService(Context.INPUT_METHOD_SERVICE);
-        doReturn(true).when(imm).showSoftInput(any(View.class), anyInt());
-
-        final long downTime = SystemClock.uptimeMillis();
-        final long eventTime = SystemClock.uptimeMillis() + 100;
-        final float x = 0.0f;
-        final float y = 0.0f;
-        // List of meta states found here: developer.android.com/reference/android/view/KeyEvent.html#getMetaState()
-        final int metaState = 0;
-        final MotionEvent motionEvent = MotionEvent.obtain(
-                downTime,
-                eventTime,
-                MotionEvent.ACTION_UP,
-                x,
-                y,
-                metaState
-        );
-
-        final TextField spyTextField = new TextField(context);
-        spyTextField.getEditText().dispatchTouchEvent(motionEvent);
-
-        verify(imm).showSoftInput(any(View.class), anyInt());
     }
 
     @Test
@@ -456,6 +469,7 @@ public class TextFieldTest {
         textField.setText("text");
         textField.setLabel("label");
         textField.setError("error");
+        textField.setCharactersCountVisible(true);
         textField.setMaxCharacters(12);
         textField.setMaxLines(3);
         textField.setEnabled(true);
@@ -529,7 +543,7 @@ public class TextFieldTest {
         assertEquals("errorText", "error", textField.getError());
         assertEquals("linesNumber", 3, editText.getMaxLines());
         assertEquals("charactersNumber", 12, container.getCounterMaxLength());
-        assertEquals("charactersVisible ", 1, container.isCounterEnabled() ? 1 : 0);
+        assertEquals("charactersVisible ", 0, container.isCounterEnabled() ? 1 : 0);
         assertEquals("hint", "hint", textField.getHint());
         assertEquals("enabled", 1, textField.isEnabled() ? 1 : 0);
         parcelMemory.clear();

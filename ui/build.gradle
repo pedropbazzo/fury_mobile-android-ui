@@ -41,19 +41,20 @@ android {
 }
 
 dependencies {
-    api project(":ui_legacy")
+    implementation project(":ui_legacy")
 
-    api "com.android.support:design:$supportLibraryVersion"
+    implementation "com.android.support:design:$supportLibraryVersion"
 
     api "com.facebook.fresco:fresco:$frescoVersion"
     api "com.facebook.fresco:webpsupport:$frescoVersion"
 
-    api "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
+    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
 
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
-    testImplementation "org.robolectric:shadows-support-v4:$robolectricVersion"
+    testImplementation "org.robolectric:shadows-supportv4:$robolectricVersion"
     testImplementation "junit:junit:$junitVersion"
     testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+    testImplementation "com.facebook.soloader:soloader:$soLoaderVersion"
 }
 
 /**

@@ -61,7 +61,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:ui_textFieldHint="Title"
-            app:ui_textFieldMaxCharacters="20"/>
+            app:ui_textFieldMaxCharacters="20"
+            app:ui_textFieldCharactersCountVisible="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextField with max characters and helper"/>
+        <com.mercadolibre.android.ui.widgets.TextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ui_textFieldHint="Title"
+            app:ui_textFieldHelperText="Helper"
+            app:ui_textFieldMaxCharacters="20"
+            app:ui_textFieldCharactersCountVisible="true" />
 
         <TextView
             android:layout_width="wrap_content"

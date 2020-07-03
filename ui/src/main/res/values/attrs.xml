@@ -235,9 +235,32 @@
             <enum name="actionSecondary" value="1"/>
             <enum name="optionPrimary" value="2"/>
         </attr>
+        <attr name="button_size" format="enum">
+            <enum name="large" value="0"/>
+            <enum name="small" value="1"/>
+        </attr>
         <attr name="state" format="enum">
             <enum name="normal" value="0"/>
             <enum name="disable" value="1"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="MeliTag">
+        <attr name="text" format="string"/>
+        <attr name="showThumbnail" format="boolean" />
+        <attr name="showCloseButton" format="boolean"/>
+        <attr name="thumbnailDrawable" format="reference"/>
+        <attr name="closeButtonDrawable" format="reference"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="containerColor" format="color|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="MeliProgressBar">
+        <attr name="maxProgressTime" format="integer" />
+        <attr name="finishAnimTime" format="integer" />
+        <attr name="progressBarText" format="string" />
+        <attr name="progressBarTextDelay" format="integer" />
+        <attr name="progressBarTextFadeInDuration" format="integer" />
+    </declare-styleable>
+
 </resources>

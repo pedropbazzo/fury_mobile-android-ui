@@ -17,7 +17,7 @@
     </style>
 
     <style name="MeliTextField.HelperText">
-        <item name="android:textAppearance">@style/MLFont.Regular</item>
+        <item name="android:textAppearance">@style/MLFont.Bold.Semi</item>
         <item name="android:textColor">@color/ui_components_dark_grey_color</item>
         <item name="android:textSize">@dimen/ui_fontsize_xsmall</item>
     </style>

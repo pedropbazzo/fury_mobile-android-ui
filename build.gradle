@@ -1,16 +1,7 @@
-apply plugin: 'idea'
-
 buildscript {
     repositories {
         jcenter()
         google()
-        maven {
-            url "https://dl.bintray.com/mercadolibre/android-releases"
-            credentials {
-                username 'bintray-read-only'
-                password 'f8a81e46551b9e29af6b3bd449a96bddff58cbd7'
-            }
-        }
     }
 
     dependencies {
@@ -20,31 +11,23 @@ buildscript {
     }
 }
 
+wrapper {
+    gradleVersion = gradleWrapperVersion
+    distributionType = Wrapper.DistributionType.BIN
+}
+
 allprojects {
     repositories {
         jcenter()
         google()
-        maven {
-            url "https://dl.bintray.com/mercadolibre/android-releases"
-            credentials {
-                username 'bintray-read-only'
-                password 'f8a81e46551b9e29af6b3bd449a96bddff58cbd7'
-            }
-        }
     }
 
-    group = libraryGroup
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    // It's our convention to keep all modules in the same GitHub repository with the same group and version.
+    group = libraryGroupId
     version = libraryVersion
-}
-
-idea {
-    module {
-        downloadJavadoc = true
-        downloadSources = true
-    }
-}
-
-wrapper {
-    gradleVersion = gradleWrapperVersion
-    distributionType = System.getenv('CI') ? Wrapper.DistributionType.BIN : Wrapper.DistributionType.ALL
 }

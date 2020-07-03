@@ -9,4 +9,26 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <style name="FullScreenModal" parent="Theme.Base">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:background">@color/ui_meli_white</item>
+    </style>
+
+    <style name="FullScreenModalExpandedToolbarAppearance">
+        <item name="android:textSize">@dimen/ui_fontsize_xlarge</item>
+        <item name="android:textColor">@color/ui_fullscreenmodal_toolbar_text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+    </style>
+
+    <style name="FullscreenModalAnimation">
+        <item name="android:windowEnterAnimation">@anim/ui_fullscreenmodal_in</item>
+        <item name="android:windowExitAnimation">@anim/ui_fullscreenmodal_out</item>
+    </style>
+
+    <style name="DefaultModalAnimation">
+    </style>
 </resources>

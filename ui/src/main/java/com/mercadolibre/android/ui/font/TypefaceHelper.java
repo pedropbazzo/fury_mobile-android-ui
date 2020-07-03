@@ -6,58 +6,24 @@ import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.provider.FontsContractCompat;
-import android.widget.Switch;
 import android.widget.TextView;
 
-import uk.co.chrisjenx.calligraphy.TypefaceUtils;
+import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.FAIL_REASON_FONT_NOT_FOUND;
 
 /**
  * This class is used as a wrapper for our custom font.
  * If you code create a View that supports typeface you should call one of this methods.
+ *
+ * @deprecated migrate to https://github.com/mercadolibre/fury_andesui-android
  */
+@Deprecated
 public final class TypefaceHelper {
 
     @NonNull
     private static TypefaceSetter typefaceSetter;
 
     static {
-        typefaceSetter = new TypefaceSetter() {
-            @Override
-            public <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font) {
-                final Typeface typeface = createTypeface(view.getContext(), font);
-                view.setTypeface(typeface);
-
-                if (view instanceof Switch) {
-                    ((Switch) view).setSwitchTypeface(typeface);
-                }
-            }
-
-            @Override
-            public void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font) {
-                final Typeface typeface = createTypeface(context, font);
-                paint.setTypeface(typeface);
-            }
-
-            @Override
-            public void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
-                final Typeface typeface = createTypeface(context, font);
-
-                if (typeface == null) {
-                    fontCallback.onFontRetrievalFailed(FontsContractCompat.FontRequestCallback.FAIL_REASON_FONT_NOT_FOUND);
-                } else {
-                    fontCallback.onFontRetrieved(typeface);
-                }
-            }
-
-            @Nullable
-            private Typeface createTypeface(@NonNull Context context, @Nullable Font font) {
-                if (font == null) {
-                    return null;
-                }
-                return TypefaceUtils.load(context.getAssets(), font.getFontPath());
-            }
-        };
+        typefaceSetter = new DefaultTypefaceSetter();
     }
 
     private TypefaceHelper() {
@@ -67,7 +33,10 @@ public final class TypefaceHelper {
     /**
      * Attach a typeface setter to this helper class
      * @param typefaceSetter field
+     *
+     * @deprecated migrate to https://github.com/mercadolibre/fury_andesui-android
      */
+    @Deprecated
     public static void attachTypefaceSetter(@NonNull final TypefaceSetter typefaceSetter) {
         TypefaceHelper.typefaceSetter = typefaceSetter;
     }
@@ -77,7 +46,10 @@ public final class TypefaceHelper {
      * @param <T>   A generic for the textview
      * @param view  The view to which apply the font
      * @param font  The {@link Font} the text should have
+     *
+     * @deprecated migrate to https://github.com/mercadolibre/fury_andesui-android
      */
+    @Deprecated
     public static <T extends TextView> void setTypeface(@NonNull final T view, @NonNull final Font font) {
         typefaceSetter.setTypeface(view, font);
     }
@@ -88,7 +60,10 @@ public final class TypefaceHelper {
      * @param context A context to obtain the font
      * @param paint   The paint to which apply the font
      * @param font    The {@link Font} the text should have
+     *
+     * @deprecated migrate to https://github.com/mercadolibre/fury_andesui-android
      */
+    @Deprecated
     public static void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font) {
         typefaceSetter.setTypeface(context, paint, font);
     }
@@ -100,14 +75,41 @@ public final class TypefaceHelper {
      * @param context to use
      * @param font to retrieve its typeface
      * @param fontCallback to call when the typeface is retrieved
+     *
+     * @deprecated use TypefaceHelper{@link #getFontTypeface(Context, Font)} instead
      */
+    @SuppressWarnings("PMD.LinguisticNaming")
+    @Deprecated
     public static void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback) {
-        typefaceSetter.getTypeface(context, font, fontCallback);
+        Typeface typeface = TypefaceHelper.getFontTypeface(context, font);
+        if (typeface == null) {
+            fontCallback.onFontRetrievalFailed(FAIL_REASON_FONT_NOT_FOUND);
+        } else {
+            fontCallback.onFontRetrieved(typeface);
+        }
+    }
+
+    /**
+     * Get a typeface associated to the font passed.
+     *
+     * @param context to use
+     * @param font to use
+     * @return associated typeface
+     *
+     * @deprecated use TypefaceHelper{@link #getFontTypeface(Context, Font)} instead
+     */
+    @Nullable
+    @Deprecated
+    public static Typeface getFontTypeface(@NonNull final Context context, @NonNull Font font) {
+        return typefaceSetter.getTypeface(context, font);
     }
 
     /**
      * Setter for typeface
+     *
+     * @deprecated use TypefaceHelper{@link #getFontTypeface(Context, Font)} instead
      */
+    @Deprecated
     public interface TypefaceSetter {
 
         /**
@@ -127,15 +129,12 @@ public final class TypefaceHelper {
         void setTypeface(@NonNull final Context context, @NonNull final Paint paint, @NonNull final Font font);
 
         /**
-         * Get a typeface associated to the font passed. The typeface will be sent through the
-         * font callback passed as param
-         *
+         * Return the typeface associated with the font
          * @param context to use
-         * @param font to retrieve its typeface
-         * @param fontCallback to call when the typeface is retrieved
+         * @param font to find the typeface
+         * @return typeface associated
          */
-        void getTypeface(@NonNull final Context context, @NonNull final Font font, @NonNull final ResourcesCompat.FontCallback fontCallback);
-
+        @Nullable
+        Typeface getTypeface(@NonNull Context context, @NonNull final Font font);
     }
-
 }

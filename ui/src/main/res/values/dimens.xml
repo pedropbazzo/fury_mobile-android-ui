@@ -21,6 +21,7 @@
 
     <!-- Buttons -->
     <dimen name="ui_button_height">48dp</dimen>
+    <dimen name="ui_small_button_height">36dp</dimen>
     <dimen name="ui_button_corner_radius">4dp</dimen>
     <dimen name="ui_button_padding">8dp</dimen>
     <dimen name="ui_button_checkbox_margin">16dp</dimen>
@@ -36,6 +37,14 @@
     <dimen name="ui_dialog_bottom_padding_with_keyboard">@dimen/ui_dialog_side_padding</dimen>
     <dimen name="ui_dialog_bottom_padding_with_keyboard_and_secondary_exit">16dp</dimen>
     <dimen name="ui_dialog_y_translation">30dp</dimen>
+
+    <!-- FullScreenModal -->
+    <dimen name="ui_fullscreenmodal_content_padding_bottom">20dp</dimen>
+    <dimen name="ui_fullscreenmodal_appbarlayout_height">145dp</dimen>
+    <dimen name="ui_fullscreenmodal_toolbar_expanded_margin_start">20dp</dimen>
+    <dimen name="ui_fullscreenmodal_toolbar_expanded_margin_end">64dp</dimen>
+    <dimen name="ui_fullscreenmodal_secondary_exit_margin_top">16dp</dimen>
+    <dimen name="ui_fullscreenmodal_secondary_internal_padding">18dp</dimen>
 
     <!-- Snackbar -->
     <dimen name="ui_snackbar_text_linespacing">5dp</dimen>
@@ -90,4 +99,19 @@
     <dimen name="ui_8m">64dp</dimen>
     <dimen name="ui_9m">72dp</dimen>
     <dimen name="ui_10m">80dp</dimen>
+
+    <!-- MeliProgressBar-->
+    <dimen name="ui_progress_bar_radius">6dp</dimen>
+    <dimen name="ui_progress_bar_height">6dp</dimen>
+
+    <!-- MeliTag -->
+    <dimen name="ui_tag_background_stroke">1dp</dimen>
+    <dimen name="ui_tag_background_height">32dp</dimen>
+    <dimen name="ui_tag_background_radius">16dp</dimen>
+    <dimen name="ui_tag_background_margin">8dp</dimen>
+    <dimen name="ui_tag_thumbnail_size">24dp</dimen>
+    <dimen name="ui_tag_thumbnail_margin">4dp</dimen>
+    <dimen name="ui_tag_text_margin">8dp</dimen>
+    <dimen name="ui_tag_close_button_size">32dp</dimen>
+    <dimen name="ui_tag_close_button_padding">8dp</dimen>
 </resources>

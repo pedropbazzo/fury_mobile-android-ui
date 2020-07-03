@@ -1,5 +1,6 @@
 package com.mercadolibre.android.ui.widgets;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -33,7 +34,7 @@ import com.mercadolibre.android.ui.R;
  *
  * @since 6/4/16
  */
-@SuppressWarnings("PMD.GodClass")
+@SuppressWarnings("PMD")
 public abstract class MeliDialog extends DialogFragment implements KeyboardEventCallback {
 
     /**
@@ -96,6 +97,12 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
         return root;
     }
 
+    @Override
+    public void onDestroy() {
+        MeliDialog.super.dismissAllowingStateLoss();
+        super.onDestroy();
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -107,7 +114,9 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
                 root.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        MeliDialog.super.dismissAllowingStateLoss();
+                        if (isAdded()) {
+                            MeliDialog.super.dismissAllowingStateLoss();
+                        }
                     }
                 }, FADE_ANIMATION_DURATION);
             } else {
@@ -413,19 +422,22 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
      * Sets custom behaviour for the back button to play the out animation when the dialog is dismissed.
      */
     private void setupAnimationOnBackPressed() {
-        getDialog().setOnKeyListener(new DialogInterface.OnKeyListener() {
-            @Override
-            public boolean onKey(final DialogInterface dialog, final int keyCode, final KeyEvent event) {
-                if (!dismissed && keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
-                    if (getOnDismissListener() != null) {
-                        getOnDismissListener().onClick(getView());
+        final Dialog dialog = getDialog();
+        if (dialog != null) {
+            dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+                @Override
+                public boolean onKey(final DialogInterface dialog, final int keyCode, final KeyEvent event) {
+                    if (!dismissed && keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+                        if (getOnDismissListener() != null) {
+                            getOnDismissListener().onClick(getView());
+                        }
+                        dismiss();
+                        return true;
                     }
-                    dismiss();
-                    return true;
+                    return false;
                 }
-                return false;
-            }
-        });
+            });
+        }
     }
 
     /**
@@ -525,5 +537,26 @@ public abstract class MeliDialog extends DialogFragment implements KeyboardEvent
                 + ", actionButton=" + actionButton
                 + ", dismissed=" + dismissed
                 + '}';
+    }
+
+    /**
+     * Gets contentDescription for close button (for accessibility)
+     */
+
+    @Nullable
+    public String getCloseButtonContentDescription() {
+        CharSequence closeButtonContentDescription = root.findViewById(R.id.ui_melidialog_close_button).getContentDescription();
+        if (closeButtonContentDescription == null) {
+            return null;
+        } else {
+            return closeButtonContentDescription.toString(); }
+    }
+
+    /**
+     * Sets contentDescription for close button (for accessibility)
+     */
+    public void setCloseButtonContentDescription(String contentDescription) {
+        closeButton = root.findViewById(R.id.ui_melidialog_close_button);
+        closeButton.setContentDescription(contentDescription);
     }
 }

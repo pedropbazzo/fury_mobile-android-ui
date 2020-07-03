@@ -1,7 +1,9 @@
 package com.mercadolibre.android.ui.legacy.widgets.image;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -76,7 +78,7 @@ public class MLImageFragment extends Fragment {
     public MLImageFragment() {
     }
 
-
+    @SuppressLint("ValidFragment")
     public MLImageFragment(boolean useGesture) {
         useGestureImageView = useGesture;
     }
@@ -89,7 +91,7 @@ public class MLImageFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             mUrl = savedInstanceState.getString("url");
             useGestureImageView = savedInstanceState.getBoolean("useZoom");

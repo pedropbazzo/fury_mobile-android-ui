@@ -29,6 +29,7 @@ import com.mercadolibre.android.ui.R;
  * Comments: If you want to center the content you should specify "match_parent" to layout_width and layout_height
  * in your xml file. Otherwise it might be shown on the top of the screen.
  */
+@SuppressWarnings("PMD")
 public class ErrorView extends LinearLayout {
 
     private ImageView image;
@@ -288,7 +289,6 @@ public class ErrorView extends LinearLayout {
     }
 
     @Override
-    @SuppressWarnings("checkstyle:multiplestringliterals")
     public String toString() {
         return "ErrorView{"
                 + "image=" + image
@@ -328,7 +328,7 @@ public class ErrorView extends LinearLayout {
          *
          * @param source The parcel that contains the data
          */
-        SavedState(final Parcel source) {
+        /* default */ SavedState(final Parcel source) {
             super(source);
             drawable = source.readInt();
             title = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
@@ -345,7 +345,7 @@ public class ErrorView extends LinearLayout {
          * @param subtitle    The view subtitle
          * @param buttonLabel The button label
          */
-        SavedState(final Parcelable superState, @DrawableRes final int drawable, final CharSequence title,
+        /* default */ SavedState(final Parcelable superState, @DrawableRes final int drawable, final CharSequence title,
                    final CharSequence subtitle, final CharSequence buttonLabel) {
             super(superState);
             this.drawable = drawable;

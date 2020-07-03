@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.soloader.SoLoader;
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.drawee.state.BinaryState;
 import com.mercadolibre.android.ui.drawee.state.EnableState;
@@ -14,6 +15,7 @@ import com.mercadolibre.android.ui.drawee.state.State;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -27,6 +29,11 @@ import static org.mockito.Mockito.when;
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class StateDraweeViewTest {
+
+    @BeforeClass
+    public static void beforeClass() {
+        SoLoader.setInTestMode();
+    }
 
     @Before
     public void setUp() {
