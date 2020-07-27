@@ -1,3 +1,7 @@
+# v8.15.0
+## Agregado
+- Agregamos contentDescription al Input de TextField
+
 # v8.14.0
 ## Cambiado
 - Se corrige el gravity del helper en el TextField, cuando esta centrado.
