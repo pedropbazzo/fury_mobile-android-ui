@@ -1,3 +1,7 @@
+# v8.16.0
+## Cambiado
+- Se corrigió un error con los ID de xml que generaban incompatibilidad con la migración de Android X desde otras librerias
+
 # v8.15.0
 ## Agregado
 - Agregamos contentDescription al Input de TextField
