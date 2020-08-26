@@ -1,3 +1,7 @@
+# v8.16.0
+## Cambiado
+- Se comprimieron las imágenes y se migraron a webp.
+
 # v8.15.0
 ## Agregado
 - Agregamos contentDescription al Input de TextField
