@@ -1,6 +1,8 @@
+# v8.17.0
+- Se comprimieron las imágenes y se migraron a webp.
+
 # v8.16.0
 ## Cambiado
-- Se comprimieron las imágenes y se migraron a webp.
 - Se corrigió un error con los ID de xml que generaban incompatibilidad con la migración de Android X desde otras librerias
 
 # v8.15.0
