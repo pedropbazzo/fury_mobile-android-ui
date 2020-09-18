@@ -1,3 +1,7 @@
+# v8.18.0
+## Cambiado
+- Migración Android API 29.
+
 # v8.17.0
 - Se comprimieron las imágenes y se migraron a webp.
 
