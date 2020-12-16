@@ -14,7 +14,7 @@
         android:layout_height="40dip" />
 
     <!-- ViewPager that contains the content (in this case, there will be 3 different fragments-->
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"
         android:layout_below="@id/tabs"
         android:layout_centerHorizontal="true"

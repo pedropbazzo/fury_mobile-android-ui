@@ -2,7 +2,7 @@ package com.mercadolibre.android.ui.widgets.contextual_menu;
 
 import android.graphics.PointF;
 import android.os.Build;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 import com.mercadolibre.android.ui.R;
 
@@ -17,6 +17,7 @@ import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.robolectric.Shadows.shadowOf;
 
 /**
  * Test class for {@link ContextualMenu}.
@@ -48,7 +49,10 @@ public class ContextualMenuTest {
 
         final ContextualMenuOption option = new ContextualMenuOption(RuntimeEnvironment.application, imageId, tooltip, hoveredColor);
 
-        assertEquals(ContextCompat.getDrawable(RuntimeEnvironment.application, imageId), option.getIcon());
+        assertEquals(
+            shadowOf(ContextCompat.getDrawable(RuntimeEnvironment.application, imageId)).getCreatedFromResId(),
+            shadowOf(option.getIcon()).getCreatedFromResId()
+        );
         assertEquals(hoveredColor, option.getHoveredTintColor());
         assertEquals(tooltip, option.getTooltip());
     }

@@ -1,7 +1,7 @@
 package com.mercadolibre.android.ui.drawee.state;
 
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
 import android.view.MotionEvent;
 import android.view.View;
 import com.mercadolibre.android.ui.drawee.StateDraweeView;

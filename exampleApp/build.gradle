@@ -28,6 +28,7 @@ android {
 
     lintOptions {
         abortOnError false
+        disable 'GradleDependency'
     }
 
     packagingOptions {
@@ -43,8 +44,7 @@ dependencies {
     implementation project(':ui')
     implementation project(':ui_legacy')
 
-    implementation "com.android.support:design:$supportLibraryVersion"
-
+    implementation "com.google.android.material:material:$materialVersion"
     implementation "com.facebook.stetho:stetho:$stethoVersion"
     implementation "com.facebook.fresco:fresco:$frescoVersion"
 }

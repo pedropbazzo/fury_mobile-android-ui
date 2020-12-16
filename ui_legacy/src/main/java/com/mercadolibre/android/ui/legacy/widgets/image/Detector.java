@@ -1,6 +1,6 @@
 package com.mercadolibre.android.ui.legacy.widgets.image;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Contract for detectors.

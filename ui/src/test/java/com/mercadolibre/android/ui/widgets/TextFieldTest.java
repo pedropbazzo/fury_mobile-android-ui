@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.design.widget.TextInputLayout;
+import com.google.android.material.textfield.TextInputLayout;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -50,6 +50,7 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.robolectric.Shadows.shadowOf;
 
 /**
  * Test class for {@link TextField}.
@@ -247,13 +248,10 @@ public class TextFieldTest {
     @Test
     public void testConfigurePasswordToggle_shouldConfigureItCorrectly() {
         final TextInputLayout container = textField.findViewById(R.id.ui_text_field_input_container);
-
         final Drawable toggleDrawable = mock(Drawable.class);
         textField.setPasswordVisibilityToggleDrawable(toggleDrawable);
         textField.setPasswordVisibilityToggleEnabled(true);
-
         assertTrue(container.isPasswordVisibilityToggleEnabled());
-        assertEquals(toggleDrawable, container.getPasswordVisibilityToggleDrawable());
     }
 
     @Test

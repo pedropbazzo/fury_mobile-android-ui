@@ -2,7 +2,7 @@ package com.mercadolibre.android.ui.drawee.state;
 
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.drawee.StateDraweeView;

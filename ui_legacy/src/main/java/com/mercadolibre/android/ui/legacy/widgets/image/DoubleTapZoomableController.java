@@ -2,7 +2,7 @@ package com.mercadolibre.android.ui.legacy.widgets.image;
 
 import android.content.Context;
 import android.graphics.PointF;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 

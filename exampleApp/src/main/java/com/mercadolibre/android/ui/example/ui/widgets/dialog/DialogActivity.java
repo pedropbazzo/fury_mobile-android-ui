@@ -1,7 +1,7 @@
 package com.mercadolibre.android.ui.example.ui.widgets.dialog;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.FragmentTransaction;
 import android.view.View;
 
 import com.mercadolibre.android.ui.example.BaseActivity;

@@ -1,7 +1,7 @@
 package com.mercadolibre.android.ui.widgets;
 
 import android.os.Build;
-import android.support.v7.view.ContextThemeWrapper;
+import androidx.appcompat.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.TextView;
 

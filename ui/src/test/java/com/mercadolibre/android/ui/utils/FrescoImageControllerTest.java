@@ -2,8 +2,8 @@ package com.mercadolibre.android.ui.utils;
 
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.v4.os.OperationCanceledException;
+import androidx.annotation.NonNull;
+import androidx.core.os.OperationCanceledException;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.DraweeView;

@@ -3,7 +3,7 @@ package com.mercadolibre.android.ui.example.ui.widgets;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
+import com.google.android.material.snackbar.Snackbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import com.mercadolibre.android.ui.example.BaseActivity;
