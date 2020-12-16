@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -83,12 +82,8 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     @VisibleForTesting
-    boolean isViewAttachedToWindow() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            return getWindowToken() != null;
-        } else {
-            return isAttachedToWindow();
-        }
+    public boolean isViewAttachedToWindow() {
+        return isAttachedToWindow();
     }
 
     @Override

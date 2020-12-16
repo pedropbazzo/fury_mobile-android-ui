@@ -3,13 +3,9 @@ package com.mercadolibre.android.ui.widgets;
 import android.os.Build;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-
-import androidx.annotation.NonNull;
 import androidx.core.widget.NestedScrollView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.testing.FragmentScenario;
-
+import androidx.fragment.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -20,6 +16,7 @@ import com.mercadolibre.android.ui.R;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
@@ -36,18 +33,10 @@ public class FullScreenModalTest {
 
     @Before
     public void setUp() {
+        FragmentActivity activity = Robolectric.setupActivity(FragmentActivity.class);
         fullScreenModal = new DummyFullScreenModal();
-        FragmentScenario scenario = FragmentScenario.launch(
-                fullScreenModal.getClass(),
-                null,
-                R.style.Theme_AppCompat,
-                null
-        );
-        scenario.onFragment(new FragmentScenario.FragmentAction() {
-            public void perform(@NonNull Fragment fragment) {
-                root = fragment.getView();
-            }
-        });
+        fullScreenModal.show(activity.getSupportFragmentManager(), null);
+        root = fullScreenModal.getView();
     }
 
     @Test

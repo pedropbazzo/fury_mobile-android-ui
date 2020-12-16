@@ -53,8 +53,6 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     testImplementation "org.mockito:mockito-inline:$mockitoVersion"
     testImplementation "com.facebook.soloader:soloader:$soLoaderVersion"
-
-    debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion"
 }
 
 /**

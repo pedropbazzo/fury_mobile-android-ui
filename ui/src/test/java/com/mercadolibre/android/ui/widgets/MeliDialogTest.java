@@ -6,16 +6,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.testing.FragmentScenario;
-
+import androidx.fragment.app.FragmentActivity;
 import com.mercadolibre.android.ui.R;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
@@ -37,18 +33,10 @@ public class MeliDialogTest {
 
     @Before
     public void setUp() {
+        FragmentActivity activity = Robolectric.setupActivity(FragmentActivity.class);
         meliDialog = new DummyMeliDialog();
-        FragmentScenario scenario = FragmentScenario.launchInContainer(
-                meliDialog.getClass(),
-                null,
-                R.style.Theme_AppCompat,
-                null
-        );
-        scenario.onFragment(new FragmentScenario.FragmentAction() {
-            public void perform(@NonNull Fragment fragment) {
-                root = fragment.getView();
-            }
-        });
+        meliDialog.show(activity.getSupportFragmentManager(), null);
+        root = meliDialog.getView();
     }
 
     @Test

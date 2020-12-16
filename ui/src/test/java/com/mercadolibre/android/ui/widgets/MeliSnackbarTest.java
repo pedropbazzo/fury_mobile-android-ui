@@ -3,12 +3,8 @@ package com.mercadolibre.android.ui.widgets;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.testing.FragmentScenario;
-
+import androidx.fragment.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,6 +13,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
@@ -41,19 +38,10 @@ public class MeliSnackbarTest {
 
     @Before
     public void setUp() {
-        // We just need a view.
-        final DummyMeliDialog fragment = new DummyMeliDialog();
-        final FragmentScenario fragmentScenario = FragmentScenario.launchInContainer(
-                fragment.getClass(),
-                null,
-                R.style.Theme_AppCompat,
-                null
-        );
-        fragmentScenario.onFragment(new FragmentScenario.FragmentAction() {
-            public void perform(@NonNull Fragment fragment) {
-                view = fragment.getView();
-            }
-        });
+        FragmentActivity activity = Robolectric.setupActivity(FragmentActivity.class);
+        DummyMeliDialog fragment = new DummyMeliDialog();
+        fragment.show(activity.getSupportFragmentManager(), null);
+        view = fragment.getView();
     }
 
     @Test
