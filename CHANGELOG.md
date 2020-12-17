@@ -1,3 +1,7 @@
+# v9.0.0
+## Cambiado
+- Migración Android X.
+
 # v8.18.0
 ## Cambiado
 - Migración Android API 29.
