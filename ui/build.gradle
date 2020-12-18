@@ -42,13 +42,11 @@ android {
 
 dependencies {
     implementation project(":ui_legacy")
-
-    implementation "com.android.support:design:$supportLibraryVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
 
     api "com.facebook.fresco:fresco:$frescoVersion"
     api "com.facebook.fresco:webpsupport:$frescoVersion"
-
-    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
 
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation "org.robolectric:shadows-supportv4:$robolectricVersion"

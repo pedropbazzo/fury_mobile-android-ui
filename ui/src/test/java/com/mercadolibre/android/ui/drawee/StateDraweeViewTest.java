@@ -2,7 +2,7 @@ package com.mercadolibre.android.ui.drawee;
 
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 
 import com.facebook.drawee.backends.pipeline.Fresco;

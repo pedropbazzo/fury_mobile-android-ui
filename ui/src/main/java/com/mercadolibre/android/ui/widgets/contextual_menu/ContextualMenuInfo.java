@@ -1,7 +1,7 @@
 package com.mercadolibre.android.ui.widgets.contextual_menu;
 
 import android.graphics.PointF;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.util.HashMap;
 import java.util.Map;

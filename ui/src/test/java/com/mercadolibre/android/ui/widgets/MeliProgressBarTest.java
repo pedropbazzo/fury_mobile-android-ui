@@ -2,7 +2,7 @@ package com.mercadolibre.android.ui.widgets;
 
 import android.animation.ObjectAnimator;
 import android.os.Build;
-import android.support.v7.view.ContextThemeWrapper;
+import androidx.appcompat.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.ProgressBar;
 import com.mercadolibre.android.ui.R;

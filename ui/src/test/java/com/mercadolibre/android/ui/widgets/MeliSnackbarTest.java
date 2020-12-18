@@ -2,28 +2,24 @@ package com.mercadolibre.android.ui.widgets;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.mercadolibre.android.ui.R;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 import org.robolectric.util.ReflectionHelpers;
-
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.robolectric.shadows.support.v4.SupportFragmentTestUtil.startFragment;
-
 
 /**
  * Test class for {@link MeliSnackbar}.
@@ -42,9 +38,9 @@ public class MeliSnackbarTest {
 
     @Before
     public void setUp() {
-        // We just need a view.
-        final Fragment fragment = new DummyMeliDialog();
-        startFragment(fragment);
+        FragmentActivity activity = Robolectric.setupActivity(FragmentActivity.class);
+        DummyMeliDialog fragment = new DummyMeliDialog();
+        fragment.show(activity.getSupportFragmentManager(), null);
         view = fragment.getView();
     }
 

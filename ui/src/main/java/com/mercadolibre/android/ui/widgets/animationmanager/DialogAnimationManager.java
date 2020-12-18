@@ -1,9 +1,9 @@
 package com.mercadolibre.android.ui.widgets.animationmanager;
 
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.annotation.StyleRes;
-import android.support.v4.app.DialogFragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
+import androidx.fragment.app.DialogFragment;
 
 import com.mercadolibre.android.ui.R;
 

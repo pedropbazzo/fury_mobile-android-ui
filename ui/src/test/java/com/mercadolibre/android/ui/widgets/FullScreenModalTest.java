@@ -1,10 +1,11 @@
 package com.mercadolibre.android.ui.widgets;
 
 import android.os.Build;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.core.widget.NestedScrollView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,9 +16,9 @@ import com.mercadolibre.android.ui.R;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
-import org.robolectric.shadows.support.v4.SupportFragmentTestUtil;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -26,21 +27,22 @@ import static org.junit.Assert.assertTrue;
 @RunWith(RobolectricTestRunner.class)
 @Config(sdk = Build.VERSION_CODES.LOLLIPOP)
 public class FullScreenModalTest {
-    private FullScreenModal fullScreenModal;
 
+    private FullScreenModal fullScreenModal;
     private View root;
 
     @Before
     public void setUp() {
+        FragmentActivity activity = Robolectric.setupActivity(FragmentActivity.class);
         fullScreenModal = new DummyFullScreenModal();
-        SupportFragmentTestUtil.startFragment(fullScreenModal);
-        root = getRootView(fullScreenModal);
+        fullScreenModal.show(activity.getSupportFragmentManager(), null);
+        root = fullScreenModal.getView();
     }
 
     @Test
     public void testNotNull() {
         assertNotNull(fullScreenModal);
-        assertNotNull(getRootView(fullScreenModal));
+        assertNotNull(root);
     }
 
     @Test
@@ -85,7 +87,4 @@ public class FullScreenModalTest {
         assertEquals(DummyMeliDialog.SECONDARY_EXIT, secondaryExit.getText().toString());
     }
 
-    private View getRootView(final FullScreenModal fullScreenModal) {
-        return fullScreenModal.getView();
-    }
 }

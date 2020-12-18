@@ -4,17 +4,22 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.annotation.ColorRes;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
-import android.support.design.widget.BaseTransientBottomBar;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.ColorRes;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
+import androidx.annotation.StringRes;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.core.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
 import com.mercadolibre.android.ui.R;
 import com.mercadolibre.android.ui.font.Font;
 import com.mercadolibre.android.ui.font.TypefaceHelper;
@@ -83,9 +88,9 @@ public final class MeliSnackbar {
      * @deprecated instead use:  make(View, CharSequence, int, @SnackbarType int) {
      * Make a Snackbar to display a message.
      * <p>
-     * Having a {@link android.support.design.widget.CoordinatorLayout} in your view hierarchy allows
+     * Having a {@link CoordinatorLayout} in your view hierarchy allows
      * Snackbar to enable certain features, such as swipe-to-dismiss and automatically moving of
-     * widgets like {@link android.support.design.widget.FloatingActionButton}.
+     * widgets like {@link FloatingActionButton}.
      *
      * @param view     The view o find a parent from.
      * @param text     The text to show. Can be formatted text.
@@ -106,9 +111,9 @@ public final class MeliSnackbar {
     /**
      * Make a Snackbar to display a message.
      * <p>
-     * Having a {@link android.support.design.widget.CoordinatorLayout} in your view hierarchy allows
+     * Having a {@link CoordinatorLayout} in your view hierarchy allows
      * Snackbar to enable certain features, such as swipe-to-dismiss and automatically moving of
-     * widgets like {@link android.support.design.widget.FloatingActionButton}.
+     * widgets like {@link FloatingActionButton}.
      *
      * @param view     The view o find a parent from.
      * @param text     The text to show. Can be formatted text.
@@ -128,9 +133,9 @@ public final class MeliSnackbar {
     /**
      * Make a Snackbar to display a message.
      * <p>
-     * Having a {@link android.support.design.widget.CoordinatorLayout} in your view hierarchy allows
+     * Having a {@link CoordinatorLayout} in your view hierarchy allows
      * Snackbar to enable certain features, such as swipe-to-dismiss and automatically moving of
-     * widgets like {@link android.support.design.widget.FloatingActionButton}.
+     * widgets like {@link FloatingActionButton}.
      *
      * @param view     The view to find a parent from.
      * @param text     The text to show. Can be formatted text.
@@ -149,9 +154,9 @@ public final class MeliSnackbar {
      * @deprecated instead use:  make(View, int, int, @SnackbarType int)
      * Make a Snackbar to display a message.
      * <p>
-     * Having a {@link android.support.design.widget.CoordinatorLayout} in your view hierarchy allows
+     * Having a {@link CoordinatorLayout} in your view hierarchy allows
      * Snackbar to enable certain features, such as swipe-to-dismiss and automatically moving of
-     * widgets like {@link android.support.design.widget.FloatingActionButton}.
+     * widgets like {@link FloatingActionButton}.
      *
      * @param view     The view o find a parent from.
      * @param resId    The resource id of the string resource to use. Can be formatted text.
@@ -172,9 +177,9 @@ public final class MeliSnackbar {
     /**
      * Make a Snackbar to display a message.
      * <p>
-     * Having a {@link android.support.design.widget.CoordinatorLayout} in your view hierarchy allows
+     * Having a {@link CoordinatorLayout} in your view hierarchy allows
      * Snackbar to enable certain features, such as swipe-to-dismiss and automatically moving of
-     * widgets like {@link android.support.design.widget.FloatingActionButton}.
+     * widgets like {@link FloatingActionButton}.
      *
      * @param view     The view o find a parent from.
      * @param resId    The resource id of the string resource to use. Can be formatted text.
@@ -195,9 +200,9 @@ public final class MeliSnackbar {
     /**
      * Make a Snackbar to display a message.
      * <p>
-     * Having a {@link android.support.design.widget.CoordinatorLayout} in your view hierarchy allows
+     * Having a {@link CoordinatorLayout} in your view hierarchy allows
      * Snackbar to enable certain features, such as swipe-to-dismiss and automatically moving of
-     * widgets like {@link android.support.design.widget.FloatingActionButton}.
+     * widgets like {@link FloatingActionButton}.
      *
      * @param view     The view o find a parent from.
      * @param resId    The resource id of the string resource to use. Can be formatted text.

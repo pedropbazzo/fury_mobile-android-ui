@@ -1,8 +1,8 @@
 package com.mercadolibre.android.ui.legacy.widgets.image;
 
 import android.content.Context;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.MotionEvent;

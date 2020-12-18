@@ -7,7 +7,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-
     <com.mercadolibre.android.ui.legacy.widgets.MLTextView
         style="@style/textview_title_normal"
         android:layout_width="wrap_content"

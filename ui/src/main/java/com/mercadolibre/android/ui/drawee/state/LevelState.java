@@ -1,7 +1,7 @@
 package com.mercadolibre.android.ui.drawee.state;
 
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
 import android.view.View;
 import com.mercadolibre.android.ui.drawee.StateDraweeView;
 import com.mercadolibre.android.ui.utils.facebook.fresco.FrescoImageController;

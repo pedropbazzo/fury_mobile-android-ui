@@ -9,15 +9,15 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
-import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import androidx.core.content.ContextCompat;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -420,7 +420,7 @@ public final class TextField extends LinearLayout {
             }
 
             final TextView errorView = (TextView) container
-                    .findViewById(android.support.design.R.id.textinput_error);
+                    .findViewById(R.id.textinput_error);
             TypefaceHelper.setTypeface(errorView, Font.SEMI_BOLD);
 
             if (textAlign == CENTER || textAlign == android.view.Gravity.CENTER_HORIZONTAL) {

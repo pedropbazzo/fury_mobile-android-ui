@@ -1,8 +1,8 @@
 package com.mercadolibre.android.ui.example.ui.widgets.dialog;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import com.mercadolibre.android.ui.example.R;

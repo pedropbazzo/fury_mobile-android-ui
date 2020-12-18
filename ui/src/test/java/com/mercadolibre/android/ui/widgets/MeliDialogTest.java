@@ -6,20 +6,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
+import androidx.fragment.app.FragmentActivity;
 import com.mercadolibre.android.ui.R;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
-import org.robolectric.util.ReflectionHelpers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.robolectric.shadows.support.v4.SupportFragmentTestUtil.startFragment;
 
 /**
  * Test class for {@link MeliDialog}.
@@ -31,20 +29,20 @@ import static org.robolectric.shadows.support.v4.SupportFragmentTestUtil.startFr
 public class MeliDialogTest {
 
     private MeliDialog meliDialog;
-
     private View root;
 
     @Before
     public void setUp() {
+        FragmentActivity activity = Robolectric.setupActivity(FragmentActivity.class);
         meliDialog = new DummyMeliDialog();
-        startFragment(meliDialog);
-        root = getRootView(meliDialog);
+        meliDialog.show(activity.getSupportFragmentManager(), null);
+        root = meliDialog.getView();
     }
 
     @Test
     public void testNotNull() {
         assertNotNull(meliDialog);
-        assertNotNull(getRootView(meliDialog));
+        assertNotNull(root);
     }
 
     @Test
@@ -91,10 +89,6 @@ public class MeliDialogTest {
         assertNotNull(errorView);
         assertEquals(View.VISIBLE, errorView.getVisibility());
         assertTrue(errorView instanceof ErrorView);
-    }
-
-    private View getRootView(final MeliDialog meliDialog) {
-        return ReflectionHelpers.getField(meliDialog, "root");
     }
 
 }

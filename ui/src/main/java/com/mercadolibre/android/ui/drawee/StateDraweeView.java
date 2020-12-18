@@ -5,11 +5,10 @@ import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.annotation.VisibleForTesting;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
 import android.util.AttributeSet;
 import android.view.View;
 import com.facebook.drawee.generic.GenericDraweeHierarchy;
@@ -83,12 +82,8 @@ public class StateDraweeView extends SimpleDraweeView {
     }
 
     @VisibleForTesting
-    boolean isViewAttachedToWindow() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
-            return getWindowToken() != null;
-        } else {
-            return isAttachedToWindow();
-        }
+    public boolean isViewAttachedToWindow() {
+        return isAttachedToWindow();
     }
 
     @Override
