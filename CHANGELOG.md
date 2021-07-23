@@ -1,7 +1,10 @@
+# v9.2.0
+## Cambiado
+- Se deshabilita forceDarkAllowed para evitar el forzado de Dark Mode.
+
 # v9.1.0
 ## Cambiado
 - Cambio en MLThemeLegacy de AppCompat a MaterialComponents.Bridge
-- Se deshabilita forceDarkAllowed para evitar el forzado de Dark Mode.
 
 # v9.0.2
 ## Cambiado
