@@ -1,3 +1,7 @@
+# v9.2.1
+## Cambiado
+- Fix theme values-29.
+
 # v9.2.0
 ## Cambiado
 - Se deshabilita forceDarkAllowed para evitar el forzado de Dark Mode.
