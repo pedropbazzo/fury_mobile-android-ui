@@ -32,4 +32,4 @@ public class EnableState extends BinaryState {
             .into(view);
     }
 
-}
+} 
